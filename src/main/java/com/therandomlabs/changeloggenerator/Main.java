@@ -7,8 +7,11 @@ import com.therandomlabs.utils.io.NIOUtils;
 
 public final class Main {
 	public static void main(String[] args) throws Exception {
-		final ExtendedCurseManifest oldManifest = ExtendedCurseManifest.from("old.json");
-		final ExtendedCurseManifest manifest = ExtendedCurseManifest.from("new.json");
+		final String oldFile = args.length > 0 ? args[0] : "old.json";
+		final String newFile = args.length > 1 ? args[1] : "new.json";
+
+		final ExtendedCurseManifest oldManifest = ExtendedCurseManifest.from(oldFile);
+		final ExtendedCurseManifest manifest = ExtendedCurseManifest.from(newFile);
 
 		final Changelog changelog = Changelog.changelog(oldManifest, manifest);
 		NIOUtils.write(Paths.get("changelog.txt"), changelog.toString());

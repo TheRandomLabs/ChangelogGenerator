@@ -1,0 +1,9 @@
+.gradle
+.settings
+bin
+build
+.classpath
+.project
+old.json
+new.json
+changelog.txt

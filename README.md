@@ -8,7 +8,7 @@ If you want to use different files as input, you can do something like this:
 
 Obviously, it isn't perfect and might need some user input, but I tried to add as much mod compatibility as possible in CurseAPI-Minecraft, and it even supports TeamCoFH's GitHub changelogs.
 
-Example changelog:
+Example changelog (a bit larger than usual, and looks even larger because of GitHub's formatting):
 
 	FTB Presents Direwolf20 1.12 1.4.0 to FTB Presents Direwolf20 1.12 1.6.0
 

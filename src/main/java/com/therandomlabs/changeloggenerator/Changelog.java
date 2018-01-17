@@ -552,7 +552,7 @@ public class Changelog {
 					append(newline).append(newline);
 		}
 
-		string.append("* Generated using https://github.com/TheRandomLabs/ChangelogGenerator.").
+		string.append("* Generated using https://github.com/TheRandomLabs/ChangelogGenerator").
 				append(newline);
 
 		final String toString = string.toString();

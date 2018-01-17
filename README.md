@@ -3,12 +3,18 @@ Uses [CurseAPI-Minecraft](https://github.com/TheRandomLabs/CurseAPI-Minecraft) (
 
 It takes two files as input - `old.json` and `new.json`. `old.json` is the `manifest.json` of the old modpack version, and `new.json` is the `manifest.json` of the new modpack version.
 
+ChangelogGenerator generates two files - `changelog.txt` and `shortchangelog.txt`. `shortchangelog.txt` only contains URLs to changelogs, while `changelog.txt` incorporates full changelogs.
+
 If you want to use different files as input, you can do something like this:
 	java -jar ChangelogGenerator.jar oldmanifest.json manifest.json
 
 Obviously, it isn't perfect and might need some user input, but I tried to add as much mod compatibility as possible in CurseAPI-Minecraft, and it even supports TeamCoFH's GitHub changelogs.
 
-Example changelog (a bit larger than usual, and looks even larger because of GitHub's formatting):
+To use this in Gradle:
+
+	compile "com.github.TheRandomLabs:ChangelogGenerator:master-SNAPSHOT"
+
+Example changelog:
 
 	FTB Presents Direwolf20 1.12 1.4.0 to FTB Presents Direwolf20 1.12 1.6.0
 
@@ -50,17 +56,17 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 
 		Aroma1997Core (went from Aroma1997Core-1.12.2-2.0.0.0.b129.jar to Aroma1997Core-1.12.2-2.0.0.0.b135.jar):
 			Aroma1997Core-1.12.2-2.0.0.0.b130.jar:
-				N/A
+				No changelog provided.
 			Aroma1997Core-1.12.2-2.0.0.0.b131.jar:
-				N/A
+				No changelog provided.
 			Aroma1997Core-1.12.2-2.0.0.0.b132.jar:
-				N/A
+				No changelog provided.
 			Aroma1997Core-1.12.2-2.0.0.0.b133.jar:
-				N/A
+				No changelog provided.
 			Aroma1997Core-1.12.2-2.0.0.0.b134.jar:
-				N/A
+				No changelog provided.
 			Aroma1997Core-1.12.2-2.0.0.0.b135.jar:
-				N/A
+				No changelog provided.
 
 		Baubles (went from Baubles-1.12-1.5.1.jar to Baubles-1.12-1.5.2.jar):
 			Baubles-1.12-1.5.2.jar:
@@ -142,7 +148,7 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 			Bookshelf-1.12.2-2.3.503.jar:
 				 * Fixed onTileRemoved implementation being mandatory. - Tyler Hancock
 			Bookshelf-1.12.2-2.3.504.jar:
-				No changelog provided
+				No changelog provided.
 			Bookshelf-1.12.2-2.3.505.jar:
 				 * Added support for code based recipes. - Tyler Hancock
 			Bookshelf-1.12.2-2.3.506.jar:
@@ -168,17 +174,17 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 			Bookshelf-1.12.2-2.3.516.jar:
 				 * Removed uneeded sideonly annotations. - Tyler Hancock
 			Bookshelf-1.12.2-2.3.518.jar:
-				No changelog provided
+				No changelog provided.
 
 		Brandon's Core (went from Brandon's Core 1.12-2.3.4.134-universal to Brandon's Core 1.12-2.3.7.140-universal):
 			Brandon's Core 1.12-2.3.6.139-universal:
-				No changelog provided
+				No changelog provided.
 			Brandon's Core 1.12-2.3.7.140-universal:
-				No changelog provided
+				No changelog provided.
 
 		Chicken Chunks 1.8.+ (went from Chicken Chunks 1.12-2.4.0.70-universal to Chicken Chunks 1.12.2-2.4.1.71-universal):
 			Chicken Chunks 1.12.2-2.4.1.71-universal:
-				No changelog provided
+				No changelog provided.
 
 		Chisel (went from Chisel - MC1.12-0.1.0.23 to Chisel - MC1.12-0.1.1.26):
 			Chisel - MC1.12-0.1.1.24:
@@ -200,7 +206,7 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 
 		CodeChicken Lib 1.8.+ (went from CodeChicken Lib 1.12-3.1.3.313-universal to CodeChicken Lib 1.12.2-3.1.5.331-universal):
 			CodeChicken Lib 1.12.2-3.1.5.331-universal:
-				No changelog provided
+				No changelog provided.
 
 		CoFH Core (went from CoFHCore-1.12.2-4.3.7.25-universal.jar to CoFHCore-1.12.2-4.3.10.5-universal.jar):
 			Changelog retrieved from GitHub:
@@ -222,7 +228,7 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 
 		CoFH World (went from CoFHWorld-1.12.2-1.0.2.10-universal.jar to CoFHWorld-1.12.2-1.1.1.12-universal.jar):
 			CoFHWorld-1.12.2-1.1.1.12-universal.jar:
-				No changelog provided
+				No changelog provided.
 
 		Compact Machines (went from compactmachines3-1.12.2-3.0.3-b169.jar to compactmachines3-1.12.2-3.0.5-b184.jar):
 			compactmachines3-1.12.2-3.0.4-b182.jar:
@@ -383,7 +389,7 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 			DarkUtils-1.12.2-1.8.188.jar:
 				 * Fixed null charm crashing when clicking on an invalid slot. #130 - Tyler Hancock
 			DarkUtils-1.12.2-1.8.190.jar:
-				No changelog provided
+				No changelog provided.
 
 		Deep Resonance (went from deepresonance-1.12-1.4.9.jar to deepresonance-1.12-1.6.0.jar):
 			deepresonance-1.12-1.5.0.jar:
@@ -422,11 +428,11 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 
 		Ender Storage 1.8.+ (went from Ender Storage 1.12-2.4.0.122-universal to Ender Storage 1.12.2-2.4.2.126-universal):
 			Ender Storage 1.12.2-2.4.2.126-universal:
-				No changelog provided
+				No changelog provided.
 
 		Environmental Tech (went from environmentaltech-1.12.2-2.0.5a.jar to environmentaltech-1.12.2-2.0.6b.jar):
 			environmentaltech-1.12.2-2.0.6a.jar:
-				No changelog provided
+				No changelog provided.
 			environmentaltech-1.12.2-2.0.6b.jar:
 				Version 2.0.6b
 				- Added Crystal Lens for all the Tier Crystals(REGEN JSONS for Void Ore Miner!!!)
@@ -745,24 +751,6 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 				 * Fix #1055 Crash when searching using OR(|) operator
 
 		Magic Bees (went from MagicBees-1.12-3.1.7.jar to MagicBees-1.12.2-3.1.9.jar):
-			MagicBees-1.12.2-3.1.8.jar:
-				-Fixed botania flower models
-
-				-Fixed module effects loading after the bee is registered, resulting in NPE's
-
-				-Made bee disabling & bee hiding in JEI configurable
-
-				-Set max frame stack size to 1, fixes frames with same durability being able to stack
-
-				-Fixed Essence of Everlasting Durability recipe
-
-				-Fixed hive gen on nether roof (thanks temp1011)
-
-				-Fixed different hive types stacking
-
-				-Fixed null taglines, resulting in NPE's when shift-hovering over BM-botania research
-
-				-Added TE mobtypes now that they are back in
 			MagicBees-1.12.2-3.1.9.jar:
 				-Fixed botania flower models
 
@@ -1393,11 +1381,11 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 			valkyrielib-1.12.2-2.0.6a.jar:
 				Fixed multiblock null owner causing people to not be able to dismantle their multiblocks from older versions.
 			valkyrielib-1.12.2-2.0.6b.jar:
-				No changelog provided
+				No changelog provided.
 
 		WanionLib (went from WanionLib-1.12.2-1.3.jar to WanionLib-1.12.2-1.4.jar):
 			WanionLib-1.12.2-1.4.jar:
-				No changelog provided
+				No changelog provided.
 
 		XNet (went from xnet-1.12-1.5.0.jar to xnet-1.12-1.6.7.jar):
 			xnet-1.12-1.6.0.jar:
@@ -1447,3 +1435,6 @@ Example changelog (a bit larger than usual, and looks even larger because of Git
 		- Inventory Sorter
 
 	Went from Forge 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587.
+	View changelog at: http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.1.2587/forge-1.12.2-14.23.1.2587-changelog.txt
+
+	* Generated using https://github.com/TheRandomLabs/ChangelogGenerator

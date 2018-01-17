@@ -1,7 +1,6 @@
 package com.therandomlabs.changeloggenerator;
 
 import java.nio.file.Paths;
-import com.therandomlabs.curseapi.minecraft.modpack.manifest.Changelog;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ExtendedCurseManifest;
 import com.therandomlabs.utils.io.NIOUtils;
 
@@ -14,6 +13,9 @@ public final class Main {
 		final ExtendedCurseManifest manifest = ExtendedCurseManifest.from(newFile);
 
 		final Changelog changelog = Changelog.changelog(oldManifest, manifest);
+		final Changelog shortChangelog = Changelog.changelog(oldManifest, manifest, false);
+
 		NIOUtils.write(Paths.get("changelog.txt"), changelog.toString());
+		NIOUtils.write(Paths.get("shortchangelog.txt"), shortChangelog.toString());
 	}
 }

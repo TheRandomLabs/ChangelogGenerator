@@ -436,4 +436,4 @@ Removed:
 Went from Forge 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587.
 View changelog at: http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.1.2587/forge-1.12.2-14.23.1.2587-changelog.txt
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator.
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator

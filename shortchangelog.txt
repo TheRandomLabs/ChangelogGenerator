@@ -1,11 +1,11 @@
 FTB Presents Direwolf20 1.12 1.4.0 to FTB Presents Direwolf20 1.12 1.6.0
 
 Added:
-	- TipTheScales
-	- Item Scroller
 	- Inventory Tweaks
+	- Item Scroller
 	- Placebo
 	- Simply Jetpacks 2
+	- TipTheScales
 
 Updated:
 	/dank/null (went from DankNull-1.12-1.0.14.jar to DankNull-1.12-1.3.29.jar):

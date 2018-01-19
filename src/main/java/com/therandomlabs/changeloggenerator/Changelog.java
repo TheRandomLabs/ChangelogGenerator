@@ -9,7 +9,6 @@ import java.util.Map;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.CurseFile;
-import com.therandomlabs.curseapi.CurseFileList;
 import com.therandomlabs.curseapi.CurseProject;
 import com.therandomlabs.curseapi.minecraft.Mod;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ExtendedCurseManifest;
@@ -132,8 +131,8 @@ public class Changelog {
 				return changelog;
 			}
 
-			final CurseFileList files = getProject().files().filterVersions(mcVersion).
-					between(getOldModFile(), getNewModFile());
+			final TRLList<CurseFile> files = getProject().files().filterVersions(mcVersion).
+					between(getOldModFile(), getNewModFile()).toArrayList();
 
 			if(getOldModFile().equals(getNewModFile())) {
 				files.add(getNewModFile());

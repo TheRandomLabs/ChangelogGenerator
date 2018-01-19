@@ -139,7 +139,7 @@ public class Changelog {
 				files.add(getNewModFile());
 			}
 
-			for(int i = files.size() - 1; i >= 0; i--) {
+			for(int i = 0; i < files.size(); i++) {
 				final String fullChangelog = files.get(i).changelog();
 				boolean noChangelogProvided = false;
 				if(fullChangelog.trim().equals("N/A") ||

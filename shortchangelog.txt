@@ -1,16 +1,36 @@
 FTB Presents Direwolf20 1.12 1.4.0 to FTB Presents Direwolf20 1.12 1.6.0
 
 Added:
-	- Inventory Tweaks
+	- TipTheScales
 	- Item Scroller
+	- Inventory Tweaks
 	- Placebo
 	- Simply Jetpacks 2
-	- TipTheScales
 
 Updated:
+	/dank/null (went from DankNull-1.12-1.0.14.jar to DankNull-1.12-1.3.29.jar):
+		DankNull-1.12-1.2.18.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2510476
+		DankNull-1.12-1.2.19.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2510615
+		DankNull-1.12-1.3.23.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2514408
+		DankNull-1.12-1.3.24.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2514449
+		DankNull-1.12-1.3.27.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2515524
+		DankNull-1.12-1.3.29.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2515694
+
 	Actually Additions (went from ActuallyAdditions-1.12.2-r125.jar to ActuallyAdditions-1.12.2-r126.jar):
 		View changelog at:
 			https://raw.githubusercontent.com/Ellpeck/ActuallyAdditions/master/update/changelog.md
+
+	Advanced Generators (went from Advanced Generators 0.9.20.9 (MC 1.12.2) to Advanced Generators 0.9.20.12 (MC 1.12.2)):
+		Advanced Generators 0.9.20.10 (MC 1.12.2):
+			View changelog at: https://minecraft.curseforge.com/projects/advanced-generators/files/2498417
+		Advanced Generators 0.9.20.12 (MC 1.12.2):
+			View changelog at: https://minecraft.curseforge.com/projects/advanced-generators/files/2516219
 
 	Applied Energistics 2 (went from appliedenergistics2-rv5-stable-3.jar to appliedenergistics2-rv5-stable-4.jar):
 		appliedenergistics2-rv5-stable-4.jar:
@@ -100,16 +120,16 @@ Updated:
 		Chisel - MC1.12-0.1.1.26:
 			View changelog at: https://minecraft.curseforge.com/projects/chisel/files/2516679
 
-	CodeChicken Lib 1.8.+ (went from CodeChicken Lib 1.12-3.1.3.313-universal to CodeChicken Lib 1.12.2-3.1.5.331-universal):
-		CodeChicken Lib 1.12.2-3.1.5.331-universal:
-			No changelog provided.
-
 	CoFH Core (went from CoFHCore-1.12.2-4.3.7.25-universal.jar to CoFHCore-1.12.2-4.3.10.5-universal.jar):
 		View changelog at:
 			https://raw.githubusercontent.com/CoFH/Version/master/cofhcore_changelog.txt
 
 	CoFH World (went from CoFHWorld-1.12.2-1.0.2.10-universal.jar to CoFHWorld-1.12.2-1.1.1.12-universal.jar):
 		CoFHWorld-1.12.2-1.1.1.12-universal.jar:
+			No changelog provided.
+
+	CodeChicken Lib 1.8.+ (went from CodeChicken Lib 1.12-3.1.3.313-universal to CodeChicken Lib 1.12.2-3.1.5.331-universal):
+		CodeChicken Lib 1.12.2-3.1.5.331-universal:
 			No changelog provided.
 
 	Compact Machines (went from compactmachines3-1.12.2-3.0.3-b169.jar to compactmachines3-1.12.2-3.0.5-b184.jar):
@@ -127,20 +147,6 @@ Updated:
 	Cyclops Core (went from CyclopsCore-1.12.2-0.10.24.jar to CyclopsCore-1.12.2-0.11.0.jar):
 		CyclopsCore-1.12.2-0.11.0.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/cyclops-core/files/2512184
-
-	/dank/null (went from DankNull-1.12-1.0.14.jar to DankNull-1.12-1.3.29.jar):
-		DankNull-1.12-1.2.18.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2510476
-		DankNull-1.12-1.2.19.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2510615
-		DankNull-1.12-1.3.23.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2514408
-		DankNull-1.12-1.3.24.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2514449
-		DankNull-1.12-1.3.27.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2515524
-		DankNull-1.12-1.3.29.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/dank-null/files/2515694
 
 	Dark Utilities (went from DarkUtils-1.12.2-1.7.181.jar to DarkUtils-1.12.2-1.8.190.jar):
 		DarkUtils-1.12.2-1.7.182.jar:
@@ -214,16 +220,6 @@ Updated:
 		Gendustry 1.6.5.8 (MC 1.12.2):
 			View changelog at: https://minecraft.curseforge.com/projects/gendustry/files/2516215
 
-	Advanced Generators (went from Advanced Generators 0.9.20.9 (MC 1.12.2) to Advanced Generators 0.9.20.12 (MC 1.12.2)):
-		Advanced Generators 0.9.20.10 (MC 1.12.2):
-			View changelog at: https://minecraft.curseforge.com/projects/advanced-generators/files/2498417
-		Advanced Generators 0.9.20.12 (MC 1.12.2):
-			View changelog at: https://minecraft.curseforge.com/projects/advanced-generators/files/2516219
-
-	iChunUtil (went from iChunUtil-1.12.2-7.1.3.jar to iChunUtil-1.12.2-7.1.4.jar):
-		iChunUtil-1.12.2-7.1.4.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/ichunutil/files/2510760
-
 	Immersive Engineering (went from Immersive Engineering 0.12 - 75 to Immersive Engineering 0.12 - 76):
 		Immersive Engineering 0.12 - 76:
 			View changelog at: https://minecraft.curseforge.com/projects/immersive-engineering/files/2515333
@@ -250,6 +246,10 @@ Updated:
 		View changelog at:
 			https://minecraft.curseforge.com/projects/jei/files/2511052
 
+	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):
+		MCMultiPart 2.4.1:
+			View changelog at: https://minecraft.curseforge.com/projects/mcmultipart/files/2511780
+
 	Magic Bees (went from MagicBees-1.12-3.1.7.jar to MagicBees-1.12.2-3.1.9.jar):
 		MagicBees-1.12.2-3.1.9.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/magic-bees/files/2517686
@@ -261,10 +261,6 @@ Updated:
 			View changelog at: https://minecraft.curseforge.com/projects/mcjtylib/files/2514045
 		mcjtylib-1.12-2.6.2.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/mcjtylib/files/2516349
-
-	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):
-		MCMultiPart 2.4.1:
-			View changelog at: https://minecraft.curseforge.com/projects/mcmultipart/files/2511780
 
 	MeeCreeps (went from meecreeps-1.12-1.0.1.jar to meecreeps-1.12-1.1.0.jar):
 		meecreeps-1.12-1.1.0.jar:
@@ -278,6 +274,10 @@ Updated:
 		minetogether-1.10.2-1.8.7.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/creeperhost-minetogether/files/2516905
 
+	Minecraft Forge (went from 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587):
+		View changelog at:
+			http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.1.2587/forge-1.12.2-14.23.1.2587-changelog.txt
+
 	ModTweaker (went from modtweaker-4.0.5 to modtweaker-4.0.6):
 		modtweaker-4.0.6:
 			View changelog at: https://minecraft.curseforge.com/projects/modtweaker/files/2514559
@@ -289,10 +289,6 @@ Updated:
 	Not Enough Wands (went from notenoughwands-1.12-1.5.9.jar to notenoughwands-1.12-1.6.0.jar):
 		notenoughwands-1.12-1.6.0.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/not-enough-wands/files/2514037
-
-	p455w0rd's Library (went from p455w0rdslib-1.12-2.0.24.jar to p455w0rdslib-1.12-2.0.25.jar):
-		p455w0rdslib-1.12-2.0.25.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/p455w0rds-library/files/2516440
 
 	Pam's HarvestCraft (went from Pam's HarvestCraft 1.12.2a.jar to Pam's HarvestCraft 1.12.2g.jar):
 		Pam's HarvestCraft 1.12.2b - Re-Balance Update.jar:
@@ -307,6 +303,26 @@ Updated:
 			View changelog at: https://minecraft.curseforge.com/projects/pams-harvestcraft/files/2518832
 		Pam's HarvestCraft 1.12.2g.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/pams-harvestcraft/files/2519315
+
+	RFTools (went from rftools-1.12-7.15.jar to rftools-1.12-7.23.jar):
+		rftools-1.12-7.20.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2514027
+		rftools-1.12-7.21.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2514048
+		rftools-1.12-7.22.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2514444
+		rftools-1.12-7.23.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2516350
+
+	RFTools Control (went from rftoolsctrl-1.12-1.7.0.jar to rftoolsctrl-1.12-1.8.0.jar):
+		rftoolsctrl-1.12-1.8.0.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools-control/files/2514031
+
+	RFTools Dimensions (went from rftoolsdim-1.12-5.05.jar to rftoolsdim-1.12-5.50.jar):
+		rftoolsdim-1.12-5.10.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools-dimensions/files/2514030
+		rftoolsdim-1.12-5.50.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/rftools-dimensions/files/2516650
 
 	Reborn Core (went from RebornCore-1.12.2-3.5.2.171-universal.jar to RebornCore-1.12.2-3.6.2.187-universal.jar):
 		RebornCore-1.12.2-3.5.3.174-universal.jar:
@@ -338,34 +354,6 @@ Updated:
 		Refined Storage 1.5.31:
 			View changelog at: https://minecraft.curseforge.com/projects/refined-storage/files/2515440
 
-	RFTools (went from rftools-1.12-7.15.jar to rftools-1.12-7.23.jar):
-		rftools-1.12-7.20.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2514027
-		rftools-1.12-7.21.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2514048
-		rftools-1.12-7.22.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2514444
-		rftools-1.12-7.23.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools/files/2516350
-
-	RFTools Control (went from rftoolsctrl-1.12-1.7.0.jar to rftoolsctrl-1.12-1.8.0.jar):
-		rftoolsctrl-1.12-1.8.0.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools-control/files/2514031
-
-	RFTools Dimensions (went from rftoolsdim-1.12-5.05.jar to rftoolsdim-1.12-5.50.jar):
-		rftoolsdim-1.12-5.10.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools-dimensions/files/2514030
-		rftoolsdim-1.12-5.50.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/rftools-dimensions/files/2516650
-
-	Tinkers Construct (went from TConstruct-1.12-2.7.4.34.jar to TConstruct-1.12.2-2.9.0.55.jar):
-		TConstruct-1.12-2.8.0.45.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/tinkers-construct/files/2507737
-		TConstruct-1.12-2.8.1.49.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/tinkers-construct/files/2510691
-		TConstruct-1.12.2-2.9.0.55.jar:
-			View changelog at: https://minecraft.curseforge.com/projects/tinkers-construct/files/2518400
-
 	Thermal Cultivation (went from ThermalCultivation-1.12.2-0.1.2.8-universal.jar to ThermalCultivation-1.12.2-0.1.5.3-universal.jar):
 		View changelog at:
 			https://raw.githubusercontent.com/CoFH/Version/master/thermalcultivation_changelog.txt
@@ -381,6 +369,14 @@ Updated:
 	Thermal Foundation (went from ThermalFoundation-1.12.2-2.3.7.18-universal.jar to ThermalFoundation-1.12.2-2.3.10.6-universal.jar):
 		View changelog at:
 			https://raw.githubusercontent.com/CoFH/Version/master/thermalfoundation_changelog.txt
+
+	Tinkers Construct (went from TConstruct-1.12-2.7.4.34.jar to TConstruct-1.12.2-2.9.0.55.jar):
+		TConstruct-1.12-2.8.0.45.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/tinkers-construct/files/2507737
+		TConstruct-1.12-2.8.1.49.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/tinkers-construct/files/2510691
+		TConstruct-1.12.2-2.9.0.55.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/tinkers-construct/files/2518400
 
 	Toast Control (went from Toast Control-1.12-1.2.0.jar to Toast Control-1.12.2-1.3.0.jar):
 		Toast Control-1.12.2-1.2.1.jar:
@@ -430,10 +426,15 @@ Updated:
 		xnet-1.12-1.6.7.jar:
 			View changelog at: https://minecraft.curseforge.com/projects/xnet/files/2517060
 
+	iChunUtil (went from iChunUtil-1.12.2-7.1.3.jar to iChunUtil-1.12.2-7.1.4.jar):
+		iChunUtil-1.12.2-7.1.4.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/ichunutil/files/2510760
+
+	p455w0rd's Library (went from p455w0rdslib-1.12-2.0.24.jar to p455w0rdslib-1.12-2.0.25.jar):
+		p455w0rdslib-1.12-2.0.25.jar:
+			View changelog at: https://minecraft.curseforge.com/projects/p455w0rds-library/files/2516440
+
 Removed:
 	- Inventory Sorter
 
-Went from Forge 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587.
-View changelog at: http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.1.2587/forge-1.12.2-14.23.1.2587-changelog.txt
-
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator.
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator

@@ -1,18 +1,73 @@
 FTB Presents Direwolf20 1.12 1.4.0 to FTB Presents Direwolf20 1.12 1.6.0
 
 Added:
-	- Inventory Tweaks
+	- TipTheScales
 	- Item Scroller
+	- Inventory Tweaks
 	- Placebo
 	- Simply Jetpacks 2
-	- TipTheScales
 
 Updated:
+	/dank/null (went from DankNull-1.12-1.0.14.jar to DankNull-1.12-1.3.29.jar):
+		DankNull-1.12-1.2.18.jar:
+			Implemented:
+
+			[#18 - Sneak+Right-Click in SMP to place block](https://github.com/p455w0rd/DankNull/issues/18)
+
+			[#20 - Added filtering on a per-item basis for the /dank/null Docking Station](https://github.com/p455w0rd/DankNull/issues/20)
+
+			[#21- Added ability to access /dank/null GUI while there is a /dank/null in the Docking Station](https://github.com/p455w0rd/DankNull/issues/21)
+
+			[#27 - Added ability to place blocks via /dank/null when it is in off hand](https://github.com/p455w0rd/DankNull/issues/27)
+
+			[#34 - Made previous/next item selection keys configurable (used to be pg fwd/pg backward mouse buttons)](https://github.com/p455w0rd/DankNull/issues/34)
+
+			[#37 - Got rid of chat spam and replaced with custom text display](https://github.com/p455w0rd/DankNull/issues/37)
+
+			Fixed:
+
+			[#25 - Fixed /dank/null items not having texture when used with certain Resource Packs/mods (Optifine and CTM specifically)](https://github.com/p455w0rd/DankNull/issues/25)
+
+			[#28 - Fixed dupe bug](https://github.com/p455w0rd/DankNull/issues/28)
+
+			[#29 - Fixed fluid buckets bug](https://github.com/p455w0rd/DankNull/issues/29)
+
+			[#30 - Fixed placement issue when used in packs with FTBUtils](https://github.com/p455w0rd/DankNull/issues/30)
+
+			[#35 - Fixed bug when /dank/null is in same pack as SwingThroughGlass](https://github.com/p455w0rd/DankNull/issues/35)
+
+			[#36 - Added ability to remove /dank/null from docking station using either hand even if the other hand has an item](https://github.com/p455w0rd/DankNull/issues/36)
+		DankNull-1.12-1.2.19.jar:
+			Fixed [#41](https://github.com/p455w0rd/DankNull/issues/41) (Since I also moved recipes around a bit, forgot to move event registration to preinit)
+		DankNull-1.12-1.3.23.jar:
+			Fixed [#43](https://github.com/p455w0rd/DankNull/issues/43), [#50](https://github.com/p455w0rd/DankNull/issues/50), [#51](https://github.com/p455w0rd/DankNull/issues/51), [#52](https://github.com/p455w0rd/DankNull/issues/52)
+
+			Removed FakePlayer ([#44](https://github.com/p455w0rd/DankNull/issues/44))
+		DankNull-1.12-1.3.24.jar:
+			Fixed server crash ([#54](https://github.com/p455w0rd/DankNull/issues/54))
+		DankNull-1.12-1.3.27.jar:
+			Fixed [#40](https://github.com/p455w0rd/DankNull/issues/40), [#48](https://github.com/p455w0rd/DankNull/issues/48), [#55](https://github.com/p455w0rd/DankNull/issues/55)
+
+			Implemented [#56](https://github.com/p455w0rd/DankNull/issues/56), [#61](https://github.com/p455w0rd/DankNull/issues/61)
+
+			Hopefully fixed [#57](https://github.com/p455w0rd/DankNull/issues/57) ..couldn't reproduce and couldn't find anyone to test, but made some adjustments...hope it works
+		DankNull-1.12-1.3.29.jar:
+			Fixed [#62](https://github.com/p455w0rd/DankNull/issues/62) - Creative /dank/null showing on wrong creative tabs
+
+			Fixed [#63](https://github.com/p455w0rd/DankNull/issues/63) - No sound when placing blocks
+
 	Actually Additions (went from ActuallyAdditions-1.12.2-r125.jar to ActuallyAdditions-1.12.2-r126.jar):
 		Changlog retrieved from GitHub:
 			# 1.12.2-r126
 			* New feature!  The atomic reconstructor can now split enchanted books with multiple enchantments!
 			* Leomil72: Added it_IT.lang
+
+	Advanced Generators (went from Advanced Generators 0.9.20.9 (MC 1.12.2) to Advanced Generators 0.9.20.12 (MC 1.12.2)):
+		Advanced Generators 0.9.20.10 (MC 1.12.2):
+			568248266: Update zh_CN language file
+			noreply: fix a typo
+		Advanced Generators 0.9.20.12 (MC 1.12.2):
+			Added BR translation (thanks InterPlay)
 
 	Applied Energistics 2 (went from appliedenergistics2-rv5-stable-3.jar to appliedenergistics2-rv5-stable-4.jar):
 		appliedenergistics2-rv5-stable-4.jar:
@@ -186,10 +241,6 @@ Updated:
 		Chisel - MC1.12-0.1.1.26:
 			 - Fix issue where certain storage blocks (iron, lapis, etc) did not have an oredict name. 
 
-	CodeChicken Lib 1.8.+ (went from CodeChicken Lib 1.12-3.1.3.313-universal to CodeChicken Lib 1.12.2-3.1.5.331-universal):
-		CodeChicken Lib 1.12.2-3.1.5.331-universal:
-			No changelog provided.
-
 	CoFH Core (went from CoFHCore-1.12.2-4.3.7.25-universal.jar to CoFHCore-1.12.2-4.3.10.5-universal.jar):
 		Changelog retrieved from GitHub:
 			4.3.10:
@@ -210,6 +261,10 @@ Updated:
 
 	CoFH World (went from CoFHWorld-1.12.2-1.0.2.10-universal.jar to CoFHWorld-1.12.2-1.1.1.12-universal.jar):
 		CoFHWorld-1.12.2-1.1.1.12-universal.jar:
+			No changelog provided.
+
+	CodeChicken Lib 1.8.+ (went from CodeChicken Lib 1.12-3.1.3.313-universal to CodeChicken Lib 1.12.2-3.1.5.331-universal):
+		CodeChicken Lib 1.12.2-3.1.5.331-universal:
 			No changelog provided.
 
 	Compact Machines (went from compactmachines3-1.12.2-3.0.3-b169.jar to compactmachines3-1.12.2-3.0.5-b184.jar):
@@ -281,54 +336,6 @@ Updated:
 
 			Fixes:
 			* Fix XML recipe oredict ingredients not adhering to stacksizes
-
-	/dank/null (went from DankNull-1.12-1.0.14.jar to DankNull-1.12-1.3.29.jar):
-		DankNull-1.12-1.2.18.jar:
-			Implemented:
-
-			[#18 - Sneak+Right-Click in SMP to place block](https://github.com/p455w0rd/DankNull/issues/18)
-
-			[#20 - Added filtering on a per-item basis for the /dank/null Docking Station](https://github.com/p455w0rd/DankNull/issues/20)
-
-			[#21- Added ability to access /dank/null GUI while there is a /dank/null in the Docking Station](https://github.com/p455w0rd/DankNull/issues/21)
-
-			[#27 - Added ability to place blocks via /dank/null when it is in off hand](https://github.com/p455w0rd/DankNull/issues/27)
-
-			[#34 - Made previous/next item selection keys configurable (used to be pg fwd/pg backward mouse buttons)](https://github.com/p455w0rd/DankNull/issues/34)
-
-			[#37 - Got rid of chat spam and replaced with custom text display](https://github.com/p455w0rd/DankNull/issues/37)
-
-			Fixed:
-
-			[#25 - Fixed /dank/null items not having texture when used with certain Resource Packs/mods (Optifine and CTM specifically)](https://github.com/p455w0rd/DankNull/issues/25)
-
-			[#28 - Fixed dupe bug](https://github.com/p455w0rd/DankNull/issues/28)
-
-			[#29 - Fixed fluid buckets bug](https://github.com/p455w0rd/DankNull/issues/29)
-
-			[#30 - Fixed placement issue when used in packs with FTBUtils](https://github.com/p455w0rd/DankNull/issues/30)
-
-			[#35 - Fixed bug when /dank/null is in same pack as SwingThroughGlass](https://github.com/p455w0rd/DankNull/issues/35)
-
-			[#36 - Added ability to remove /dank/null from docking station using either hand even if the other hand has an item](https://github.com/p455w0rd/DankNull/issues/36)
-		DankNull-1.12-1.2.19.jar:
-			Fixed [#41](https://github.com/p455w0rd/DankNull/issues/41) (Since I also moved recipes around a bit, forgot to move event registration to preinit)
-		DankNull-1.12-1.3.23.jar:
-			Fixed [#43](https://github.com/p455w0rd/DankNull/issues/43), [#50](https://github.com/p455w0rd/DankNull/issues/50), [#51](https://github.com/p455w0rd/DankNull/issues/51), [#52](https://github.com/p455w0rd/DankNull/issues/52)
-
-			Removed FakePlayer ([#44](https://github.com/p455w0rd/DankNull/issues/44))
-		DankNull-1.12-1.3.24.jar:
-			Fixed server crash ([#54](https://github.com/p455w0rd/DankNull/issues/54))
-		DankNull-1.12-1.3.27.jar:
-			Fixed [#40](https://github.com/p455w0rd/DankNull/issues/40), [#48](https://github.com/p455w0rd/DankNull/issues/48), [#55](https://github.com/p455w0rd/DankNull/issues/55)
-
-			Implemented [#56](https://github.com/p455w0rd/DankNull/issues/56), [#61](https://github.com/p455w0rd/DankNull/issues/61)
-
-			Hopefully fixed [#57](https://github.com/p455w0rd/DankNull/issues/57) ..couldn't reproduce and couldn't find anyone to test, but made some adjustments...hope it works
-		DankNull-1.12-1.3.29.jar:
-			Fixed [#62](https://github.com/p455w0rd/DankNull/issues/62) - Creative /dank/null showing on wrong creative tabs
-
-			Fixed [#63](https://github.com/p455w0rd/DankNull/issues/63) - No sound when placing blocks
 
 	Dark Utilities (went from DarkUtils-1.12.2-1.7.181.jar to DarkUtils-1.12.2-1.8.190.jar):
 		DarkUtils-1.12.2-1.7.182.jar:
@@ -563,23 +570,6 @@ Updated:
 			Prevent getting TE on incorrect block in apiary getLightValue (closes #254)
 			Added BR translation (thanks InterPlay)
 
-	Advanced Generators (went from Advanced Generators 0.9.20.9 (MC 1.12.2) to Advanced Generators 0.9.20.12 (MC 1.12.2)):
-		Advanced Generators 0.9.20.10 (MC 1.12.2):
-			568248266: Update zh_CN language file
-			noreply: fix a typo
-		Advanced Generators 0.9.20.12 (MC 1.12.2):
-			Added BR translation (thanks InterPlay)
-
-	iChunUtil (went from iChunUtil-1.12.2-7.1.3.jar to iChunUtil-1.12.2-7.1.4.jar):
-		iChunUtil-1.12.2-7.1.4.jar:
-			- Fix the aggressive head tracking config being locked to 0 or 1 despite there being a 2 option.
-			- Fix crashes by shatter and morph when killing a skeleton because of Optifine.
-			- Fix client crashes when using the recipe book on a client with iChunUtil installed, on a server that doesn't have it installed.
-			- Fix crashes with block entities that have been summoned/loaded with an invalid NBT data.
-			- Made latched entity invisible to hide the second bounding box found in the player.
-			- Update localization for the keybind settings to reflect on how keybinds are accessed now.
-			- Add a way for non-iChunUtil mods to use iChunUtil's update tracker.
-
 	Immersive Engineering (went from Immersive Engineering 0.12 - 75 to Immersive Engineering 0.12 - 76):
 		Immersive Engineering 0.12 - 76:
 			- added various config options for the Belljar, to adjust growthspeeds and fertilizer effects
@@ -732,6 +722,11 @@ Updated:
 			 * Update Polish translation (#1062) 
 			 * Fix #1055 Crash when searching using OR(|) operator 
 
+	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):
+		MCMultiPart 2.4.1:
+			 * Fixed TEs not getting their IPartInfo set when turned into a multipart 
+			 * Implemented entity collision detection support (for BC compat) 
+
 	Magic Bees (went from MagicBees-1.12-3.1.7.jar to MagicBees-1.12.2-3.1.9.jar):
 		MagicBees-1.12.2-3.1.9.jar:
 			-Fixed botania flower models
@@ -778,11 +773,6 @@ Updated:
 			 * Joseph did some internal code changes to the widget library 
 			 * Rendering stack tooltips for BlockRender widgets is now a core feature of McJtyLib 
 
-	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):
-		MCMultiPart 2.4.1:
-			 * Fixed TEs not getting their IPartInfo set when turned into a multipart 
-			 * Implemented entity collision detection support (for BC compat) 
-
 	MeeCreeps (went from meecreeps-1.12-1.0.1.jar to meecreeps-1.12-1.1.0.jar):
 		meecreeps-1.12-1.1.0.jar:
 			1.1.0:
@@ -808,6 +798,105 @@ Updated:
 			Fixed localisation on friends list key bind.
 
 			Changed default key combination to Ctrl+M to avoid reported conflict with JEI.
+
+	Minecraft Forge (went from 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587):
+		Changelog retrieved from files.minecraftforge.net:
+			Changelog:
+			Build 2587:
+				bs2609: Fix dormant chunk cache allowing entity data to be overwritten (#4528)
+
+			Build 1.12.2-14.23.1.2586:
+				bs2609: Fix dimension data not being saved (#4667)
+
+			Build 1.12.2-14.23.1.2585:
+				bartek.bok: Don't copy state from variant to multi-part model (#4629)
+
+			Build 1.12.2-14.23.1.2584:
+				josephcsible: Fix vanilla giant jungle trees causing cascading generation (#4652)
+
+			Build 1.12.2-14.23.1.2583:
+				knightminer4: Fix Beetroot crops don't break/drop when trampled (#4644)
+
+			Build 1.12.2-14.23.1.2582:
+				bartek.bok:
+					Enhance crash message when custom models return null default state
+					(#4615)
+
+			Build 1.12.2-14.23.1.2581:
+				mezz: Update Github StaleBot config to run on old Issues as well as PRs
+
+			Build 1.12.2-14.23.1.2580:
+				LexManos:
+					Downgrade RegistryEntry's dangerous alternative prefix message to info
+					instead of BigWarning. This is still most likely a broken mod, but
+					nobody ever actually fixes themselves, and i'm tired of being blamed for
+					'spamming' the logs.
+
+			Build 1.11.2-13.20.1.2579:
+				bartek.bok: Fix invalid rendering of single-frame B3D models (#3917)
+
+			Build 1.12.2-14.23.1.2578:
+				LexManos:
+					Fix missing call to release() in the event channel handler (#4513) 
+					(reverted from commit cd99957627625f7baeff8761c6382b05db9699d3)
+
+			Build 1.12.2-14.23.1.2577:
+				Leviathan143:
+					Add some extra context to Advancements/Minecart/Fishing/TileEntity loot
+					handlers.(#4443)
+				mccommanderminecraft: Added Custom Slime Block hook for Piston. (#4520)
+
+			Build 1.12.2-14.23.1.2576:
+				bartek.bok: Fix animation of rotated block parts (#4156)
+				bartek.bok: Fix invalid rendering of single-frame B3D models (Fix #3815)
+				bs2609: Adjust diffuse light calculation to match vanilla facing values (#4305)
+				bs2609: Fix applyUVLock not preserving input order (#4336)
+				bs2609: Adjust light matrix calculations to use per-face logic (#4339)
+
+			Build 1.12.2-14.23.1.2575:
+				tterrag1098: Fix BakedQuadRetextured not overriding getSprite (#4137)
+
+			Build 1.12.2-14.23.1.2574:
+				bs2609: Fix missing call to release() in the event channel handler (#4513)
+				kashike: Delay egg creation to avoid null statistics (#4508)
+				arturzartdinov:
+					Added LivingKnockBackEvent event to allow better control over knock back
+					effects. (#4503)
+
+			Build 1.12.2-14.23.1.2573:
+				mrkirby153:
+					Reimplemented TileEntity and Entity Update Profiling in the /forge track
+					command (#4521)
+
+			Build 1.12.2-14.23.1.2572:
+				bs2609: Don't enforce IPv4 for clients connecting to IPv6-only servers (#4563)
+				JDLogic: [macOS] Fix missing text on loading error screens (#4532)
+
+			Build 1.12.2-14.23.1.2571:
+				bs2609: Add an event for registering block/item colour handlers (#4565)
+
+			Build 1.12.2-14.23.1.2570:
+				josephcsible: Deprecate passing a class to CapabilityManager::register (#4574)
+				josephcsible:
+					Make vanilla powered rails receive power from mods' custom powered rail
+					subclasses (#4573)
+				matthewprenger: Fix startIndex for /forge generate position parsing (#4572)
+				AlgorithmX2: BlockFlowerPot now checks solid top side instead of old method. (#4571)
+				AlgorithmX2: Fix: Anvil Bug with Custom Damage Items. (#4570)
+
+			Build 1.12.2-14.23.1.2569:
+				mezz:
+					Change how chests check if they're blocked. (#4584)
+					Readd Vanilla Bug: https://bugs.mojang.com/browse/MC-378
+				bs2609: Add missing nullability annotations to some Forge-added methods (#4578)
+
+			Build 1.12.2-14.23.1.2568:
+				BillyGalbreath:
+					Allow EntityFishHook to spawn water particles in all liquids that use
+					Material.WATER (#4585)
+
+			Build 1.12.2-14.23.1.2567:
+				gegy1000: Add Sound loading progress bar (#4593)
 
 	ModTweaker (went from modtweaker-4.0.5 to modtweaker-4.0.6):
 		modtweaker-4.0.6:
@@ -835,12 +924,6 @@ Updated:
 			1.6.0:
 
 			 * This version requires McJtyLib 2.6.0! 
-
-	p455w0rd's Library (went from p455w0rdslib-1.12-2.0.24.jar to p455w0rdslib-1.12-2.0.25.jar):
-		p455w0rdslib-1.12-2.0.25.jar:
-			Fixed rare ConcurrantModificationException
-
-			Updated Inventory logic a bit to work with Enderman Evolution
 
 	Pam's HarvestCraft (went from Pam's HarvestCraft 1.12.2a.jar to Pam's HarvestCraft 1.12.2g.jar):
 		Pam's HarvestCraft 1.12.2b - Re-Balance Update.jar:
@@ -944,75 +1027,6 @@ Updated:
 			- Fixed: Presser: The Presser can now be automated! Input slot is accessed from top, sides while both Output slots are accessed from the bottom. Tested with hoppers!
 			- Fixed some issues with Hunger Overhaul interacting with HarvestCraft (PR by alexbegt)
 
-	Reborn Core (went from RebornCore-1.12.2-3.5.2.171-universal.jar to RebornCore-1.12.2-3.6.2.187-universal.jar):
-		RebornCore-1.12.2-3.5.3.174-universal.jar:
-			(modmuss50) #releaseBuild
-			(modmuss50) Some improvements to the power system value > string handling
-			(drcrazy) Drop from ore should be good now. Part of TechReborn/TechReborn#1365
-			(drcrazy) Changed OreDropSet.drop to return NonNullList instead of ArrayList
-		RebornCore-1.12.2-3.5.4.176-universal.jar:
-			(modmuss50) #releaseBuild
-			(modmuss50) Rewrite to use the correct way of logging
-		RebornCore-1.12.2-3.6.0.181-universal.jar:
-			NOTE: This is a beta test of the new slot configuration system that was added to TechReborn. Please report all issues to the github.
-
-			(modmuss50) #betaBuild
-			(modmuss50) Added the ability to filter inputs on a slot so it only accepts valid items
-			(modmuss50) Fix [https://github.com/TechReborn/TechReborn/issues/1383](https://github.com/TechReborn/TechReborn/issues/1383)
-		RebornCore-1.12.2-3.6.1.183-universal.jar:
-			(modmuss50) #releaseBuild
-			(modmuss50) Use https for shield connection
-		RebornCore-1.12.2-3.6.2.187-universal.jar:
-			(modmuss50) #releaseBuild
-			(modmuss50) Fix kicking other players when configuring machine slots Closes [https://github.com/TechReborn/TechReborn/issues/1406](https://github.com/TechReborn/TechReborn/issues/1406)
-			(drcrazy) Added pt-BR Translation (#76)
-			(drcrazy) fix for TechReborn/TechReborn#1402
-
-	Reborn Storage (went from RebornStorage-1.12.2-3.0.2.32.jar to RebornStorage-1.12.2-3.0.3.36.jar):
-		RebornStorage-1.12.2-3.0.2.33.jar:
-			(modmuss50) Hopefully fix crash, Closes #70 #releaseBuild
-		RebornStorage-1.12.2-3.0.3.36.jar:
-			(modmuss50) #releaseBuild
-			(modmuss50) Only print out invalid multiblock error when hand is empty
-
-	Redstone Arsenal (went from RedstoneArsenal-1.12.2-2.3.7.18-universal.jar to RedstoneArsenal-1.12.2-2.3.10.4-universal.jar):
-		Changelog retrieved from GitHub:
-			2.3.10:
-			GENERAL:
-				-Internal refactors and optimizations.
-
-			FIXED:
-				-Quiver can now be disabled.
-
-			2.3.9:
-			FIXED:
-				-Addressed a few potential but highly unlikely NPEs with raytracing.
-				-Corrected Unbreaking enchantment energy reduction calculation.
-
-			2.3.8:
-			ADDED:
-				-Tools with AOE Breaking (Hammer, Shovel, Pickaxe) now display breaking effects on every block.
-
-			FIXED:
-				-Empowering the Flux-Infused Bow now correctly increases arrow damage and velocity.
-				-Enchants are more consistent with respect to vanilla tool types.
-
-	Refined Storage (went from Refined Storage 1.5.28 to Refined Storage 1.5.31):
-		Refined Storage 1.5.29:
-			 * Update Forge to 2577 (minimum Forge version required is now 2555 for MC 1.12.2) (raoulvdberge) 
-			 * Fixed bug where MCMP multiparts were blocking RS network connections (raoulvdberge) 
-			 * Fixed Reader/Writers for energy extracting energy when not needed (raoulvdberge) 
-		Refined Storage 1.5.30:
-			 * Fixed crashing bug when MCMultiPart is not installed (raoulvdberge) 
-		Refined Storage 1.5.31:
-			 * Improved the "cannot craft! loop in processing..." error message (raoulvdberge) 
-			 * Fixed error logs when toggling the Pattern Grid from and to processing mode (raoulvdberge) 
-			 * Fixed pattern slots in Crafters not being accessible (raoulvdberge) 
-			 * Fixed rare Grid crash (raoulvdberge) 
-			 * Fixed OpenComputers cable showing up in Grid as air (raoulvdberge) 
-			 * Storage disk and block stored and capacity counts are formatted now in the tooltip (raoulvdberge) 
-			 * Made the Disk Manipulator unsided (inserting goes to insert slots and extracting from output slots) (raoulvdberge) 
-
 	RFTools (went from rftools-1.12-7.15.jar to rftools-1.12-7.23.jar):
 		rftools-1.12-7.20.jar:
 			7.20:
@@ -1099,65 +1113,74 @@ Updated:
 			 * Fixed the “Body none” dimlet not working. Its old, unintended behavior is now available via “Body default”. 
 			 * And lots of refactoring and code cleanup 
 
-	Tinkers Construct (went from TConstruct-1.12-2.7.4.34.jar to TConstruct-1.12.2-2.9.0.55.jar):
-		TConstruct-1.12-2.8.0.45.jar:
-			New
+	Reborn Core (went from RebornCore-1.12.2-3.5.2.171-universal.jar to RebornCore-1.12.2-3.6.2.187-universal.jar):
+		RebornCore-1.12.2-3.5.3.174-universal.jar:
+			(modmuss50) #releaseBuild
+			(modmuss50) Some improvements to the power system value > string handling
+			(drcrazy) Drop from ore should be good now. Part of TechReborn/TechReborn#1365
+			(drcrazy) Changed OreDropSet.drop to return NonNullList instead of ArrayList
+		RebornCore-1.12.2-3.5.4.176-universal.jar:
+			(modmuss50) #releaseBuild
+			(modmuss50) Rewrite to use the correct way of logging
+		RebornCore-1.12.2-3.6.0.181-universal.jar:
+			NOTE: This is a beta test of the new slot configuration system that was added to TechReborn. Please report all issues to the github.
 
-			- Casting Channels are back, and better than ever! Thanks KnightMiner! (also check out ceramics, where they were tested)
-			- Kamas are the little brother of scythes, working as shears as well as mowing through plants and crops
-			- Items in the side-inventory are used for shift-clicking recipies via JEI, again! (Yes, technically not new, but.. new! Again!)
-			- Chisel blocks should render correctly now
+			(modmuss50) #betaBuild
+			(modmuss50) Added the ability to filter inputs on a slot so it only accepts valid items
+			(modmuss50) Fix [https://github.com/TechReborn/TechReborn/issues/1383](https://github.com/TechReborn/TechReborn/issues/1383)
+		RebornCore-1.12.2-3.6.1.183-universal.jar:
+			(modmuss50) #releaseBuild
+			(modmuss50) Use https for shield connection
+		RebornCore-1.12.2-3.6.2.187-universal.jar:
+			(modmuss50) #releaseBuild
+			(modmuss50) Fix kicking other players when configuring machine slots Closes [https://github.com/TechReborn/TechReborn/issues/1406](https://github.com/TechReborn/TechReborn/issues/1406)
+			(drcrazy) Added pt-BR Translation (#76)
+			(drcrazy) fix for TechReborn/TechReborn#1402
 
-			- New ore preference config. This is a list of mod IDs to prefer for recipe outputs from the ore dictionary, such as casting recipes.
+	Reborn Storage (went from RebornStorage-1.12.2-3.0.2.32.jar to RebornStorage-1.12.2-3.0.3.36.jar):
+		RebornStorage-1.12.2-3.0.2.33.jar:
+			(modmuss50) Hopefully fix crash, Closes #70 #releaseBuild
+		RebornStorage-1.12.2-3.0.3.36.jar:
+			(modmuss50) #releaseBuild
+			(modmuss50) Only print out invalid multiblock error when hand is empty
 
-			Material rebalancing
+	Redstone Arsenal (went from RedstoneArsenal-1.12.2-2.3.7.18-universal.jar to RedstoneArsenal-1.12.2-2.3.10.4-universal.jar):
+		Changelog retrieved from GitHub:
+			2.3.10:
+			GENERAL:
+				-Internal refactors and optimizations.
 
-			- Pig-Iron now is a medium-tier material, between iron and steel, and a better handle. It's much cheaper and keeps you topped off with food now. It uses clay instead of emerald now, but more iron. Blood also is easier to get now.
-			- Cactus now always returns damage when you're holding a cactus tool. It returns more damage when blocking
-			- Flammable now also sets enemies on fire when you're not blocking (aka when getting hit)
-			- Prismarine now always has Aquadynamic and a very minor damage buff
-			- Electrums trait now works for both combat and mining. You also gain charge on hitting enemies or breaking blocks. When breaking a block while charged you get a short boost of Haste(mining speed), when hitting an enemy you get a short boost of speed in addition to the bonus damage
-			- Lead has more durability and has a new "Heavy" trait which prevents knockback
-			- Minor nerf to bronze trait
-			- Silvers holy trait now applies weakness to undead on hit, and deals more damage
-			- Netherracks damage bonus doubled and also applies to tool heads/blades now
+			FIXED:
+				-Quiver can now be disabled.
 
-			Changes
+			2.3.9:
+			FIXED:
+				-Addressed a few potential but highly unlikely NPEs with raytracing.
+				-Corrected Unbreaking enchantment energy reduction calculation.
 
-			- Glowing modifier now also works from the offhand
-			- In general traits/modifiers that require no player interaction also work in the offhand
-			- Blood is more readily available now
-			- Multiblock controllers can now be placed up to 64 blocks above the floor (was 9)
-			- As long as a smeltery or tank isn't completely full there will always be an area at the top to check the remaining capacity
+			2.3.8:
+			ADDED:
+				-Tools with AOE Breaking (Hammer, Shovel, Pickaxe) now display breaking effects on every block.
 
-			Bugfixes
+			FIXED:
+				-Empowering the Flux-Infused Bow now correctly increases arrow damage and velocity.
+				-Enchants are more consistent with respect to vanilla tool types.
 
-			- Probably fixed the crash that sometimes happens with blood (and in very rare cases: other fluids) in the smeltery!
-			- Obsidian bolts head no head-texture
-			- Fix tooltips on the materials when inspecting bolts
-			- Fix snow setting on slime fluid (or rather, slime fluid being counted as solid)
-			- Fixed a hit (sound) issue with projectiles stuck in blocks
-			- Many small code, localization and visual fixes
-		TConstruct-1.12-2.8.1.49.jar:
-			2.8.0.49 Changes:
-
-			- Kama book page
-
-			- Kama/ and Scythes can now properly harvest Netherwart
-
-			- Broken Kamas don't shear anymore
-
-			- Elecrum Trait description updated
-		TConstruct-1.12.2-2.9.0.55.jar:
-			Requires Forge 2577
-			Requires JEI 4.8 (if JEI is present)
-
-			Changelog:
-
-			* Seared Channel Recipe gives 3 now
-			* Tools can be renamed anytime again!
-			* Gasses now render upside down
-			* TiC Slime Blocks now work with pistons
+	Refined Storage (went from Refined Storage 1.5.28 to Refined Storage 1.5.31):
+		Refined Storage 1.5.29:
+			 * Update Forge to 2577 (minimum Forge version required is now 2555 for MC 1.12.2) (raoulvdberge) 
+			 * Fixed bug where MCMP multiparts were blocking RS network connections (raoulvdberge) 
+			 * Fixed Reader/Writers for energy extracting energy when not needed (raoulvdberge) 
+		Refined Storage 1.5.30:
+			 * Fixed crashing bug when MCMultiPart is not installed (raoulvdberge) 
+		Refined Storage 1.5.31:
+			 * Improved the "cannot craft! loop in processing..." error message (raoulvdberge) 
+			 * Fixed error logs when toggling the Pattern Grid from and to processing mode (raoulvdberge) 
+			 * Fixed pattern slots in Crafters not being accessible (raoulvdberge) 
+			 * Fixed rare Grid crash (raoulvdberge) 
+			 * Fixed OpenComputers cable showing up in Grid as air (raoulvdberge) 
+			 * Storage disk and block stored and capacity counts are formatted now in the tooltip (raoulvdberge) 
+			 * Made the Disk Manipulator unsided (inserting goes to insert slots and extracting from output slots) (raoulvdberge) 
 
 	Thermal Cultivation (went from ThermalCultivation-1.12.2-0.1.2.8-universal.jar to ThermalCultivation-1.12.2-0.1.5.3-universal.jar):
 		Changelog retrieved from GitHub:
@@ -1295,6 +1318,66 @@ Updated:
 				-Corrected some colors on bow sprites.
 				-Enchants are more consistent with respect to vanilla tool types.
 
+	Tinkers Construct (went from TConstruct-1.12-2.7.4.34.jar to TConstruct-1.12.2-2.9.0.55.jar):
+		TConstruct-1.12-2.8.0.45.jar:
+			New
+
+			- Casting Channels are back, and better than ever! Thanks KnightMiner! (also check out ceramics, where they were tested)
+			- Kamas are the little brother of scythes, working as shears as well as mowing through plants and crops
+			- Items in the side-inventory are used for shift-clicking recipies via JEI, again! (Yes, technically not new, but.. new! Again!)
+			- Chisel blocks should render correctly now
+
+			- New ore preference config. This is a list of mod IDs to prefer for recipe outputs from the ore dictionary, such as casting recipes.
+
+			Material rebalancing
+
+			- Pig-Iron now is a medium-tier material, between iron and steel, and a better handle. It's much cheaper and keeps you topped off with food now. It uses clay instead of emerald now, but more iron. Blood also is easier to get now.
+			- Cactus now always returns damage when you're holding a cactus tool. It returns more damage when blocking
+			- Flammable now also sets enemies on fire when you're not blocking (aka when getting hit)
+			- Prismarine now always has Aquadynamic and a very minor damage buff
+			- Electrums trait now works for both combat and mining. You also gain charge on hitting enemies or breaking blocks. When breaking a block while charged you get a short boost of Haste(mining speed), when hitting an enemy you get a short boost of speed in addition to the bonus damage
+			- Lead has more durability and has a new "Heavy" trait which prevents knockback
+			- Minor nerf to bronze trait
+			- Silvers holy trait now applies weakness to undead on hit, and deals more damage
+			- Netherracks damage bonus doubled and also applies to tool heads/blades now
+
+			Changes
+
+			- Glowing modifier now also works from the offhand
+			- In general traits/modifiers that require no player interaction also work in the offhand
+			- Blood is more readily available now
+			- Multiblock controllers can now be placed up to 64 blocks above the floor (was 9)
+			- As long as a smeltery or tank isn't completely full there will always be an area at the top to check the remaining capacity
+
+			Bugfixes
+
+			- Probably fixed the crash that sometimes happens with blood (and in very rare cases: other fluids) in the smeltery!
+			- Obsidian bolts head no head-texture
+			- Fix tooltips on the materials when inspecting bolts
+			- Fix snow setting on slime fluid (or rather, slime fluid being counted as solid)
+			- Fixed a hit (sound) issue with projectiles stuck in blocks
+			- Many small code, localization and visual fixes
+		TConstruct-1.12-2.8.1.49.jar:
+			2.8.0.49 Changes:
+
+			- Kama book page
+
+			- Kama/ and Scythes can now properly harvest Netherwart
+
+			- Broken Kamas don't shear anymore
+
+			- Elecrum Trait description updated
+		TConstruct-1.12.2-2.9.0.55.jar:
+			Requires Forge 2577
+			Requires JEI 4.8 (if JEI is present)
+
+			Changelog:
+
+			* Seared Channel Recipe gives 3 now
+			* Tools can be renamed anytime again!
+			* Gasses now render upside down
+			* TiC Slime Blocks now work with pistons
+
 	Toast Control (went from Toast Control-1.12-1.2.0.jar to Toast Control-1.12.2-1.3.0.jar):
 		Toast Control-1.12.2-1.2.1.jar:
 			Changed the defaults to block advancement toasts.
@@ -1413,10 +1496,23 @@ Updated:
 			 * Bug fix with setting integer values in guis 
 			 * Fixed double tooltips in gui of controller 
 
+	iChunUtil (went from iChunUtil-1.12.2-7.1.3.jar to iChunUtil-1.12.2-7.1.4.jar):
+		iChunUtil-1.12.2-7.1.4.jar:
+			- Fix the aggressive head tracking config being locked to 0 or 1 despite there being a 2 option.
+			- Fix crashes by shatter and morph when killing a skeleton because of Optifine.
+			- Fix client crashes when using the recipe book on a client with iChunUtil installed, on a server that doesn't have it installed.
+			- Fix crashes with block entities that have been summoned/loaded with an invalid NBT data.
+			- Made latched entity invisible to hide the second bounding box found in the player.
+			- Update localization for the keybind settings to reflect on how keybinds are accessed now.
+			- Add a way for non-iChunUtil mods to use iChunUtil's update tracker.
+
+	p455w0rd's Library (went from p455w0rdslib-1.12-2.0.24.jar to p455w0rdslib-1.12-2.0.25.jar):
+		p455w0rdslib-1.12-2.0.25.jar:
+			Fixed rare ConcurrantModificationException
+
+			Updated Inventory logic a bit to work with Enderman Evolution
+
 Removed:
 	- Inventory Sorter
 
-Went from Forge 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587.
-View changelog at: http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.1.2587/forge-1.12.2-14.23.1.2587-changelog.txt
-
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator.
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator

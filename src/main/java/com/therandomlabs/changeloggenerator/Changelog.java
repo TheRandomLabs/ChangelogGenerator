@@ -386,8 +386,8 @@ public class Changelog {
 
 		@Override
 		public boolean isDowngrade() {
-			final String[] oldParts = oldVersion.split("\\.");
-			final String[] newParts = newVersion.split("\\.");
+			final String[] oldParts = oldVersion.split("\\.|-");
+			final String[] newParts = newVersion.split("\\.|-");
 
 			for(int i = 0; i < oldParts.length; i++) {
 				final int oldNumber = Integer.parseInt(oldParts[i]);
@@ -426,9 +426,9 @@ public class Changelog {
 					if(version.equals(oldVersion) || version.equals(oldVersionBuildNumber)) {
 						break;
 					}
-
-					parsed.append(line).append(System.lineSeparator());
 				}
+
+				parsed.append(line).append(System.lineSeparator());
 			}
 
 			changelog.put("Changelog retrieved from files.minecraftforge.net", parsed.toString());

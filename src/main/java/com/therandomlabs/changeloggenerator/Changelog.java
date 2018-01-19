@@ -69,6 +69,9 @@ public class Changelog {
 		}
 
 		public String getOldModName() throws CurseException {
+			if(getOldModFile().equals(getNewModFile())) {
+				return "[Archived file]";
+			}
 			return getOldModFile().name();
 		}
 
@@ -131,6 +134,10 @@ public class Changelog {
 
 			final CurseFileList files = getProject().files().filterVersions(mcVersion).
 					between(getOldModFile(), getNewModFile());
+
+			if(getOldModFile().equals(getNewModFile())) {
+				files.add(getNewModFile());
+			}
 
 			for(int i = files.size() - 1; i >= 0; i--) {
 				final String fullChangelog = files.get(i).changelog();

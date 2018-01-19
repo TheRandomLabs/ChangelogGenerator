@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import com.therandomlabs.curseapi.CurseAPI;
@@ -18,12 +19,12 @@ import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.concurrent.ThreadUtils;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.misc.StringUtils;
+import com.therandomlabs.utils.throwable.ThrowableHandling;
 
 //TODO more options, e.g. ascending/descending order
 //TODO rewrite
-//TODO full Forge changelog
 public class Changelog {
-	public class UpdateInfo implements Cloneable {
+	public class UpdateInfo implements Cloneable, Comparable<UpdateInfo> {
 		public static final int BIOMES_O_PLENTY_ID = 220318;
 		public static final int ACTUALLY_ADDITIONS_ID = 228404;
 		public static final String ACTUALLY_ADDITIONS_CHANGELOG = "https://raw." +
@@ -326,12 +327,114 @@ public class Changelog {
 		public UpdateInfo clone() {
 			return new UpdateInfo(mcVersion, oldMod.clone(), newMod.clone());
 		}
+
+		@Override
+		public int compareTo(UpdateInfo info) {
+			try {
+				return getModTitle().compareTo(info.getModTitle());
+			} catch(CurseException ex) {
+				ThrowableHandling.handle(ex);
+			}
+			return 0;
+		}
 	}
 
-	public static final String FORGE_VERSION = "FORGE_VERSION";
-	public static final String FORGE_CHANGELOG = "http://files.minecraftforge.net/maven/net" +
-			"/minecraftforge/forge/" + FORGE_VERSION + "/forge-" + FORGE_VERSION +
-			"-changelog.txt";
+	public class ForgeUpdateInfo extends UpdateInfo {
+		public static final String FORGE_VERSION = "FORGE_VERSION";
+		public static final String FORGE_CHANGELOG = "http://files.minecraftforge.net/maven/net" +
+				"/minecraftforge/forge/" + FORGE_VERSION + "/forge-" + FORGE_VERSION +
+				"-changelog.txt";
+
+		private final String oldVersion;
+		private final String newVersion;
+
+		ForgeUpdateInfo(String mcVersion, String oldVersion, String newVersion) {
+			super(mcVersion, null, null);
+			this.oldVersion = oldVersion;
+			this.newVersion = newVersion;
+		}
+
+		@Override
+		public CurseProject getProject() {
+			return null;
+		}
+
+		@Override
+		public String getModTitle() {
+			return "Minecraft Forge";
+		}
+
+		@Override
+		public CurseFile getOldModFile() {
+			return null;
+		}
+
+		@Override
+		public String getOldModName() {
+			return oldVersion;
+		}
+
+		@Override
+		public CurseFile getNewModFile() {
+			return null;
+		}
+
+		@Override
+		public String getNewModName() {
+			return newVersion;
+		}
+
+		@Override
+		public boolean isDowngrade() {
+			final String[] oldParts = oldVersion.split("\\.");
+			final String[] newParts = newVersion.split("\\.");
+
+			for(int i = 0; i < oldParts.length; i++) {
+				final int oldNumber = Integer.parseInt(oldParts[i]);
+				final int newNumber = Integer.parseInt(newParts[i]);
+
+				if(oldNumber > newNumber) {
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		@Override
+		public Map<String, String> getChangelog() throws CurseException, IOException {
+			if(isDowngrade()) {
+				return Collections.emptyMap();
+			}
+
+			final Map<String, String> changelog = new HashMap<>();
+			final String changelogUrl = FORGE_CHANGELOG.replaceAll(FORGE_VERSION, newVersion);
+
+			if(!useFullChangelogs) {
+				changelog.put("View changelog at", changelogUrl);
+				return changelog;
+			}
+
+			final String oldVersionBuildNumber = ArrayUtils.last(oldVersion.split("\\."));
+
+			final String[] lines = StringUtils.splitNewline(DocumentUtils.read(changelogUrl));
+			final StringBuilder parsed = new StringBuilder();
+
+			for(String line : lines) {
+				if(line.startsWith("Build ")) {
+					final String version = StringUtils.removeLastChar(line.split(" ")[1]);
+					if(version.equals(oldVersion) || version.equals(oldVersionBuildNumber)) {
+						break;
+					}
+
+					parsed.append(line).append(System.lineSeparator());
+				}
+			}
+
+			changelog.put("Changelog retrieved from files.minecraftforge.net", parsed.toString());
+			return changelog;
+		}
+	}
 
 	private final ExtendedCurseManifest oldManifest;
 	private final ExtendedCurseManifest newManifest;
@@ -348,6 +451,11 @@ public class Changelog {
 			boolean useFullChangelogs) {
 		this.oldManifest = oldManifest;
 		this.newManifest = newManifest;
+
+		oldManifest.both();
+		oldManifest.moveAlternativeModsToFiles();
+		newManifest.both();
+		newManifest.moveAlternativeModsToFiles();
 
 		this.useFullChangelogs = useFullChangelogs;
 
@@ -400,6 +508,17 @@ public class Changelog {
 				added.add(newMod);
 			}
 		}
+
+		if(hasForgeVersionChanged()) {
+			updated.add(
+					new ForgeUpdateInfo(mcVersion, getOldForgeVersion(), getNewForgeVersion()));
+		}
+
+		unchanged.sort();
+		updated.sort();
+		downgraded.sort();
+		removed.sort();
+		added.sort();
 
 		this.unchanged = unchanged.toImmutableList();
 		this.updated = updated.toImmutableList();
@@ -547,15 +666,6 @@ public class Changelog {
 			}
 
 			string.append(newline).append(newline);
-		}
-
-		if(changelog.hasForgeVersionChanged()) {
-			string.append("Went from Forge ").append(changelog.getOldForgeVersion()).
-					append(" to ").append(changelog.getNewForgeVersion()).append('.').
-					append(newline);
-			string.append("View changelog at: " +
-					FORGE_CHANGELOG.replaceAll(FORGE_VERSION, changelog.getNewForgeVersion())).
-					append(newline).append(newline);
 		}
 
 		string.append("* Generated using https://github.com/TheRandomLabs/ChangelogGenerator").

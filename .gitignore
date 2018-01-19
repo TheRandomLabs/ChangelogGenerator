@@ -6,3 +6,5 @@ build
 .project
 old.json
 new.json
+ChangelogGenerator.bat
+ChangelogGenerator.jar

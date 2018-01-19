@@ -421,6 +421,10 @@ public class Changelog {
 			final StringBuilder parsed = new StringBuilder();
 
 			for(String line : lines) {
+				if(line.trim().equals("Changelog:")) {
+					continue;
+				}
+
 				if(line.startsWith("Build ")) {
 					final String version = StringUtils.removeLastChar(line.split(" ")[1]);
 					if(version.equals(oldVersion) || version.equals(oldVersionBuildNumber)) {

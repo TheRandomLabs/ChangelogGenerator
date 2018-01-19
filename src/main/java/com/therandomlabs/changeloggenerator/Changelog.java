@@ -10,6 +10,7 @@ import java.util.Map;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.CurseFile;
+import com.therandomlabs.curseapi.CurseFileList;
 import com.therandomlabs.curseapi.CurseProject;
 import com.therandomlabs.curseapi.minecraft.Mod;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ExtendedCurseManifest;
@@ -132,8 +133,15 @@ public class Changelog {
 				return changelog;
 			}
 
-			final TRLList<CurseFile> files = getProject().files().filterVersions(mcVersion).
-					between(getOldModFile(), getNewModFile()).toArrayList();
+			CurseFileList fileList = getProject().files();
+			if(getOldModFile().minecraftVersion() == getNewModFile().minecraftVersion()) {
+				fileList = getProject().files().filterVersions(getNewModFile().minecraftVersion());
+			} else {
+				fileList = getProject().files().filterMCVersionGroup(mcVersion);
+			}
+			fileList = fileList.between(getOldModFile(), getNewModFile());
+
+			final TRLList<CurseFile> files = fileList.toArrayList();
 
 			if(getOldModFile().equals(getNewModFile())) {
 				files.add(getNewModFile());
@@ -141,13 +149,8 @@ public class Changelog {
 
 			for(int i = 0; i < files.size(); i++) {
 				final String fullChangelog = files.get(i).changelog();
-				boolean noChangelogProvided = false;
 				if(fullChangelog.trim().equals("N/A") ||
 						fullChangelog.trim().equals("No changelog provided")) {
-					noChangelogProvided = true;
-				}
-
-				if(noChangelogProvided) {
 					changelog.put(files.get(i).name(), "No changelog provided.");
 					continue;
 				}

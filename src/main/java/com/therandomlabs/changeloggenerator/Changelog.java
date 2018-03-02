@@ -9,11 +9,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
-import com.therandomlabs.curseapi.CurseFile;
-import com.therandomlabs.curseapi.CurseFileList;
-import com.therandomlabs.curseapi.CurseProject;
+import com.therandomlabs.curseapi.file.CurseFile;
+import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.Mod;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ExtendedCurseManifest;
+import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.DocumentUtils;
 import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.collection.TRLList;
@@ -133,13 +133,13 @@ public class Changelog {
 				return changelog;
 			}
 
-			CurseFileList fileList = getProject().files();
+			final CurseFileList fileList = getProject().files();
 			if(getOldModFile().minecraftVersion() == getNewModFile().minecraftVersion()) {
-				fileList = getProject().files().filterVersions(getNewModFile().minecraftVersion());
+				fileList.filterVersions(getNewModFile().minecraftVersion());
 			} else {
-				fileList = getProject().files().filterMCVersionGroup(mcVersion);
+				fileList.filterMCVersionGroup(mcVersion);
 			}
-			fileList = fileList.between(getOldModFile(), getNewModFile());
+			fileList.between(getOldModFile(), getNewModFile());
 
 			final TRLList<CurseFile> files = fileList.toArrayList();
 

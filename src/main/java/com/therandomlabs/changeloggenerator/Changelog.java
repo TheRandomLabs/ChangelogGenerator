@@ -64,7 +64,7 @@ public class Changelog {
 
 		public CurseFile getOldModFile() throws CurseException {
 			if(oldModFile == null) {
-				oldModFile = getProject().closestFileToID(oldMod.fileID, false);
+				oldModFile = getProject().fileClosestToID(oldMod.fileID, false);
 			}
 			return oldModFile;
 		}
@@ -82,7 +82,7 @@ public class Changelog {
 
 		public CurseFile getNewModFile() throws CurseException {
 			if(newModFile == null) {
-				newModFile = getProject().closestFileToID(newMod.fileID, true);
+				newModFile = getProject().fileClosestToID(newMod.fileID, true);
 			}
 			return newModFile;
 		}

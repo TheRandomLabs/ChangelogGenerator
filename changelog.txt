@@ -57,8 +57,32 @@ Updated:
 			[#36 - Added ability to remove /dank/null from docking station using either hand even if the other hand has an item](https://github.com/p455w0rd/DankNull/issues/36)
 
 	Actually Additions (went from ActuallyAdditions-1.12.2-r125.jar to ActuallyAdditions-1.12.2-r126.jar):
-		Changlog retrieved from GitHub:
-			# 1.12.2-r126
+		1.12.2-r131:
+			* Vertical Digger no longer uses getMetaFromState and now uses getPickBlock.
+			* Farmer no longer breaks stem blocks.
+			* Config for atomic reconstructor battery size.
+			* Made a note on the oil generator that values are per 50 mB.
+		1.12.2-r130:
+			* Fixes the drill not breaking blocks of similar hardness in 3x3 or 5x5 mode.
+			* Fixes the default farmer casting every IPlantable to a BlockBush.
+		1.12.2-r129:
+			* Dalapo: Added an extra null check to canFillFluidType
+			* Biocoal burn time is now 800 again, instead of 80.  Whoops.
+			* Worms shouldn't show up from areas that cannot be tilled.
+			* (Hopefully) fixed desync issues with the 5x5 and 3x3 drill.
+			* Feeder has gained +5 INT.
+			* Config added for the fur ball drop chance.
+			* Greenhouse Glass recipe now makes 2 glass, and uses a single empowered palis crystal.
+		1.12.2-r128:
+			* Removed a debug line in Greenhouse Glass
+			* Fixed the firework box recipe displaying wrongly in JEI
+		1.12.2-r127:
+			* Removed explicit tesla support.
+			* The AIOT will now accept sword enchantments.
+			* Greenhouse Glass is no longer a tile entity, this should significantly improve performance.  It will be a bit slower in terms of plant growth though.
+			* Canitzp: Fixes a duplication bug with MeeCreeps and AA containers.
+			* Fixes a log error with Coal Dust and JEI.
+		1.12.2-r126:
 			* New feature!  The atomic reconstructor can now split enchanted books with multiple enchantments!
 			* Leomil72: Added it_IT.lang
 
@@ -118,7 +142,7 @@ Updated:
 			bdew: Prevent HasTE from corrupting TE's of unrelated blocks if passed an
 
 	Binnie's Mods (went from binnie-mods-1.12.2-2.5.0.106.jar to binnie-mods-1.12.2-2.5.0.111.jar):
-		Changelog retrieved from binnie-mods-1.12.2-2.5.0.111.jar:
+		Retrieved from binnie-mods-1.12.2-2.5.0.106.jar and binnie-mods-1.12.2-2.5.0.111.jar's changelogs:
 			 Alpha version. Do not create a world you care about with this version, it may break things severely.
 			 Please help the project by trying it out and [reporting issues here.](https://github.com/ForestryMC/Binnie/issues)
 
@@ -163,15 +187,13 @@ Updated:
 			 * Fix crash from CraftTweaker ASM version issue - mezz 
 
 	Biomes O' Plenty (went from BiomesOPlenty-1.12.2-7.0.1.2310-universal.jar to BiomesOPlenty-1.12.2-7.0.1.2312-universal.jar):
-		Changelog retrieved from BiomesOPlenty-1.12.2-7.0.1.2312-universal.jar:
-			Build 1.12.2-7.0.1.2312:
-			 github:
-			 Revised and fixed version (pt-BR.lang)
-			 And, if the mod itself don't have any actualization, should be the final
-			 version
-
-			Build 1.12.2-7.0.1.2311:
-			 github: Added pt-BR.lang File for 1.12.2
+		1.12.2-7.0.1.2312:
+			github:
+			Revised and fixed version (pt-BR.lang)
+			And, if the mod itself don't have any actualization, should be the final
+			version
+		1.12.2-7.0.1.2311:
+			github: Added pt-BR.lang File for 1.12.2
 
 	Bookshelf (went from Bookshelf-1.12.2-2.2.500.jar to Bookshelf-1.12.2-2.3.518.jar):
 		Bookshelf-1.12.2-2.3.518.jar:
@@ -242,16 +264,13 @@ Updated:
 			 - Fix chisel sound playing twice in iChisel
 
 	CoFH Core (went from CoFHCore-1.12.2-4.3.7.25-universal.jar to CoFHCore-1.12.2-4.3.10.5-universal.jar):
-		Changelog retrieved from GitHub:
-			4.3.10:
+		4.3.10:
 			GENERAL:
 				-Internal refactors and optimizations.
-
-			4.3.9:
+		4.3.9:
 			FIXED:
 				-Addressed a few potential but highly unlikely NPEs with raytracing.
-
-			4.3.8:
+		4.3.8:
 			CHANGED:
 				-The killall command no longer kills Item Frame Entities when "item" or "items" is provided as
 					a parameter.
@@ -382,16 +401,12 @@ Updated:
 
 	Deep Resonance (went from deepresonance-1.12-1.4.9.jar to deepresonance-1.12-1.6.0.jar):
 		deepresonance-1.12-1.6.0.jar:
-			1.6.0:
-
 			 * This version requires McJtyLib 2.6.0! 
 			 * Joseph C. Sible fixed the overworld variant of resonating ore appearing twice in the creative inventory 
 			 * Added obsidian to the recipe of the tank to avoid people (ab)using them as cheap liquid conduits 
 			 * Fixed a problem with the resonating plate recipe being broken 
 			 * Fixed an OC dependency 
 		deepresonance-1.12-1.5.0.jar:
-			1.5.0:
-
 			 * Updated to latest ElecCore (1.8.434) 
 
 	Default Options (went from DefaultOptions_1.12.1-9.2.4.jar to DefaultOptions_1.12.2-9.2.5.jar):
@@ -505,7 +520,7 @@ Updated:
 			- Bumped version to 0.4.5.45
 
 	Forestry (went from forestry_1.12.2-5.7.0.215.jar to forestry_1.12.2-5.7.0.232.jar):
-		Changelog retrieved from forestry_1.12.2-5.7.0.232.jar:
+		Retrieved from forestry_1.12.2-5.7.0.215.jar and forestry_1.12.2-5.7.0.232.jar's changelogs:
 			 Please help the Forestry project by [reporting issues here.](https://github.com/ForestryMC/ForestryMC/issues)
 
 			Current release 5.7.0.232
@@ -707,7 +722,7 @@ Updated:
 			* Add option to shift click in Player Simulator, Closes #73
 
 	Just Enough Items (JEI) (went from jei_1.12.2-4.8.5.132.jar to jei_1.12.2-4.8.5.138.jar):
-		Changelog retrieved from jei_1.12.2-4.8.5.138.jar:
+		Retrieved from jei_1.12.2-4.8.5.132.jar and jei_1.12.2-4.8.5.138.jar's changelogs:
 			Current release 4.8.5.138
 
 			 * Update zh_cn.lang (#1073) 
@@ -757,26 +772,18 @@ Updated:
 
 	McJtyLib (went from mcjtylib-1.12-2.5.0.jar to mcjtylib-1.12-2.6.2.jar):
 		mcjtylib-1.12-2.6.2.jar:
-			2.6.2:
-
 			 * Joseph C. Sible did some fixes to tooltip handling in the gui library 
 			 * Joseph fixed wrong height of a line with just a single ItemStack in tooltips 
 			 * Joseph did some internal code changes to the widget library 
 			 * Rendering stack tooltips for BlockRender widgets is now a core feature of McJtyLib 
 		mcjtylib-1.12-2.6.1.jar:
-			2.6.1:
-
 			 * Fix a server side crash 
 		mcjtylib-1.12-2.6.0.jar:
-			2.6.0:
-
 			 * Big refactoring and cleanup of a lot of code. Pulled code out of various mods for better code reuse 
 			 * Joseph C. Sible cleaned up a lot of code 
 
 	MeeCreeps (went from meecreeps-1.12-1.0.1.jar to meecreeps-1.12-1.1.0.jar):
 		meecreeps-1.12-1.1.0.jar:
-			1.1.0:
-
 			 * This version requires McJtyLib 2.6.0! 
 			 * Fixed the two pickup tasks so they properly work again. They somehow got broken 
 
@@ -800,102 +807,81 @@ Updated:
 			Fixed bug where invite only servers weren't working as I didn't send the hash correctly. I am a dumb.
 
 	Minecraft Forge (went from 1.12.2-14.23.1.2566 to 1.12.2-14.23.1.2587):
-		Changelog retrieved from files.minecraftforge.net:
-			Build 2587:
-				bs2609: Fix dormant chunk cache allowing entity data to be overwritten (#4528)
-
-			Build 1.12.2-14.23.1.2586:
-				bs2609: Fix dimension data not being saved (#4667)
-
-			Build 1.12.2-14.23.1.2585:
-				bartek.bok: Don't copy state from variant to multi-part model (#4629)
-
-			Build 1.12.2-14.23.1.2584:
-				josephcsible: Fix vanilla giant jungle trees causing cascading generation (#4652)
-
-			Build 1.12.2-14.23.1.2583:
-				knightminer4: Fix Beetroot crops don't break/drop when trampled (#4644)
-
-			Build 1.12.2-14.23.1.2582:
-				bartek.bok:
-					Enhance crash message when custom models return null default state
-					(#4615)
-
-			Build 1.12.2-14.23.1.2581:
-				mezz: Update Github StaleBot config to run on old Issues as well as PRs
-
-			Build 1.12.2-14.23.1.2580:
-				LexManos:
-					Downgrade RegistryEntry's dangerous alternative prefix message to info
-					instead of BigWarning. This is still most likely a broken mod, but
-					nobody ever actually fixes themselves, and i'm tired of being blamed for
-					'spamming' the logs.
-
-			Build 1.11.2-13.20.1.2579:
-				bartek.bok: Fix invalid rendering of single-frame B3D models (#3917)
-
-			Build 1.12.2-14.23.1.2578:
-				LexManos:
-					Fix missing call to release() in the event channel handler (#4513) 
-					(reverted from commit cd99957627625f7baeff8761c6382b05db9699d3)
-
-			Build 1.12.2-14.23.1.2577:
-				Leviathan143:
-					Add some extra context to Advancements/Minecart/Fishing/TileEntity loot
-					handlers.(#4443)
-				mccommanderminecraft: Added Custom Slime Block hook for Piston. (#4520)
-
-			Build 1.12.2-14.23.1.2576:
-				bartek.bok: Fix animation of rotated block parts (#4156)
-				bartek.bok: Fix invalid rendering of single-frame B3D models (Fix #3815)
-				bs2609: Adjust diffuse light calculation to match vanilla facing values (#4305)
-				bs2609: Fix applyUVLock not preserving input order (#4336)
-				bs2609: Adjust light matrix calculations to use per-face logic (#4339)
-
-			Build 1.12.2-14.23.1.2575:
-				tterrag1098: Fix BakedQuadRetextured not overriding getSprite (#4137)
-
-			Build 1.12.2-14.23.1.2574:
-				bs2609: Fix missing call to release() in the event channel handler (#4513)
-				kashike: Delay egg creation to avoid null statistics (#4508)
-				arturzartdinov:
-					Added LivingKnockBackEvent event to allow better control over knock back
-					effects. (#4503)
-
-			Build 1.12.2-14.23.1.2573:
-				mrkirby153:
-					Reimplemented TileEntity and Entity Update Profiling in the /forge track
-					command (#4521)
-
-			Build 1.12.2-14.23.1.2572:
-				bs2609: Don't enforce IPv4 for clients connecting to IPv6-only servers (#4563)
-				JDLogic: [macOS] Fix missing text on loading error screens (#4532)
-
-			Build 1.12.2-14.23.1.2571:
-				bs2609: Add an event for registering block/item colour handlers (#4565)
-
-			Build 1.12.2-14.23.1.2570:
-				josephcsible: Deprecate passing a class to CapabilityManager::register (#4574)
-				josephcsible:
-					Make vanilla powered rails receive power from mods' custom powered rail
-					subclasses (#4573)
-				matthewprenger: Fix startIndex for /forge generate position parsing (#4572)
-				AlgorithmX2: BlockFlowerPot now checks solid top side instead of old method. (#4571)
-				AlgorithmX2: Fix: Anvil Bug with Custom Damage Items. (#4570)
-
-			Build 1.12.2-14.23.1.2569:
-				mezz:
-					Change how chests check if they're blocked. (#4584)
-					Readd Vanilla Bug: https://bugs.mojang.com/browse/MC-378
-				bs2609: Add missing nullability annotations to some Forge-added methods (#4578)
-
-			Build 1.12.2-14.23.1.2568:
-				BillyGalbreath:
-					Allow EntityFishHook to spawn water particles in all liquids that use
-					Material.WATER (#4585)
-
-			Build 1.12.2-14.23.1.2567:
-				gegy1000: Add Sound loading progress bar (#4593)
+		1.12.2-14.23.1.2587:
+			bs2609: Fix dormant chunk cache allowing entity data to be overwritten (#4528)
+		1.12.2-14.23.1.2586:
+			bs2609: Fix dimension data not being saved (#4667)
+		1.12.2-14.23.1.2585:
+			bartek.bok: Don't copy state from variant to multi-part model (#4629)
+		1.12.2-14.23.1.2584:
+			josephcsible: Fix vanilla giant jungle trees causing cascading generation (#4652)
+		1.12.2-14.23.1.2583:
+			knightminer4: Fix Beetroot crops don't break/drop when trampled (#4644)
+		1.12.2-14.23.1.2582:
+			bartek.bok:
+				Enhance crash message when custom models return null default state
+				(#4615)
+		1.12.2-14.23.1.2581:
+			mezz: Update Github StaleBot config to run on old Issues as well as PRs
+		1.12.2-14.23.1.2580:
+			LexManos:
+				Downgrade RegistryEntry's dangerous alternative prefix message to info
+				instead of BigWarning. This is still most likely a broken mod, but
+				nobody ever actually fixes themselves, and i'm tired of being blamed for
+				'spamming' the logs.
+		1.11.2-13.20.1.2579:
+			bartek.bok: Fix invalid rendering of single-frame B3D models (#3917)
+		1.12.2-14.23.1.2578:
+			LexManos:
+				Fix missing call to release() in the event channel handler (#4513) 
+				(reverted from commit cd99957627625f7baeff8761c6382b05db9699d3)
+		1.12.2-14.23.1.2577:
+			Leviathan143:
+				Add some extra context to Advancements/Minecart/Fishing/TileEntity loot
+				handlers.(#4443)
+			mccommanderminecraft: Added Custom Slime Block hook for Piston. (#4520)
+		1.12.2-14.23.1.2576:
+			bartek.bok: Fix animation of rotated block parts (#4156)
+			bartek.bok: Fix invalid rendering of single-frame B3D models (Fix #3815)
+			bs2609: Adjust diffuse light calculation to match vanilla facing values (#4305)
+			bs2609: Fix applyUVLock not preserving input order (#4336)
+			bs2609: Adjust light matrix calculations to use per-face logic (#4339)
+		1.12.2-14.23.1.2575:
+			tterrag1098: Fix BakedQuadRetextured not overriding getSprite (#4137)
+		1.12.2-14.23.1.2574:
+			bs2609: Fix missing call to release() in the event channel handler (#4513)
+			kashike: Delay egg creation to avoid null statistics (#4508)
+			arturzartdinov:
+				Added LivingKnockBackEvent event to allow better control over knock back
+				effects. (#4503)
+		1.12.2-14.23.1.2573:
+			mrkirby153:
+				Reimplemented TileEntity and Entity Update Profiling in the /forge track
+				command (#4521)
+		1.12.2-14.23.1.2572:
+			bs2609: Don't enforce IPv4 for clients connecting to IPv6-only servers (#4563)
+			JDLogic: [macOS] Fix missing text on loading error screens (#4532)
+		1.12.2-14.23.1.2571:
+			bs2609: Add an event for registering block/item colour handlers (#4565)
+		1.12.2-14.23.1.2570:
+			josephcsible: Deprecate passing a class to CapabilityManager::register (#4574)
+			josephcsible:
+				Make vanilla powered rails receive power from mods' custom powered rail
+				subclasses (#4573)
+			matthewprenger: Fix startIndex for /forge generate position parsing (#4572)
+			AlgorithmX2: BlockFlowerPot now checks solid top side instead of old method. (#4571)
+			AlgorithmX2: Fix: Anvil Bug with Custom Damage Items. (#4570)
+		1.12.2-14.23.1.2569:
+			mezz:
+				Change how chests check if they're blocked. (#4584)
+				Readd Vanilla Bug: https://bugs.mojang.com/browse/MC-378
+			bs2609: Add missing nullability annotations to some Forge-added methods (#4578)
+		1.12.2-14.23.1.2568:
+			Billy Galbreath:
+				Allow EntityFishHook to spawn water particles in all liquids that use
+				Material.WATER (#4585)
+		1.12.2-14.23.1.2567:
+			gegy1000: Add Sound loading progress bar (#4593)
 
 	ModTweaker (went from modtweaker-4.0.5 to modtweaker-4.0.6):
 		modtweaker-4.0.6:
@@ -924,7 +910,7 @@ Updated:
 
 			 * This version requires McJtyLib 2.6.0! 
 
-	Pam's HarvestCraft (went from Pam's HarvestCraft 1.12.2a.jar to Pam's HarvestCraft 1.12.2g.jar):
+	Pam's HarvestCraft (went from Pam's HarvestCraft 1.12.2a.jar to [Archived file]):
 		Pam's HarvestCraft 1.12.2g.jar:
 			HarvestCraft 1.12.2g
 			-----------------
@@ -1028,22 +1014,14 @@ Updated:
 
 	RFTools (went from rftools-1.12-7.15.jar to rftools-1.12-7.23.jar):
 		rftools-1.12-7.23.jar:
-			7.23:
-
 			 * Joseph C. Sible made a change to let creative powercells act as infinite power sinks 
 			 * Now use the new feature in McJtyLib for drawing stack tooltips 
 			 * Depends on McJtyLib 2.6.2! 
 		rftools-1.12-7.22.jar:
-			7.22:
-
 			 * Fixed crashes with builder and screen when being wrenched or similar circumstances 
 		rftools-1.12-7.21.jar:
-			7.21:
-
 			 * Server side fix 
 		rftools-1.12-7.20.jar:
-			7.20:
-
 			 * This version requires McJtyLib 2.6.0! 
 			 * Joseph C. Sible fixed dimensional ore registration with the three types. This fixes the nether and end variants of dimensional shard ore dropping as the overworld variant when silk touched 
 			 * Joseph added a recipe for the shape manual and fixed recipe for block protector 
@@ -1055,14 +1033,10 @@ Updated:
 
 	RFTools Control (went from rftoolsctrl-1.12-1.7.0.jar to rftoolsctrl-1.12-1.8.0.jar):
 		rftoolsctrl-1.12-1.8.0.jar:
-			1.8.0:
-
 			 * This version requires McJtyLib 2.6.0! 
 
 	RFTools Dimensions (went from rftoolsdim-1.12-5.05.jar to rftoolsdim-1.12-5.50.jar):
 		rftoolsdim-1.12-5.50.jar:
-			5.50:
-
 			 * Requires McJtyLib 2.6.2 
 			 * Fixes a double icon bug in the dimlet workbench 
 			 * All changes below by Joseph. C Sible 
@@ -1108,8 +1082,6 @@ Updated:
 			 * Fixed the “Body none” dimlet not working. Its old, unintended behavior is now available via “Body default”. 
 			 * And lots of refactoring and code cleanup 
 		rftoolsdim-1.12-5.10.jar:
-			5.10:
-
 			 * This version requires McJtyLib 2.6.0! 
 
 	Reborn Core (went from RebornCore-1.12.2-3.5.2.171-universal.jar to RebornCore-1.12.2-3.6.2.187-universal.jar):
@@ -1144,20 +1116,17 @@ Updated:
 			(modmuss50) Hopefully fix crash, Closes #70 #releaseBuild
 
 	Redstone Arsenal (went from RedstoneArsenal-1.12.2-2.3.7.18-universal.jar to RedstoneArsenal-1.12.2-2.3.10.4-universal.jar):
-		Changelog retrieved from GitHub:
-			2.3.10:
+		2.3.10:
 			GENERAL:
 				-Internal refactors and optimizations.
 
 			FIXED:
 				-Quiver can now be disabled.
-
-			2.3.9:
+		2.3.9:
 			FIXED:
 				-Addressed a few potential but highly unlikely NPEs with raytracing.
 				-Corrected Unbreaking enchantment energy reduction calculation.
-
-			2.3.8:
+		2.3.8:
 			ADDED:
 				-Tools with AOE Breaking (Hammer, Shovel, Pickaxe) now display breaking effects on every block.
 
@@ -1182,32 +1151,26 @@ Updated:
 			 * Fixed Reader/Writers for energy extracting energy when not needed (raoulvdberge) 
 
 	Thermal Cultivation (went from ThermalCultivation-1.12.2-0.1.2.8-universal.jar to ThermalCultivation-1.12.2-0.1.5.3-universal.jar):
-		Changelog retrieved from GitHub:
-			0.1.5:
+		0.1.5:
 			GENERAL:
 				-Internal refactors and optimizations.
-
-			0.1.4:
+		0.1.4:
 			FIXED:
 				-Addressed a potential but highly unlikely NPE with raytracing.
-
-			0.1.3:
+		0.1.3:
 			GENERAL:
 				-Backend refactors.
 				-Improved Fake Player detection logic on Watering Can.
 
 	Thermal Dynamics (went from ThermalDynamics-1.12.2-2.3.7.14-universal.jar to ThermalDynamics-1.12.2-2.3.10.4-universal.jar):
-		Changelog retrieved from GitHub:
-			2.3.10:
+		2.3.10:
 			GENERAL:
 				-Internal refactors and optimizations.
-
-			2.3.9:
+		2.3.9:
 			ADDED:
 				-Redstone Relays. These transmit redstone signals along duct networks and have 16 channels.
 					(Thanks ImbaKnugel)
-
-			2.3.8:
+		2.3.8:
 			CHANGED:
 				-Cover recipe is now hidden from the Crafting Book.
 
@@ -1216,8 +1179,7 @@ Updated:
 				-Leadstone and Cryo Ducts now properly connect.
 
 	Thermal Expansion (went from ThermalExpansion-1.12.2-5.3.7.31-universal.jar to ThermalExpansion-1.12.2-5.3.10.14-universal.jar):
-		Changelog retrieved from GitHub:
-			5.3.10:
+		5.3.10:
 			GENERAL:
 				-Internal refactors and optimizations.
 
@@ -1241,8 +1203,7 @@ Updated:
 				-Cache behavior has been changed internally, for better crossmod compatibility.
 				-Comparator behavior has been improved for the Cell, Tank, and Cache.
 				-Many recipes have been rebalanced. In general, dynamos and augments are all slightly cheaper.
-
-			5.3.9:
+		5.3.9:
 			ADDED:
 				-New Items:
 					Morbs. These allow for mobs to be caught. Basic Morbs have a 25% reuse chance. Adding some
@@ -1258,8 +1219,7 @@ Updated:
 				-Added logic to the Arcane Ensorcellator to circumvent a miserable failing on Mojang's part.
 				-Corrected a corner case where Furnace recipes were not properly retrieved.
 				-Fixed a crash when locking a tank in the Fluid Allocator.
-
-			5.3.8:
+		5.3.8:
 			ADDED:
 				-New Augments:
 					Gearworking Die - Allows the Compactor to create Gears from 4 Ingots.
@@ -1285,15 +1245,13 @@ Updated:
 				-Substrate and Stratum augments.
 
 	Thermal Foundation (went from ThermalFoundation-1.12.2-2.3.7.18-universal.jar to ThermalFoundation-1.12.2-2.3.10.6-universal.jar):
-		Changelog retrieved from GitHub:
-			2.3.10:
+		2.3.10:
 			GENERAL:
 				-Internal refactors and optimizations.
 
 			CHANGED:
 				-Tome of Insight now accepts "Essence" and converts it to experience.
-
-			2.3.9:
+		2.3.9:
 			ADDED:
 				-Storage blocks for Charcoal and Coal Coke.
 
@@ -1302,8 +1260,7 @@ Updated:
 
 			FIXED:
 				-Addressed a few potential but highly unlikely NPEs with raytracing.
-
-			2.3.8:
+		2.3.8:
 			ADDED:
 				-Tools with AOE Breaking (Hammers) now display breaking effects on every block.
 
@@ -1420,7 +1377,7 @@ Updated:
 			the first two commands are for creating all the recipes for a given kind, per example, if you want change all you gear recipe to have a different shape, then now you don't need to create one by one.
 			the last command will be used to remove recipes for a given kind, if you pass it the argument "block", then it will remove all the recipes for blocks, like iron block, copper block, gold block, and etc... (I will expand this on the future for mod machines)
 
-			for more informations about CraftTweaker support, check out [this](https:/linkout?remoteUrl=https%253a%252f%252fwww.reddit.com%252fr%252ffeedthebeast%252fcomments%252f7n1cg5%252funidict_112220_update%252f).
+			for more informations about CraftTweaker support, check out [this](https://minecraft.curseforge.com/linkout?remoteUrl=https%253a%252f%252fwww.reddit.com%252fr%252ffeedthebeast%252fcomments%252f7n1cg5%252funidict_112220_update%252f).
 
 			New: a config option to blacklist some ItemStacks in Unification (resquested by [lanse505](https://minecraft.curseforge.com/members/lanse505))
 
@@ -1453,46 +1410,30 @@ Updated:
 
 	XNet (went from xnet-1.12-1.5.0.jar to xnet-1.12-1.6.7.jar):
 		xnet-1.12-1.6.7.jar:
-			1.6.7:
-
 			 * Bug fix with setting integer values in guis 
 			 * Fixed double tooltips in gui of controller 
 		xnet-1.12-1.6.6.jar:
-			1.6.6:
-
 			 * Fixed a problem with advanced connectors still being limited to 1000mb instead of 5000mb for liquids 
 			 * Changes to the IConnectable API 
 		xnet-1.12-1.6.5.jar:
-			1.6.5:
-
 			 * Fixed another division by zero 
 		xnet-1.12-1.6.4.jar:
-			1.6.4:
-
 			 * Needs McJtyLib 2.6.2 
 			 * Uses McJtyLib way to render tooltips for items in filter 
 			 * New API so that other mods can 'connect' their blocks to XNet connectors 
 			 * Fixed a crash that could occur in item channels 
 			 * Improved how 'random' works. It will now really select evenly among all non-empty input slots 
 		xnet-1.12-1.6.3.jar:
-			1.6.3:
-
 			 * Second attempt to fix the TPS lag. This version should be ok now 
 		xnet-1.12-1.6.2.jar:
-			1.6.2:
-
 			 * Fixed a bug in handling of old connectors for XNet causing lots of log spam and loss of TPS 
 		xnet-1.12-1.6.1.jar:
-			1.6.1:
-
 			 * Implemented extract mode for item channels: first (like it was in the past), random slot, or round robin 
 			 * Doubled the speed of item connectors (5 ticks per operation for advanced and 10 ticks per operation for normal) 
 			 * New version of the redstone proxy block that can do block updates 
 			 * The controller GUI will sort connected blocks based on block name 
 			 * Implemented tooltips for the filtered items in item connectors 
 		xnet-1.12-1.6.0.jar:
-			1.6.0:
-
 			 * This version requires McJtyLib 2.6.0! 
 
 	iChunUtil (went from iChunUtil-1.12.2-7.1.3.jar to iChunUtil-1.12.2-7.1.4.jar):

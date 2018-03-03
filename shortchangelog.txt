@@ -61,7 +61,7 @@ Updated:
 			https://minecraft.curseforge.com/projects/bdlib/files/2516209
 
 	Binnie's Mods (went from binnie-mods-1.12.2-2.5.0.106.jar to binnie-mods-1.12.2-2.5.0.111.jar):
-		Retrieved from binnie-mods-1.12.2-2.5.0.106.jar and binnie-mods-1.12.2-2.5.0.111.jar's changelogs:
+		View changelog at:
 			https://minecraft.curseforge.com/projects/binnies-mods/files/2517404
 
 	Biomes O' Plenty (went from BiomesOPlenty-1.12.2-7.0.1.2310-universal.jar to BiomesOPlenty-1.12.2-7.0.1.2312-universal.jar):
@@ -213,7 +213,7 @@ Updated:
 			https://minecraft.curseforge.com/projects/extreme-reactors/files/2516062
 
 	Forestry (went from forestry_1.12.2-5.7.0.215.jar to forestry_1.12.2-5.7.0.232.jar):
-		Retrieved from forestry_1.12.2-5.7.0.215.jar and forestry_1.12.2-5.7.0.232.jar's changelogs:
+		View changelog at:
 			https://minecraft.curseforge.com/projects/forestry/files/2518143
 
 	Gendustry (went from Gendustry 1.6.5.6 (MC 1.12.2) to Gendustry 1.6.5.8 (MC 1.12.2)):
@@ -243,7 +243,7 @@ Updated:
 			https://minecraft.curseforge.com/projects/integrated-tunnels/files/2512203
 
 	Just Enough Items (JEI) (went from jei_1.12.2-4.8.5.132.jar to jei_1.12.2-4.8.5.138.jar):
-		Retrieved from jei_1.12.2-4.8.5.132.jar and jei_1.12.2-4.8.5.138.jar's changelogs:
+		View changelog at:
 			https://minecraft.curseforge.com/projects/jei/files/2511052
 
 	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):

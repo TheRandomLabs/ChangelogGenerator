@@ -57,15 +57,13 @@ Updated:
 			[#36 - Added ability to remove /dank/null from docking station using either hand even if the other hand has an item](https://github.com/p455w0rd/DankNull/issues/36)
 
 	Actually Additions (went from ActuallyAdditions-1.12.2-r125.jar to ActuallyAdditions-1.12.2-r126.jar):
-		1.12.2-r131:
+		1.12.2-r126:
 			* Vertical Digger no longer uses getMetaFromState and now uses getPickBlock.
 			* Farmer no longer breaks stem blocks.
 			* Config for atomic reconstructor battery size.
 			* Made a note on the oil generator that values are per 50 mB.
-		1.12.2-r130:
 			* Fixes the drill not breaking blocks of similar hardness in 3x3 or 5x5 mode.
 			* Fixes the default farmer casting every IPlantable to a BlockBush.
-		1.12.2-r129:
 			* Dalapo: Added an extra null check to canFillFluidType
 			* Biocoal burn time is now 800 again, instead of 80.  Whoops.
 			* Worms shouldn't show up from areas that cannot be tilled.
@@ -73,16 +71,13 @@ Updated:
 			* Feeder has gained +5 INT.
 			* Config added for the fur ball drop chance.
 			* Greenhouse Glass recipe now makes 2 glass, and uses a single empowered palis crystal.
-		1.12.2-r128:
 			* Removed a debug line in Greenhouse Glass
 			* Fixed the firework box recipe displaying wrongly in JEI
-		1.12.2-r127:
 			* Removed explicit tesla support.
 			* The AIOT will now accept sword enchantments.
 			* Greenhouse Glass is no longer a tile entity, this should significantly improve performance.  It will be a bit slower in terms of plant growth though.
 			* Canitzp: Fixes a duplication bug with MeeCreeps and AA containers.
 			* Fixes a log error with Coal Dust and JEI.
-		1.12.2-r126:
 			* New feature!  The atomic reconstructor can now split enchanted books with multiple enchantments!
 			* Leomil72: Added it_IT.lang
 
@@ -1455,4 +1450,4 @@ Updated:
 Removed:
 	- Inventory Sorter
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.5)

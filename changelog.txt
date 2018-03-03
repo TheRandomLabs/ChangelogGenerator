@@ -138,48 +138,48 @@ Updated:
 
 	Binnie's Mods (went from binnie-mods-1.12.2-2.5.0.106.jar to binnie-mods-1.12.2-2.5.0.111.jar):
 		Retrieved from binnie-mods-1.12.2-2.5.0.106.jar and binnie-mods-1.12.2-2.5.0.111.jar's changelogs:
-			 Alpha version. Do not create a world you care about with this version, it may break things severely.
-			 Please help the project by trying it out and [reporting issues here.](https://github.com/ForestryMC/Binnie/issues)
+			Alpha version. Do not create a world you care about with this version, it may break things severely.
+			Please help the project by trying it out and [reporting issues here.](https://github.com/ForestryMC/Binnie/issues)
 
 			Current release 2.5.0.111
 
-			 * Fix #331 Crash on launching when butterflies are disabled in forestry. - Nedelosk 
-			 * Validate ItemFieldKit to avoid metadata manipulations with items. (#375) - mezz 
-			 * Create & Update zh_CN.lang(s) (#376) - SihenZhang 
-			 * #347 Various issues with the brewery - mezz 
-			 * Fix #359 remove oredict "gearWood" for scented and proven gears - mezz 
-			 * Create ru_RU.lang for Binnie Genetics (#358) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Extrabees (#355) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Botany (#354) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Extratrees (#357) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Core (#353) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Design (#356) - Mr-Krab 
-			 * Make Binnie's stained glass non-flammable - mezz 
-			 * Update dependencies - mezz 
-			 * Fix #344 Networking issue with latest Forge - mezz 
-			 * Fix Ceramic Brick pick block - DrManganese 
-			 * Fix #350 Crash on dedicated server - mezz 
-			 * Fix localization error - mezz 
-			 * Remove unused imports - mezz 
-			 * Fix #345 Prevent shift-clicking into recipe slots - mezz 
-			 * Improve tooltips on machines, show some basic help Close #216 make the help key configurable - mezz 
-			 * Fix #343 TOPAddons shows 6 tanks for each real tank - mezz 
-			 * Fix ArrayIndexOutOfBoundsException on invalid soil metadata (#317) - Gamebuster 
-			 * Add Item Capability support to Alveary Frame Housing (#325) - mcenderdragon 
-			 * Fix #298 Most trees support apples when they shouldn't. - mezz 
-			 * Fix #294 Nerf fruit saturation - mezz 
-			 * Fix #340 Inoculate and Splicer cannot apply bee effect alleles - mezz 
-			 * Fix #341 Analyst turns tree pollen into sapling - mezz 
-			 * Fix #335 Fix lab stand, render items over some machines - mezz 
-			 * Fix #337 Breeding System Crash - mezz 
-			 * Create zh_CN.lang(s) (#334) - SihenZhang 
-			 * Expand accepted blocks for Redstone, Leaves, and Wood flower type bees - mezz 
-			 * Fix #336 Ecstatic Bee effect crashes - mezz 
-			 * Prevent 2-tall flowers from breaking blocks when grown - mezz 
-			 * Enable JEI lookup of items and fluids in all guis - mezz 
-			 * Fix automated extraction from machines pulling all items out - mezz 
-			 * Fix machine particles - mezz 
-			 * Fix crash from CraftTweaker ASM version issue - mezz 
+			 * Fix #331 Crash on launching when butterflies are disabled in forestry. - Nedelosk
+			 * Validate ItemFieldKit to avoid metadata manipulations with items. (#375) - mezz
+			 * Create & Update zh_CN.lang(s) (#376) - SihenZhang
+			 * #347 Various issues with the brewery - mezz
+			 * Fix #359 remove oredict "gearWood" for scented and proven gears - mezz
+			 * Create ru_RU.lang for Binnie Genetics (#358) - Mr-Krab
+			 * Create ru_RU.lang for Binnie Extrabees (#355) - Mr-Krab
+			 * Create ru_RU.lang for Binnie Botany (#354) - Mr-Krab
+			 * Create ru_RU.lang for Binnie Extratrees (#357) - Mr-Krab
+			 * Create ru_RU.lang for Binnie Core (#353) - Mr-Krab
+			 * Create ru_RU.lang for Binnie Design (#356) - Mr-Krab
+			 * Make Binnie's stained glass non-flammable - mezz
+			 * Update dependencies - mezz
+			 * Fix #344 Networking issue with latest Forge - mezz
+			 * Fix Ceramic Brick pick block - DrManganese
+			 * Fix #350 Crash on dedicated server - mezz
+			 * Fix localization error - mezz
+			 * Remove unused imports - mezz
+			 * Fix #345 Prevent shift-clicking into recipe slots - mezz
+			 * Improve tooltips on machines, show some basic help Close #216 make the help key configurable - mezz
+			 * Fix #343 TOPAddons shows 6 tanks for each real tank - mezz
+			 * Fix ArrayIndexOutOfBoundsException on invalid soil metadata (#317) - Gamebuster
+			 * Add Item Capability support to Alveary Frame Housing (#325) - mcenderdragon
+			 * Fix #298 Most trees support apples when they shouldn't. - mezz
+			 * Fix #294 Nerf fruit saturation - mezz
+			 * Fix #340 Inoculate and Splicer cannot apply bee effect alleles - mezz
+			 * Fix #341 Analyst turns tree pollen into sapling - mezz
+			 * Fix #335 Fix lab stand, render items over some machines - mezz
+			 * Fix #337 Breeding System Crash - mezz
+			 * Create zh_CN.lang(s) (#334) - SihenZhang
+			 * Expand accepted blocks for Redstone, Leaves, and Wood flower type bees - mezz
+			 * Fix #336 Ecstatic Bee effect crashes - mezz
+			 * Prevent 2-tall flowers from breaking blocks when grown - mezz
+			 * Enable JEI lookup of items and fluids in all guis - mezz
+			 * Fix automated extraction from machines pulling all items out - mezz
+			 * Fix machine particles - mezz
+			 * Fix crash from CraftTweaker ASM version issue - mezz
 
 	Biomes O' Plenty (went from BiomesOPlenty-1.12.2-7.0.1.2310-universal.jar to BiomesOPlenty-1.12.2-7.0.1.2312-universal.jar):
 		1.12.2-7.0.1.2312:
@@ -194,41 +194,41 @@ Updated:
 		Bookshelf-1.12.2-2.3.518.jar:
 			No changelog provided.
 		Bookshelf-1.12.2-2.3.516.jar:
-			 * Removed uneeded sideonly annotations. - Tyler Hancock 
+			 * Removed uneeded sideonly annotations. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.515.jar:
-			 * Undo the changes to real player checks. - Tyler Hancock 
+			 * Undo the changes to real player checks. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.514.jar:
-			 * Added a reusable basic 16x16x16 layered json model. - Tyler Hancock 
+			 * Added a reusable basic 16x16x16 layered json model. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.513.jar:
-			 * Fixed biome change util using dirty scala arrays. Ew. - Tyler Hancock 
+			 * Fixed biome change util using dirty scala arrays. Ew. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.512.jar:
-			 * Made fake player check more friendly. - Tyler Hancock 
+			 * Made fake player check more friendly. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.511.jar:
-			 * Fixed some duplicate items being added to the variants list. - Tyler Hancock 
+			 * Fixed some duplicate items being added to the variants list. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.510.jar:
-			 * Added a bunch of new world utils. - Tyler Hancock 
+			 * Added a bunch of new world utils. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.509.jar:
-			 * Fixed incorrect access transformer for world info. - Tyler Hancock 
+			 * Fixed incorrect access transformer for world info. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.508.jar:
-			 * Added access transformers for some chunk generator things. - Tyler Hancock 
+			 * Added access transformers for some chunk generator things. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.507.jar:
-			 * Actually fixed the custom model hook. - Tyler Hancock 
+			 * Actually fixed the custom model hook. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.506.jar:
-			 * Fixed custom models hook not firing. - Tyler Hancock 
+			 * Fixed custom models hook not firing. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.505.jar:
-			 * Added support for code based recipes. - Tyler Hancock 
+			 * Added support for code based recipes. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.504.jar:
 			No changelog provided.
 		Bookshelf-1.12.2-2.3.503.jar:
-			 * Fixed onTileRemoved implementation being mandatory. - Tyler Hancock 
+			 * Fixed onTileRemoved implementation being mandatory. - Tyler Hancock
 		Bookshelf-1.12.2-2.3.502.jar:
-			 * Added some missing javadocs for IColorfulItem and ICustomMesh - Tyler Hancock 
-			 * Added a class for handling metadata food. - Tyler Hancock 
-			 * Ticked major version up. Backwards compat is no longer assured. - Tyler Hancock 
-			 * Added a default meta check for all variant items and blocks. - Tyler Hancock 
+			 * Added some missing javadocs for IColorfulItem and ICustomMesh - Tyler Hancock
+			 * Added a class for handling metadata food. - Tyler Hancock
+			 * Ticked major version up. Backwards compat is no longer assured. - Tyler Hancock
+			 * Added a default meta check for all variant items and blocks. - Tyler Hancock
 		Bookshelf-1.12.2-2.2.501.jar:
-			 * Added a util to check if two blocks are in the same chunk. - Tyler Hancock 
-			 * Added a hook for when tiles are removed. - Tyler Hancock 
+			 * Added a util to check if two blocks are in the same chunk. - Tyler Hancock
+			 * Added a hook for when tiles are removed. - Tyler Hancock
 
 	Brandon's Core (went from Brandon's Core 1.12-2.3.4.134-universal to Brandon's Core 1.12-2.3.7.140-universal):
 		Brandon's Core 1.12-2.3.7.140-universal:
@@ -242,21 +242,21 @@ Updated:
 
 	Chisel (went from Chisel - MC1.12-0.1.0.23 to Chisel - MC1.12-0.1.1.26):
 		Chisel - MC1.12-0.1.1.26:
-			 - Fix issue where certain storage blocks (iron, lapis, etc) did not have an oredict name. 
+			- Fix issue where certain storage blocks (iron, lapis, etc) did not have an oredict name.
 		Chisel - MC1.12-0.1.1.24:
 			Chisel MC1.12-0.1.1.24
 			New
 
-			 - Default chisel durabilities were slightly buffed, to make them even multiples of 64. To get these new values, remove the durability configs from your config file.
+			- Default chisel durabilities were slightly buffed, to make them even multiples of 64. To get these new values, remove the durability configs from your config file.
 
 			Fixes
 
-			 - [#594](https://github.com/Chisel-Team/Chisel/issues/594) Fix factory block recipe output being an empty stack
-			 - [#598](https://github.com/Chisel-Team/Chisel/issues/598) Fix oredict conversion groups only working one-way, it should now actually be possible to create chisel's ingot blocks!
-			 - [#606](https://github.com/Chisel-Team/Chisel/issues/606) Fix crash when in-world chiseling oredict variants
-			 - [#605](https://github.com/Chisel-Team/Chisel/issues/605) Fix factory blocks having the same recipe as Tyrian (Tyrian recipe was corrected)
-			 - Fix iron/diamond chisel incorrectly handling a chisel breaking partially through crafting a stack
-			 - Fix chisel sound playing twice in iChisel
+			- [#594](https://github.com/Chisel-Team/Chisel/issues/594) Fix factory block recipe output being an empty stack
+			- [#598](https://github.com/Chisel-Team/Chisel/issues/598) Fix oredict conversion groups only working one-way, it should now actually be possible to create chisel's ingot blocks!
+			- [#606](https://github.com/Chisel-Team/Chisel/issues/606) Fix crash when in-world chiseling oredict variants
+			- [#605](https://github.com/Chisel-Team/Chisel/issues/605) Fix factory blocks having the same recipe as Tyrian (Tyrian recipe was corrected)
+			- Fix iron/diamond chisel incorrectly handling a chisel breaking partially through crafting a stack
+			- Fix chisel sound playing twice in iChisel
 
 	CoFH Core (went from CoFHCore-1.12.2-4.3.7.25-universal.jar to CoFHCore-1.12.2-4.3.10.5-universal.jar):
 		4.3.10:
@@ -355,54 +355,54 @@ Updated:
 		DarkUtils-1.12.2-1.8.190.jar:
 			No changelog provided.
 		DarkUtils-1.12.2-1.8.188.jar:
-			 * Fixed null charm crashing when clicking on an invalid slot. #130 - Tyler Hancock 
+			 * Fixed null charm crashing when clicking on an invalid slot. #130 - Tyler Hancock
 		DarkUtils-1.12.2-1.8.187.jar:
-			 * Fixed maim trap not causing damage to players and bosses. - Tyler Hancock 
-			 * Fixed JEI description for the EXP monolith and player trap. #128 - Tyler Hancock 
+			 * Fixed maim trap not causing damage to players and bosses. - Tyler Hancock
+			 * Fixed JEI description for the EXP monolith and player trap. #128 - Tyler Hancock
 		DarkUtils-1.12.2-1.8.186.jar:
-			 * Fixed dyed slime recipe causing serverside crash. Closes #127 - Tyler Hancock 
+			 * Fixed dyed slime recipe causing serverside crash. Closes #127 - Tyler Hancock
 		DarkUtils-1.12.2-1.8.185.jar:
-			This is the first alpha for the 1.8 content update. Things may change, and more content is still planned. 
+			This is the first alpha for the 1.8 content update. Things may change, and more content is still planned.
 
 			New
 
-			 * Maim trap. Permanently lowers the max health of mobs on contact and will continue to do so until they have 1 heart left. Players and bosses are excluded from this and will take damage instead. 
-			 * Player trap. Similar to the damage trap, but all damage is from a player source. 
-			 * Monolith of Spawning. Overrides spawn checks in the same chunk, to allways allow the mob to spawn. Spawned mobs have 20% more health and attack damage. 
-			 * Monolith of Experience. Absorbs experience orbs in the same chunk as it. EXP can be pulled from the reclaimed from the monolith. 
-			 * Using wither dust on a skeleton will turn it into a wither skeleton. 
-			 * Dispensing wither dust will turn skeletons into wither skeletons. 
-			 * Pearl Ender Hopper. An upgrade to the old ender hopper that is instant, and doesn't spawn particles. 
+			 * Maim trap. Permanently lowers the max health of mobs on contact and will continue to do so until they have 1 heart left. Players and bosses are excluded from this and will take damage instead.
+			 * Player trap. Similar to the damage trap, but all damage is from a player source.
+			 * Monolith of Spawning. Overrides spawn checks in the same chunk, to allways allow the mob to spawn. Spawned mobs have 20% more health and attack damage.
+			 * Monolith of Experience. Absorbs experience orbs in the same chunk as it. EXP can be pulled from the reclaimed from the monolith.
+			 * Using wither dust on a skeleton will turn it into a wither skeleton.
+			 * Dispensing wither dust will turn skeletons into wither skeletons.
+			 * Pearl Ender Hopper. An upgrade to the old ender hopper that is instant, and doesn't spawn particles.
 			Changes
 
-			 * Fire trap now does 2 fire damage instead of 1. 
-			 * Items and blocks with sub types (like traps) now have specific information pages in JEI. 
-			 * The null charm now has 27 slots rather than 5. 
-			 * Charms will now work in Baubles again. 
-			 * Ender tether crafting now requires an unstable ender pearl. Normal pearl recipe removed. 
-			 * Removed the recipe for the block update detector. Added a recipe to replace existing ones with Vanilla's BUD block. 
-			 * Changed the recipes for lore tags, and added recipes for previously uncraftable lore tag colours. 
-			 * Rewrote the recipe system to work better with ore dictionary and metadata. 
+			 * Fire trap now does 2 fire damage instead of 1.
+			 * Items and blocks with sub types (like traps) now have specific information pages in JEI.
+			 * The null charm now has 27 slots rather than 5.
+			 * Charms will now work in Baubles again.
+			 * Ender tether crafting now requires an unstable ender pearl. Normal pearl recipe removed.
+			 * Removed the recipe for the block update detector. Added a recipe to replace existing ones with Vanilla's BUD block.
+			 * Changed the recipes for lore tags, and added recipes for previously uncraftable lore tag colours.
+			 * Rewrote the recipe system to work better with ore dictionary and metadata.
 			Fixes
 
-			 * The wither trap would not do damage to mobs if they stand on the plate. 
-			 * Removed duplicate JEI information recipe registrations. 
-			 * Ender Tethers are now significantly more performant. 
-			 * Shulkers would not drop their pearls if you kill them. 
-			 * Fixed a client side freeze when shift clicking items into the null charm. 
-			 * Fixed being able to move the null charm item while accessing it's inventory. 
+			 * The wither trap would not do damage to mobs if they stand on the plate.
+			 * Removed duplicate JEI information recipe registrations.
+			 * Ender Tethers are now significantly more performant.
+			 * Shulkers would not drop their pearls if you kill them.
+			 * Fixed a client side freeze when shift clicking items into the null charm.
+			 * Fixed being able to move the null charm item while accessing it's inventory.
 		DarkUtils-1.12.2-1.7.182.jar:
-			 * zh_CN update (#123) - Technician;Freak 
+			 * zh_CN update (#123) - Technician;Freak
 
 	Deep Resonance (went from deepresonance-1.12-1.4.9.jar to deepresonance-1.12-1.6.0.jar):
 		deepresonance-1.12-1.6.0.jar:
-			 * This version requires McJtyLib 2.6.0! 
-			 * Joseph C. Sible fixed the overworld variant of resonating ore appearing twice in the creative inventory 
-			 * Added obsidian to the recipe of the tank to avoid people (ab)using them as cheap liquid conduits 
-			 * Fixed a problem with the resonating plate recipe being broken 
-			 * Fixed an OC dependency 
+			 * This version requires McJtyLib 2.6.0!
+			 * Joseph C. Sible fixed the overworld variant of resonating ore appearing twice in the creative inventory
+			 * Added obsidian to the recipe of the tank to avoid people (ab)using them as cheap liquid conduits
+			 * Fixed a problem with the resonating plate recipe being broken
+			 * Fixed an OC dependency
 		deepresonance-1.12-1.5.0.jar:
-			 * Updated to latest ElecCore (1.8.434) 
+			 * Updated to latest ElecCore (1.8.434)
 
 	Default Options (went from DefaultOptions_1.12.1-9.2.4.jar to DefaultOptions_1.12.2-9.2.5.jar):
 		DefaultOptions_1.12.2-9.2.5.jar:
@@ -432,11 +432,11 @@ Updated:
 	Environmental Tech (went from environmentaltech-1.12.2-2.0.5a.jar to environmentaltech-1.12.2-2.0.6b.jar):
 		environmentaltech-1.12.2-2.0.6b.jar:
 			Version 2.0.6b
-			 - Added Crystal Lens for all the Tier Crystals(REGEN JSONS for Void Ore Miner!!!)
-			 - Added next tier block requirements for Assembler left click functionality.
+			- Added Crystal Lens for all the Tier Crystals(REGEN JSONS for Void Ore Miner!!!)
+			- Added next tier block requirements for Assembler left click functionality.
 			Version 2.0.6a
-			 - Fixes
-			 - Updated to latest ValkyrieLib
+			- Fixes
+			- Updated to latest ValkyrieLib
 		environmentaltech-1.12.2-2.0.6a.jar:
 			No changelog provided.
 
@@ -444,46 +444,46 @@ Updated:
 		Exchangers-1.12.2-2.6.2.jar:
 			1.12 Exclusive Changes
 
-			 * Fixed MV Exchanger requiring Tier 3 core instead of Tier 2 in hard mode, closes [#43](https://github.com/JackyyTV/Exchangers/issues/43) 
+			 * Fixed MV Exchanger requiring Tier 3 core instead of Tier 2 in hard mode, closes [#43](https://github.com/JackyyTV/Exchangers/issues/43)
 		Exchangers-1.12.2-2.6.1.jar:
-			 * 
+			 *
 			Added a Silk Touch mode config option, if Silk Touch mode is disabled, players may enchant the Exchangers with Silk Touch to achieve Silk Touching on Exchangers or Fortune to get additional drops
 
-			 * 
+			 *
 			Added a PlaceEvent for when Exchangers tries to replace blocks, allows other mods to cancel the event, which also fixes an issue with Faction Mod, closes [#41](https://github.com/JackyyTV/Exchangers/issues/41)
 
-			 * 
+			 *
 			Migrated over to use string block IDs instead of integers
 
-			 * 
+			 *
 			Rewritten lots of translation stuff
 
-			 * 
+			 *
 			Changed all the camelCase translation keys to be lowercase with underscores
 
-			 * 
+			 *
 			Added a special blocks list for internal use
 
-			 * 
+			 *
 			Fixed a major problem with Exchangers not being able to replace blocks with metadata, closes [#42](https://github.com/JackyyTV/Exchangers/issues/42)
 
-			 * 
+			 *
 			Internal code optimizations to greatly reduce redundancy
 
-			 * 
+			 *
 			Added a config option to allow Unbreaking enchant reducing chance of using power for Powered Exchangers, currently tested and works on all MC versions, enabled by default (Part of [#37](https://github.com/JackyyTV/Exchangers/issues/37))
 
-			 * 
+			 *
 			Added a way to decrease range for Exchangers (by holding sneak and pressing the mode key)
 		Exchangers-1.12.2-2.6.jar:
 			Exchangers has hit 1 million total downloads on CurseForge! Thank you everyone for the support! <3
 
 			1.12 Exclusive Changes
 
-			 * Rewritten everything again, just to make porting changes from 1.10 and 1.11 easier 
-			 * Fixed error messages not showing up on servers, closes [#35](https://github.com/JackyyTV/Exchangers/issues/35) 
-			 * Added Blockcraftery blocks to global whitelist, closes [#38](https://github.com/JackyyTV/Exchangers/issues/38) 
-			 * Moved error messages to use the vanilla status messages, so they don't spam the ingame chat 
+			 * Rewritten everything again, just to make porting changes from 1.10 and 1.11 easier
+			 * Fixed error messages not showing up on servers, closes [#35](https://github.com/JackyyTV/Exchangers/issues/35)
+			 * Added Blockcraftery blocks to global whitelist, closes [#38](https://github.com/JackyyTV/Exchangers/issues/38)
+			 * Moved error messages to use the vanilla status messages, so they don't spam the ingame chat
 
 	Extra Utilities (went from Extra Utilities 2 - 1.12 - 1.6.8 to Extra Utilities 2 - 1.12 - 1.7.2):
 		Extra Utilities 2 - 1.12 - 1.7.2:
@@ -516,63 +516,63 @@ Updated:
 
 	Forestry (went from forestry_1.12.2-5.7.0.215.jar to forestry_1.12.2-5.7.0.232.jar):
 		Retrieved from forestry_1.12.2-5.7.0.215.jar and forestry_1.12.2-5.7.0.232.jar's changelogs:
-			 Please help the Forestry project by [reporting issues here.](https://github.com/ForestryMC/ForestryMC/issues)
+			Please help the Forestry project by [reporting issues here.](https://github.com/ForestryMC/ForestryMC/issues)
 
 			Current release 5.7.0.232
 
-			 * Adds dimension blacklist for hive generation. - phillipasmith1995 
-			 * Adds dimension blacklist for hive generation. - phillipasmith1995 
-			 * Adds dimension blacklist for hive generation. - phillipasmith1995 
-			 * Move the worktable into a separate module - Nedelosk 
-			 * Should be all of them (hopefully) - temp1011 
-			 * Add power config for analyzer - temp1011 
-			 * Fix #1061 Squeezer is very "liberal" regarding oredict in Recipes - Nedelosk 
-			 * Update Lang Git-Module - Nedelosk 
-			 * Fix #1937 Backpacks do not hold previously defined items - Nedelosk 
-			 * Fix #1399 Add Hive Generation Blacklist - Nedelosk 
-			 * Fix #1884 Tin can / wax capsule cannot pick up fluid blocks in world - Nedelosk 
-			 * Fix Crate Registration - Nedelosk 
-			 * Fix #1916 Client Crash with new version - Nedelosk 
-			 * Fix #1874 Crash when adding bee to BQM quest / chestloot - Nedelosk 
-			 * Fix #1920 Crate registration only on client side - Nedelosk 
-			 * No biome check - temp1011 
-			 * Fix #1919 Butterfly Model throws NullPointerException - Nedelosk 
-			 * Improve Database Recipe - Nedelosk 
-			 * Fix hive flammability Hive placed in the overworld burned whereas hive placed in nether did not in my tests. Hopefully this works better. - temp1011 
-			 * Fix #1932 Client Tile Updates Depending On Apiculture Module - Nedelosk 
-			 * Woops - temp1011 
-			 * add damage option to hives based on config - temp1011 
-			 * update config in apiculture - temp1011 
-			 * make non hellish hives flammable - temp1011 
-			 * Fix "Invalid property value detected" error logs from Buildcraft - mezz 
-			 * Fix #1918 Fix #1912 packet handler issue with latest Forge (14.23.1.2574+) - Nedelosk 
-			 * Fix Broken Sockets - Nedelosk 
-			 * Fix #1907 Electric engine doesn't update configuration properly - Nedelosk 
-			 * Fix #1901 Custom Backpack Model Registration - Nedelosk 
-			 * Fix #1906 Willow leaves can be used to create an x-ray - Nedelosk 
-			 * Fix resurrected ender dragons having no AI (#1908) - Remy A 
-			 * Revert "Slightly improve render performance of genetic items (bee, trees, etc)" This reverts commit 3df3d9121e51fca16e8a02b19ddb8e1a2b1d5bc6. - mezz 
-			 * Fix #1893 False Module Container ID - Nedelosk 
-			 * Slightly improve render performance of genetic items (bee, trees, etc) - mezz 
-			 * Stop viscous fluids from making water flowing sounds - mezz 
-			 * Fix #1890 NPE with Quark - Nedelosk 
-			 * Fix backward compatibility - Nedelosk 
-			 * Clean Up Module System - Nedelosk 
-			 * Fix Module System - Nedelosk 
-			 * Fix Api - Nedelosk 
-			 * Improve Module System - Nedelosk 
-			 * Fix GreenhouseEventHandler - Nedelosk 
-			 * Change the plugin system to a module system and split up modules -Changed plugin system to a module -Renamed forestry plugins to modules -Mod integration plugins are still called plugins -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage block for individuals -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk 
-			 * Update Lang - Nedelosk 
-			 * Move some classes to the api and fix broken api classes - Nedelosk 
-			 * Remove experimental code - Nedelosk 
-			 * Remove unused resources - Nedelosk 
-			 * Change the plugin system to a module system and slit up modules -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage for individuals -Added a gui element system to improve the alyzer api -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk 
-			 * Fix #1866 Block State Interaction Issues With Pokecube and Forestry - Nedelosk 
-			 * Fix Mystical Agriculture Inferium Seeds and update Integration - Nedelosk 
-			 * Fix #1860 Mystical Agriculture Integration (Could not find item) - Nedelosk 
-			 * Fix #1856 Non Glass Fluids in Thermionic Fabricator are not getting used up. - Nedelosk 
-			 * Fix #1863 Bottler does not empty bottles - Nedelosk 
+			 * Adds dimension blacklist for hive generation. - phillipasmith1995
+			 * Adds dimension blacklist for hive generation. - phillipasmith1995
+			 * Adds dimension blacklist for hive generation. - phillipasmith1995
+			 * Move the worktable into a separate module - Nedelosk
+			 * Should be all of them (hopefully) - temp1011
+			 * Add power config for analyzer - temp1011
+			 * Fix #1061 Squeezer is very "liberal" regarding oredict in Recipes - Nedelosk
+			 * Update Lang Git-Module - Nedelosk
+			 * Fix #1937 Backpacks do not hold previously defined items - Nedelosk
+			 * Fix #1399 Add Hive Generation Blacklist - Nedelosk
+			 * Fix #1884 Tin can / wax capsule cannot pick up fluid blocks in world - Nedelosk
+			 * Fix Crate Registration - Nedelosk
+			 * Fix #1916 Client Crash with new version - Nedelosk
+			 * Fix #1874 Crash when adding bee to BQM quest / chestloot - Nedelosk
+			 * Fix #1920 Crate registration only on client side - Nedelosk
+			 * No biome check - temp1011
+			 * Fix #1919 Butterfly Model throws NullPointerException - Nedelosk
+			 * Improve Database Recipe - Nedelosk
+			 * Fix hive flammability Hive placed in the overworld burned whereas hive placed in nether did not in my tests. Hopefully this works better. - temp1011
+			 * Fix #1932 Client Tile Updates Depending On Apiculture Module - Nedelosk
+			 * Woops - temp1011
+			 * add damage option to hives based on config - temp1011
+			 * update config in apiculture - temp1011
+			 * make non hellish hives flammable - temp1011
+			 * Fix "Invalid property value detected" error logs from Buildcraft - mezz
+			 * Fix #1918 Fix #1912 packet handler issue with latest Forge (14.23.1.2574+) - Nedelosk
+			 * Fix Broken Sockets - Nedelosk
+			 * Fix #1907 Electric engine doesn't update configuration properly - Nedelosk
+			 * Fix #1901 Custom Backpack Model Registration - Nedelosk
+			 * Fix #1906 Willow leaves can be used to create an x-ray - Nedelosk
+			 * Fix resurrected ender dragons having no AI (#1908) - Remy A
+			 * Revert "Slightly improve render performance of genetic items (bee, trees, etc)" This reverts commit 3df3d9121e51fca16e8a02b19ddb8e1a2b1d5bc6. - mezz
+			 * Fix #1893 False Module Container ID - Nedelosk
+			 * Slightly improve render performance of genetic items (bee, trees, etc) - mezz
+			 * Stop viscous fluids from making water flowing sounds - mezz
+			 * Fix #1890 NPE with Quark - Nedelosk
+			 * Fix backward compatibility - Nedelosk
+			 * Clean Up Module System - Nedelosk
+			 * Fix Module System - Nedelosk
+			 * Fix Api - Nedelosk
+			 * Improve Module System - Nedelosk
+			 * Fix GreenhouseEventHandler - Nedelosk
+			 * Change the plugin system to a module system and split up modules -Changed plugin system to a module -Renamed forestry plugins to modules -Mod integration plugins are still called plugins -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage block for individuals -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk
+			 * Update Lang - Nedelosk
+			 * Move some classes to the api and fix broken api classes - Nedelosk
+			 * Remove experimental code - Nedelosk
+			 * Remove unused resources - Nedelosk
+			 * Change the plugin system to a module system and slit up modules -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage for individuals -Added a gui element system to improve the alyzer api -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk
+			 * Fix #1866 Block State Interaction Issues With Pokecube and Forestry - Nedelosk
+			 * Fix Mystical Agriculture Inferium Seeds and update Integration - Nedelosk
+			 * Fix #1860 Mystical Agriculture Integration (Could not find item) - Nedelosk
+			 * Fix #1856 Non Glass Fluids in Thermionic Fabricator are not getting used up. - Nedelosk
+			 * Fix #1863 Bottler does not empty bottles - Nedelosk
 
 	Gendustry (went from Gendustry 1.6.5.6 (MC 1.12.2) to Gendustry 1.6.5.8 (MC 1.12.2)):
 		Gendustry 1.6.5.8 (MC 1.12.2):
@@ -585,7 +585,7 @@ Updated:
 			- added various config options for the Belljar, to adjust growthspeeds and fertilizer effects
 			- re-added partivles and animation for the Arc Furnace (thanks Malte)
 			- added TOP compat for the Sheetmetal Tank (thanks SirWindfield)
-			- added Metal Ladders and Scaffold covered versions 
+			- added Metal Ladders and Scaffold covered versions
 			- fixed wires connected to razorwire not rendering (thanks Malte)
 			- fixed missing comparator output on the Current Transformer (thanks Malte)
 			- fixed the drill accidentally modifying its NBT on sharing (thanks Malte)
@@ -602,42 +602,42 @@ Updated:
 			- fixed derpyness with Mineral Veins (at least for the most part), regarding CraftTweaker
 			- fixed links to Biodiesel in the manual pointing to a nonexistant page
 			- fixed a minor texture warning in the console
-			- Translations Added/Updated: zh_CN (DYColdWind) 
+			- Translations Added/Updated: zh_CN (DYColdWind)
 
 	Industrial Foregoing (went from industrialforegoing-1.12.2-1.6.3-107.jar to industrialforegoing-1.12.2-1.6.6-113.jar):
 		industrialforegoing-1.12.2-1.6.6-113.jar:
-			 * Made fake players not mounting entities 
-			 * Added a safety check for entities in the Mob Imprisonment Tool 
-			 * Improved Log rendering 
-			 * Fixed Item Splitter Facing 
-			 * Tooltips are now translatable 
-			 * Fixed Block Breaker and Block Placer accepting range addons 
-			 * Book entries are now translatable 
+			 * Made fake players not mounting entities
+			 * Added a safety check for entities in the Mob Imprisonment Tool
+			 * Improved Log rendering
+			 * Fixed Item Splitter Facing
+			 * Tooltips are now translatable
+			 * Fixed Block Breaker and Block Placer accepting range addons
+			 * Book entries are now translatable
 		industrialforegoing-1.12.2-1.6.5-112.jar:
-			 * Added the mob in the Mob Imprisonment Tool name for easy searching 
-			 * Fixed Fluid Crafter not crafting with only 1 fluid 
-			 * Added config options to disable machines from the game 
-			 * Added config option to not show Book entries in JEI 
-			 * More safe fluid crafting for the Fluid Crafter and making the tank fluid the default fluid for the recipe. 
-			 * Improved leaf breaking so it doesn't drop items on the floor, I hope. 
-			 * Added chorus support for the Plant Gatherer 
-			 * Improved tooltips, Plant Gatherer shows what it can gather. 
-			 * Fixed Forestry Saplings not being planted with the Plant Sower 
-			 * Changed all the machines that had a 5x5 radius and didn't accept Range addons to a 7x7 
-			 * Added the range of the machines in the tooltip 
-			 * Fixed Item Splitter only pushing the first slot 
-			 * 
+			 * Added the mob in the Mob Imprisonment Tool name for easy searching
+			 * Fixed Fluid Crafter not crafting with only 1 fluid
+			 * Added config options to disable machines from the game
+			 * Added config option to not show Book entries in JEI
+			 * More safe fluid crafting for the Fluid Crafter and making the tank fluid the default fluid for the recipe.
+			 * Improved leaf breaking so it doesn't drop items on the floor, I hope.
+			 * Added chorus support for the Plant Gatherer
+			 * Improved tooltips, Plant Gatherer shows what it can gather.
+			 * Fixed Forestry Saplings not being planted with the Plant Sower
+			 * Changed all the machines that had a 5x5 radius and didn't accept Range addons to a 7x7
+			 * Added the range of the machines in the tooltip
+			 * Fixed Item Splitter only pushing the first slot
+			 *
 		industrialforegoing-1.12.2-1.6.4-111.jar:
-			 * Added config options to disable machines from the game 
-			 * Added config option to not show Book entries in JEI 
-			 * More safe fluid crafting for the Fluid Crafter and making the tank fluid the default fluid for the recipe. 
-			 * Improved leaf breaking so it doesn't drop items on the floor, I hope. 
-			 * Added chorus support for the Plant Gatherer 
-			 * Improved tooltips, Plant Gatherer shows what it can gather. 
-			 * Fixed Forestry Saplings not being planted with the Plant Sower 
-			 * Changed all the machines that had a 5x5 radius and didn't accept Range addons to a 7x7 
-			 * Added the range of the machines in the tooltip 
-			 * Fixed Item Splitter only pushing the first slot 
+			 * Added config options to disable machines from the game
+			 * Added config option to not show Book entries in JEI
+			 * More safe fluid crafting for the Fluid Crafter and making the tank fluid the default fluid for the recipe.
+			 * Improved leaf breaking so it doesn't drop items on the floor, I hope.
+			 * Added chorus support for the Plant Gatherer
+			 * Improved tooltips, Plant Gatherer shows what it can gather.
+			 * Fixed Forestry Saplings not being planted with the Plant Sower
+			 * Changed all the machines that had a 5x5 radius and didn't accept Range addons to a 7x7
+			 * Added the range of the machines in the tooltip
+			 * Fixed Item Splitter only pushing the first slot
 
 	Integrated Dynamics (went from IntegratedDynamics-1.12.2-0.9.8.jar to IntegratedDynamics-1.12.2-0.10.0.jar):
 		IntegratedDynamics-1.12.2-0.10.0.jar:
@@ -651,7 +651,7 @@ Updated:
 			* Add network aspect for reading the network consumption rate
 			* Add TPS aspect to world and extradimensional readers
 			* Add auto-supply mode to batteries
-			 This allows you to automatically fill held energy containers.
+			This allows you to automatically fill held energy containers.
 			* Add operators to read items, fluids and energy from entities, Closes #403
 			* Add redstone pulse writing aspects, Closes #418
 			* Add part setting for changing the effective target side, #278
@@ -660,18 +660,18 @@ Updated:
 			* Add molten metal convenience recipes to Drying Basin
 			* Add an "Is Minecart" operator
 			* Add an entity and machine writer
-			 Like the inventory writer, these will only be useful with cross-mod compats
+			Like the inventory writer, these will only be useful with cross-mod compats
 			* Add an offset time to the redstone clock
-			 This lets you have, for example, 4 redstone clocks, each one on for a different
-			 1/4 of each second. Without this, they'd all be on for the same 1/4 of each
-			 second. This partially solves #317; it will fully solve it once #197 is solved.
+			This lets you have, for example, 4 redstone clocks, each one on for a different
+			1/4 of each second. Without this, they'd all be on for the same 1/4 of each
+			second. This partially solves #317; it will fully solve it once #197 is solved.
 			* Add a recipe to squeeze menril resin out of planks
 			* Add menril doors
 			* Allow squeezing of poisonous materials
 
 			Changes:
 			* Balance default energy capacity of batteries
-			 This multiplies the default capacity by a factor of 10, in order to have a better balance compared to other RF storage mods.
+			This multiplies the default capacity by a factor of 10, in order to have a better balance compared to other RF storage mods.
 			* Make battery transfer limit in relation to its capacity, #377
 			* Show outline of variables in variable slots
 			* Show battery energy level toast when right clicking with an empty hand
@@ -697,7 +697,7 @@ Updated:
 			Fixes:
 			* Fix crash on comparator reading on certain blocks, Closes #450
 			* Fix incorrect LP dropdown rendering order
-			 The dropdown of the operators field was sometimes being rendered in front of the LP element type name box.
+			The dropdown of the operators field was sometimes being rendered in front of the LP element type name box.
 			* Fix incorrect operator value signatures, Closes #386
 			* Fix generator incorrectly internally acting as variable store
 			* Fix value updates not being propagated when 1+ steps from a proxy, Closes #374
@@ -720,22 +720,22 @@ Updated:
 		Retrieved from jei_1.12.2-4.8.5.132.jar and jei_1.12.2-4.8.5.138.jar's changelogs:
 			Current release 4.8.5.138
 
-			 * Update zh_cn.lang (#1073) 
-			 * Improve tooltip message when item can't be crafted in player inventory 
-			 * Fix #1077 packet handler issue with latest Forge (14.23.1.2574+) 
-			 * Update sv_se.lang (#1070) 
-			 * Fix #1066 Item Hiding Mode not working with mouse clicks 
-			 * Use ClientConnectedToServerEvent instead of EntityJoinWorldEvent 
-			 * Check for disabled brewing recipes using a BrewingRecipeRegistry#hasOutput (#1065) 
-			 * Close #953 Hide item from client if it doesn't exist in the server 
-			 * Only subscribe to ClientTickEvent when needed 
-			 * Update Polish translation (#1062) 
-			 * Fix #1055 Crash when searching using OR(|) operator 
+			 * Update zh_cn.lang (#1073)
+			 * Improve tooltip message when item can't be crafted in player inventory
+			 * Fix #1077 packet handler issue with latest Forge (14.23.1.2574+)
+			 * Update sv_se.lang (#1070)
+			 * Fix #1066 Item Hiding Mode not working with mouse clicks
+			 * Use ClientConnectedToServerEvent instead of EntityJoinWorldEvent
+			 * Check for disabled brewing recipes using a BrewingRecipeRegistry#hasOutput (#1065)
+			 * Close #953 Hide item from client if it doesn't exist in the server
+			 * Only subscribe to ClientTickEvent when needed
+			 * Update Polish translation (#1062)
+			 * Fix #1055 Crash when searching using OR(|) operator
 
 	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):
 		MCMultiPart 2.4.1:
-			 * Fixed TEs not getting their IPartInfo set when turned into a multipart 
-			 * Implemented entity collision detection support (for BC compat) 
+			 * Fixed TEs not getting their IPartInfo set when turned into a multipart
+			 * Implemented entity collision detection support (for BC compat)
 
 	Magic Bees (went from MagicBees-1.12-3.1.7.jar to MagicBees-1.12.2-3.1.9.jar):
 		MagicBees-1.12.2-3.1.9.jar:
@@ -767,20 +767,20 @@ Updated:
 
 	McJtyLib (went from mcjtylib-1.12-2.5.0.jar to mcjtylib-1.12-2.6.2.jar):
 		mcjtylib-1.12-2.6.2.jar:
-			 * Joseph C. Sible did some fixes to tooltip handling in the gui library 
-			 * Joseph fixed wrong height of a line with just a single ItemStack in tooltips 
-			 * Joseph did some internal code changes to the widget library 
-			 * Rendering stack tooltips for BlockRender widgets is now a core feature of McJtyLib 
+			 * Joseph C. Sible did some fixes to tooltip handling in the gui library
+			 * Joseph fixed wrong height of a line with just a single ItemStack in tooltips
+			 * Joseph did some internal code changes to the widget library
+			 * Rendering stack tooltips for BlockRender widgets is now a core feature of McJtyLib
 		mcjtylib-1.12-2.6.1.jar:
-			 * Fix a server side crash 
+			 * Fix a server side crash
 		mcjtylib-1.12-2.6.0.jar:
-			 * Big refactoring and cleanup of a lot of code. Pulled code out of various mods for better code reuse 
-			 * Joseph C. Sible cleaned up a lot of code 
+			 * Big refactoring and cleanup of a lot of code. Pulled code out of various mods for better code reuse
+			 * Joseph C. Sible cleaned up a lot of code
 
 	MeeCreeps (went from meecreeps-1.12-1.0.1.jar to meecreeps-1.12-1.1.0.jar):
 		meecreeps-1.12-1.1.0.jar:
-			 * This version requires McJtyLib 2.6.0! 
-			 * Fixed the two pickup tasks so they properly work again. They somehow got broken 
+			 * This version requires McJtyLib 2.6.0!
+			 * Fixed the two pickup tasks so they properly work again. They somehow got broken
 
 	MineTogether (went from minetogether-1.10.2-1.8.2.jar to minetogether-1.10.2-1.8.7.jar):
 		minetogether-1.10.2-1.8.7.jar:
@@ -828,7 +828,7 @@ Updated:
 			bartek.bok: Fix invalid rendering of single-frame B3D models (#3917)
 		1.12.2-14.23.1.2578:
 			LexManos:
-				Fix missing call to release() in the event channel handler (#4513) 
+				Fix missing call to release() in the event channel handler (#4513)
 				(reverted from commit cd99957627625f7baeff8761c6382b05db9699d3)
 		1.12.2-14.23.1.2577:
 			Leviathan143:
@@ -903,7 +903,7 @@ Updated:
 		notenoughwands-1.12-1.6.0.jar:
 			1.6.0:
 
-			 * This version requires McJtyLib 2.6.0! 
+			 * This version requires McJtyLib 2.6.0!
 
 	Pam's HarvestCraft (went from Pam's HarvestCraft 1.12.2a.jar to [Archived file]):
 		Pam's HarvestCraft 1.12.2g.jar:
@@ -928,7 +928,7 @@ Updated:
 			- Fixed: Block: Fruit blocks now break with nothing is above them, if mature will drop 2 fruits (to make up for losing a renewable resource block)
 			- Fixed: Config: Removed useless config options (bait amounts, fresh water amounts, salt amounts, etc). To change the amount a recipe gives you, open the recipe JSON in the JAR file in a text editor and change the count amount. (reported by bushbaby1234)
 			- Fixed: Recipe: Grilled Mushroom now uses cropWhitemushroom instead of harvestcraft:whitemushroomitem
-			- Fixed: Recipe: All recipes with alternate versions have now been re-named foodname_alternate item (example: friesitem_foodSalt, friesitem_dustSalt, friesitem_itemSalt, etc) - 
+			- Fixed: Recipe: All recipes with alternate versions have now been re-named foodname_alternate item (example: friesitem_foodSalt, friesitem_dustSalt, friesitem_itemSalt, etc) -
 			- Fixed: Recipe: Sweet and Sour Sauce now uses foodHoneydrop and dropHoney instead of harvestcraft:honeyitem
 			- Fixed: Recipe: All salt recipes should have three versions for dustSalt, foodSalt, and itemSalt Ore Dictionary (reported by Chunkey)
 			- Fixed: Recipe: Fruit logs (maple, cinnamon, paperbark) should now convert to planks correctly
@@ -1009,75 +1009,75 @@ Updated:
 
 	RFTools (went from rftools-1.12-7.15.jar to rftools-1.12-7.23.jar):
 		rftools-1.12-7.23.jar:
-			 * Joseph C. Sible made a change to let creative powercells act as infinite power sinks 
-			 * Now use the new feature in McJtyLib for drawing stack tooltips 
-			 * Depends on McJtyLib 2.6.2! 
+			 * Joseph C. Sible made a change to let creative powercells act as infinite power sinks
+			 * Now use the new feature in McJtyLib for drawing stack tooltips
+			 * Depends on McJtyLib 2.6.2!
 		rftools-1.12-7.22.jar:
-			 * Fixed crashes with builder and screen when being wrenched or similar circumstances 
+			 * Fixed crashes with builder and screen when being wrenched or similar circumstances
 		rftools-1.12-7.21.jar:
-			 * Server side fix 
+			 * Server side fix
 		rftools-1.12-7.20.jar:
-			 * This version requires McJtyLib 2.6.0! 
-			 * Joseph C. Sible fixed dimensional ore registration with the three types. This fixes the nether and end variants of dimensional shard ore dropping as the overworld variant when silk touched 
-			 * Joseph added a recipe for the shape manual and fixed recipe for block protector 
-			 * Joseph removed some log spam 
-			 * Joseph implemented config options to allow disabling some subsystems in RFTools: security system, block protector, network monitor, crafter, coal generator, ... 
-			 * Joseph fixed a bug where the block protector didn't properly save and restore redstone mode 
-			 * Joseph fixed a syringe bug in creative 
-			 * Countless other small changes and fixes 
+			 * This version requires McJtyLib 2.6.0!
+			 * Joseph C. Sible fixed dimensional ore registration with the three types. This fixes the nether and end variants of dimensional shard ore dropping as the overworld variant when silk touched
+			 * Joseph added a recipe for the shape manual and fixed recipe for block protector
+			 * Joseph removed some log spam
+			 * Joseph implemented config options to allow disabling some subsystems in RFTools: security system, block protector, network monitor, crafter, coal generator, ...
+			 * Joseph fixed a bug where the block protector didn't properly save and restore redstone mode
+			 * Joseph fixed a syringe bug in creative
+			 * Countless other small changes and fixes
 
 	RFTools Control (went from rftoolsctrl-1.12-1.7.0.jar to rftoolsctrl-1.12-1.8.0.jar):
 		rftoolsctrl-1.12-1.8.0.jar:
-			 * This version requires McJtyLib 2.6.0! 
+			 * This version requires McJtyLib 2.6.0!
 
 	RFTools Dimensions (went from rftoolsdim-1.12-5.05.jar to rftoolsdim-1.12-5.50.jar):
 		rftoolsdim-1.12-5.50.jar:
-			 * Requires McJtyLib 2.6.2 
-			 * Fixes a double icon bug in the dimlet workbench 
-			 * All changes below by Joseph. C Sible 
-			 * New features: 
-			 * Made dimensions be completely determined by the world seed and dimlets used (randomizeSeed is available if you don’t like this) 
-			 * Brought back the seed dimlet 
-			 * Made the dimlet workbench show full names and keys, and all possible variants 
-			 * Made the dimension editor work instantly and for free for cheater dimensions 
-			 * Made dimension editor dimlet injections take effect without having to reload the dimension 
-			 * Added the ability to turn off a dimlet by injecting it again 
-			 * Added a dimlet to reset the sky color 
-			 * Added dimensions' cloud colors to their info dump 
-			 * Added the ability to specify a descriptor to createdim 
-			 * Added a setting to control whether rarity factors scale with the number of items in each rarity 
-			 * Enhancements: 
-			 * Prevented players from accidentally injecting dimlets that only have an effect when used from the beginning 
-			 * Stopped low-power effects from flickering on and off 
-			 * Made colored clouds compatible with Forge’s GPU cloud renderer 
-			 * Made sure the space outside of the shelter’s door isn’t blocked 
-			 * Spaced out dimlets when extracting them 
-			 * Hid the realized dimension tab from the creative inventory 
-			 * Improved random dimlet generation’s probability calculations 
-			 * Improved handling of missing mob dimlets 
-			 * Bug fixes: 
-			 * Fixed crashes during Lost Cities world generation if the RFTools Crafter was disabled 
-			 * Fixed chunk loaders not working on server startup until a player enters the dimension 
-			 * Fixed lots of bugs involving how dimension information was shared between server and client 
-			 * Fixed createdim being able to create multiple dimensions with the same descriptor 
-			 * Fixed blacklisted dimlets being silently destroyed by the enscriber 
-			 * Fixed several resource leaks 
-			 * Fixed dimension effects not working in cheater dimensions 
-			 * Fixed most cases of cascading world generation in Lost Cities dimensions 
-			 * Fixed block display names showing Air instead of what they actually were 
-			 * Fixed Lost Cities data centers using the library chance to generate instead of their own 
-			 * Fixed uncraftable dimlets being generated from the wrong distribution 
-			 * Fixed a crafter and dimensional block variant never generating 
-			 * Fixed lit redstone ore showing up in place of redstone ore in the dimlet workbench 
-			 * Fixed cloud colors not properly overwriting each other 
-			 * Fixed mob descriptors not showing any useful information 
-			 * Fixed chests in dimlet dungeons facing the wrong way 
-			 * Fixed dimensions created by commands having the wrong owner 
-			 * Fixed mob dimlets for non-mob entities appearing in the dimlet workbench 
-			 * Fixed the “Body none” dimlet not working. Its old, unintended behavior is now available via “Body default”. 
-			 * And lots of refactoring and code cleanup 
+			 * Requires McJtyLib 2.6.2
+			 * Fixes a double icon bug in the dimlet workbench
+			 * All changes below by Joseph. C Sible
+			 * New features:
+			 * Made dimensions be completely determined by the world seed and dimlets used (randomizeSeed is available if you don’t like this)
+			 * Brought back the seed dimlet
+			 * Made the dimlet workbench show full names and keys, and all possible variants
+			 * Made the dimension editor work instantly and for free for cheater dimensions
+			 * Made dimension editor dimlet injections take effect without having to reload the dimension
+			 * Added the ability to turn off a dimlet by injecting it again
+			 * Added a dimlet to reset the sky color
+			 * Added dimensions' cloud colors to their info dump
+			 * Added the ability to specify a descriptor to createdim
+			 * Added a setting to control whether rarity factors scale with the number of items in each rarity
+			 * Enhancements:
+			 * Prevented players from accidentally injecting dimlets that only have an effect when used from the beginning
+			 * Stopped low-power effects from flickering on and off
+			 * Made colored clouds compatible with Forge’s GPU cloud renderer
+			 * Made sure the space outside of the shelter’s door isn’t blocked
+			 * Spaced out dimlets when extracting them
+			 * Hid the realized dimension tab from the creative inventory
+			 * Improved random dimlet generation’s probability calculations
+			 * Improved handling of missing mob dimlets
+			 * Bug fixes:
+			 * Fixed crashes during Lost Cities world generation if the RFTools Crafter was disabled
+			 * Fixed chunk loaders not working on server startup until a player enters the dimension
+			 * Fixed lots of bugs involving how dimension information was shared between server and client
+			 * Fixed createdim being able to create multiple dimensions with the same descriptor
+			 * Fixed blacklisted dimlets being silently destroyed by the enscriber
+			 * Fixed several resource leaks
+			 * Fixed dimension effects not working in cheater dimensions
+			 * Fixed most cases of cascading world generation in Lost Cities dimensions
+			 * Fixed block display names showing Air instead of what they actually were
+			 * Fixed Lost Cities data centers using the library chance to generate instead of their own
+			 * Fixed uncraftable dimlets being generated from the wrong distribution
+			 * Fixed a crafter and dimensional block variant never generating
+			 * Fixed lit redstone ore showing up in place of redstone ore in the dimlet workbench
+			 * Fixed cloud colors not properly overwriting each other
+			 * Fixed mob descriptors not showing any useful information
+			 * Fixed chests in dimlet dungeons facing the wrong way
+			 * Fixed dimensions created by commands having the wrong owner
+			 * Fixed mob dimlets for non-mob entities appearing in the dimlet workbench
+			 * Fixed the “Body none” dimlet not working. Its old, unintended behavior is now available via “Body default”.
+			 * And lots of refactoring and code cleanup
 		rftoolsdim-1.12-5.10.jar:
-			 * This version requires McJtyLib 2.6.0! 
+			 * This version requires McJtyLib 2.6.0!
 
 	Reborn Core (went from RebornCore-1.12.2-3.5.2.171-universal.jar to RebornCore-1.12.2-3.6.2.187-universal.jar):
 		RebornCore-1.12.2-3.6.2.187-universal.jar:
@@ -1131,19 +1131,19 @@ Updated:
 
 	Refined Storage (went from Refined Storage 1.5.28 to Refined Storage 1.5.31):
 		Refined Storage 1.5.31:
-			 * Improved the "cannot craft! loop in processing..." error message (raoulvdberge) 
-			 * Fixed error logs when toggling the Pattern Grid from and to processing mode (raoulvdberge) 
-			 * Fixed pattern slots in Crafters not being accessible (raoulvdberge) 
-			 * Fixed rare Grid crash (raoulvdberge) 
-			 * Fixed OpenComputers cable showing up in Grid as air (raoulvdberge) 
-			 * Storage disk and block stored and capacity counts are formatted now in the tooltip (raoulvdberge) 
-			 * Made the Disk Manipulator unsided (inserting goes to insert slots and extracting from output slots) (raoulvdberge) 
+			 * Improved the "cannot craft! loop in processing..." error message (raoulvdberge)
+			 * Fixed error logs when toggling the Pattern Grid from and to processing mode (raoulvdberge)
+			 * Fixed pattern slots in Crafters not being accessible (raoulvdberge)
+			 * Fixed rare Grid crash (raoulvdberge)
+			 * Fixed OpenComputers cable showing up in Grid as air (raoulvdberge)
+			 * Storage disk and block stored and capacity counts are formatted now in the tooltip (raoulvdberge)
+			 * Made the Disk Manipulator unsided (inserting goes to insert slots and extracting from output slots) (raoulvdberge)
 		Refined Storage 1.5.30:
-			 * Fixed crashing bug when MCMultiPart is not installed (raoulvdberge) 
+			 * Fixed crashing bug when MCMultiPart is not installed (raoulvdberge)
 		Refined Storage 1.5.29:
-			 * Update Forge to 2577 (minimum Forge version required is now 2555 for MC 1.12.2) (raoulvdberge) 
-			 * Fixed bug where MCMP multiparts were blocking RS network connections (raoulvdberge) 
-			 * Fixed Reader/Writers for energy extracting energy when not needed (raoulvdberge) 
+			 * Update Forge to 2577 (minimum Forge version required is now 2555 for MC 1.12.2) (raoulvdberge)
+			 * Fixed bug where MCMP multiparts were blocking RS network connections (raoulvdberge)
+			 * Fixed Reader/Writers for energy extracting energy when not needed (raoulvdberge)
 
 	Thermal Cultivation (went from ThermalCultivation-1.12.2-0.1.2.8-universal.jar to ThermalCultivation-1.12.2-0.1.5.3-universal.jar):
 		0.1.5:
@@ -1343,11 +1343,11 @@ Updated:
 		UniDict-1.12.2-2.1.jar:
 			1.12.2-2.1:
 
-			 * now resource gathering is made on init (this will need some testing in order to see if there are no negative effects.). 
-			 * now you can pass null values (for the shape)for the CraftTweaker command mods.unidict.api.newShapedRecipeTemplate() without crashing. 
-			 * added a new "RemoveByKind" CT command, "furnace". 
-			 * added the method "addItemStackToBlackList" to UniDictAPI, this will allow modders to "blacklist" ItemStacks directly (resquested by [SkySom](https://minecraft.curseforge.com/members/SkySom)) 
-			 * 
+			 * now resource gathering is made on init (this will need some testing in order to see if there are no negative effects.).
+			 * now you can pass null values (for the shape)for the CraftTweaker command mods.unidict.api.newShapedRecipeTemplate() without crashing.
+			 * added a new "RemoveByKind" CT command, "furnace".
+			 * added the method "addItemStackToBlackList" to UniDictAPI, this will allow modders to "blacklist" ItemStacks directly (resquested by [SkySom](https://minecraft.curseforge.com/members/SkySom))
+			 *
 			added an optional parameter "String[] resourceKindWhiteList" for the CT commands "mods.unidict.removalByKind,get("crafting")" and "mods.unidict.removalByKind,get("furnace")"
 			is is basically a filter, that it will remove recipes only when the resource contains the given "kinds".
 
@@ -1368,7 +1368,7 @@ Updated:
 			isn't required to store the "instance" in a val, but if you want to use it several times, it is better.
 		UniDict-1.12.2-2.0.jar:
 			CraftTweaker support:
-			mods.unidict.api.newShapedRecipeTemplate(String outputKind, int outputSize, String[][] shape); mods.unidict.api.newShapelessRecipeTemplate(String outpuKind, int outputSize, String[] inputs); mods.unidict.removalByKind.crafting(String kindName); 
+			mods.unidict.api.newShapedRecipeTemplate(String outputKind, int outputSize, String[][] shape); mods.unidict.api.newShapelessRecipeTemplate(String outpuKind, int outputSize, String[] inputs); mods.unidict.removalByKind.crafting(String kindName);
 			the first two commands are for creating all the recipes for a given kind, per example, if you want change all you gear recipe to have a different shape, then now you don't need to create one by one.
 			the last command will be used to remove recipes for a given kind, if you pass it the argument "block", then it will remove all the recipes for blocks, like iron block, copper block, gold block, and etc... (I will expand this on the future for mod machines)
 
@@ -1388,8 +1388,8 @@ Updated:
 		UniDict-1.12.2-1.8.jar:
 			New:
 
-			 * added Black List for Entries/Kinds for KeepOneEntry. 
-			 * added support for the machine "Assembler" in Extreme Energy Integration. 
+			 * added Black List for Entries/Kinds for KeepOneEntry.
+			 * added support for the machine "Assembler" in Extreme Energy Integration.
 		UniDict-1.12.2-1.7.jar:
 			New Integration: [Extreme Energy](https://minecraft.curseforge.com/projects/extreme-energy) (High-Pressure Crusher)
 
@@ -1405,31 +1405,31 @@ Updated:
 
 	XNet (went from xnet-1.12-1.5.0.jar to xnet-1.12-1.6.7.jar):
 		xnet-1.12-1.6.7.jar:
-			 * Bug fix with setting integer values in guis 
-			 * Fixed double tooltips in gui of controller 
+			 * Bug fix with setting integer values in guis
+			 * Fixed double tooltips in gui of controller
 		xnet-1.12-1.6.6.jar:
-			 * Fixed a problem with advanced connectors still being limited to 1000mb instead of 5000mb for liquids 
-			 * Changes to the IConnectable API 
+			 * Fixed a problem with advanced connectors still being limited to 1000mb instead of 5000mb for liquids
+			 * Changes to the IConnectable API
 		xnet-1.12-1.6.5.jar:
-			 * Fixed another division by zero 
+			 * Fixed another division by zero
 		xnet-1.12-1.6.4.jar:
-			 * Needs McJtyLib 2.6.2 
-			 * Uses McJtyLib way to render tooltips for items in filter 
-			 * New API so that other mods can 'connect' their blocks to XNet connectors 
-			 * Fixed a crash that could occur in item channels 
-			 * Improved how 'random' works. It will now really select evenly among all non-empty input slots 
+			 * Needs McJtyLib 2.6.2
+			 * Uses McJtyLib way to render tooltips for items in filter
+			 * New API so that other mods can 'connect' their blocks to XNet connectors
+			 * Fixed a crash that could occur in item channels
+			 * Improved how 'random' works. It will now really select evenly among all non-empty input slots
 		xnet-1.12-1.6.3.jar:
-			 * Second attempt to fix the TPS lag. This version should be ok now 
+			 * Second attempt to fix the TPS lag. This version should be ok now
 		xnet-1.12-1.6.2.jar:
-			 * Fixed a bug in handling of old connectors for XNet causing lots of log spam and loss of TPS 
+			 * Fixed a bug in handling of old connectors for XNet causing lots of log spam and loss of TPS
 		xnet-1.12-1.6.1.jar:
-			 * Implemented extract mode for item channels: first (like it was in the past), random slot, or round robin 
-			 * Doubled the speed of item connectors (5 ticks per operation for advanced and 10 ticks per operation for normal) 
-			 * New version of the redstone proxy block that can do block updates 
-			 * The controller GUI will sort connected blocks based on block name 
-			 * Implemented tooltips for the filtered items in item connectors 
+			 * Implemented extract mode for item channels: first (like it was in the past), random slot, or round robin
+			 * Doubled the speed of item connectors (5 ticks per operation for advanced and 10 ticks per operation for normal)
+			 * New version of the redstone proxy block that can do block updates
+			 * The controller GUI will sort connected blocks based on block name
+			 * Implemented tooltips for the filtered items in item connectors
 		xnet-1.12-1.6.0.jar:
-			 * This version requires McJtyLib 2.6.0! 
+			 * This version requires McJtyLib 2.6.0!
 
 	iChunUtil (went from iChunUtil-1.12.2-7.1.3.jar to iChunUtil-1.12.2-7.1.4.jar):
 		iChunUtil-1.12.2-7.1.4.jar:
@@ -1450,4 +1450,4 @@ Updated:
 Removed:
 	- Inventory Sorter
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.5)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.4)

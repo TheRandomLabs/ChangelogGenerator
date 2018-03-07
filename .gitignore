@@ -8,3 +8,10 @@ old.json
 new.json
 ChangelogGenerator.bat
 ChangelogGenerator.jar
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea

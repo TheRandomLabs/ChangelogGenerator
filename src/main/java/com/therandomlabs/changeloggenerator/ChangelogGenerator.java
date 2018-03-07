@@ -18,6 +18,8 @@ public final class ChangelogGenerator {
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
 	public static void main(String[] args) throws Exception {
+		//TODO more args
+
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
 
@@ -34,10 +36,10 @@ public final class ChangelogGenerator {
 			boolean urls) throws CurseException, IOException {
 		final StringBuilder string = new StringBuilder();
 
-		string.append(results.getOldManifest().name + ' ' + results.getOldManifest().version).
-				append(" to ").
-				append(results.getNewManifest().name + ' ' + results.getNewManifest().version).
-				append(NEWLINE).append(NEWLINE);
+		string.append(results.getOldManifest().name).append(' ').
+				append(results.getOldManifest().version).append(" to ").
+				append(results.getNewManifest().name).append(' ').
+				append(results.getNewManifest().version).append(NEWLINE).append(NEWLINE);
 
 		if(!results.getAdded().isEmpty()) {
 			string.append("Added:");
@@ -92,6 +94,7 @@ public final class ChangelogGenerator {
 		for(Map.Entry<VersionChange, Map<String, String>> changelog : changelogs.entrySet()) {
 			final VersionChange vc = changelog.getKey();
 
+			//TODO date support
 			string.append(NEWLINE).append("\t").append(vc.getModTitle()).
 					append(" (went from ").append(vc.getOldFileName()).append(" to ").
 					append(vc.getNewFileName()).append("):");

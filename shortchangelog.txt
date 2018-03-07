@@ -437,4 +437,4 @@ Updated:
 Removed:
 	- Inventory Sorter
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.5)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.4)

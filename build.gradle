@@ -9,8 +9,6 @@ repositories {
 }
 
 dependencies {
-	compile "com.github.TheRandomLabs:TRLUtils:master-SNAPSHOT"
-	compile "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
 	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 }
 

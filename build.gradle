@@ -1,13 +1,16 @@
 apply plugin: "java"
+apply plugin: "idea"
 
 repositories {
 	jcenter()
 	maven {
-		url "https://jitpack.io"
+		url = "https://jitpack.io"
 	}
 }
 
 dependencies {
+	compile "com.github.TheRandomLabs:TRLUtils:master-SNAPSHOT"
+	compile "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
 	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 }
 

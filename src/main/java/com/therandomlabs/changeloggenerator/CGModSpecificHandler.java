@@ -420,7 +420,6 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 				final String currentVersion = line.substring(1);
 
 				if(version.equals(currentVersion)) {
-					System.out.println("Continuing");
 					continue;
 				}
 

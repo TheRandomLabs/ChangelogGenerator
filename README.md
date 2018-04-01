@@ -8,9 +8,9 @@ ChangelogGenerator generates two files - `changelog.txt` and `shortchangelog.txt
 If you want to use different files as input, you can do something like this:
 	java -jar ChangelogGenerator.jar oldmanifest.json manifest.json
 
-Obviously, it isn't perfect and might need some user input, but I tried to add as much mod compatibility as possible in CurseAPI-Minecraft, and it even supports TeamCoFH's GitHub changelogs.
+Obviously it isn't perfect, but I tried to add as much mod compatibility as possible (CoFH's mods, mezz's mods, etc.).
 
-To use this in Gradle:
+To use this with Gradle:
 
 	compile "com.github.TheRandomLabs:ChangelogGenerator:master-SNAPSHOT"
 

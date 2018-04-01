@@ -58,29 +58,6 @@ Updated:
 
 	Actually Additions (went from ActuallyAdditions-1.12.2-r125.jar to ActuallyAdditions-1.12.2-r126.jar):
 		1.12.2-r126:
-			* Added compat with FastWorkbench for the portable crafter.
-			* Made the logging of the crusher recipes a debug, instead of info (less log spam).
-			* The\_Fireplace: added en_UD.lang
-			* Vertical Digger no longer uses getMetaFromState and now uses getPickBlock.
-			* Farmer no longer breaks stem blocks.
-			* Config for atomic reconstructor battery size.
-			* Made a note on the oil generator that values are per 50 mB.
-			* Fixes the drill not breaking blocks of similar hardness in 3x3 or 5x5 mode.
-			* Fixes the default farmer casting every IPlantable to a BlockBush.
-			* Dalapo: Added an extra null check to canFillFluidType
-			* Biocoal burn time is now 800 again, instead of 80.  Whoops.
-			* Worms shouldn't show up from areas that cannot be tilled.
-			* (Hopefully) fixed desync issues with the 5x5 and 3x3 drill.
-			* Feeder has gained +5 INT.
-			* Config added for the fur ball drop chance.
-			* Greenhouse Glass recipe now makes 2 glass, and uses a single empowered palis crystal.
-			* Removed a debug line in Greenhouse Glass
-			* Fixed the firework box recipe displaying wrongly in JEI
-			* Removed explicit tesla support.
-			* The AIOT will now accept sword enchantments.
-			* Greenhouse Glass is no longer a tile entity, this should significantly improve performance.  It will be a bit slower in terms of plant growth though.
-			* Canitzp: Fixes a duplication bug with MeeCreeps and AA containers.
-			* Fixes a log error with Coal Dust and JEI.
 			* New feature!  The atomic reconstructor can now split enchanted books with multiple enchantments!
 			* Leomil72: Added it_IT.lang
 
@@ -140,49 +117,120 @@ Updated:
 			bdew: Prevent HasTE from corrupting TE's of unrelated blocks if passed an
 
 	Binnie's Mods (went from binnie-mods-1.12.2-2.5.0.106.jar to binnie-mods-1.12.2-2.5.0.111.jar):
-		Retrieved from binnie-mods-1.12.2-2.5.0.106.jar and binnie-mods-1.12.2-2.5.0.111.jar's changelogs:
-			 Alpha version. Do not create a world you care about with this version, it may break things severely.
-			 Please help the project by trying it out and [reporting issues here.](https://github.com/ForestryMC/Binnie/issues)
-
-			Current release 2.5.0.111
-
-			 * Fix #331 Crash on launching when butterflies are disabled in forestry. - Nedelosk 
-			 * Validate ItemFieldKit to avoid metadata manipulations with items. (#375) - mezz 
-			 * Create & Update zh_CN.lang(s) (#376) - SihenZhang 
-			 * #347 Various issues with the brewery - mezz 
-			 * Fix #359 remove oredict "gearWood" for scented and proven gears - mezz 
-			 * Create ru_RU.lang for Binnie Genetics (#358) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Extrabees (#355) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Botany (#354) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Extratrees (#357) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Core (#353) - Mr-Krab 
-			 * Create ru_RU.lang for Binnie Design (#356) - Mr-Krab 
-			 * Make Binnie's stained glass non-flammable - mezz 
-			 * Update dependencies - mezz 
-			 * Fix #344 Networking issue with latest Forge - mezz 
-			 * Fix Ceramic Brick pick block - DrManganese 
-			 * Fix #350 Crash on dedicated server - mezz 
-			 * Fix localization error - mezz 
-			 * Remove unused imports - mezz 
-			 * Fix #345 Prevent shift-clicking into recipe slots - mezz 
-			 * Improve tooltips on machines, show some basic help Close #216 make the help key configurable - mezz 
-			 * Fix #343 TOPAddons shows 6 tanks for each real tank - mezz 
-			 * Fix ArrayIndexOutOfBoundsException on invalid soil metadata (#317) - Gamebuster 
-			 * Add Item Capability support to Alveary Frame Housing (#325) - mcenderdragon 
-			 * Fix #298 Most trees support apples when they shouldn't. - mezz 
-			 * Fix #294 Nerf fruit saturation - mezz 
-			 * Fix #340 Inoculate and Splicer cannot apply bee effect alleles - mezz 
-			 * Fix #341 Analyst turns tree pollen into sapling - mezz 
-			 * Fix #335 Fix lab stand, render items over some machines - mezz 
-			 * Fix #337 Breeding System Crash - mezz 
-			 * Create zh_CN.lang(s) (#334) - SihenZhang 
-			 * Expand accepted blocks for Redstone, Leaves, and Wood flower type bees - mezz 
-			 * Fix #336 Ecstatic Bee effect crashes - mezz 
-			 * Prevent 2-tall flowers from breaking blocks when grown - mezz 
-			 * Enable JEI lookup of items and fluids in all guis - mezz 
-			 * Fix automated extraction from machines pulling all items out - mezz 
-			 * Fix machine particles - mezz 
-			 * Fix crash from CraftTweaker ASM version issue - mezz 
+		2.5.0:
+			* Fix #331 Crash on launching when butterflies are disabled in forestry. - Nedelosk 
+			* Validate ItemFieldKit to avoid metadata manipulations with items. (#375) - mezz 
+			* Create & Update zh_CN.lang(s) (#376) - SihenZhang 
+			* #347 Various issues with the brewery - mezz 
+			* Fix #359 remove oredict "gearWood" for scented and proven gears - mezz 
+			* Create ru_RU.lang for Binnie Genetics (#358) - Mr-Krab 
+			* Create ru_RU.lang for Binnie Extrabees (#355) - Mr-Krab 
+			* Create ru_RU.lang for Binnie Botany (#354) - Mr-Krab 
+			* Create ru_RU.lang for Binnie Extratrees (#357) - Mr-Krab 
+			* Create ru_RU.lang for Binnie Core (#353) - Mr-Krab 
+			* Create ru_RU.lang for Binnie Design (#356) - Mr-Krab 
+			* Make Binnie's stained glass non-flammable - mezz 
+			* Update dependencies - mezz 
+			* Fix #344 Networking issue with latest Forge - mezz 
+			* Fix Ceramic Brick pick block - DrManganese 
+			* Fix #350 Crash on dedicated server - mezz 
+			* Fix localization error - mezz 
+			* Remove unused imports - mezz 
+			* Fix #345 Prevent shift-clicking into recipe slots - mezz 
+			* Improve tooltips on machines, show some basic help Close #216 make the help key configurable - mezz 
+			* Fix #343 TOPAddons shows 6 tanks for each real tank - mezz 
+			* Fix ArrayIndexOutOfBoundsException on invalid soil metadata (#317) - Gamebuster 
+			* Add Item Capability support to Alveary Frame Housing (#325) - mcenderdragon 
+			* Fix #298 Most trees support apples when they shouldn't. - mezz 
+			* Fix #294 Nerf fruit saturation - mezz 
+			* Fix #340 Inoculate and Splicer cannot apply bee effect alleles - mezz 
+			* Fix #341 Analyst turns tree pollen into sapling - mezz 
+			* Fix #335 Fix lab stand, render items over some machines - mezz 
+			* Fix #337 Breeding System Crash - mezz 
+			* Create zh_CN.lang(s) (#334) - SihenZhang 
+			* Expand accepted blocks for Redstone, Leaves, and Wood flower type bees - mezz 
+			* Fix #336 Ecstatic Bee effect crashes - mezz 
+			* Prevent 2-tall flowers from breaking blocks when grown - mezz 
+			* Enable JEI lookup of items and fluids in all guis - mezz 
+			* Fix automated extraction from machines pulling all items out - mezz 
+			* Fix machine particles - mezz 
+			* Fix crash from CraftTweaker ASM version issue - mezz 
+			* Update Version - Nedelosk 
+			* Update top Forestry 5.7 - Nedelosk 
+			* Fix #324, Fix #330 Ecstatic and absolute bees are unobtainable - Nedelosk 
+			* Fix #326 Rocky hives spawning too often and causing lag - mezz 
+			* Fix #244, Fix #296 Crash when disabling extratrees module - Nedelosk 
+			* Fix #320 Disabled module causes crash on startup - Nedelosk 
+			* Fix #322 Leaves in inventory client crash - Nedelosk 
+			* Revert "Downgrade gradle to 2.14" This reverts commit f13bfc0a633a99713f9ee2fb1123f6c3c7d5ee96. - mezz 
+			* Downgrade gradle to 2.14 - mezz 
+			* Cleanup - mezz 
+			* Fix #293 Crash when opening Arborist database - mezz 
+			* Disable gradle daemon - mezz 
+			* Revert "Update gradle to 4.1" This reverts commit f1e7a198e5e4d05d91107e5957cde34a6f9813df. - mezz 
+			* Update gradle to 4.1 - mezz 
+			* Try adding more ram for gradle - mezz 
+			* Update dependencies - mezz 
+			* Update Forestry - Nedelosk 
+			* Fix #274 Fix stone hive generation, increase water hive generation. (Thanks to @p-schneider) - mezz 
+			* Fix #288 Fix compartments have two tabs selected when first opened - mezz 
+			* Cleanup unused imports - mezz 
+			* Fix errors when placing fruit press - mezz 
+			* Fix #290 Compartment Crash on Opening - mezz 
+			* Try increasing gradle ram - mezz 
+			* Try disabling the gradle daemon - mezz 
+			* Fix #287 Missing design project from main jar - mezz 
+			* Register error states explicitly - mezz 
+			* Convert anonymous inner classes to static inner classes. Should fix the build issue, which is caused by the bug described here: [https://github.com/MinecraftForge/Srg2Source/pull/17](https://github.com/MinecraftForge/Srg2Source/pull/17) - mezz 
+			* #284 Fix hive pickblock (fixes Just Enough Resources worldgen recipes) - mezz 
+			* Remove ExtraTrees dependency from Botany Move shared code to a new Design library mod - mezz 
+			* Add 1.12 to accepted Forge versions - mezz 
+			* Move some block classes from core-api to core - mezz 
+			* Update to 1.12.1 - mezz 
+			* Improve lumber mill recipe handling - mezz 
+			* Fix #273 Crash with Dimensional Control mod - mezz 
+			* Fix #272 Fruit Name Issue - Nedelosk 
+			* Remove genetics-main dependency from extrabees and extratrees - mezz 
+			* Fix missing Planks - Nedelosk 
+			* Fix #264 Move recipe registration from postInit to init - Nedelosk 
+			* Fix #263 It Crashes (game won't start) MC1.12 Forge 2443 - Nedelosk 
+			* Mark as working on 1.12.1 on CurseForge - mezz 
+			* Remove the genetics dependency on botany-api - mezz 
+			* Fix a broken translation format string - mezz 
+			* Fix cases where we use the Forestry log - mezz 
+			* Move the apiarist database out of genetics and in to extrabees - mezz 
+			* Remove extrabees-api - mezz 
+			* Remove genetics dependency on extrabees - mezz 
+			* Untangle the Genetics Analyst from the other modules - mezz 
+			* Clean Up Extra Trees Planks - Nedelosk 
+			* Clean Up Extra Trees - Nedelosk 
+			* Clean Up StyleSheets - Nedelosk 
+			* Create punnett stylesheet json file - Nedelosk 
+			* Clean Up Stylesheet loading - Nedelosk 
+			* Move Tree Breeding System - Nedelosk 
+			* Split "api" into one api module for every module - mezz 
+			* Fix missing core api from output jar - mezz 
+			* Make core only depend on its own api, nothing else - mezz 
+			* Clean up IBorder - mezz 
+			* Remove Unused Import - Nedelosk 
+			* Clean Up Gui - Nedelosk 
+			* Clean up EnumFlowerColor - mezz 
+			* Update Readme.md - Nedelosk 
+			* Fix #261 Ceramic block issues - Nedelosk 
+			* Clean Up Cocktail Liquid - Nedelosk 
+			* Clean Up Fluids - Nedelosk 
+			* Clean Up Extra Trees Modules - Nedelosk 
+			* Fix Extra Trees Config property - Nedelosk 
+			* Remove duplicated mcmod.info files - Nedelosk 
+			* Add config handler to the module system - Nedelosk 
+			* Move Mutation Item Registration to the Mutation Handler - Nedelosk 
+			* Fix #258 Crash With Thermal Dynamics - Nedelosk 
+			* Fix Hive Name - Nedelosk 
+			* Clean Up Extra Bee Products - Nedelosk 
+			* Fix #259 All Hives drop the same bee - Nedelosk 
+			* Fix #259 All Hives drop the same bee - Nedelosk 
+			* Fix design item models - Nedelosk 
+			* Split mcmod.info and add logos - Nedelosk 
 
 	Biomes O' Plenty (went from BiomesOPlenty-1.12.2-7.0.1.2310-universal.jar to BiomesOPlenty-1.12.2-7.0.1.2312-universal.jar):
 		1.12.2-7.0.1.2312:
@@ -448,6 +496,13 @@ Updated:
 			1.12 Exclusive Changes
 
 			 * Fixed MV Exchanger requiring Tier 3 core instead of Tier 2 in hard mode, closes [#43](https://github.com/JackyyTV/Exchangers/issues/43) 
+			General Changes
+
+			 * Completely implemented support for Holding and Unbreaking enchant, closes [#37](https://github.com/JackyyTV/Exchangers/issues/37) 
+			 * Fixed rendering issue with Light Level Overlay Reloaded, closes [#44](https://github.com/JackyyTV/Exchangers/issues/44) 
+			 * Rewritten GUI and render overlay, hopefully should resolve a lot of OpenGL conflicts with different mods 
+			 * Render overlay now turns green when selecting a valid block and turns red when selecting an invalid block 
+			 * Minor changes and code cleanups 
 		Exchangers-1.12.2-2.6.1.jar:
 			 * 
 			Added a Silk Touch mode config option, if Silk Touch mode is disabled, players may enchant the Exchangers with Silk Touch to achieve Silk Touching on Exchangers or Fortune to get additional drops
@@ -487,6 +542,17 @@ Updated:
 			 * Fixed error messages not showing up on servers, closes [#35](https://github.com/JackyyTV/Exchangers/issues/35) 
 			 * Added Blockcraftery blocks to global whitelist, closes [#38](https://github.com/JackyyTV/Exchangers/issues/38) 
 			 * Moved error messages to use the vanilla status messages, so they don't spam the ingame chat 
+			General Changes
+
+			 * Added Holding Enchant support for [#37](https://github.com/JackyyTV/Exchangers/issues/37), currently only works on 1.10.2 and 1.11.2, no idea why it's not working on 1.12 yet 
+			 * Fixed blockstate issues with selected blocks, closes [#39](https://github.com/JackyyTV/Exchangers/issues/39) 
+			 * Added a config option to allow custom whitelist for blocks 
+			 * Added a config option to allow OreDict circuits being used in Mekanism Exchanger recipes 
+			 * Improved tooltips and error messages 
+			 * Added some cool stuff for Patreon / Twitch subs 
+			 * Updated Polish translation and added Brazilian Portuguese translation, closes [#34](https://github.com/JackyyTV/Exchangers/pull/34) and [#40](https://github.com/JackyyTV/Exchangers/pull/40) 
+			 * Added jar signing 
+			 * Package name refactors (me.jacky1356400.exchangers -> jackyy.exchangers) 
 
 	Extra Utilities (went from Extra Utilities 2 - 1.12 - 1.6.8 to Extra Utilities 2 - 1.12 - 1.7.2):
 		Extra Utilities 2 - 1.12 - 1.7.2:
@@ -518,64 +584,60 @@ Updated:
 			- Bumped version to 0.4.5.45
 
 	Forestry (went from forestry_1.12.2-5.7.0.215.jar to forestry_1.12.2-5.7.0.232.jar):
-		Retrieved from forestry_1.12.2-5.7.0.215.jar and forestry_1.12.2-5.7.0.232.jar's changelogs:
-			 Please help the Forestry project by [reporting issues here.](https://github.com/ForestryMC/ForestryMC/issues)
-
-			Current release 5.7.0.232
-
-			 * Adds dimension blacklist for hive generation. - phillipasmith1995 
-			 * Adds dimension blacklist for hive generation. - phillipasmith1995 
-			 * Adds dimension blacklist for hive generation. - phillipasmith1995 
-			 * Move the worktable into a separate module - Nedelosk 
-			 * Should be all of them (hopefully) - temp1011 
-			 * Add power config for analyzer - temp1011 
-			 * Fix #1061 Squeezer is very "liberal" regarding oredict in Recipes - Nedelosk 
-			 * Update Lang Git-Module - Nedelosk 
-			 * Fix #1937 Backpacks do not hold previously defined items - Nedelosk 
-			 * Fix #1399 Add Hive Generation Blacklist - Nedelosk 
-			 * Fix #1884 Tin can / wax capsule cannot pick up fluid blocks in world - Nedelosk 
-			 * Fix Crate Registration - Nedelosk 
-			 * Fix #1916 Client Crash with new version - Nedelosk 
-			 * Fix #1874 Crash when adding bee to BQM quest / chestloot - Nedelosk 
-			 * Fix #1920 Crate registration only on client side - Nedelosk 
-			 * No biome check - temp1011 
-			 * Fix #1919 Butterfly Model throws NullPointerException - Nedelosk 
-			 * Improve Database Recipe - Nedelosk 
-			 * Fix hive flammability Hive placed in the overworld burned whereas hive placed in nether did not in my tests. Hopefully this works better. - temp1011 
-			 * Fix #1932 Client Tile Updates Depending On Apiculture Module - Nedelosk 
-			 * Woops - temp1011 
-			 * add damage option to hives based on config - temp1011 
-			 * update config in apiculture - temp1011 
-			 * make non hellish hives flammable - temp1011 
-			 * Fix "Invalid property value detected" error logs from Buildcraft - mezz 
-			 * Fix #1918 Fix #1912 packet handler issue with latest Forge (14.23.1.2574+) - Nedelosk 
-			 * Fix Broken Sockets - Nedelosk 
-			 * Fix #1907 Electric engine doesn't update configuration properly - Nedelosk 
-			 * Fix #1901 Custom Backpack Model Registration - Nedelosk 
-			 * Fix #1906 Willow leaves can be used to create an x-ray - Nedelosk 
-			 * Fix resurrected ender dragons having no AI (#1908) - Remy A 
-			 * Revert "Slightly improve render performance of genetic items (bee, trees, etc)" This reverts commit 3df3d9121e51fca16e8a02b19ddb8e1a2b1d5bc6. - mezz 
-			 * Fix #1893 False Module Container ID - Nedelosk 
-			 * Slightly improve render performance of genetic items (bee, trees, etc) - mezz 
-			 * Stop viscous fluids from making water flowing sounds - mezz 
-			 * Fix #1890 NPE with Quark - Nedelosk 
-			 * Fix backward compatibility - Nedelosk 
-			 * Clean Up Module System - Nedelosk 
-			 * Fix Module System - Nedelosk 
-			 * Fix Api - Nedelosk 
-			 * Improve Module System - Nedelosk 
-			 * Fix GreenhouseEventHandler - Nedelosk 
-			 * Change the plugin system to a module system and split up modules -Changed plugin system to a module -Renamed forestry plugins to modules -Mod integration plugins are still called plugins -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage block for individuals -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk 
-			 * Update Lang - Nedelosk 
-			 * Move some classes to the api and fix broken api classes - Nedelosk 
-			 * Remove experimental code - Nedelosk 
-			 * Remove unused resources - Nedelosk 
-			 * Change the plugin system to a module system and slit up modules -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage for individuals -Added a gui element system to improve the alyzer api -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk 
-			 * Fix #1866 Block State Interaction Issues With Pokecube and Forestry - Nedelosk 
-			 * Fix Mystical Agriculture Inferium Seeds and update Integration - Nedelosk 
-			 * Fix #1860 Mystical Agriculture Integration (Could not find item) - Nedelosk 
-			 * Fix #1856 Non Glass Fluids in Thermionic Fabricator are not getting used up. - Nedelosk 
-			 * Fix #1863 Bottler does not empty bottles - Nedelosk 
+		5.7.0:
+			* Adds dimension blacklist for hive generation. - phillipasmith1995 
+			* Adds dimension blacklist for hive generation. - phillipasmith1995 
+			* Adds dimension blacklist for hive generation. - phillipasmith1995 
+			* Move the worktable into a separate module - Nedelosk 
+			* Should be all of them (hopefully) - temp1011 
+			* Add power config for analyzer - temp1011 
+			* Fix #1061 Squeezer is very "liberal" regarding oredict in Recipes - Nedelosk 
+			* Update Lang Git-Module - Nedelosk 
+			* Fix #1937 Backpacks do not hold previously defined items - Nedelosk 
+			* Fix #1399 Add Hive Generation Blacklist - Nedelosk 
+			* Fix #1884 Tin can / wax capsule cannot pick up fluid blocks in world - Nedelosk 
+			* Fix Crate Registration - Nedelosk 
+			* Fix #1916 Client Crash with new version - Nedelosk 
+			* Fix #1874 Crash when adding bee to BQM quest / chestloot - Nedelosk 
+			* Fix #1920 Crate registration only on client side - Nedelosk 
+			* No biome check - temp1011 
+			* Fix #1919 Butterfly Model throws NullPointerException - Nedelosk 
+			* Improve Database Recipe - Nedelosk 
+			* Fix hive flammability Hive placed in the overworld burned whereas hive placed in nether did not in my tests. Hopefully this works better. - temp1011 
+			* Fix #1932 Client Tile Updates Depending On Apiculture Module - Nedelosk 
+			* Woops - temp1011 
+			* add damage option to hives based on config - temp1011 
+			* update config in apiculture - temp1011 
+			* make non hellish hives flammable - temp1011 
+			* Fix "Invalid property value detected" error logs from Buildcraft - mezz 
+			* Fix #1918 Fix #1912 packet handler issue with latest Forge (14.23.1.2574+) - Nedelosk 
+			* Fix Broken Sockets - Nedelosk 
+			* Fix #1907 Electric engine doesn't update configuration properly - Nedelosk 
+			* Fix #1901 Custom Backpack Model Registration - Nedelosk 
+			* Fix #1906 Willow leaves can be used to create an x-ray - Nedelosk 
+			* Fix resurrected ender dragons having no AI (#1908) - Remy A 
+			* Revert "Slightly improve render performance of genetic items (bee, trees, etc)" This reverts commit 3df3d9121e51fca16e8a02b19ddb8e1a2b1d5bc6. - mezz 
+			* Fix #1893 False Module Container ID - Nedelosk 
+			* Slightly improve render performance of genetic items (bee, trees, etc) - mezz 
+			* Stop viscous fluids from making water flowing sounds - mezz 
+			* Fix #1890 NPE with Quark - Nedelosk 
+			* Fix backward compatibility - Nedelosk 
+			* Clean Up Module System - Nedelosk 
+			* Fix Module System - Nedelosk 
+			* Fix Api - Nedelosk 
+			* Improve Module System - Nedelosk 
+			* Fix GreenhouseEventHandler - Nedelosk 
+			* Change the plugin system to a module system and split up modules -Changed plugin system to a module -Renamed forestry plugins to modules -Mod integration plugins are still called plugins -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage block for individuals -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk 
+			* Update Lang - Nedelosk 
+			* Move some classes to the api and fix broken api classes - Nedelosk 
+			* Remove experimental code - Nedelosk 
+			* Remove unused resources - Nedelosk 
+			* Change the plugin system to a module system and slit up modules -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage for individuals -Added a gui element system to improve the alyzer api -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk 
+			* Fix #1866 Block State Interaction Issues With Pokecube and Forestry - Nedelosk 
+			* Fix Mystical Agriculture Inferium Seeds and update Integration - Nedelosk 
+			* Fix #1860 Mystical Agriculture Integration (Could not find item) - Nedelosk 
+			* Fix #1856 Non Glass Fluids in Thermionic Fabricator are not getting used up. - Nedelosk 
+			* Fix #1863 Bottler does not empty bottles - Nedelosk 
 
 	Gendustry (went from Gendustry 1.6.5.6 (MC 1.12.2) to Gendustry 1.6.5.8 (MC 1.12.2)):
 		Gendustry 1.6.5.8 (MC 1.12.2):
@@ -720,20 +782,18 @@ Updated:
 			* Add option to shift click in Player Simulator, Closes #73
 
 	Just Enough Items (JEI) (went from jei_1.12.2-4.8.5.132.jar to jei_1.12.2-4.8.5.138.jar):
-		Retrieved from jei_1.12.2-4.8.5.132.jar and jei_1.12.2-4.8.5.138.jar's changelogs:
-			Current release 4.8.5.138
-
-			 * Update zh_cn.lang (#1073) 
-			 * Improve tooltip message when item can't be crafted in player inventory 
-			 * Fix #1077 packet handler issue with latest Forge (14.23.1.2574+) 
-			 * Update sv_se.lang (#1070) 
-			 * Fix #1066 Item Hiding Mode not working with mouse clicks 
-			 * Use ClientConnectedToServerEvent instead of EntityJoinWorldEvent 
-			 * Check for disabled brewing recipes using a BrewingRecipeRegistry#hasOutput (#1065) 
-			 * Close #953 Hide item from client if it doesn't exist in the server 
-			 * Only subscribe to ClientTickEvent when needed 
-			 * Update Polish translation (#1062) 
-			 * Fix #1055 Crash when searching using OR(|) operator 
+		4.8.5:
+			* Update zh_cn.lang (#1073) 
+			* Improve tooltip message when item can't be crafted in player inventory 
+			* Fix #1077 packet handler issue with latest Forge (14.23.1.2574+) 
+			* Update sv_se.lang (#1070) 
+			* Fix #1066 Item Hiding Mode not working with mouse clicks 
+			* Use ClientConnectedToServerEvent instead of EntityJoinWorldEvent 
+			* Check for disabled brewing recipes using a BrewingRecipeRegistry#hasOutput (#1065) 
+			* Close #953 Hide item from client if it doesn't exist in the server 
+			* Only subscribe to ClientTickEvent when needed 
+			* Update Polish translation (#1062) 
+			* Fix #1055 Crash when searching using OR(|) operator 
 
 	MCMultiPart (went from MCMultiPart 2.4.0 to MCMultiPart 2.4.1):
 		MCMultiPart 2.4.1:
@@ -1283,6 +1343,16 @@ Updated:
 			* Tools can be renamed anytime again!
 			* Gasses now render upside down
 			* TiC Slime Blocks now work with pistons
+
+			Bugfixes:
+
+			* Fix last vanilla-type arrow not being fired with TiC bows
+			* Crafting stations ignore each others inventories, preventing freezes
+			* On-Hurt Traits (cactus) don't deal damage when you're receiving reflected damage anymore (guardians/other cactus users), preventing a crash
+			* Remove impossible to craft casting recipes that showed up in JEI
+			* Fix Magma Slime Islands cascading worldgen
+			* Fix Slime Boots causing fall damage on land depending on where you originally started (you take less damage now too)
+			* Same for congealed slime blocks
 		TConstruct-1.12-2.8.1.49.jar:
 			2.8.0.49 Changes:
 
@@ -1293,6 +1363,46 @@ Updated:
 			- Broken Kamas don't shear anymore
 
 			- Elecrum Trait description updated
+
+			2.8.0.45 Changes:
+
+			New
+
+			- Casting Channels are back, and better than ever! Thanks KnightMiner! (also check out ceramics, where they were tested)
+			- Kamas are the little brother of scythes, working as shears as well as mowing through plants and crops
+			- Items in the side-inventory are used for shift-clicking recipies via JEI, again! (Yes, technically not new, but.. new! Again!)
+			- Chisel blocks should render correctly now
+
+			- New ore preference config. This is a list of mod IDs to prefer for recipe outputs from the ore dictionary, such as casting recipes.
+
+			Material rebalancing
+
+			- Pig-Iron now is a medium-tier material, between iron and steel, and a better handle. It's much cheaper and keeps you topped off with food now. It uses clay instead of emerald now, but more iron. Blood also is easier to get now.
+			- Cactus now always returns damage when you're holding a cactus tool. It returns more damage when blocking
+			- Flammable now also sets enemies on fire when you're not blocking (aka when getting hit)
+			- Prismarine now always has Aquadynamic and a very minor damage buff
+			- Electrums trait now works for both combat and mining. You also gain charge on hitting enemies or breaking blocks. When breaking a block while charged you get a short boost of Haste(mining speed), when hitting an enemy you get a short boost of speed in addition to the bonus damage
+			- Lead has more durability and has a new "Heavy" trait which prevents knockback
+			- Minor nerf to bronze trait
+			- Silvers holy trait now applies weakness to undead on hit, and deals more damage
+			- Netherracks damage bonus doubled and also applies to tool heads/blades now
+
+			Changes
+
+			- Glowing modifier now also works from the offhand
+			- In general traits/modifiers that require no player interaction also work in the offhand
+			- Blood is more readily available now
+			- Multiblock controllers can now be placed up to 64 blocks above the floor (was 9)
+			- As long as a smeltery or tank isn't completely full there will always be an area at the top to check the remaining capacity
+
+			Bugfixes
+
+			- Probably fixed the crash that sometimes happens with blood (and in very rare cases: other fluids) in the smeltery!
+			- Obsidian bolts head no head-texture
+			- Fix tooltips on the materials when inspecting bolts
+			- Fix snow setting on slime fluid (or rather, slime fluid being counted as solid)
+			- Fixed a hit (sound) issue with projectiles stuck in blocks
+			- Many small code, localization and visual fixes
 		TConstruct-1.12-2.8.0.45.jar:
 			New
 
@@ -1453,4 +1563,4 @@ Updated:
 Removed:
 	- Inventory Sorter
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.4)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.5)

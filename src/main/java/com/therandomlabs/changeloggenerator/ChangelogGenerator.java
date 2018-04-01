@@ -8,6 +8,7 @@ import com.therandomlabs.curseapi.minecraft.Mod;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ExtendedCurseManifest;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ManifestComparer;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ManifestComparer.VersionChange;
+import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
@@ -17,8 +18,9 @@ public final class ChangelogGenerator {
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
+	//TODO command line
 	public static void main(String[] args) throws Exception {
-		//TODO more args
+		ManifestComparer.registerModSpecificHandler(CGModSpecificHandler.INSTANCE);
 
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";

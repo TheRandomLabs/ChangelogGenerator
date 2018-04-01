@@ -17,10 +17,12 @@ public final class ChangelogGenerator {
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
+	static {
+		ManifestComparer.registerModSpecificHandler(CGModSpecificHandler.INSTANCE);
+	}
+
 	//TODO command line
 	public static void main(String[] args) throws Exception {
-		ManifestComparer.registerModSpecificHandler(CGModSpecificHandler.INSTANCE);
-
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
 

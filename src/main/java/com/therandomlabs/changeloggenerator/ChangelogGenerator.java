@@ -8,7 +8,6 @@ import com.therandomlabs.curseapi.minecraft.Mod;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ExtendedCurseManifest;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ManifestComparer;
 import com.therandomlabs.curseapi.minecraft.modpack.manifest.ManifestComparer.VersionChange;
-import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.misc.StringUtils;

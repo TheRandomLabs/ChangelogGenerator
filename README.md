@@ -15,3 +15,7 @@ To use this with Gradle:
 	compile "com.github.TheRandomLabs:ChangelogGenerator:master-SNAPSHOT"
 
 Example changelogs can be found at changelog.txt and shortchangelog.txt in this repository.
+
+Planned features:
+* Better mezz support
+* Proper command-line arguments

@@ -21,6 +21,8 @@ public final class ChangelogGenerator {
 		ManifestComparer.registerModSpecificHandler(CGModSpecificHandler.INSTANCE);
 	}
 
+	private ChangelogGenerator() {}
+
 	//TODO command line
 	public static void main(String[] args) throws Exception {
 		final String oldFile = args.length > 0 ? args[0] : "old.json";

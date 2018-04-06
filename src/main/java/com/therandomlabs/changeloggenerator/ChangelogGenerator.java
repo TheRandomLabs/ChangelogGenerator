@@ -99,7 +99,6 @@ public final class ChangelogGenerator {
 		for(Map.Entry<VersionChange, Map<String, String>> changelog : changelogs.entrySet()) {
 			final VersionChange vc = changelog.getKey();
 
-			//TODO date support
 			string.append(NEWLINE).append("\t").append(vc.getModTitle()).
 					append(" (went from ").append(vc.getOldFileName()).append(" to ").
 					append(vc.getNewFileName()).append("):");
@@ -110,6 +109,9 @@ public final class ChangelogGenerator {
 
 				final String[] lines = StringUtils.NEWLINE.split(modChangelog.getValue());
 				for(String line : lines) {
+					//Remove unneeded whitespace at the end of the line
+					line = StringUtils.trimTrailing(line);
+
 					string.append(NEWLINE);
 
 					if(!line.trim().isEmpty()) {

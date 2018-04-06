@@ -24,6 +24,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	private static final String VIEW_CHANGELOG_AT = ManifestComparer.VIEW_CHANGELOG_AT;
 
 	private static final int SERVEROBSERVER_ID = 279375;
+	private static final int FOAMFIX_ID = 278494;
 	private static final int BIOMES_O_PLENTY_ID = 220318;
 	private static final int ACTUALLY_ADDITIONS_ID = 228404;
 
@@ -80,15 +81,28 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 
 	@Override
 	public void filterFileList(CurseFileList files, CurseFile oldFile, CurseFile newFile) {
-		//ServerObserver Universal
-		if(oldFile.project().id() == SERVEROBSERVER_ID) {
-			if(!oldFile.name().endsWith(" Universal") &&
-					!newFile.name().endsWith(" Universal")) {
-				files.removeIf(file -> file.name().endsWith(" Universal"));
-			} else if(oldFile.name().endsWith(" Universal") &&
-					newFile.name().endsWith(" Universal")) {
-				files.removeIf(file -> !file.name().endsWith(" Universal"));
-			}
+		switch(oldFile.project().id()) {
+			case SERVEROBSERVER_ID:
+				final String UNIVERSAL = " Universal";
+
+				if(newFile.name().endsWith(UNIVERSAL)) {
+					files.removeIf(file -> !file.name().endsWith(UNIVERSAL));
+				} else {
+					files.removeIf(file -> file.name().endsWith(UNIVERSAL));
+				}
+
+				break;
+
+			case FOAMFIX_ID:
+				final String LAWFUL = "Lawful";
+
+				if(oldFile.name().contains(LAWFUL)) {
+					files.removeIf(file -> !file.name().contains(LAWFUL));
+				} else {
+					files.removeIf(file -> file.name().contains(LAWFUL));
+				}
+
+				break;
 		}
 	}
 

@@ -81,7 +81,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 
 	@Override
 	public void filterFileList(CurseFileList files, CurseFile oldFile, CurseFile newFile) {
-		switch(oldFile.project().id()) {
+		switch(oldFile.projectID()) {
 			case SERVEROBSERVER_ID:
 				final String UNIVERSAL = " Universal";
 
@@ -143,7 +143,8 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	}
 
 	@Override
-	public String modifyChangelog(CurseFile oldFile, CurseFile newFile, String changelog) {
+	public String modifyChangelog(CurseFile oldFile, CurseFile newFile, String changelog)
+			throws CurseException {
 		if(oldFile.project().owner().username().equals("McJty")) {
 			//McJty's changelogs' first two lines are not needed
 			final String[] lines = StringUtils.splitNewline(changelog);

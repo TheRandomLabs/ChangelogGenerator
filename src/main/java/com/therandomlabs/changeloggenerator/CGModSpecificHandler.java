@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import com.therandomlabs.curseapi.CurseException;
+import com.therandomlabs.curseapi.cursemeta.CurseMeta;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.cmanifest.ManifestComparer;
@@ -16,6 +17,7 @@ import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.misc.StringUtils;
+import com.therandomlabs.utils.throwable.ThrowableHandling;
 
 public final class CGModSpecificHandler implements ManifestComparer.ModSpecificHandler {
 	public static final CGModSpecificHandler INSTANCE = new CGModSpecificHandler();
@@ -56,7 +58,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		final int id = project.id();
 
 		if(id == BIOMES_O_PLENTY_ID) {
-			return new ImmutableList<>(newFile.urlString());
+			return new ImmutableList<>(getChangelogURLString(newFile));
 		}
 
 		if(id == ACTUALLY_ADDITIONS_ID) {
@@ -73,7 +75,10 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		}
 
 		if(owner.equals("bre2l") || owner.equals("zmaster587")) {
-			return new ImmutableList<>(newFile.urlString(), oldFile.urlString());
+			return new ImmutableList<>(
+					getChangelogURLString(newFile),
+					getChangelogURLString(oldFile)
+			);
 		}
 
 		return null;
@@ -122,21 +127,23 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 
 		final String owner = project.owner().username();
 
-		if(owner.equals("TeamCoFH")) {
-			try {
+		try {
+			if(owner.equals("TeamCoFH")) {
 				final Map<String, String> changelog = getCoFHChangelog(oldFile, newFile, urls);
 				if(changelog != null) {
 					return changelog;
 				}
-			} catch(ArrayIndexOutOfBoundsException ignored) {}
-		}
+			}
 
-		if(owner.equals("bre2el")) {
-			return getBre2elChangelog(oldFile, newFile, urls);
-		}
+			if(owner.equals("bre2el")) {
+				return getBre2elChangelog(oldFile, newFile, urls);
+			}
 
-		if(newFile.uploader().equals("mezz")) {
-			return getMezzChangelog(oldFile, newFile, urls);
+			if(newFile.uploader().equals("mezz")) {
+				return getMezzChangelog(oldFile, newFile, urls);
+			}
+		} catch(IndexOutOfBoundsException | NullPointerException | NumberFormatException ex) {
+			ThrowableHandling.handleWithoutExit(ex);
 		}
 
 		return null;
@@ -195,9 +202,10 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 
 				if(changelogStarted) {
 					String entryString = entry.toString();
-					entryString = StringUtils.removeLastChars(entryString,
-							NEWLINE.length());
+					entryString = StringUtils.removeLastChars(entryString, NEWLINE.length());
+
 					changelog.put(version, entryString);
+
 					entry.setLength(0);
 				}
 
@@ -461,5 +469,14 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		}
 
 		return changelog;
+	}
+
+	private static URL getChangelogURL(CurseFile file) throws CurseException {
+		return file.url() == null ? file.url() :
+				CurseMeta.getChangelogURL(file.projectID(), file.id());
+	}
+
+	private static String getChangelogURLString(CurseFile file) throws CurseException {
+		return getChangelogURL(file).toString();
 	}
 }

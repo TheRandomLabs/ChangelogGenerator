@@ -1091,7 +1091,7 @@ Updated:
 			also fixed another bug I found with ItemScroller
 
 Downgraded:
-	Unknown Title (went from DiscordSuite-2.0.0.jar to [Archived file]):
+	DiscordSuite (went from DiscordSuite-2.0.0.jar to [Archived file]):
 		DiscordSuite-2.0.0.jar:
 			No changelog provided.
 

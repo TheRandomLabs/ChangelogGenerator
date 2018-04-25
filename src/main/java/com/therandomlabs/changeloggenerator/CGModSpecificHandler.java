@@ -35,13 +35,6 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	private CGModSpecificHandler() {}
 
 	@Override
-	public boolean shouldPreloadFiles(int projectID, CurseProject project) {
-		final String owner = project == null ? null : project.owner().username();
-		return projectID != BIOMES_O_PLENTY_ID && projectID != ACTUALLY_ADDITIONS_ID &&
-				!"TeamCoFH".equals(owner) && !"bre2el".equals(owner) && !"mezz".equals(owner);
-	}
-
-	@Override
 	public boolean shouldPreloadOnlyNewFile(int projectID, CurseProject project) {
 		final String owner = project == null ? null : project.owner().username();
 		return projectID == BIOMES_O_PLENTY_ID || "bre2el".equals(owner) || "mezz".equals(owner);
@@ -114,21 +107,21 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 			return getAAChangelog(oldFile, newFile, urls);
 		}
 
-		final String owner = project.owner().username();
+		final String owner = project == null ? null : project.owner().username();
 
 		try {
-			if(owner.equals("TeamCoFH")) {
+			if("TeamCoFH".equals(owner)) {
 				final Map<String, String> changelog = getCoFHChangelog(oldFile, newFile, urls);
 				if(changelog != null) {
 					return changelog;
 				}
 			}
 
-			if(owner.equals("bre2el")) {
+			if("bre2el".equals(owner)) {
 				return getBre2elChangelog(oldFile, newFile, urls);
 			}
 
-			if(newFile.uploader().equals("mezz")) {
+			if("mezz".equals(newFile.uploader())) {
 				return getMezzChangelog(oldFile, newFile, urls);
 			}
 		} catch(IndexOutOfBoundsException | NullPointerException | NumberFormatException ex) {
@@ -141,7 +134,13 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	@Override
 	public String modifyChangelog(CurseFile oldFile, CurseFile newFile, String changelog)
 			throws CurseException {
-		if(oldFile.project().owner().username().equals("McJty")) {
+		final CurseProject project = oldFile.project();
+
+		if(project == null) {
+			return changelog;
+		}
+
+		if("McJty".equals(project.owner().username())) {
 			//McJty's changelogs' first two lines are not needed
 			final String[] lines = StringUtils.splitNewline(changelog);
 			return ArrayUtils.join(ArrayUtils.subArray(lines, 2), NEWLINE);

@@ -110,12 +110,10 @@ public final class ChangelogGenerator {
 				final String[] lines = StringUtils.NEWLINE.split(modChangelog.getValue());
 				for(String line : lines) {
 					//Remove unneeded whitespace at the end of the line
-					line = StringUtils.trimTrailing(line);
-
 					string.append(NEWLINE);
 
 					if(!line.trim().isEmpty()) {
-						string.append("\t\t\t").append(line);
+						string.append("\t\t\t").append(StringUtils.trimTrailing(line));
 					}
 				}
 			}

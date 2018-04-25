@@ -41,22 +41,21 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	}
 
 	@Override
-	public List<String> getURLsToPreload(CurseFile oldFile, CurseFile newFile)
+	public List<String> getURLsToPreload(int projectID, CurseFile oldFile, CurseFile newFile)
 			throws CurseException {
 		final CurseProject project = oldFile.project();
-		final int id = project.id();
 
-		if(id == BIOMES_O_PLENTY_ID) {
+		if(projectID == BIOMES_O_PLENTY_ID) {
 			return new ImmutableList<>(ManifestComparer.getChangelogURLString(newFile));
 		}
 
-		if(id == ACTUALLY_ADDITIONS_ID) {
+		if(projectID == ACTUALLY_ADDITIONS_ID) {
 			return new ImmutableList<>(ACTUALLY_ADDITIONS_CHANGELOG);
 		}
 
-		final String owner = project.owner().username();
+		final String owner = project == null ? null : project.owner().username();
 
-		if(owner.equals("TeamCoFH")) {
+		if("TeamCoFH".equals(owner)) {
 			final String url = getCoFHURL(newFile);
 			if(url != null) {
 				return new ImmutableList<>(url);
@@ -67,8 +66,9 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	}
 
 	@Override
-	public void filterFileList(CurseFileList files, CurseFile oldFile, CurseFile newFile) {
-		switch(oldFile.projectID()) {
+	public void filterFileList(int projectID, CurseFileList files, CurseFile oldFile,
+			CurseFile newFile) {
+		switch(projectID) {
 			case SERVEROBSERVER_ID:
 				final String UNIVERSAL = " Universal";
 
@@ -94,16 +94,15 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	}
 
 	@Override
-	public Map<String, String> getChangelogs(CurseFile oldFile, CurseFile newFile, boolean urls)
-			throws CurseException, IOException {
+	public Map<String, String> getChangelogs(int projectID, CurseFile oldFile, CurseFile newFile,
+			boolean urls) throws CurseException, IOException {
 		final CurseProject project = oldFile.project();
-		final int id = project.id();
 
-		if(id == BIOMES_O_PLENTY_ID) {
+		if(projectID == BIOMES_O_PLENTY_ID) {
 			return getBoPChangelog(oldFile, newFile, urls);
 		}
 
-		if(id == ACTUALLY_ADDITIONS_ID) {
+		if(projectID == ACTUALLY_ADDITIONS_ID) {
 			return getAAChangelog(oldFile, newFile, urls);
 		}
 
@@ -132,8 +131,8 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	}
 
 	@Override
-	public String modifyChangelog(CurseFile oldFile, CurseFile newFile, String changelog)
-			throws CurseException {
+	public String modifyChangelog(int projectID, CurseFile oldFile, CurseFile newFile,
+			String changelog) throws CurseException {
 		final CurseProject project = oldFile.project();
 
 		if(project == null) {

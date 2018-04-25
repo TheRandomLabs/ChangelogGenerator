@@ -166,7 +166,7 @@ Updated:
 		View changelog at:
 			https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.3.2673/forge-1.12.2-14.23.3.2673-changelog.txt
 
-	NuclearCraft (went from [Archived file] to NuclearCraft-2.10j--1.12.2):
+	NuclearCraft (went from NuclearCraft-2.10f--1.12.2 to NuclearCraft-2.10j--1.12.2):
 		NuclearCraft-2.10j--1.12.2:
 			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/226254/2553193
 		NuclearCraft-2.10i--1.12.2:
@@ -175,6 +175,8 @@ Updated:
 			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/226254/2552538
 		NuclearCraft-2.10g--1.12.2:
 			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/226254/2552426
+		NuclearCraft-2.10f--1.12.2:
+			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/226254/2550819
 
 	Ore Excavation (went from OreExcavation-1.4.113.jar to OreExcavation-1.4.118.jar):
 		OreExcavation-1.4.118.jar:
@@ -225,7 +227,7 @@ Updated:
 			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/244559/2552069
 
 Downgraded:
-	DiscordSuite (went from DiscordSuite-2.0.0.jar to [Archived file]):
+	Unknown Title (went from DiscordSuite-2.0.0.jar to [Archived file]):
 		DiscordSuite-2.0.0.jar:
 			No changelog provided.
 
@@ -234,4 +236,4 @@ Removed:
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.6)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.6.1)

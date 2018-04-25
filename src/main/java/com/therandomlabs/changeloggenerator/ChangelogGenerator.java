@@ -11,9 +11,10 @@ import com.therandomlabs.curseapi.minecraft.cmanifest.ManifestComparer.VersionCh
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
+import com.therandomlabs.utils.network.NetworkUtils;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.6.1";
+	public static final String VERSION = "1.6.2";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
@@ -25,6 +26,8 @@ public final class ChangelogGenerator {
 
 	//TODO command line
 	public static void main(String[] args) throws Exception {
+		NetworkUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator");
+
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
 

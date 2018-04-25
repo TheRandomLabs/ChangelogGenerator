@@ -8,12 +8,7 @@ repositories {
 }
 
 dependencies {
-	compile "com.github.jhy:jsoup:master-SNAPSHOT"
-	compile "com.github.google:gson:gson-parent-2.8.2"
-	compile files("../../TRLUtils/TRLUtils/out/production/classes")
-	compile files("../CurseAPI/out/production/classes")
-	compile files("../CurseAPI-Minecraft/out/production/classes")
-	//compile "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
+	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

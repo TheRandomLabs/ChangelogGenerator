@@ -58,7 +58,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		final int id = project.id();
 
 		if(id == BIOMES_O_PLENTY_ID) {
-			return new ImmutableList<>(getChangelogURLString(newFile));
+			return new ImmutableList<>(ManifestComparer.getChangelogURLString(newFile));
 		}
 
 		if(id == ACTUALLY_ADDITIONS_ID) {
@@ -72,13 +72,6 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 			if(url != null) {
 				return new ImmutableList<>(url);
 			}
-		}
-
-		if(owner.equals("bre2l") || owner.equals("zmaster587")) {
-			return new ImmutableList<>(
-					getChangelogURLString(newFile),
-					getChangelogURLString(oldFile)
-			);
 		}
 
 		return null;
@@ -255,7 +248,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(url) {
-			changelog.put(VIEW_CHANGELOG_AT, newFile.urlString());
+			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getChangelogURLString(newFile));
 			return changelog;
 		}
 
@@ -359,7 +352,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(url) {
-			changelog.put(VIEW_CHANGELOG_AT, newFile.urlString());
+			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getChangelogURLString(newFile));
 			return changelog;
 		}
 
@@ -420,7 +413,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(url) {
-			changelog.put(VIEW_CHANGELOG_AT, newFile.urlString());
+			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getChangelogURLString(newFile));
 			return changelog;
 		}
 
@@ -469,14 +462,5 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		}
 
 		return changelog;
-	}
-
-	private static URL getChangelogURL(CurseFile file) throws CurseException {
-		return file.url() == null ? file.url() :
-				CurseMeta.getChangelogURL(file.projectID(), file.id());
-	}
-
-	private static String getChangelogURLString(CurseFile file) throws CurseException {
-		return getChangelogURL(file).toString();
 	}
 }

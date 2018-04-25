@@ -7,7 +7,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import com.therandomlabs.curseapi.CurseException;
-import com.therandomlabs.curseapi.cursemeta.CurseMeta;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.cmanifest.ManifestComparer;
@@ -36,19 +35,16 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 	private CGModSpecificHandler() {}
 
 	@Override
-	public boolean shouldPreloadFiles(CurseProject project) {
-		final int id = project.id();
-		final String owner = project.owner().username();
-		return id != BIOMES_O_PLENTY_ID && id != ACTUALLY_ADDITIONS_ID &&
-				!owner.equals("TeamCoFH") && !owner.equals("bre21") &&
-				!owner.equals("mezz");
+	public boolean shouldPreloadFiles(int projectID, CurseProject project) {
+		final String owner = project == null ? null : project.owner().username();
+		return projectID != BIOMES_O_PLENTY_ID && projectID != ACTUALLY_ADDITIONS_ID &&
+				!"TeamCoFH".equals(owner) && !"bre2el".equals(owner) && !"mezz".equals(owner);
 	}
 
 	@Override
-	public boolean shouldPreloadOnlyNewFile(CurseProject project) {
-		final int id = project.id();
-		final String owner = project.owner().username();
-		return id == BIOMES_O_PLENTY_ID || owner.equals("bre21") || owner.equals("mezz");
+	public boolean shouldPreloadOnlyNewFile(int projectID, CurseProject project) {
+		final String owner = project == null ? null : project.owner().username();
+		return projectID == BIOMES_O_PLENTY_ID || "bre2el".equals(owner) || "mezz".equals(owner);
 	}
 
 	@Override

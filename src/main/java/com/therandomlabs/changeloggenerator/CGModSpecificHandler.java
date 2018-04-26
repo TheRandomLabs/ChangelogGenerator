@@ -386,7 +386,7 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		final String oldName = StringUtils.removeLastChars(version, 4);
 		String[] split = StringUtils.split(oldName, '_');
 
-		final String oldVersion;
+		String oldVersion;
 
 		if(split.length == 1) {
 			split = StringUtils.split(oldName, '-');
@@ -396,6 +396,9 @@ public final class CGModSpecificHandler implements ManifestComparer.ModSpecificH
 		}
 
 		split = StringUtils.split(oldVersion, '.');
+		if(split.length == 5) {
+			oldVersion = StringUtils.removeLastChars(oldVersion, split[3].length() + 1);
+		}
 		return StringUtils.removeLastChars(oldVersion, ArrayUtils.last(split).length() + 1);
 	}
 

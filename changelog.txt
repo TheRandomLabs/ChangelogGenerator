@@ -1050,7 +1050,7 @@ Updated:
 		5.3.12:
 			CHANGED:
 				-Adjusted insertion and extraction logic from various machine tanks.
-				-Potion refining now produces a bit more at each level, ending at 100 mB for level 5 and not 50.
+				-Potion refining now produces a bit more at each level, ending at 100 mB for level 5.
 
 	Thermal Foundation (went from ThermalFoundation-1.12.2-2.3.11.8-universal.jar to ThermalFoundation-1.12.2-2.3.12.10-universal.jar):
 		2.3.12:
@@ -1091,13 +1091,13 @@ Updated:
 			also fixed another bug I found with ItemScroller
 
 Downgraded:
-	DiscordSuite (went from DiscordSuite-2.0.0.jar to [Archived file]):
-		DiscordSuite-2.0.0.jar:
-			No changelog provided.
+	DiscordSuite (went from DiscordSuite-2.0.1.jar to DiscordSuite-2.0.0.jar):
+		DiscordSuite-2.0.1.jar:
+			Fix some curse packs having invalid information due to... things
 
 Removed:
 	- EDX Multipart
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.6.2)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.6.3)

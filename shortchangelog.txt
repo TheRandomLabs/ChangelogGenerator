@@ -227,13 +227,13 @@ Updated:
 			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/244559/2552069
 
 Downgraded:
-	DiscordSuite (went from DiscordSuite-2.0.0.jar to [Archived file]):
-		DiscordSuite-2.0.0.jar:
-			No changelog provided.
+	DiscordSuite (went from DiscordSuite-2.0.1.jar to DiscordSuite-2.0.0.jar):
+		DiscordSuite-2.0.1.jar:
+			https://cursemeta.dries007.net/api/v2/direct/v2GetChangeLog/282743/2540191
 
 Removed:
 	- EDX Multipart
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.6.2)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.6.3)

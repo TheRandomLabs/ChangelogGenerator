@@ -14,7 +14,7 @@ import com.therandomlabs.utils.misc.StringUtils;
 import com.therandomlabs.utils.network.NetworkUtils;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.6.2";
+	public static final String VERSION = "1.6.3";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 

@@ -9,7 +9,8 @@ import java.util.Map;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
-import com.therandomlabs.curseapi.minecraft.cmanifest.ManifestComparer;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ManifestComparer;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ModSpecificHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.DocumentUtils;
 import com.therandomlabs.utils.collection.ArrayUtils;
@@ -18,7 +19,7 @@ import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.misc.StringUtils;
 import com.therandomlabs.utils.throwable.ThrowableHandling;
 
-public final class CGModSpecificHandler implements ManifestComparer.ModSpecificHandler {
+public final class CGModSpecificHandler implements ModSpecificHandler {
 	public static final CGModSpecificHandler INSTANCE = new CGModSpecificHandler();
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;

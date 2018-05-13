@@ -1,20 +1,26 @@
 package com.therandomlabs.changeloggenerator;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import com.google.gson.JsonSyntaxException;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.minecraft.Mod;
-import com.therandomlabs.curseapi.minecraft.cmanifest.ExtendedCurseManifest;
-import com.therandomlabs.curseapi.minecraft.cmanifest.ManifestComparer;
-import com.therandomlabs.curseapi.minecraft.cmanifest.ManifestComparer.VersionChange;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.ExtendedMPManifest;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.CompareResults;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ManifestComparer;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.VersionChange;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.io.NetUtils;
 import com.therandomlabs.utils.misc.StringUtils;
+import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.6.5";
+	public static final String VERSION = "1.7";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
@@ -31,16 +37,49 @@ public final class ChangelogGenerator {
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
 
-		final ExtendedCurseManifest oldManifest = ExtendedCurseManifest.from(oldFile);
-		final ExtendedCurseManifest manifest = ExtendedCurseManifest.from(newFile);
+		final Path oldPath = getPath(oldFile);
+		final Path newPath = getPath(newFile);
 
-		final ManifestComparer.Results results = ManifestComparer.compare(oldManifest, manifest);
+		final ExtendedMPManifest oldManifest = getManifest(oldPath);
+		final ExtendedMPManifest manifest = getManifest(newPath);
+
+		final CompareResults results = ManifestComparer.compare(oldManifest, manifest);
 
 		NIOUtils.write(Paths.get("changelog.txt"), getChangelog(results, false));
 		NIOUtils.write(Paths.get("shortchangelog.txt"), getChangelog(results, true));
 	}
 
-	public static String getChangelog(ManifestComparer.Results results, boolean urls)
+	private static Path getPath(String stringPath) {
+		Path path = null;
+
+		try {
+			path = Paths.get(stringPath);
+			if(!Files.exists(path) || Files.isDirectory(path)) {
+				getLogger().error("Invalid path: " + stringPath);
+				System.exit(1);
+			}
+		} catch(InvalidPathException ex) {
+			getLogger().error("Invalid path: " + stringPath);
+			System.exit(1);
+		}
+
+		return path;
+	}
+
+	private static ExtendedMPManifest getManifest(Path path) throws IOException {
+		ExtendedMPManifest manifest = null;
+
+		try {
+			manifest = ExtendedMPManifest.from(path);
+		} catch(JsonSyntaxException ex) {
+			getLogger().error("Invalid JSON: " + path);
+			System.exit(1);
+		}
+
+		return manifest;
+	}
+
+	public static String getChangelog(CompareResults results, boolean urls)
 			throws CurseException, IOException {
 		final StringBuilder string = new StringBuilder();
 

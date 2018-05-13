@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import com.therandomlabs.curseapi.CurseException;
+import com.therandomlabs.curseapi.cursemeta.CurseMeta;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ManifestComparer;
@@ -411,7 +412,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(url) {
-			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getChangelogURLString(newFile));
+			changelog.put(VIEW_CHANGELOG_AT, getCurseForgeURL(newFile));
 			return changelog;
 		}
 
@@ -460,5 +461,10 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		}
 
 		return changelog;
+	}
+
+	private static String getCurseForgeURL(CurseFile file) throws CurseException {
+		return file.url() == null ?
+				CurseMeta.getChangelogURLString(file.projectID(), file.id()) : file.urlString();
 	}
 }

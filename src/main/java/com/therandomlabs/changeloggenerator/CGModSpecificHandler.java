@@ -48,7 +48,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		final CurseProject project = oldFile.project();
 
 		if(projectID == BIOMES_O_PLENTY_ID) {
-			return new ImmutableList<>(ManifestComparer.getChangelogURLString(newFile));
+			return new ImmutableList<>(ManifestComparer.getCurseForgeURL(newFile));
 		}
 
 		if(projectID == ACTUALLY_ADDITIONS_ID) {
@@ -244,7 +244,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(url) {
-			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getChangelogURLString(newFile));
+			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getCurseForgeURL(newFile));
 			return changelog;
 		}
 
@@ -348,7 +348,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(url) {
-			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getChangelogURLString(newFile));
+			changelog.put(VIEW_CHANGELOG_AT, ManifestComparer.getCurseForgeURL(newFile));
 			return changelog;
 		}
 
@@ -461,10 +461,5 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		}
 
 		return changelog;
-	}
-
-	private static String getCurseForgeURL(CurseFile file) throws CurseException {
-		return file.url() == null ?
-				CurseMeta.getChangelogURLString(file.projectID(), file.id()) : file.urlString();
 	}
 }

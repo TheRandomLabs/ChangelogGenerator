@@ -16,6 +16,7 @@ import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.VersionChange;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.io.NetUtils;
+import com.therandomlabs.utils.misc.Assertions;
 import com.therandomlabs.utils.misc.StringUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
@@ -39,6 +40,9 @@ public final class ChangelogGenerator {
 
 		final Path oldPath = getPath(oldFile);
 		final Path newPath = getPath(newFile);
+
+		Assertions.fileExists(oldPath);
+		Assertions.fileExists(newPath);
 
 		final ExtendedMPManifest oldManifest = getManifest(oldPath);
 		final ExtendedMPManifest manifest = getManifest(newPath);

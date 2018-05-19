@@ -8,11 +8,13 @@ import java.nio.file.Paths;
 import java.util.Map;
 import com.google.gson.JsonSyntaxException;
 import com.therandomlabs.curseapi.CurseException;
+import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.Mod;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.CompareResults;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.ExtendedMPManifest;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.CompareResults;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ManifestComparer;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.VersionChange;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.VersionChange;
+import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.io.NetUtils;
@@ -21,7 +23,7 @@ import com.therandomlabs.utils.misc.StringUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.7";
+	public static final String VERSION = "1.8";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
@@ -34,6 +36,11 @@ public final class ChangelogGenerator {
 	//TODO command line
 	public static void main(String[] args) throws Exception {
 		NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator");
+		run(args);
+	}
+
+	public static void run(String[] args) throws CurseException, IOException {
+		getLogger().disableDebug();
 
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
@@ -51,6 +58,20 @@ public final class ChangelogGenerator {
 
 		NIOUtils.write(Paths.get("changelog.txt"), getChangelog(results, false));
 		NIOUtils.write(Paths.get("shortchangelog.txt"), getChangelog(results, true));
+	}
+
+	public static void testJEI() throws CurseException, IOException {
+		final CurseProject jei = CurseProject.fromID(238222);
+
+		final ExtendedMPManifest oldManifest =
+				ExtendedMPManifest.ofFiles("jei_old", new CurseFileList(jei.files().get(2)));
+		final ExtendedMPManifest manifest =
+				ExtendedMPManifest.ofFiles("jei_new", new CurseFileList(jei.latestFile()));
+
+		final CompareResults results = ManifestComparer.compare(oldManifest, manifest);
+
+		NIOUtils.write(Paths.get("jei_changelog.txt"), getChangelog(results, false));
+		NIOUtils.write(Paths.get("jei_shortchangelog.txt"), getChangelog(results, true));
 	}
 
 	private static Path getPath(String stringPath) {

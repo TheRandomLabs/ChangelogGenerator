@@ -9,26 +9,31 @@ import java.util.Map;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ManifestComparer;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.compare.ModSpecificHandler;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.ModSpecificHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.DocumentUtils;
 import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.collection.ImmutableList;
-import com.therandomlabs.utils.io.IOConstants;
+import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.misc.StringUtils;
 import com.therandomlabs.utils.throwable.ThrowableHandling;
+import static com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer.VIEW_CHANGELOG_AT;
+import static com.therandomlabs.utils.io.IOConstants.LINE_SEPARATOR;
 
 public final class CGModSpecificHandler implements ModSpecificHandler {
 	public static final CGModSpecificHandler INSTANCE = new CGModSpecificHandler();
-
-	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
-	private static final String VIEW_CHANGELOG_AT = ManifestComparer.VIEW_CHANGELOG_AT;
 
 	private static final int SERVEROBSERVER_ID = 279375;
 	private static final int FOAMFIX_ID = 278494;
 	private static final int BIOMES_O_PLENTY_ID = 220318;
 	private static final int ACTUALLY_ADDITIONS_ID = 228404;
+
+	private static final TRLList<Integer> MEZZ_IDS = new ImmutableList<>(
+			59751,
+			223525,
+			238222
+	);
 
 	private static final String ACTUALLY_ADDITIONS_CHANGELOG = "https://raw." +
 			"githubusercontent.com/Ellpeck/ActuallyAdditions/master/update/changelog.md";
@@ -36,9 +41,9 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 	private CGModSpecificHandler() {}
 
 	@Override
-	public boolean shouldPreloadOnlyNewFile(int projectID, CurseProject project) {
-		final String owner = project == null ? null : project.owner().username();
-		return projectID == BIOMES_O_PLENTY_ID || "bre2el".equals(owner) || "mezz".equals(owner);
+	public boolean shouldPreloadOnlyNewFile(CurseProject project) {
+		final String owner = project == null ? null : project.ownerUsername();
+		return MEZZ_IDS.contains(project.id()) || "bre2el".equals(owner) || "mezz".equals(owner);
 	}
 
 	@Override
@@ -46,15 +51,11 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			throws CurseException {
 		final CurseProject project = oldFile.project();
 
-		if(projectID == BIOMES_O_PLENTY_ID) {
-			return new ImmutableList<>(ManifestComparer.getCurseForgeURL(newFile));
-		}
-
 		if(projectID == ACTUALLY_ADDITIONS_ID) {
 			return new ImmutableList<>(ACTUALLY_ADDITIONS_CHANGELOG);
 		}
 
-		final String owner = project == null ? null : project.owner().username();
+		final String owner = project == null ? null : project.ownerUsername();
 
 		if("TeamCoFH".equals(owner)) {
 			final String url = getCoFHURL(newFile);
@@ -70,27 +71,27 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 	public void filterFileList(int projectID, CurseFileList files, CurseFile oldFile,
 			CurseFile newFile) {
 		switch(projectID) {
-			case SERVEROBSERVER_ID:
-				final String UNIVERSAL = " Universal";
+		case SERVEROBSERVER_ID:
+			final String UNIVERSAL = " Universal";
 
-				if(newFile.name().endsWith(UNIVERSAL)) {
-					files.removeIf(file -> !file.name().endsWith(UNIVERSAL));
-				} else {
-					files.removeIf(file -> file.name().endsWith(UNIVERSAL));
-				}
+			if(newFile.name().endsWith(UNIVERSAL)) {
+				files.removeIf(file -> !file.name().endsWith(UNIVERSAL));
+			} else {
+				files.removeIf(file -> file.name().endsWith(UNIVERSAL));
+			}
 
-				break;
+			break;
 
-			case FOAMFIX_ID:
-				final String LAWFUL = "Lawful";
+		case FOAMFIX_ID:
+			final String LAWFUL = "Lawful";
 
-				if(oldFile.name().contains(LAWFUL)) {
-					files.removeIf(file -> !file.name().contains(LAWFUL));
-				} else {
-					files.removeIf(file -> file.name().contains(LAWFUL));
-				}
+			if(oldFile.name().contains(LAWFUL)) {
+				files.removeIf(file -> !file.name().contains(LAWFUL));
+			} else {
+				files.removeIf(file -> file.name().contains(LAWFUL));
+			}
 
-				break;
+			break;
 		}
 	}
 
@@ -107,7 +108,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			return getAAChangelog(oldFile, newFile, urls);
 		}
 
-		final String owner = project == null ? null : project.owner().username();
+		final String owner = project == null ? null : project.ownerUsername();
 
 		try {
 			if("TeamCoFH".equals(owner)) {
@@ -121,7 +122,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 				return getBre2elChangelog(oldFile, newFile, urls);
 			}
 
-			if("mezz".equals(newFile.uploader())) {
+			if(MEZZ_IDS.contains(projectID)) {
 				return getMezzChangelog(oldFile, newFile, urls);
 			}
 		} catch(IndexOutOfBoundsException | NullPointerException | NumberFormatException ex) {
@@ -140,10 +141,10 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			return changelog;
 		}
 
-		if("McJty".equals(project.owner().username())) {
+		if("McJty".equals(project.ownerUsername())) {
 			//McJty's changelogs' first two lines are not needed
 			final String[] lines = StringUtils.splitNewline(changelog);
-			return ArrayUtils.join(ArrayUtils.subArray(lines, 2), NEWLINE);
+			return ArrayUtils.join(ArrayUtils.subArray(lines, 2), LINE_SEPARATOR);
 		}
 
 		return changelog;
@@ -190,7 +191,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 
 				if(changelogStarted) {
 					String entryString = entry.toString();
-					entryString = StringUtils.removeLastChars(entryString, NEWLINE.length());
+					entryString = StringUtils.removeLastChars(entryString, LINE_SEPARATOR.length());
 
 					changelog.put(version, entryString);
 
@@ -216,7 +217,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			}
 
 			if(changelogStarted) {
-				entry.append(line).append(NEWLINE);
+				entry.append(line).append(LINE_SEPARATOR);
 			}
 		}
 
@@ -279,7 +280,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			}
 
 			if(version != null) {
-				entry.append(line.substring(1)).append(NEWLINE);
+				entry.append(line.substring(1)).append(LINE_SEPARATOR);
 			}
 		}
 
@@ -335,7 +336,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			}
 
 			if(changelogStarted) {
-				entry.append(line).append(NEWLINE);
+				entry.append(line).append(LINE_SEPARATOR);
 			}
 		}
 
@@ -377,7 +378,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 				continue;
 			}
 
-			entry.append(line).append(NEWLINE);
+			entry.append(line).append(LINE_SEPARATOR);
 		}
 
 		return changelog;
@@ -403,9 +404,6 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		return StringUtils.removeLastChars(oldVersion, ArrayUtils.last(split).length() + 1);
 	}
 
-	//TODO do by replacement instead?
-	//Jesus Christ this was the hardest one to write
-	//Don't ask me what it does
 	static Map<String, String> getMezzChangelog(CurseFile oldFile, CurseFile newFile, boolean url)
 			throws CurseException {
 		final Map<String, String> changelog = new LinkedHashMap<>();
@@ -456,7 +454,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 				break;
 			}
 
-			entry.append(line.substring(1)).append(NEWLINE);
+			entry.append(line.substring(1)).append(LINE_SEPARATOR);
 		}
 
 		return changelog;

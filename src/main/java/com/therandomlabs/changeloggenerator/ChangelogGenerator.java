@@ -35,7 +35,7 @@ public final class ChangelogGenerator {
 
 	//TODO command line
 	public static void main(String[] args) throws Exception {
-		NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator");
+		NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator)");
 		run(args);
 	}
 

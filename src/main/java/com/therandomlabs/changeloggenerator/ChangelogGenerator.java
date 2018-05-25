@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 import com.google.gson.JsonSyntaxException;
+import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.Mod;
@@ -23,7 +24,7 @@ import com.therandomlabs.utils.misc.StringUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.8";
+	public static final String VERSION = "1.9";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
@@ -44,6 +45,10 @@ public final class ChangelogGenerator {
 
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
+
+		if(args.length > 2 && args[2].equals("avoidCurseMeta")) {
+			CurseAPI.avoidCurseMeta(true);
+		}
 
 		final Path oldPath = getPath(oldFile);
 		final Path newPath = getPath(newFile);

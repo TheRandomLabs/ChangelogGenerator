@@ -42,7 +42,11 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 
 	@Override
 	public boolean shouldPreloadOnlyNewFile(CurseProject project) {
-		final String owner = project == null ? null : project.ownerUsername();
+		if(project == null) {
+			return false;
+		}
+
+		final String owner = project.ownerUsername();
 		return MEZZ_IDS.contains(project.id()) || "bre2el".equals(owner) || "mezz".equals(owner);
 	}
 

@@ -454,7 +454,7 @@ Updated:
 		Ender IO - 5.0.22:
 			You need either the main file or a selection of the "split" jars, not both!
 
-			[Changelog (this build)]() / [Changelog (all builds)]()
+			[Changelog (this build)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252f22%252fchanges) / [Changelog (all builds)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252fchanges)
 
 			Added
 
@@ -469,7 +469,7 @@ Updated:
 			Default configs for machines have changed, please delete enderiomachines.cfg!
 			You need either the main file or a selection of the "split" jars, not both!
 
-			[Changelog (this build)]() / [Changelog (all builds)]()
+			[Changelog (this build)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252f21%252fchanges) / [Changelog (all builds)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252fchanges)
 
 			EnderIO 5.0.21
 
@@ -877,11 +877,11 @@ Updated:
 
 	Mekanism (went from Mekanism-1.12.2-9.4.3.330.jar to Mekanism-1.12.2-9.4.4.337.jar):
 		Mekanism-1.12.2-9.4.4.337.jar:
-			Please see [http://aidancbrady.com/mekanism/download/legacy/]() for changelog.
+			 Please see [http://aidancbrady.com/mekanism/download/legacy/](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252faidancbrady.com%252fmekanism%252fdownload%252flegacy%252f) for changelog.
 
 	Mekanism Generators (went from MekanismGenerators-1.12.2-9.4.3.330.jar to MekanismGenerators-1.12.2-9.4.4.337.jar):
 		MekanismGenerators-1.12.2-9.4.4.337.jar:
-			Please see [http://aidancbrady.com/mekanism/download/legacy/]() for changelog.
+			 Please see [http://aidancbrady.com/mekanism/download/legacy/](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252faidancbrady.com%252fmekanism%252fdownload%252flegacy%252f) for changelog.
 
 	Minecraft Forge (went from 1.12.2-14.23.2.2645 to 1.12.2-14.23.3.2673):
 		1.12.2-14.23.3.2673:
@@ -974,7 +974,7 @@ Updated:
 			josephcsible: Add description to Error raised by the server hang watchdog. (#4714)
 			Judge40: Create event for overriding mob griefing flag based on entity. (#4710)
 
-	NuclearCraft (went from NuclearCraft-2.10f--1.12.2 to NuclearCraft-2.10j--1.12.2):
+	NuclearCraft (went from [Archived file] to NuclearCraft-2.10j--1.12.2):
 		NuclearCraft-2.10j--1.12.2:
 			+ Added extra control buttons to Fusion Reactor
 
@@ -1100,4 +1100,4 @@ Removed:
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.8)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.9)

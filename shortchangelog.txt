@@ -166,7 +166,7 @@ Updated:
 		View changelog at:
 			https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.3.2673/forge-1.12.2-14.23.3.2673-changelog.txt
 
-	NuclearCraft (went from NuclearCraft-2.10f--1.12.2 to NuclearCraft-2.10j--1.12.2):
+	NuclearCraft (went from [Archived file] to NuclearCraft-2.10j--1.12.2):
 		NuclearCraft-2.10j--1.12.2:
 			https://minecraft.curseforge.com/projects/nuclearcraft-mod/files/2553193
 		NuclearCraft-2.10i--1.12.2:
@@ -236,4 +236,4 @@ Removed:
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.8)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.9)

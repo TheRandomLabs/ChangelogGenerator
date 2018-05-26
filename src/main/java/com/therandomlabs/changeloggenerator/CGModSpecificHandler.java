@@ -12,7 +12,7 @@ import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.ModSpecificHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
-import com.therandomlabs.curseapi.util.DocumentUtils;
+import com.therandomlabs.curseapi.util.Documents;
 import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.collection.TRLList;
@@ -178,7 +178,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		newVersion = newVersion.substring(0, newVersion.length() - lengthToRemove);
 
 		final String[] lines =
-				ArrayUtils.subArray(StringUtils.splitNewline(DocumentUtils.read(changelogURL)), 4);
+				ArrayUtils.subArray(StringUtils.splitNewline(Documents.read(changelogURL)), 4);
 		final StringBuilder entry = new StringBuilder();
 		String version = null;
 
@@ -309,7 +309,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		newVersion = StringUtils.removeLastChars(newVersion, 4);
 
 		final String[] lines =
-				StringUtils.splitNewline(DocumentUtils.read(ACTUALLY_ADDITIONS_CHANGELOG));
+				StringUtils.splitNewline(Documents.read(ACTUALLY_ADDITIONS_CHANGELOG));
 		final StringBuilder entry = new StringBuilder();
 		String version = null;
 

@@ -229,7 +229,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 	}
 
 	static String getCoFHURL(CurseFile file) throws CurseException {
-		String url = file.changelog().trim();
+		String url = file.changelog(true).trim();
 		url = url.split("]")[0].substring(1);
 		url = url.replace("/blob", "");
 		url = url.replace("github", "raw.githubusercontent");
@@ -255,7 +255,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		final String[] split = oldFile.name().split("-");
 		final String oldVersion = split[1] + '-' + split[2];
 
-		final String[] lines = StringUtils.splitNewline(newFile.changelog());
+		final String[] lines = StringUtils.splitNewline(newFile.changelog(true));
 
 		final StringBuilder entry = new StringBuilder();
 
@@ -358,7 +358,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 
 		final String oldVersion = oldFile.name().split("-")[2].replaceAll("\\.jar", "");
 
-		final String[] lines = StringUtils.splitNewline(newFile.changelog());
+		final String[] lines = StringUtils.splitNewline(newFile.changelog(true));
 		final StringBuilder entry = new StringBuilder();
 		String version = null;
 
@@ -420,7 +420,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		final String oldVersion = getMezzModVersion(oldFile.name());
 		final String newVersion = getMezzModVersion(newFile.name());
 
-		final String[] lines = StringUtils.splitNewline(newFile.changelog());
+		final String[] lines = StringUtils.splitNewline(newFile.changelog(true));
 
 		final StringBuilder entry = new StringBuilder();
 

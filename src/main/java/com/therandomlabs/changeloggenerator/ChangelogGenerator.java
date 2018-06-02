@@ -47,7 +47,7 @@ public final class ChangelogGenerator {
 		final String newFile = args.length > 1 ? args[1] : "new.json";
 
 		if(args.length > 2 && args[2].equals("avoidCurseMeta")) {
-			CurseAPI.avoidCurseMeta(true);
+			CurseAPI.setCurseMetaEnabled(false);
 		}
 
 		final Path oldPath = getPath(oldFile);

@@ -15,7 +15,8 @@ If you want to use different files as input, you can do something like this:
 Obviously it isn't perfect, but I tried to add as much mod compatibility as possible
 (CoFH's mods, mezz's mods, etc.).
 
-Use "avoidCurseMeta" as the third command-line argument if CurseMeta is down.
+**Use "avoidCurseMeta" as the third command-line argument if CurseMeta is down (which it is).**
+
 I still haven't implemented proper command-line argument parsing.
 
 To use this with Gradle:

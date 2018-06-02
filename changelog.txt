@@ -1100,4 +1100,4 @@ Removed:
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.9.1)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.9.2)

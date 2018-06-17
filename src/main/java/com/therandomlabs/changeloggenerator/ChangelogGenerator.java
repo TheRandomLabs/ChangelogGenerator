@@ -115,7 +115,7 @@ public final class ChangelogGenerator {
 				append(results.getNewManifest().name).append(' ').
 				append(results.getNewManifest().version).append(NEWLINE).append(NEWLINE);
 
-		if(!results.getAdded().isEmpty()) {
+		if(!results.loadAndGetAdded().isEmpty()) {
 			string.append("Added:");
 
 			for(Mod added : results.getAdded()) {
@@ -143,7 +143,7 @@ public final class ChangelogGenerator {
 			appendChangelogs(string, changelogs);
 		}
 
-		if(!results.getRemoved().isEmpty()) {
+		if(!results.loadAndGetRemoved().isEmpty()) {
 			string.append("Removed:");
 
 			for(Mod removed : results.getRemoved()) {

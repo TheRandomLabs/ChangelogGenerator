@@ -24,7 +24,7 @@ import com.therandomlabs.utils.misc.StringUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.9.3";
+	public static final String VERSION = "1.9.4";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 
@@ -34,7 +34,6 @@ public final class ChangelogGenerator {
 
 	private ChangelogGenerator() {}
 
-	//TODO command line
 	public static void main(String[] args) throws Exception {
 		NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator)");
 		run(args);
@@ -46,9 +45,7 @@ public final class ChangelogGenerator {
 		final String oldFile = args.length > 0 ? args[0] : "old.json";
 		final String newFile = args.length > 1 ? args[1] : "new.json";
 
-		if(args.length > 2 && args[2].equals("avoidCurseMeta")) {
-			CurseAPI.setCurseMetaEnabled(false);
-		}
+		CurseAPI.setCurseMetaEnabled(false);
 
 		final Path oldPath = getPath(oldFile);
 		final Path newPath = getPath(newFile);
@@ -132,7 +129,7 @@ public final class ChangelogGenerator {
 			string.append("Updated:");
 
 			final Map<VersionChange, Map<String, String>> changelogs =
-					results.getUpdatedChangelogs(urls);
+					results.getUpdatedChangelogs(urls, true);
 
 			appendChangelogs(string, changelogs);
 		}
@@ -141,7 +138,7 @@ public final class ChangelogGenerator {
 			string.append("Downgraded:");
 
 			final Map<VersionChange, Map<String, String>> changelogs =
-					results.getDowngradedChangelogs(urls);
+					results.getDowngradedChangelogs(urls, true);
 
 			appendChangelogs(string, changelogs);
 		}
@@ -150,7 +147,13 @@ public final class ChangelogGenerator {
 			string.append("Removed:");
 
 			for(Mod removed : results.getRemoved()) {
-				string.append(NEWLINE).append("\t").append("- ").append(removed.title());
+				String title = removed.title();
+
+				if(title.equals(CurseProject.UNKNOWN_TITLE)) {
+					title = "Deleted project";
+				}
+
+				string.append(NEWLINE).append("\t").append("- ").append(title);
 			}
 
 			string.append(NEWLINE).append(NEWLINE);

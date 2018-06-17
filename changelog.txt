@@ -1,11 +1,11 @@
 Enigmatica 2 Expert 1.18 to Enigmatica 2 Expert 1.19
 
 Added:
-	- Unknown Name
 	- Backpacks
 	- Carry On
-	- Thaumic JEI
 	- Thaumcraft
+	- Thaumic JEI
+	- Unknown Name
 
 Updated:
 	Actually Additions (went from ActuallyAdditions-1.12.2-r133.jar to ActuallyAdditions-1.12.2-r134.jar):
@@ -1091,9 +1091,13 @@ Updated:
 			also fixed another bug I found with ItemScroller
 
 Downgraded:
+	DiscordSuite (went from DiscordSuite-2.0.1.jar to DiscordSuite-2.0.0.jar):
+		DiscordSuite-2.0.1.jar:
+			Fix some curse packs having invalid information due to... things
+
 Removed:
-	- Reborn Core
 	- EDX Multipart
 	- Game Stages
+	- Reborn Core
 
 * Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.9.4)

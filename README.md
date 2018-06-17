@@ -16,9 +16,9 @@ Obviously it isn't perfect, but I tried to add as much mod compatibility as poss
 (CoFH's mods, mezz's mods, etc.).
 
 Because there's no official API for retrieving changelogs, there will be crashes when things change.
-I usually fix these problems within 24 hours.
+I usually fix these problems quickly.
 
-**Use "avoidCurseMeta" as the third command-line argument if CurseMeta is down (which it is).**
+At the moment, CurseMeta support is disabled since it's been down for a while.
 
 I still haven't implemented proper command-line argument parsing.
 
@@ -30,4 +30,5 @@ Example changelogs can be found at changelog.txt and shortchangelog.txt in this 
 
 Planned features:
 * Better mezz support
+* IC2 support
 * Proper command-line arguments

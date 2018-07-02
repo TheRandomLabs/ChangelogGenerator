@@ -433,6 +433,11 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 			}
 
 			if(line.startsWith("v")) {
+				if(version == null) {
+					version = newVersion;
+					continue;
+				}
+
 				final String currentVersion = line.substring(1);
 
 				if(version.equals(currentVersion)) {

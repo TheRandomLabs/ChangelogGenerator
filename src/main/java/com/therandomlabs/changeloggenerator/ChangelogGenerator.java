@@ -5,10 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import com.google.gson.JsonSyntaxException;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
+import com.therandomlabs.curseapi.CurseForgeSite;
+import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.Mod;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.CompareResults;
@@ -16,11 +20,13 @@ import com.therandomlabs.curseapi.minecraft.mpmanifest.ExtendedMPManifest;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.VersionChange;
 import com.therandomlabs.curseapi.project.CurseProject;
+import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.io.IOConstants;
 import com.therandomlabs.utils.io.NIOUtils;
 import com.therandomlabs.utils.io.NetUtils;
 import com.therandomlabs.utils.misc.Assertions;
 import com.therandomlabs.utils.misc.StringUtils;
+import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
@@ -41,11 +47,24 @@ public final class ChangelogGenerator {
 
 	public static void run(String[] args) throws CurseException, IOException {
 		getLogger().disableDebug();
-
-		final String oldFile = args.length > 0 ? args[0] : "old.json";
-		final String newFile = args.length > 1 ? args[1] : "new.json";
-
 		CurseAPI.setCurseMetaEnabled(false);
+
+		if(args.length == 1) {
+			CurseProject project;
+
+			try {
+				project = CurseProject.fromID(args[0]);
+			} catch(NumberFormatException ex) {
+				project = CurseProject.fromSlug(CurseForgeSite.MINECRAFT, args[0]);
+			}
+
+			NIOUtils.write(Paths.get("changeloghistory.txt"), getChangelogHistory(project));
+
+			return;
+		}
+
+		final String oldFile = args.length > 1 ? args[0] : "old.json";
+		final String newFile = args.length > 1 ? args[1] : "new.json";
 
 		final Path oldPath = getPath(oldFile);
 		final Path newPath = getPath(newFile);
@@ -76,34 +95,51 @@ public final class ChangelogGenerator {
 		NIOUtils.write(Paths.get("jei_shortchangelog.txt"), getChangelog(results, true));
 	}
 
-	private static Path getPath(String stringPath) {
-		Path path = null;
+	public static String getChangelogHistory(CurseProject project) throws CurseException {
+		final CurseFileList files = project.files();
+		final CurseFile latest = files.latest();
+		final CurseFile oldest = files.get(files.size() - 1);
 
-		try {
-			path = Paths.get(stringPath);
-			if(!Files.exists(path) || Files.isDirectory(path)) {
-				getLogger().error("Invalid path: " + stringPath);
-				System.exit(1);
+		final StringBuilder string = new StringBuilder();
+
+		string.append(oldest.name()).append(" to ").append(latest.name()).append(NEWLINE);
+
+		final Map<CurseFile, String> changelogs = new ConcurrentHashMap<>();
+
+		ThreadUtils.splitWorkload(CurseAPI.getMaximumThreads(), files.size(), index -> {
+			final CurseFile file = files.get(index);
+			getLogger().info("Downloading changelog for file: " + file.name());
+			changelogs.put(file, file.changelog(true));
+		});
+
+		final TRLList<Map.Entry<CurseFile, String>> entries = new TRLList<>(changelogs.entrySet());
+		entries.sort(Comparator.comparing(Map.Entry::getKey));
+
+		for(int i = entries.size() - 1; i >= 0; i--) {
+			final Map.Entry<CurseFile, String> entry = entries.get(i);
+			final CurseFile file = entry.getKey();
+			final String changelog = entry.getValue();
+
+			string.append(NEWLINE).append(file.name()).append(':');
+
+			final String[] lines = StringUtils.NEWLINE.split(changelog);
+
+			for(String line : lines) {
+				string.append(NEWLINE);
+
+				if(!line.trim().isEmpty()) {
+					string.append("\t").append(StringUtils.trimTrailing(line));
+				}
 			}
-		} catch(InvalidPathException ex) {
-			getLogger().error("Invalid path: " + stringPath);
-			System.exit(1);
+
+			string.append(NEWLINE);
 		}
 
-		return path;
-	}
+		string.append(NEWLINE).
+				append("* Generated using https://github.com/TheRandomLabs/ChangelogGenerator").
+				append(" (").append(VERSION).append(")").append(NEWLINE);
 
-	private static ExtendedMPManifest getManifest(Path path) throws IOException {
-		ExtendedMPManifest manifest = null;
-
-		try {
-			manifest = ExtendedMPManifest.from(path);
-		} catch(JsonSyntaxException ex) {
-			getLogger().error("Invalid JSON: " + path);
-			System.exit(1);
-		}
-
-		return manifest;
+		return string.toString();
 	}
 
 	public static String getChangelog(CompareResults results, boolean urls)
@@ -162,11 +198,37 @@ public final class ChangelogGenerator {
 		string.append("* Generated using https://github.com/TheRandomLabs/ChangelogGenerator").
 				append(" (").append(VERSION).append(")").append(NEWLINE);
 
-		final String toString = string.toString();
-		if(toString.endsWith(NEWLINE + NEWLINE)) {
-			return toString.substring(0, toString.length() - NEWLINE.length());
+		return string.toString();
+	}
+
+	private static Path getPath(String stringPath) {
+		Path path = null;
+
+		try {
+			path = Paths.get(stringPath);
+			if(!Files.exists(path) || Files.isDirectory(path)) {
+				getLogger().error("Invalid path: " + stringPath);
+				System.exit(1);
+			}
+		} catch(InvalidPathException ex) {
+			getLogger().error("Invalid path: " + stringPath);
+			System.exit(1);
 		}
-		return toString;
+
+		return path;
+	}
+
+	private static ExtendedMPManifest getManifest(Path path) throws IOException {
+		ExtendedMPManifest manifest = null;
+
+		try {
+			manifest = ExtendedMPManifest.from(path);
+		} catch(JsonSyntaxException ex) {
+			getLogger().error("Invalid JSON: " + path);
+			System.exit(1);
+		}
+
+		return manifest;
 	}
 
 	private static void appendChangelogs(StringBuilder string,
@@ -192,7 +254,6 @@ public final class ChangelogGenerator {
 					}
 				}
 			}
-
 			string.append(NEWLINE);
 		}
 

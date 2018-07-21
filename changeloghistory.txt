@@ -1,0 +1,450 @@
+Enigmatica 2: Expert 1.18 to Enigmatica 2: Expert 1.32
+
+Enigmatica 2: Expert 1.32:
+	Minor Update
+	Downgraded AE2 to the latest release.
+	Updated Thaumcraft to BETA17.
+
+Enigmatica 2: Expert 1.31:
+	Remember to run both update commands
+
+	 * ”/bqs_loot default load” and “/bq_admin default load”
+	 * Removed Angel of Vengeance
+	 * Removed Scaling Health
+	AoV and Scaling Health were originally put in the pack to add a sense of increased PvE difficulty, and make handling threats more fun and versatile. I no longer feel like they fulfill this purpose, as AoV is mostly used for cheesing bosses, and Scaling Health mostly just means you’ll have to hit mobs a few additional times
+
+	Added
+
+	 * Spice of Life: Carrot Edition (You get additional hearts from eating new foods)
+	Tweaks
+
+	 * Cyclic: Re-enabled Hearts
+	 * Dark Utilities: Charms can now go in any Bauble slot
+	 * Ice&Fire: Re-configured, as the config file was renamed and reset to default by an update
+	 * Modular Machinery: Changed all Machine multiblocks to require both in and output. You may need to swap the placement of your item in and outputs.
+	 * Morph-O-Tool: Changed to morph when held in main hand
+	Recipes
+
+	 * Creative: Gas Tank Frame & Master Trophy can now be seen in JEI
+	 * Gear: Wooden Gear x2 recipe removed
+	 * MiscRecipes: Uranium Blocks can be crafted from Uranium Ingots
+	Quests
+
+	 * Botania: Band of Mana fixed
+	 * Misc: Various improvements to descriptions, thanks to Barhandar for the help
+	[ Mod Updates (Link)](https://gist.github.com/NillerMedDild/cdb372882998730fa4d823a32feef9fc)
+
+Enigmatica 2: Expert 1.30:
+	Updated to Forge 1.12.2-14.23.4.2708
+
+	Bugfixes
+
+	 * Bows and weapons no longer reset on fire
+	Tweaks
+
+	 * CustomMainMenu: Raised the button panel a bit
+	Recipes
+
+	 * ExNihilo&Compressum: Wooden Hammer conflict fixed
+	 * Gear: Wood and Stone Gear recipes made a little more consistent
+	 * Thermal Expansion: Resonant Cell Frame craftable once again, the Resonant Ender Bucket is no longer in the recipe
+	 * Thermal Expansion: Thermal alloys can now be smelted into liquid in the Magma Crucible
+	Quests
+
+	 * None
+
+Enigmatica 2: Expert 1.29:
+	I apologize for the massive instability in the modpack in the recent updates, I’m doing my best to stabilize the pack, without losing out on updates and new content.
+
+	 * Thaumcraft: Downgraded to BETA13 in an attempt to avoid a crash with it and Ice&Fire
+	 * XNet/YNot: Crashing fixed
+	 * Llibrary: Crashing fixed
+	 * Mekanism: Cable recipes fixed
+	 * Advanced Generators: Recipes re-added
+	 * Applied Energistics: Recipes re-added
+	 * Draconic Evolution: Draconic Armor is finally craftable
+	 * Cyclic: Disabled the Peat system and all pipes
+	 * And probably a lot more that I'm forgetting, no new content however.
+
+Enigmatica 2: Expert 1.28:
+	Bumped to version 1.28
+
+	There is a known issue where dying can cause a crash which will be fixed asap.
+
+	Added
+
+	 * Animus by Saerethlb
+	 * Thaumic Tinkerer by nekosune
+	 * Removed Weapon Levels as it has been removed from Curseforge
+	Tweaks
+
+	 * Advanced Rocketry: Armor can now be enchanted with Airtight Seal in the Chemical Reactor
+	 * Animus: Removed all Khopesh’ but the Diamond and Bound variants
+	 * Animus: Removed the Healing Fragments
+	 * Animus: Decreased the LP cost of the Sigil of Consumption
+	 * Astral Sorcery: JEI now indicates that Sooty Marble is craftable in normal Crafting Tables
+	 * Carry On: Blacklisted Item Allocator
+	 * CoFH: Disabled the Soulbound enchant. The Ender IO version is still available
+	 * Ender IO: Re-configured Machine power usage/speed
+	 * Ex Nihilo Creatio: Barrel recipes work again (End Stone, Sky Stone, etc)
+	 * FTB Utilities: Set the AFK timer to 10 minutes
+	 * Industrialcraft: The Liquid Heat Exchanger now generates more heat from Hot Coolant
+	 * IndustrialCraft: Quartz can now be Macerated
+	 * JAOPCA: Disabled the Dense Plate module
+	 * NuclearCraft: Tweaked the numbers of most active cooling in the Fission Reactor, most notably nerfed Quartz Active Cooling by 90% (You can see the exact values in the nuclearcraft config file)
+	 * OpenBlocks: The Last Stand Enchant now requires 12 times as much XP
+	 * Thaumcraft: Temporarily disabled the Stabilizer
+	 * Tool Progression: Increased harvest level of the Psi Pickaxe, as well as Psimetal and Psigem as Tinkers’ Construct parts.
+	Recipes
+
+	 *  Advanced Rocketry: HeatProof Brick
+	 *  Advanced Rocketry: All Rolling Machine recipes now take Lubricant instead of Water
+	 *  Animus: Leech Reagent
+	 *  Animus: Consumption Reagent
+	 *  Astral Sorcery: Nocturnal Powder
+	 *  Astral Sorcery: Illumination Powder
+	 *  Blood Magic: Hellfire Forge
+	 *  Blood Magic: Blood Altar
+	 *  Blood Magic: Awakened Activation Crystal
+	 *  Better Builder’s Wands: All Wands but the Unbreakable one
+	 *  Botania: All Mana Spreaders
+	 *  Botania: Livingwood (Sorry, I couldn’t help myself)
+	 *  Botania: Mana Pool & Diluted Mana Pool
+	 *  Botania: Livingrock is now made with Arcane Stone (Seems more magical than Reinforced Stone)
+	 *  Creative: Gas Tank emptying recipe
+	 *  Creative: Fluid Tank emptying recipe
+	 *  Cyclic: Fluid Storage Tank
+	 *  Cyclic: Redstone Clock
+	 *  Draconic Evolution: Energy requirement for Awakened Draconium fixed
+	 *  Environmental Tech: Digital Guide
+	 *  Extra Utilities: Redstone Clock
+	 *  Immersive Engineering: Concrete Conversion recipes (Sheet, Slab etc)
+	 *  Mekanism: All cables/pipes/tubes
+	 *  NuclearCraft: Rock Crusher
+	 *  Redstone Arsenal: Flux-Infused Bow
+	 *  Thermal Expansion: The Pulverizer now requires either a Crusher or a Double Crusher
+	Quests
+
+	 * None
+	Mod Updates (Link)
+
+Enigmatica 2: Expert 1.26c:
+	Updated Forge to 1.12.2-14.23.4.2705
+
+	Third time's the charm: Downgraded all McJty mods. Sorry for the inconvinience.
+
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Added
+
+	 * None
+	Tweaks
+
+	 * Advanced Rocketry: The Rolling Machine now produces Thermal Foundation Plates
+	 * Astral Sorcery: Tweaked the numbers and which ores the Treasure Shrine can generate
+	 * Botania: Tall Mystical Flowers can once again be sheared
+	 * Draconic Evolution: Increased the size of the Reactor Explosion (Psst, keep it stable if you like your world)
+	 * IndustrialCraft: Macerating Coal now outputs TE Coal Dust
+	 * IndustrialCraft: Macerating Quartz Stairs now gives 3 Quartz
+	 * NuclearCraft: Nerfed the output of Fusion Reactors by 11%
+	 * NuclearCraft: All machine outputs have been unified to match most other mods
+	 * NuclearCraft: Changed energy requirement and speed of the new machines Rock Crusher & Centrifuge
+	 * Thaumic JEI: Re-enabled Aspects from Itemstack (without the scanning)
+	 * Twilight Forest: Trophies are no longer unbreakable
+	Recipes
+
+	 * Advanced Rocketry: All Rolling Machine recipes now take Water instead of Lubricant, until Advanced Rocketry allows custom fluids in recipes.
+	 * Applied Energistics: ME Controller
+	 * Armor: Draconic Armor
+	 * Armor: All Wyvern armor should once again be craftable. Additionally, the Draconium Blocks now need to be charged
+	 * Cyclic Charms
+	 * Extra Utilities 2: Nether Star Generator recipe fixed
+	 * Extreme Reactors: Benitoite recipe fixed - A few items have been removed, and some have been added
+	 * IndustrialCraft2: Removed duplicate recipes for Metal Casings
+	 * Thaumcraft: Temporary Void Seed recipe
+	 * Thaumcraft: Temporary Void Metal recipe
+	Quests
+
+	 * Getting Started: Rewards for mining level 0 changed
+	 * IC2: Added Mod tags to Semifluid Generator quest
+	 * Advanced Rocketry: Titanium quest description updated
+	[Mod Updates (Link)](https://gist.github.com/NillerMedDild/05dfb771725431e704bccbd5dfa871c9)
+
+Enigmatica 2: Expert 1.25:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Lately the modpack has become increasingly laggy, and in an attempt to fix it I’ll be removing a few mods that don’t affect progression. I apologize for any issues this may cause. You are of course welcome to add the mods back yourself.
+
+	 * InstantUnify (Shouldn’t be needed if I manage to unify everything)
+	 * ItemPhysics Full (Not needed, only aesthetic)
+	 * Redstone Paste (We now have other means of “sticky” redstone)
+	 * Signals (Mostly a QoL mod for those who like to make large rail networks, has no real purpose in the pack)
+	Added
+
+	 * TombManyPlugins - Cosmetic Armor Reworked by M4thG33k
+	 * TombManyPlugins - Backpacks (Eydamos) by M4thG33k
+	 * TombManyGraves 2 API by M4thG33k
+	Tweaks
+
+	 * Advanced Rocketry: Fixed Planet biomes being incorrect, for the last time(?)
+	 * Advanced Rocketry: Altered the biomes and atmospheres of a few planets
+	 * Chisel: Added the 2 stray Quark Basalts to the Chisel options
+	 * IndustrialCraft2: Crushed Ores can now be melted down in the TiC Smeltery
+	 * JEI: Added a description to the Scanner and Replicator, of custom things you can scan/replicate
+	 * JER: Update Profile for Dim 114
+	 * Modular Machinery: Fixed the Processor facing in the Advanced Carpenter
+	 * Nutrition: Twilight Forest Venison
+	 * Nutrition: Stuffed Duck, Fruit Cream Festival Bread
+	 * Nutrition: Chimichanga
+	 * Mystical Agriculture: Disabled Grains of Infinity Seeds, End Metal Seeds and Alumite Seeds
+	 * Oregen: Rutile Ore now spawns on all Moons
+	Recipes
+
+	 * Advanced Rocketry: All Rolling Machine recipes now require Lubricant in place of Water
+	 * Advanced Rocketry: Silicon Boule now only requires Silicon
+	 * Advanced Rocketry: Basic and Advanced Circuit Plate
+	 * Advanced Rocketry: Changed the Precision Assembler recipes for all Circuit Boards
+	 * Botania: Gaia Spirit dupe recipe
+	 * Draconic Evolution: Mob Grinder
+	 * Gendustry: The crafting components that previously had 2 crafting recipes now only has the custom one
+	 * Modular Machinery: Osgloglas, Osmiridium, Mirion
+	 * Mystical Agriculture: Thaumium Seeds, Void Seeds
+	 * RFTools: Conversion between Clearing Quarry and normal Quarry
+	 * Thaumcraft: Wood Table
+	Quests
+
+	 * Getting Started: Harvest Level quests have had their descriptions and rewards changed
+	 * Astral Sorcery: Collector Crystal should accept both kinds
+	 * Industrial Foregoing: Added a few more quests
+	 * Immersive Engineering: In update 1.24, the Coke Oven quest was changed to no longer reward the items needed for a Metal Press. This was changed because I made additional recipes for Iron/Aluminum/Steel Rods, making the Metal Press craftable.
+	[Mod Updates (Link)](https://gist.github.com/NillerMedDild/42c9557fc56c04e58bdcec01954618d3)
+
+Enigmatica 2: Expert 1.24:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Added
+
+	 * Thaumic Computers by jco2641
+	 * Tinker’s JEI by Possible_Triangle
+	Tweaks
+
+	 * Advanced Rocketry: Advanced Rocketry oregen is now handled by CoFHWorld. The updated oregen will only be in new chunks, unless you enable retrogen yourself
+	 * Animania: Animals no longer consume water source blocks
+	 * EnderIO: Disabled some Machine secondary recipes
+	 * EnderIO: Whitelisted Villagers in the Powered Spawner
+	 * Immersive Tech: Steam consumption of the Steam Turbine increased massively, from 50mb/t to 4000mb/t
+	 * Modular Machinery: Is no longer gated behind Ender IO!
+	 * Modular Machinery: Added a Fluid Input Port to the Advanced Metallurgic Fabricator
+	 * Tooltip: Small Plate Presser
+	Recipes
+
+	 * Advanced Rocketry: Increased the yield of the Machine Structure recipe to 6
+	 * Advanced Rocketry: Remade the Titanium Ingot recipe. It is no longer craftable in the Arc Furnace. You can get them via the Advanced Metallurgic Fabricator, and Rutile Ore (found in Space)
+	 * Immersive Engineering: Early game Metal Stick variants (and Sticks) can now be made in the Advanced Rocketry Small Plate Press - Its JEI entry explains how to build the multiblock
+	 * Metal Rods: Iron, Steel and Aluminum Metal Sticks are now by default from Immersive Engineering, as I prefer their texture. They can be made in the Metal Press, Small Plate Presser, Lathe and crafted.
+	 * Ender IO: Fused Quartz can now be crafted in the NuclearCraft Alloy Furnace
+	 * Extended Crafting: Catalyst for Redstone, Glowstone, Lapis and Quartz changed to Crystaltine Catalyst
+	 * Modular Machinery: Fixed the odd Overclocker Upgrade recipes
+	Quests
+
+	 * Quests; Getting Started: Veinminer description (keybind changed to Grave)
+	 * Quests; Getting Started: Cooking for Blockheads quests
+	 * Quests; Actually Additions: Added a few more quests
+	 * Quests; Nuclearcraft: Added a few more quests
+	 * Quests; RFTools Dimensions: Added a few more quests
+	 * Quests; Gates: Restricted the first gates based on Harvest Level quests
+	[Mod Updates (Link)](https://gist.github.com/NillerMedDild/e9b722b86ef93febfa7b50a8c88d534c)
+
+Enigmatica 2: Expert 1.23:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Added
+
+	 * Modular Machinery by HellFirePvP
+	 * Modular Diversity by BordListian
+	 * Broken Wings by quat1024 - This mods is configured to disable creative flight in the Twilight Forest
+	 * Readded Discord Suite by TheCodedOne
+	Tweaks
+
+	 * Carry On: Blacklisted Ice & Fire completely
+	 * Carry On: Blacklisted Nuclearcraft completely
+	 * Cyclic: Disabled the Excavator enchantment
+	 * Cyclic: Disabled named mobs dropping nametags
+	 * Default Options: Changed the default key of Carry On to Right Shift
+	 * Default Options: Changed the default key of OreExcavation (VeinMiner) to Grave
+	 * IndustrialCraft2: Unified some of the output of the Macerator
+	 * Just Enough Resources: Updated Overworld
+	 * Modular Machinery: Renamed Modularium to Modularium Alloy
+	 * Modular Machinery: Advanced Metallurgic Fabricator
+	 * Modular Machinery: Advanced Carpenter
+	 * Oregen: Copper and Tin Ore generation moved to Y level 30-55
+	 * Oregen: Thaumcraft Amber Ore is now generated with CoFH
+	 * Oregen: Thaumcraft Cinnabar is now generated with CoFH
+	 * Thaumcraft: Disabled retrogen
+	Recipes
+
+	 * Ender IO: Clear Glass can now be crafted
+	 * Modular Machinery: Machine Controller
+	 * Modular Machinery: Modularium
+	 * Modular Machinery: Machine Casing
+	 * Modular Machinery: Machine Vent
+	 * Modular Machinery: Machine Gearbox
+	 * Modular Machinery: Machine Circuitry
+	 * Modular Machinery: All Machine energy, liquid and item in/outputs, all tiers
+	 * Modular Machinery: Advanced Metallurgic Fabricator Blueprint
+	 * Modular Machinery: Advanced Carpenter Blueprint
+	 * Creative: The Creative Gas Tank now requires buckets of Ender IO Rocket Fuel instead of the Advanced Rocketry variety
+	 * Creative: Creative Essence now required Void Metal Ingots
+	 * Creative Essence: Incorporate Thaumcraft
+	 * Draconic Evolution: Awakened Draconium
+	 * Jetpack gated behind Elytra
+	 * IC2: Jetpack gated behind Elytra
+	 * Ender IO: Power Buffer
+	 * Misc: Thaumcraft Amber can be crafted into BoP Amber, and vice versa
+	 * Misc: Lithium Dust can now be smelted into Ingots
+	Quests
+
+	 * Quests: Clay bucket reward fixed
+	[Mod Updates (Link)](https://gist.github.com/NillerMedDild/5f95ac16cc2d9588b528e1e19d160ba1)
+
+Enigmatica 2: Expert 1.22:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Added
+
+	 * None
+	Tweaks
+
+	 * Exchangers: Increased the mining level of all Exchangers
+	 * Ex Compressum: Fake Players can no longer use the Heavy Sieve
+	 * Ex Compressum: Increased the speed of the Auto Sieve and Auto Heavy Sieve
+	 * Ex Compressum: Increased the energy usage of the Auto Sieve and Auto Heavy Sieve
+	 * Ex Compressum: Increased the speed of the Auto Hammer and Auto Compressed Hammer
+	 * Ex Compressum: Increased the energy usage of the Auto Hammer and Auto Compressed Hammer
+	 * Ex Compressum: Increased the energy usage of the Auto Compressor
+	 * IndustrialCraft2: The Wrenches are once again available, but you don’t need them to break machines properly. They can be used for rotating and picking up machines.
+	 * Just Enough Resources: Removed Ender Amethyst from the graphs
+	 * Thaumcraft: Re-enabled Pechs
+	 * Tool Progression: Increased the mining level of the Blood Magic Bound Pickaxe
+	Recipes
+
+	 * Botania: Rune of Winter fixed, hopefully for good this time
+	Quests
+
+	 * Fixed all quests that were set to autoclaim
+	 * Thaumcraft: Essentia quest moved to before the Infuser
+	Updated Thaumcraft to BETA12.
+
+Enigmatica 2: Expert 1.21:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Updated to Better Questing 3
+
+	Added
+
+	 * Thaumic Inventory Scanning by BlayTheNinth
+	 * Just Enough Reactors by The_BrainStone
+	Tweaks
+
+	 * Astral Sorcery: Rock Crystals generate once again
+	 * Advanced Rocketry: Fixed an issue with custom Advanced Rocketry recipes
+	 * Advanced Rocketry: Fixed Biomes once again - If you have made a new world with the Thaumcraft patch or later, the biomes will be wrong. It will not affect progression, only asthetics.
+	 * Carry On: Blacklisted Blood Magic completely
+	 * Carry On: Blacklisted Cooking for Blockheads completely
+	 * Carry On: Blacklisted all Shulker Boxes
+	 * Carry On: Blacklisted Storage Drawers
+	 * Ex Nihilo Creatio: Increased the chance of getting both Cobalt and Ardite from Crushed Netherrack
+	 * Instant Unify: Chiseled Metal Blocks will no longer instantly revert back
+	 * IndustrialCraft2: The Metal Former can now make additional types of metal plates
+	 * IndustrialCraft2: The Block Cutter can now cut additional types of metal blocks
+	 * Tool Progression: Cinnabar Ore and Amber Ore now have mining levels
+	 * Tool Progression: Greatwood and Silverwood logs now have axe mining levels
+	 * Tool Progression: Added mining levels to a bunch of other Thaumcraft-y things
+	 * Tool Progression: Snow can now be mined with an empty hand
+	 * JEI: Added a description to the Tool Forge, explaining you can use any metal block
+	 * Loot Chests: Fixed a few misspelled rewards
+	 * Mekanism: Allowed Chunkloading
+	 * Mekanism: Disabled Machine Effects
+	 * Mekanism: Disabled Ambient Lighting
+	 * Thaumcraft: Disabled Pechs temporarily
+	Recipes
+
+	 * Botania: Fixed the Rune of Winter recipe
+	 * Astral Sorcery: Glass Lens
+	 * Astral Sorcery: Recipes required Rock Crystals now accept any Astral Sorcery Crystal
+	 * Immersive Engineering: Light Engineering Block
+	 * Immersive Engineering: Heavy Engineering Block
+	 * IC2 Hazmat Gear: Changed to accept oreDict orange dye
+	 * Ultimate Ingot: Added Thaumcraft ingots
+	 * Applied Energistics: Temporarily disabled the Compactor Mint recipe for Silicon
+	 * Applied Energistics: Temporarily disabled the Inscriber Plate recipes
+	Quests
+
+	 * Thaumcraft: Infernal Furnace name fixed
+	 * Thaumcraft: Changed the description of the first quest
+	 * Getting Started: Improved the Mining level explanation in the very first Mining level quest
+	 * Astral Sorcery: Resonating Wand should now detect properly
+	 * Forestry: Beekeeper's Armor should now detect properly
+	[Mod Updates (Link)](https://gist.github.com/NillerMedDild/3b4090e0889e7adc6847158919f65eaf)
+
+Enigmatica 2: Expert 1.20:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Added
+
+	 * None
+	Tweaks
+
+	 * Just Enough Resource: Updated Overworld
+	 * Carry On: Mekanism Cardboard Box can no longer be picked up (and the Cardboard Box can be unpackaged)
+	 * Carry On: Blacklisted all Thaumcraft blocks
+	 * Tool Progression: Thaumcraft Tools
+	 * IndustrialCraft2: Removed the normal Overclocker Upgrade recipe, as it was incompatible with batch crafting
+	Recipes
+
+	 * Actually Additions: Drill Speed Upgrade I & III
+	 * Thermal Expansion: Nullifier
+	Quests
+
+	 * Quests: Blood Magic Orbs fixed
+	 * Quests: Thaumcraft is now properly gated
+	 * Quests; Blood Magic: Tier 4 altar quest now requires Bloodstone Bricks
+	[Mod Updates (Link)](https://gist.github.com/NillerMedDild/80e8078261291c0490e5988e85c61699)
+
+Enigmatica 2: Expert 1.18:
+	Remember to run both update commands
+
+	”/bqs_loot default load” and “/bq_admin default load”
+
+	Added
+
+	 * Add No Night Vision Flashing by TeamCoFH
+	Tweaks
+
+	 * Ex Nihilo Creatio: Fake Players can no longer sieve
+	 * Random Things: Set spirit spawn rate to 0
+	 * Advanced Rocketry: Reduced the crafting time of all things made in the Electric Arc Furnace. Energy usage has been raised to match
+	Recipes
+
+	 * Immersive Engineering: LV and MV Wire Connectors and Relays are now upgradeable
+	 * Immersive Engineering: MV and HV Capacitors
+	 * Ender IO: Basic Capacitor changed
+	Quests
+
+	 * None
+
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.10)

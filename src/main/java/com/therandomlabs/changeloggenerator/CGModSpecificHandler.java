@@ -28,6 +28,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 	private static final int FOAMFIX_ID = 278494;
 	private static final int BIOMES_O_PLENTY_ID = 220318;
 	private static final int ACTUALLY_ADDITIONS_ID = 228404;
+	private static final int IC2_ID = 242638;
 
 	private static final TRLList<Integer> MEZZ_IDS = new ImmutableList<>(
 			59751,
@@ -134,6 +135,11 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		}
 
 		return null;
+	}
+
+	@Override
+	public String getChangelog(CurseFile file) throws CurseException {
+		return file.id() == IC2_ID ? getIC2Changelog(file) : null;
 	}
 
 	@Override
@@ -467,5 +473,26 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		}
 
 		return changelog;
+	}
+
+	static String getIC2Changelog(CurseFile file) throws CurseException {
+		final String[] lines = StringUtils.splitNewline(file.changelog(true));
+		final StringBuilder changelog = new StringBuilder();
+		boolean versionFound = false;
+
+		for(String line : lines) {
+			if(line.contains("jenkins-IC2_")) {
+				if(versionFound) {
+					break;
+				}
+
+				versionFound = true;
+				continue;
+			}
+
+			changelog.append(line.substring(1)).append(LINE_SEPARATOR);
+		}
+
+		return changelog.toString();
 	}
 }

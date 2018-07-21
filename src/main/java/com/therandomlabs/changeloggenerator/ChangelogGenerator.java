@@ -30,7 +30,7 @@ import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.10";
+	public static final String VERSION = "1.10.1";
 
 	private static final String NEWLINE = IOConstants.LINE_SEPARATOR;
 

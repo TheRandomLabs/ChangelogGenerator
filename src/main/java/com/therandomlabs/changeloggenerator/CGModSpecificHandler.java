@@ -19,7 +19,7 @@ import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.misc.StringUtils;
 import com.therandomlabs.utils.throwable.ThrowableHandling;
 import static com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer.VIEW_CHANGELOG_AT;
-import static com.therandomlabs.utils.io.IOConstants.LINE_SEPARATOR;
+import static com.therandomlabs.utils.io.IOUtils.LINE_SEPARATOR;
 
 public final class CGModSpecificHandler implements ModSpecificHandler {
 	public static final CGModSpecificHandler INSTANCE = new CGModSpecificHandler();
@@ -75,8 +75,7 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 	@Override
 	public void filterFileList(int projectID, CurseFileList files, CurseFile oldFile,
 			CurseFile newFile) {
-		switch(projectID) {
-		case SERVEROBSERVER_ID:
+		if(projectID == SERVEROBSERVER_ID) {
 			final String UNIVERSAL = " Universal";
 
 			if(newFile.name().endsWith(UNIVERSAL)) {
@@ -85,18 +84,19 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 				files.removeIf(file -> file.name().endsWith(UNIVERSAL));
 			}
 
-			break;
+			return;
+		}
 
-		case FOAMFIX_ID:
-			final String LAWFUL = "Lawful";
+		if(projectID != FOAMFIX_ID) {
+			return;
+		}
 
-			if(oldFile.name().contains(LAWFUL)) {
-				files.removeIf(file -> !file.name().contains(LAWFUL));
-			} else {
-				files.removeIf(file -> file.name().contains(LAWFUL));
-			}
+		final String LAWFUL = "Lawful";
 
-			break;
+		if(oldFile.name().contains(LAWFUL)) {
+			files.removeIf(file -> !file.name().contains(LAWFUL));
+		} else {
+			files.removeIf(file -> file.name().contains(LAWFUL));
 		}
 	}
 
@@ -201,7 +201,8 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 
 				if(changelogStarted) {
 					String entryString = entry.toString();
-					entryString = StringUtils.removeLastChars(entryString, LINE_SEPARATOR.length());
+					entryString = StringUtils.removeLastChars(entryString,
+							LINE_SEPARATOR.length());
 
 					changelog.put(version, entryString);
 
@@ -408,9 +409,11 @@ public final class CGModSpecificHandler implements ModSpecificHandler {
 		}
 
 		split = StringUtils.split(oldVersion, '.');
+
 		if(split.length == 5) {
 			oldVersion = StringUtils.removeLastChars(oldVersion, split[3].length() + 1);
 		}
+
 		return StringUtils.removeLastChars(oldVersion, ArrayUtils.last(split).length() + 1);
 	}
 

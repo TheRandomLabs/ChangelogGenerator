@@ -13,12 +13,17 @@ import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.CurseForgeSite;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
-import com.therandomlabs.curseapi.minecraft.Mod;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.CompareResults;
+import com.therandomlabs.curseapi.minecraft.ModList;
+import com.therandomlabs.curseapi.minecraft.comparison.ModListComparer;
+import com.therandomlabs.curseapi.minecraft.comparison.ModListComparison;
+import com.therandomlabs.curseapi.minecraft.comparison.ModSpecificChangelogHandler;
+import com.therandomlabs.curseapi.minecraft.comparison.VersionChange;
+import com.therandomlabs.curseapi.minecraft.forge.MinecraftForge;
 import com.therandomlabs.curseapi.minecraft.mpmanifest.ExtendedMPManifest;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.ManifestComparer;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.VersionChange;
+import com.therandomlabs.curseapi.minecraft.mpmanifest.Mod;
+import com.therandomlabs.curseapi.minecraft.version.MCVersion;
 import com.therandomlabs.curseapi.project.CurseProject;
+import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.io.NetUtils;
@@ -28,12 +33,24 @@ import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.10.3";
+	public static final String VERSION = "1.11";
+
+	public static final ImmutableList<ModSpecificChangelogHandler> HANDLERS = new ImmutableList<>(
+			ActuallyAdditionsHandler.INSTANCE,
+			BiomesOPlentyHandler.INSTANCE,
+			Bre2elHandler.INSTANCE,
+			CoFHHandler.INSTANCE,
+			FoamFixHandler.INSTANCE,
+			IC2Handler.INSTANCE,
+			McJtyHandler.INSTANCE,
+			MezzHandler.INSTANCE,
+			ServerObserverHandler.INSTANCE
+	);
 
 	private static final String NEWLINE = IOUtils.LINE_SEPARATOR;
 
 	static {
-		ManifestComparer.registerModSpecificHandler(CGModSpecificHandler.INSTANCE);
+		HANDLERS.forEach(ModListComparer::registerChangelogHandler);
 	}
 
 	private ChangelogGenerator() {}
@@ -72,24 +89,62 @@ public final class ChangelogGenerator {
 		final ExtendedMPManifest oldManifest = getManifest(oldPath);
 		final ExtendedMPManifest manifest = getManifest(newPath);
 
-		final CompareResults results = ManifestComparer.compare(oldManifest, manifest);
+		final ModList oldList = new ModList(
+				oldManifest.getAllMods(),
+				oldManifest.minecraft.version,
+				MinecraftForge.TITLE,
+				oldManifest.minecraft.getForgeVersion()
+		);
+		final ModList newList = new ModList(
+				manifest.getAllMods(),
+				manifest.minecraft.version,
+				MinecraftForge.TITLE,
+				manifest.minecraft.getForgeVersion()
+		);
 
-		IOUtils.write(Paths.get("changelog.txt"), getChangelog(results, false));
-		IOUtils.write(Paths.get("shortchangelog.txt"), getChangelog(results, true));
+		final ModListComparison results = ModListComparer.compare(oldList, newList);
+
+		final String oldName = oldManifest.name;
+		final String oldVersion = oldManifest.version;
+		final String newName = manifest.name;
+		final String newVersion  = manifest.version;
+
+		IOUtils.write(
+				Paths.get("changelog.txt"),
+				getChangelog(results, false, oldName, oldVersion, newName, newVersion)
+		);
+		IOUtils.write(
+				Paths.get("shortchangelog.txt"),
+				getChangelog(results, true, oldName, oldVersion, newName, newVersion)
+		);
 	}
 
 	public static void testJEI() throws CurseException, IOException {
 		final CurseProject jei = CurseProject.fromID(238222);
 
-		final ExtendedMPManifest oldManifest =
-				ExtendedMPManifest.ofFiles("jei_old", new CurseFileList(jei.files().get(2)));
-		final ExtendedMPManifest manifest =
-				ExtendedMPManifest.ofFiles("jei_new", new CurseFileList(jei.latestFile()));
+		final ModList oldList = ModList.fromCurseFilesBasic(
+				new CurseFileList(jei.files().get(2)),
+				MCVersion.UNKNOWN,
+				MinecraftForge.TITLE,
+				"test"
+		);
+		final ModList newList = ModList.fromCurseFilesBasic(
+				new CurseFileList(jei.latestFile()),
+				MCVersion.UNKNOWN,
+				MinecraftForge.TITLE,
+				"test"
+		);
 
-		final CompareResults results = ManifestComparer.compare(oldManifest, manifest);
+		final ModListComparison results = ModListComparer.compare(oldList, newList);
 
-		IOUtils.write(Paths.get("jei_changelog.txt"), getChangelog(results, false));
-		IOUtils.write(Paths.get("jei_shortchangelog.txt"), getChangelog(results, true));
+		IOUtils.write(
+				Paths.get("jei_changelog.txt"),
+				getChangelog(results, false, "JEI", "Old", "JEI", "New")
+		);
+		IOUtils.write(
+				Paths.get("jei_shortchangelog.txt"),
+				getChangelog(results, true, "JEI", "Old", "JEI", "New")
+		);
 	}
 
 	public static String getChangelogHistory(CurseProject project) throws CurseException {
@@ -139,16 +194,16 @@ public final class ChangelogGenerator {
 		return string.toString();
 	}
 
-	public static String getChangelog(CompareResults results, boolean urls)
-			throws CurseException, IOException {
+	public static String getChangelog(ModListComparison results, boolean urls, String oldName,
+			String oldVersion, String newName, String newVersion) throws CurseException {
 		final StringBuilder string = new StringBuilder();
 
-		string.append(results.getOldManifest().name).append(' ').
-				append(results.getOldManifest().version).append(" to ").
-				append(results.getNewManifest().name).append(' ').
-				append(results.getNewManifest().version).append(NEWLINE).append(NEWLINE);
+		string.append(oldName).append(' ').
+				append(oldVersion).append(" to ").
+				append(newName).append(' ').
+				append(newVersion).append(NEWLINE).append(NEWLINE);
 
-		if(!results.loadAndGetAdded().isEmpty()) {
+		if(!results.loadInfoAndGetAdded().isEmpty()) {
 			string.append("Added:");
 
 			for(Mod added : results.getAdded()) {
@@ -176,7 +231,7 @@ public final class ChangelogGenerator {
 			appendChangelogs(string, changelogs);
 		}
 
-		if(!results.loadAndGetRemoved().isEmpty()) {
+		if(!results.loadInfoAndGetRemoved().isEmpty()) {
 			string.append("Removed:");
 
 			for(Mod removed : results.getRemoved()) {
@@ -196,6 +251,37 @@ public final class ChangelogGenerator {
 				append(" (").append(VERSION).append(")").append(NEWLINE);
 
 		return string.toString();
+	}
+
+	private static void appendChangelogs(StringBuilder string,
+			Map<VersionChange, Map<String, String>> changelogs) throws CurseException {
+		for(Map.Entry<VersionChange, Map<String, String>> changelog : changelogs.entrySet()) {
+			final VersionChange vc = changelog.getKey();
+
+			string.append(NEWLINE).append("\t").append(vc.getModTitle()).
+					append(" (went from ").append(vc.getOldFileName()).append(" to ").
+					append(vc.getNewFileName()).append("):");
+
+			for(Map.Entry<String, String> modChangelog : changelog.getValue().entrySet()) {
+				string.append(NEWLINE).append("\t\t").append(modChangelog.getKey()).
+						append(':');
+
+				final String[] lines = StringUtils.NEWLINE.split(modChangelog.getValue());
+
+				for(String line : lines) {
+					//Remove unneeded whitespace at the end of the line
+					string.append(NEWLINE);
+
+					if(!line.trim().isEmpty()) {
+						string.append("\t\t\t").append(StringUtils.trimTrailing(line));
+					}
+				}
+			}
+
+			string.append(NEWLINE);
+		}
+
+		string.append(NEWLINE);
 	}
 
 	private static Path getPath(String stringPath) {
@@ -227,34 +313,5 @@ public final class ChangelogGenerator {
 		}
 
 		return manifest;
-	}
-
-	private static void appendChangelogs(StringBuilder string,
-			Map<VersionChange, Map<String, String>> changelogs) throws CurseException {
-		for(Map.Entry<VersionChange, Map<String, String>> changelog : changelogs.entrySet()) {
-			final VersionChange vc = changelog.getKey();
-
-			string.append(NEWLINE).append("\t").append(vc.getModTitle()).
-					append(" (went from ").append(vc.getOldFileName()).append(" to ").
-					append(vc.getNewFileName()).append("):");
-
-			for(Map.Entry<String, String> modChangelog : changelog.getValue().entrySet()) {
-				string.append(NEWLINE).append("\t\t").append(modChangelog.getKey()).
-						append(':');
-
-				final String[] lines = StringUtils.NEWLINE.split(modChangelog.getValue());
-				for(String line : lines) {
-					//Remove unneeded whitespace at the end of the line
-					string.append(NEWLINE);
-
-					if(!line.trim().isEmpty()) {
-						string.append("\t\t\t").append(StringUtils.trimTrailing(line));
-					}
-				}
-			}
-			string.append(NEWLINE);
-		}
-
-		string.append(NEWLINE);
 	}
 }

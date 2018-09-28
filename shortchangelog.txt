@@ -164,19 +164,9 @@ Updated:
 
 	Minecraft Forge (went from 1.12.2-14.23.2.2645 to 1.12.2-14.23.3.2673):
 		View changelog at:
-			https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.3.2673/forge-1.12.2-14.23.3.2673-changelog.txt
+			https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.4.2758/forge-1.12.2-14.23.4.2758-changelog.txt
 
 	NuclearCraft (went from [Archived file] to NuclearCraft-2.10j--1.12.2):
-		NuclearCraft-2.10j--1.12.2:
-			https://minecraft.curseforge.com/projects/nuclearcraft-mod/files/2553193
-		NuclearCraft-2.10i--1.12.2:
-			https://minecraft.curseforge.com/projects/nuclearcraft-mod/files/2552679
-		NuclearCraft-2.10h--1.12.2:
-			https://minecraft.curseforge.com/projects/nuclearcraft-mod/files/2552538
-		NuclearCraft-2.10g--1.12.2:
-			https://minecraft.curseforge.com/projects/nuclearcraft-mod/files/2552426
-		NuclearCraft-2.10f--1.12.2:
-			https://minecraft.curseforge.com/projects/nuclearcraft-mod/files/2550819
 
 	Ore Excavation (went from OreExcavation-1.4.113.jar to OreExcavation-1.4.118.jar):
 		OreExcavation-1.4.118.jar:
@@ -236,4 +226,4 @@ Removed:
 	- Game Stages
 	- Reborn Core
 
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.9.4)
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.11)

@@ -1,14 +1,13 @@
 apply plugin: "java"
 
 repositories {
-	jcenter()
 	maven {
 		url = "https://jitpack.io"
 	}
 }
 
 dependencies {
-	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
+	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:85b177f0a0"
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

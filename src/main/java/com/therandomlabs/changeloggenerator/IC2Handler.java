@@ -33,6 +33,10 @@ public final class IC2Handler implements ModSpecificChangelogHandler {
 				continue;
 			}
 
+			if(line.isEmpty()) {
+				continue;
+			}
+
 			changelog.append(line.substring(1)).append(IOUtils.LINE_SEPARATOR);
 		}
 

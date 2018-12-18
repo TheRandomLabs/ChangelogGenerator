@@ -3,7 +3,7 @@ package com.therandomlabs.changeloggenerator;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
-import com.therandomlabs.curseapi.minecraft.comparison.ModSpecificChangelogHandler;
+import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 
 public final class ServerObserverHandler implements ModSpecificChangelogHandler {

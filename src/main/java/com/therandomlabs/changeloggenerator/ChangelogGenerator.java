@@ -13,14 +13,14 @@ import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.CurseForgeSite;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileList;
-import com.therandomlabs.curseapi.minecraft.ModList;
-import com.therandomlabs.curseapi.minecraft.comparison.ModListComparer;
-import com.therandomlabs.curseapi.minecraft.comparison.ModListComparison;
-import com.therandomlabs.curseapi.minecraft.comparison.ModSpecificChangelogHandler;
-import com.therandomlabs.curseapi.minecraft.comparison.VersionChange;
-import com.therandomlabs.curseapi.minecraft.forge.MinecraftForge;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.ExtendedMPManifest;
-import com.therandomlabs.curseapi.minecraft.mpmanifest.Mod;
+import com.therandomlabs.curseapi.minecraft.CurseAPIMinecraft;
+import com.therandomlabs.curseapi.minecraft.modpack.ExMPManifest;
+import com.therandomlabs.curseapi.minecraft.modpack.Mod;
+import com.therandomlabs.curseapi.minecraft.modpack.ModList;
+import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModListComparer;
+import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModListComparison;
+import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
+import com.therandomlabs.curseapi.minecraft.modpack.comparison.VersionChange;
 import com.therandomlabs.curseapi.minecraft.version.MCVersion;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.collection.ImmutableList;
@@ -33,7 +33,7 @@ import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.11.2";
+	public static final String VERSION = "1.12";
 
 	public static final ImmutableList<ModSpecificChangelogHandler> HANDLERS = new ImmutableList<>(
 			ActuallyAdditionsHandler.INSTANCE,
@@ -86,20 +86,21 @@ public final class ChangelogGenerator {
 		Assertions.fileExists(oldPath);
 		Assertions.fileExists(newPath);
 
-		final ExtendedMPManifest oldManifest = getManifest(oldPath);
-		final ExtendedMPManifest manifest = getManifest(newPath);
+		final ExMPManifest oldManifest = getManifest(oldPath);
+		final ExMPManifest manifest = getManifest(newPath);
 
 		final ModList oldList = new ModList(
-				oldManifest.getAllMods(),
+				oldManifest.getAllFiles(),
 				oldManifest.minecraft.version,
-				MinecraftForge.TITLE,
-				oldManifest.minecraft.getForgeVersion()
+				CurseAPIMinecraft.MINECRAFT_FORGE,
+				oldManifest.minecraft.forgeVersion()
 		);
+
 		final ModList newList = new ModList(
-				manifest.getAllMods(),
+				manifest.getAllFiles(),
 				manifest.minecraft.version,
-				MinecraftForge.TITLE,
-				manifest.minecraft.getForgeVersion()
+				CurseAPIMinecraft.MINECRAFT_FORGE,
+				manifest.minecraft.forgeVersion()
 		);
 
 		final ModListComparison results = ModListComparer.compare(oldList, newList);
@@ -125,13 +126,13 @@ public final class ChangelogGenerator {
 		final ModList oldList = ModList.fromCurseFilesBasic(
 				new CurseFileList(jei.files().get(2)),
 				MCVersion.UNKNOWN,
-				MinecraftForge.TITLE,
+				CurseAPIMinecraft.MINECRAFT_FORGE,
 				"test"
 		);
 		final ModList newList = ModList.fromCurseFilesBasic(
 				new CurseFileList(jei.latestFile()),
 				MCVersion.UNKNOWN,
-				MinecraftForge.TITLE,
+				CurseAPIMinecraft.MINECRAFT_FORGE,
 				"test"
 		);
 
@@ -260,20 +261,26 @@ public final class ChangelogGenerator {
 
 			string.append(NEWLINE).append("\t").append(vc.getModTitle()).
 					append(" (went from ").append(vc.getOldFileName()).append(" to ").
-					append(vc.getNewFileName()).append("):");
+					append(vc.getNewFileName()).append(")");
 
-			for(Map.Entry<String, String> modChangelog : changelog.getValue().entrySet()) {
-				string.append(NEWLINE).append("\t\t").append(modChangelog.getKey()).
-						append(':');
+			final Map<String, String> versions = changelog.getValue();
 
-				final String[] lines = StringUtils.NEWLINE.split(modChangelog.getValue());
+			if(!versions.isEmpty()) {
+				string.append(':');
 
-				for(String line : lines) {
-					//Remove unneeded whitespace at the end of the line
-					string.append(NEWLINE);
+				for(Map.Entry<String, String> modChangelog : versions.entrySet()) {
+					string.append(NEWLINE).append("\t\t").append(modChangelog.getKey()).
+							append(':');
 
-					if(!line.trim().isEmpty()) {
-						string.append("\t\t\t").append(StringUtils.trimTrailing(line));
+					final String[] lines = StringUtils.NEWLINE.split(modChangelog.getValue());
+
+					for(String line : lines) {
+						//Remove unneeded whitespace at the end of the line
+						string.append(NEWLINE);
+
+						if(!line.trim().isEmpty()) {
+							string.append("\t\t\t").append(StringUtils.trimTrailing(line));
+						}
 					}
 				}
 			}
@@ -302,11 +309,11 @@ public final class ChangelogGenerator {
 		return path;
 	}
 
-	private static ExtendedMPManifest getManifest(Path path) throws IOException {
-		ExtendedMPManifest manifest = null;
+	private static ExMPManifest getManifest(Path path) throws IOException {
+		ExMPManifest manifest = null;
 
 		try {
-			manifest = ExtendedMPManifest.from(path);
+			manifest = ExMPManifest.from(path);
 		} catch(JsonSyntaxException ex) {
 			getLogger().error("Invalid JSON: " + path);
 			System.exit(1);

@@ -2,7 +2,7 @@ package com.therandomlabs.changeloggenerator;
 
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.CurseFile;
-import com.therandomlabs.curseapi.minecraft.comparison.ModSpecificChangelogHandler;
+import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;

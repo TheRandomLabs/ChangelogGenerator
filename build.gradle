@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:85b177f0a0"
+	compile "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

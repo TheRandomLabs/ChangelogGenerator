@@ -23,6 +23,7 @@ import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChange
 import com.therandomlabs.curseapi.minecraft.modpack.comparison.VersionChange;
 import com.therandomlabs.curseapi.minecraft.version.MCVersion;
 import com.therandomlabs.curseapi.project.CurseProject;
+import com.therandomlabs.forgeutils.ForgeUtils;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.io.IOUtils;
@@ -50,6 +51,7 @@ public final class ChangelogGenerator {
 	private static final String NEWLINE = IOUtils.LINE_SEPARATOR;
 
 	static {
+		ForgeUtils.initialize();
 		HANDLERS.forEach(ModListComparer::registerChangelogHandler);
 	}
 

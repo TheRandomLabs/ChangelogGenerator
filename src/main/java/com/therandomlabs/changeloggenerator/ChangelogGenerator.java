@@ -28,6 +28,7 @@ import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.io.IOUtils;
+import com.therandomlabs.utils.io.NetUtils;
 import com.therandomlabs.utils.misc.Assertions;
 import com.therandomlabs.utils.misc.StringUtils;
 import com.therandomlabs.utils.misc.ThreadUtils;
@@ -58,7 +59,7 @@ public final class ChangelogGenerator {
 	private ChangelogGenerator() {}
 
 	public static void main(String[] args) throws Exception {
-		//NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator)");
+		NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator)");
 
 		if(ArrayUtils.contains(args, "curseMeta")) {
 			CurseAPI.setCurseMetaEnabled(true);

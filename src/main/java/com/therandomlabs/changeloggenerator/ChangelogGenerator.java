@@ -24,17 +24,17 @@ import com.therandomlabs.curseapi.minecraft.modpack.comparison.VersionChange;
 import com.therandomlabs.curseapi.minecraft.version.MCVersion;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.forgeutils.ForgeUtils;
+import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.collection.TRLList;
 import com.therandomlabs.utils.io.IOUtils;
-import com.therandomlabs.utils.io.NetUtils;
 import com.therandomlabs.utils.misc.Assertions;
 import com.therandomlabs.utils.misc.StringUtils;
 import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.12.2";
+	public static final String VERSION = "1.12.3";
 
 	public static final ImmutableList<ModSpecificChangelogHandler> HANDLERS = new ImmutableList<>(
 			ActuallyAdditionsHandler.INSTANCE,
@@ -58,7 +58,12 @@ public final class ChangelogGenerator {
 	private ChangelogGenerator() {}
 
 	public static void main(String[] args) throws Exception {
-		NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator)");
+		//NetUtils.setUserAgent("Mozilla (https://github.com/TheRandomLabs/ChangelogGenerator)");
+
+		if(ArrayUtils.contains(args, "curseMeta")) {
+			CurseAPI.setCurseMetaEnabled(true);
+		}
+
 		run(args);
 	}
 

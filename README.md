@@ -29,8 +29,8 @@ I usually fix these problems quickly. You may also see repeated errors while try
 URLs. This is because there's no way to tell whether a file is archived or if it is just a random
 error, so you can usually ignore it.
 
-CurseMeta is faster than retrieving changelogs directly from HTML, however, CurseMeta is currently
-down so CurseMeta support is disabled.
+CurseMeta is faster than retrieving changelogs directly from HTML, however, it is not guaranteed to
+work, so it is disabled by default. To enable it, put `curseMeta` somewhere in the arguments.
 
 I still haven't implemented proper command-line argument parsing.
 

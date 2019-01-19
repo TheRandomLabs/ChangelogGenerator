@@ -13,7 +13,6 @@ import com.therandomlabs.curseapi.util.Documents;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
-import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ActuallyAdditionsHandler extends ModSpecificChangelogHandler {
 	public static final ActuallyAdditionsHandler INSTANCE = new ActuallyAdditionsHandler();

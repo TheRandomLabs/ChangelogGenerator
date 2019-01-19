@@ -9,23 +9,17 @@ import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModListComparer;
 import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.collection.ArrayUtils;
-import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class MezzHandler extends ModSpecificChangelogHandler {
-	public static final MezzHandler INSTANCE = new MezzHandler();
-	public static final ImmutableList<Integer> IDS = new ImmutableList<>(
-			59751,
-			223525,
-			238222
-	);
+public final class Buuz135Handler extends ModSpecificChangelogHandler {
+	public static final Buuz135Handler INSTANCE = new Buuz135Handler();
 
-	private MezzHandler() {}
+	private Buuz135Handler() {}
 
 	@Override
 	public boolean handlesMod(CurseProject project) {
-		return IDS.contains(project.id());
+		return "Buuz135".equals(project.ownerUsername());
 	}
 
 	@Override
@@ -47,32 +41,26 @@ public final class MezzHandler extends ModSpecificChangelogHandler {
 			return changelog;
 		}
 
-		final String oldVersion = getModVersion(oldFile.name());
-		final String newVersion = getModVersion(newFile.name());
+		String[] split = oldFile.name().split("-");
+		final String oldVersion = ArrayUtils.fromLast(split, 1);
 
-		final String[] lines = StringUtils.splitNewline(newFile.changelog(true));
+		split = newFile.name().split("-");
+		final String newVersion = ArrayUtils.fromLast(split, 1);
+
+		final String[] lines =
+				ArrayUtils.subArray(StringUtils.splitNewline(newFile.changelog(true)), 1);
 
 		final StringBuilder entry = new StringBuilder();
 
-		String version = null;
+		String version = newVersion;
 
 		for(String line : lines) {
-			if(line.startsWith("Current release ")) {
-				version = newVersion;
+			if(line.trim().isEmpty()) {
 				continue;
 			}
 
-			if(line.startsWith("v")) {
-				if(version == null) {
-					version = newVersion;
-					continue;
-				}
-
-				final String currentVersion = line.substring(1);
-
-				if(version.equals(currentVersion)) {
-					continue;
-				}
+			if(!line.startsWith(" * ")) {
+				final String currentVersion = StringUtils.split(line, ' ')[0];
 
 				changelog.put(version, entry.toString());
 				entry.setLength(0);
@@ -85,10 +73,6 @@ public final class MezzHandler extends ModSpecificChangelogHandler {
 				continue;
 			}
 
-			if(version == null || line.isEmpty()) {
-				continue;
-			}
-
 			if(version.equals(oldVersion) && !oldVersion.equals(newVersion)) {
 				break;
 			}
@@ -97,27 +81,5 @@ public final class MezzHandler extends ModSpecificChangelogHandler {
 		}
 
 		return changelog;
-	}
-
-	public static String getModVersion(String version) {
-		final String oldName = StringUtils.removeLastChars(version, 4);
-		String[] split = StringUtils.split(oldName, '_');
-
-		String oldVersion;
-
-		if(split.length == 1) {
-			split = StringUtils.split(oldName, '-');
-			oldVersion = split[split.length - 1];
-		} else {
-			oldVersion = StringUtils.split(split[1], '-')[1];
-		}
-
-		split = StringUtils.split(oldVersion, '.');
-
-		if(split.length == 5) {
-			oldVersion = StringUtils.removeLastChars(oldVersion, split[3].length() + 1);
-		}
-
-		return StringUtils.removeLastChars(oldVersion, ArrayUtils.last(split).length() + 1);
 	}
 }

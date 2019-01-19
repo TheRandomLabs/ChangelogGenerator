@@ -41,6 +41,7 @@ public final class ChangelogGenerator {
 			ActuallyAdditionsHandler.INSTANCE,
 			BiomesOPlentyHandler.INSTANCE,
 			Bre2elHandler.INSTANCE,
+			Buuz135Handler.INSTANCE,
 			CoFHHandler.INSTANCE,
 			FoamFixHandler.INSTANCE,
 			IC2Handler.INSTANCE,

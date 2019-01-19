@@ -27,8 +27,8 @@ public final class Bre2elHandler extends ModSpecificChangelogHandler {
 	}
 
 	@Override
-	public Map<String, String> getChangelogs(CurseFile oldFile, CurseFile newFile, boolean urls)
-			throws CurseException, IOException {
+	public Map<String, String> getChangelogs(Object cacheKey, CurseFile oldFile, CurseFile newFile,
+			boolean urls) throws CurseException, IOException {
 		final Map<String, String> changelog = new LinkedHashMap<>();
 
 		if(urls) {

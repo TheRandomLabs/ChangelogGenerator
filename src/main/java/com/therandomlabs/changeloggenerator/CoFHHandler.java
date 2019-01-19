@@ -35,8 +35,8 @@ public final class CoFHHandler extends ModSpecificChangelogHandler {
 	}
 
 	@Override
-	public Map<String, String> getChangelogs(CurseFile oldFile, CurseFile newFile, boolean urls)
-			throws CurseException, IOException {
+	public Map<String, String> getChangelogs(Object cacheKey, CurseFile oldFile, CurseFile newFile,
+			boolean urls) throws CurseException, IOException {
 		final String changelogURL = getChangelogURL(newFile);
 
 		if(changelogURL == null) {
@@ -58,7 +58,10 @@ public final class CoFHHandler extends ModSpecificChangelogHandler {
 		lengthToRemove = ArrayUtils.last(newVersion.split("\\.")).length() + 1;
 		newVersion = newVersion.substring(0, newVersion.length() - lengthToRemove);
 
-		final String[] lines = ArrayUtils.subArray(StringUtils.splitNewline(read(changelogURL)), 4);
+		final String[] lines = ArrayUtils.subArray(
+				StringUtils.splitNewline(Documents.readWithCache(changelogURL, cacheKey)), 4
+		);
+
 		final StringBuilder entry = new StringBuilder();
 		String version = null;
 

@@ -66,11 +66,11 @@ public final class ActuallyAdditionsHandler extends ModSpecificChangelogHandler 
 
 				version = line.substring(2);
 
-				if(!changelogStarted && version.equals(newVersion)) {
+				if(!changelogStarted && equals(version, newVersion)) {
 					changelogStarted = true;
 				}
 
-				if(version.equals(oldVersion)) {
+				if(equals(version, oldVersion)) {
 					break;
 				}
 
@@ -87,5 +87,21 @@ public final class ActuallyAdditionsHandler extends ModSpecificChangelogHandler 
 		}
 
 		return changelog;
+	}
+
+	public static boolean equals(String version1, String version2) {
+		if(version1.equals(version2)) {
+			return true;
+		}
+
+		if(!Character.isDigit(StringUtils.lastChar(version1))) {
+			version1 = StringUtils.removeLastChar(version1);
+		}
+
+		if(!Character.isDigit(StringUtils.lastChar(version2))) {
+			version2 = StringUtils.removeLastChar(version2);
+		}
+
+		return version1.equals(version2);
 	}
 }

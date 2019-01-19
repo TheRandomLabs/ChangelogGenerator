@@ -13,6 +13,7 @@ import com.therandomlabs.curseapi.util.Documents;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
+import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ActuallyAdditionsHandler extends ModSpecificChangelogHandler {
 	public static final ActuallyAdditionsHandler INSTANCE = new ActuallyAdditionsHandler();
@@ -44,11 +45,17 @@ public final class ActuallyAdditionsHandler extends ModSpecificChangelogHandler 
 
 		String[] split = oldFile.name().split("-");
 		String oldVersion = split[1] + '-' + split[2];
-		oldVersion = StringUtils.removeLastChars(oldVersion, 4);
+
+		if(oldVersion.endsWith(".jar")) {
+			oldVersion = StringUtils.removeLastChars(oldVersion, 4);
+		}
 
 		split = newFile.name().split("-");
 		String newVersion = split[1] + '-' + split[2];
-		newVersion = StringUtils.removeLastChars(newVersion, 4);
+
+		if(newVersion.endsWith(".jar")) {
+			newVersion = StringUtils.removeLastChars(newVersion, 4);
+		}
 
 		final String[] lines =
 				StringUtils.splitNewline(Documents.readWithCache(CHANGELOG_URL, cacheKey));

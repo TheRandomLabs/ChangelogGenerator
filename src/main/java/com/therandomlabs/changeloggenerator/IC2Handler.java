@@ -7,7 +7,7 @@ import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class IC2Handler implements ModSpecificChangelogHandler {
+public final class IC2Handler extends ModSpecificChangelogHandler {
 	public static final IC2Handler INSTANCE = new IC2Handler();
 
 	private IC2Handler() {}

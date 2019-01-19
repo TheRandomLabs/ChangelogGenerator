@@ -11,7 +11,7 @@ import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class Bre2elHandler implements ModSpecificChangelogHandler {
+public final class Bre2elHandler extends ModSpecificChangelogHandler {
 	public static final Bre2elHandler INSTANCE = new Bre2elHandler();
 
 	private Bre2elHandler() {}

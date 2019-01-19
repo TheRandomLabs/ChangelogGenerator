@@ -6,7 +6,7 @@ import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 
-public final class ServerObserverHandler implements ModSpecificChangelogHandler {
+public final class ServerObserverHandler extends ModSpecificChangelogHandler {
 	public static final ServerObserverHandler INSTANCE = new ServerObserverHandler();
 
 	private ServerObserverHandler() {}

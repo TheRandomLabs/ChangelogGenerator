@@ -9,15 +9,14 @@ import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModListComparer;
 import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
-import com.therandomlabs.curseapi.util.Documents;
 import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class ActuallyAdditionsHandler implements ModSpecificChangelogHandler {
+public final class ActuallyAdditionsHandler extends ModSpecificChangelogHandler {
 	public static final ActuallyAdditionsHandler INSTANCE = new ActuallyAdditionsHandler();
-	public static final String CHANGELOG_URL = "https://raw.githubusercontent.com/Ellpeck/" +
-			"ActuallyAdditions/master/update/changelog.md";
+	public static final String CHANGELOG_URL = "https://raw.githubusercontent.com/" +
+			"Ellpeck/ActuallyAdditions/master/update/changelog.md";
 
 	private ActuallyAdditionsHandler() {}
 
@@ -50,8 +49,7 @@ public final class ActuallyAdditionsHandler implements ModSpecificChangelogHandl
 		String newVersion = split[1] + '-' + split[2];
 		newVersion = StringUtils.removeLastChars(newVersion, 4);
 
-		final String[] lines =
-				StringUtils.splitNewline(Documents.read(CHANGELOG_URL));
+		final String[] lines = StringUtils.splitNewline(read(CHANGELOG_URL));
 		final StringBuilder entry = new StringBuilder();
 		String version = null;
 

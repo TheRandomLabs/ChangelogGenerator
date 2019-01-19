@@ -8,7 +8,7 @@ import com.therandomlabs.utils.collection.ArrayUtils;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class McJtyHandler implements ModSpecificChangelogHandler {
+public final class McJtyHandler extends ModSpecificChangelogHandler {
 	public static final McJtyHandler INSTANCE = new McJtyHandler();
 
 	private McJtyHandler() {}

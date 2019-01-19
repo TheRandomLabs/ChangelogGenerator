@@ -6,7 +6,7 @@ import com.therandomlabs.curseapi.file.CurseFileList;
 import com.therandomlabs.curseapi.minecraft.modpack.comparison.ModSpecificChangelogHandler;
 import com.therandomlabs.curseapi.project.CurseProject;
 
-public final class FoamFixHandler implements ModSpecificChangelogHandler {
+public final class FoamFixHandler extends ModSpecificChangelogHandler {
 	public static final FoamFixHandler INSTANCE = new FoamFixHandler();
 
 	private FoamFixHandler() {}

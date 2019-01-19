@@ -17,7 +17,7 @@ import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class CoFHHandler implements ModSpecificChangelogHandler {
+public final class CoFHHandler extends ModSpecificChangelogHandler {
 	public static final CoFHHandler INSTANCE = new CoFHHandler();
 
 	private CoFHHandler() {}
@@ -58,8 +58,7 @@ public final class CoFHHandler implements ModSpecificChangelogHandler {
 		lengthToRemove = ArrayUtils.last(newVersion.split("\\.")).length() + 1;
 		newVersion = newVersion.substring(0, newVersion.length() - lengthToRemove);
 
-		final String[] lines =
-				ArrayUtils.subArray(StringUtils.splitNewline(Documents.read(changelogURL)), 4);
+		final String[] lines = ArrayUtils.subArray(StringUtils.splitNewline(read(changelogURL)), 4);
 		final StringBuilder entry = new StringBuilder();
 		String version = null;
 

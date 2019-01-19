@@ -11,7 +11,7 @@ import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class BiomesOPlentyHandler implements ModSpecificChangelogHandler {
+public final class BiomesOPlentyHandler extends ModSpecificChangelogHandler {
 	public static final BiomesOPlentyHandler INSTANCE = new BiomesOPlentyHandler();
 
 	private BiomesOPlentyHandler() {}

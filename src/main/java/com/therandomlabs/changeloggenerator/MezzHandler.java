@@ -13,7 +13,7 @@ import com.therandomlabs.utils.collection.ImmutableList;
 import com.therandomlabs.utils.io.IOUtils;
 import com.therandomlabs.utils.misc.StringUtils;
 
-public final class MezzHandler implements ModSpecificChangelogHandler {
+public final class MezzHandler extends ModSpecificChangelogHandler {
 	public static final MezzHandler INSTANCE = new MezzHandler();
 	public static final ImmutableList<Integer> IDS = new ImmutableList<>(
 			59751,

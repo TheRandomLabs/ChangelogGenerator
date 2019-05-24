@@ -32,7 +32,8 @@ error, so you can usually ignore it.
 CurseMeta is faster than retrieving changelogs directly from HTML, however, it is not guaranteed to
 work, so it is disabled by default. To enable it, put `curseMeta` somewhere in the arguments.
 
-I still haven't implemented proper command-line argument parsing.
+I still haven't implemented proper command-line argument parsing, and ChangelogGenerator does not yet
+work with 1.13+ modpacks.
 
 To use this with Gradle:
 

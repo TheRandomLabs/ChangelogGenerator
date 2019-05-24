@@ -35,7 +35,7 @@ import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.13";
+	public static final String VERSION = "1.14";
 
 	public static final ImmutableList<ModSpecificChangelogHandler> HANDLERS = new ImmutableList<>(
 			ActuallyAdditionsHandler.INSTANCE,
@@ -213,18 +213,22 @@ public final class ChangelogGenerator {
 				append(newName).append(' ').
 				append(newVersion).append(NEWLINE).append(NEWLINE);
 
-		if(!results.loadInfoAndGetAdded().isEmpty()) {
-			string.append("Added:");
+		final TRLList<Mod> addedFiles = results.loadInfoAndGetAdded();
 
-			for(Mod added : results.getAdded()) {
+		if(!addedFiles.isEmpty()) {
+			string.append("Added ").append(addedFiles.size()).append(" files:");
+
+			for(Mod added : addedFiles) {
 				string.append(NEWLINE).append("\t").append("- ").append(added.title());
 			}
 
 			string.append(NEWLINE).append(NEWLINE);
 		}
 
-		if(!results.getUpdated().isEmpty()) {
-			string.append("Updated:");
+		final TRLList<VersionChange> updatedFiles = results.getUpdated();
+
+		if(!updatedFiles.isEmpty()) {
+			string.append("Updated ").append(addedFiles.size()).append(" files:");
 
 			final Map<VersionChange, Map<String, String>> changelogs =
 					results.getUpdatedChangelogs(urls, true);
@@ -232,8 +236,10 @@ public final class ChangelogGenerator {
 			appendChangelogs(string, changelogs);
 		}
 
-		if(!results.getDowngraded().isEmpty()) {
-			string.append("Downgraded:");
+		final TRLList<VersionChange> downgradedFiles = results.getDowngraded();
+
+		if(!downgradedFiles.isEmpty()) {
+			string.append("Downgraded ").append(downgradedFiles.size()).append(" files:");
 
 			final Map<VersionChange, Map<String, String>> changelogs =
 					results.getDowngradedChangelogs(urls, true);
@@ -241,8 +247,10 @@ public final class ChangelogGenerator {
 			appendChangelogs(string, changelogs);
 		}
 
-		if(!results.loadInfoAndGetRemoved().isEmpty()) {
-			string.append("Removed:");
+		final TRLList<Mod> removedFiles = results.loadInfoAndGetRemoved();
+
+		if(!removedFiles.isEmpty()) {
+			string.append("Removed ").append(removedFiles.size()).append(" files:");
 
 			for(Mod removed : results.getRemoved()) {
 				String title = removed.title();

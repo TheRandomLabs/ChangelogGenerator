@@ -228,7 +228,7 @@ public final class ChangelogGenerator {
 		final TRLList<VersionChange> updatedFiles = results.getUpdated();
 
 		if(!updatedFiles.isEmpty()) {
-			string.append("Updated ").append(addedFiles.size()).append(" files:");
+			string.append("Updated ").append(updatedFiles.size()).append(" files:");
 
 			final Map<VersionChange, Map<String, String>> changelogs =
 					results.getUpdatedChangelogs(urls, true);

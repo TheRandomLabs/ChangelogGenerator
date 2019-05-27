@@ -47,7 +47,8 @@ public final class ChangelogGenerator {
 			IC2Handler.INSTANCE,
 			McJtyHandler.INSTANCE,
 			MezzHandler.INSTANCE,
-			ServerObserverHandler.INSTANCE
+			ServerObserverHandler.INSTANCE,
+			SpazleyHandler.INSTANCE
 	);
 
 	private static final String NEWLINE = IOUtils.LINE_SEPARATOR;

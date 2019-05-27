@@ -3,6 +3,7 @@ package com.therandomlabs.changeloggenerator;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ public final class CoFHHandler extends ModSpecificChangelogHandler {
 	public List<String> getURLsToPreload(CurseFile oldFile, CurseFile newFile)
 			throws CurseException {
 		final String url = getChangelogURL(newFile);
-		return url != null ? new ImmutableList<>(url) : null;
+		return url != null ? new ImmutableList<>(url) : Collections.emptyList();
 	}
 
 	@Override

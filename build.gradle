@@ -2,12 +2,12 @@ apply plugin: "java"
 
 repositories {
 	maven {
-		url = "https://jitpack.io"
+		url "https://jitpack.io"
 	}
 }
 
 dependencies {
-	compile "com.github.TheRandomLabs:ForgeUtils:-SNAPSHOT"
+	compile "com.github.TheRandomLabs:ForgeUtils:master-SNAPSHOT"
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

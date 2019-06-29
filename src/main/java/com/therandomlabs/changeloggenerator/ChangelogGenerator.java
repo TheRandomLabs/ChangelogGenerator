@@ -35,7 +35,7 @@ import com.therandomlabs.utils.misc.ThreadUtils;
 import static com.therandomlabs.utils.logging.Logging.getLogger;
 
 public final class ChangelogGenerator {
-	public static final String VERSION = "1.14";
+	public static final String VERSION = "1.15";
 
 	public static final ImmutableList<ModSpecificChangelogHandler> HANDLERS = new ImmutableList<>(
 			ActuallyAdditionsHandler.INSTANCE,

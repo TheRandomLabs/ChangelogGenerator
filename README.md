@@ -1,7 +1,7 @@
 # ChangelogGenerator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Build](https://github.com/TheRandomLabs/ChangelogGenerator/workflows/build/badge.svg)
+[![Build](https://jitci.com/gh/TheRandomLabs/ChangelogGenerator/svg)](https://jitci.com/gh/TheRandomLabs/ChangelogGenerator)
 
 Generates changelogs for CurseForge modpacks.
 

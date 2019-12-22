@@ -1,1081 +1,1248 @@
-Enigmatica 2 Expert 1.18 to Enigmatica 2 Expert 1.19
+=============================================
+All the Mods 4 0.2.5 --> All the Mods 4 0.2.7
+=============================================
 
 Added:
-	- Backpacks
-	- Carry On
-	- Thaumcraft
-	- Thaumic JEI
-	- Unknown Name
+- Fairy Lights
 
 Updated:
-	Actually Additions (went from ActuallyAdditions-1.12.2-r133.jar to ActuallyAdditions-1.12.2-r134.jar):
-		1.12.2-r134:
-			* Worm should no longer attempt to post a UseHoeEvent on farmland.
-			* Only items with FE capability can be placed in the energizer.
-			* Water bowl in the offhand is no longer a weapon of mass destruction.
-			* Oil generator outputs now properly scale with configured values.
-			* AA banner patterns now work properly.
-
-	Advanced Rocketry (went from AdvancedRocketry 1.12.2-1.4.0-72-UNSTABLE build -72 for 1.12.2 to AdvancedRocketry 1.12.2-1.4.0-77-UNSTABLE build -77 for 1.12.2):
-		AdvancedRocketry 1.12.2-1.4.0-77-UNSTABLE build -77 for 1.12.2:
-			 Highly untested and may break world
-
-			Current release 1.12.2-1.4.0-77
-
-			 * [ fixes #1254](https://github.com/zmaster587/AdvancedRocketry/commit/3e82485098687ac)
-			 * [ fix accidental removal of GC handling](https://github.com/zmaster587/AdvancedRocketry/commit/5c90a74654032c2)
-			 * [ fix gas mining rockets only half connect to infrastructure, #1256](https://github.com/zmaster587/AdvancedRocketry/commit/9e05b3a761d369d)
-			 * [ add extraneous load for world #1257](https://github.com/zmaster587/AdvancedRocketry/commit/11789f5ce9d38c0)
-			 * [ fix spelling error in config comments](https://github.com/zmaster587/AdvancedRocketry/commit/de72308146917f6)
-			 * [ Update GC handling for 1.12, should fix #1135](https://github.com/zmaster587/AdvancedRocketry/commit/54345b555f9f4df)
-			 * [ orbitalTheta, icon now transfer from config folder when resetFromConfig](https://github.com/zmaster587/AdvancedRocketry/commit/934ecbc3619251c)
-			 * [ improvements to the tranciever](https://github.com/zmaster587/AdvancedRocketry/commit/0abbb673ffc02cc)
-			 * [ planet loading fixes, things and stuff](https://github.com/zmaster587/AdvancedRocketry/commit/e48525e4f85cfdb)
-			 * [ fix crash when trying to store data to non existant chip in the warp controller](https://github.com/zmaster587/AdvancedRocketry/commit/87aa196c0fcff46)
-			 * [ fix random world crash when opening rocket contents](https://github.com/zmaster587/AdvancedRocketry/commit/77096646c69c03f)
-			 * [ Fix pressure tanks returning wrong capability Fair warning: this was written on github, so you might want to double check the syntax. This fixes crashes like [this one](https://pastebin.com/NTsgib8A) when getCapability is queried with a capability other than IFluidHandlerItem.](https://github.com/zmaster587/AdvancedRocketry/commit/10476a779f24afc)
-			 * [ Jetpacks massivly improved](https://github.com/zmaster587/AdvancedRocketry/commit/388891e87d415c9)
-			 * [ fix jetpack not deactivating in certain conditions, fly speed interference](https://github.com/zmaster587/AdvancedRocketry/commit/9b894763984a263)
-			 * [ fix crash with recent forge builds #1235](https://github.com/zmaster587/AdvancedRocketry/commit/e44e4c4a2d10df3)
-			 * [ fix issue with jetpack recipe not working in chemical assembler](https://github.com/zmaster587/AdvancedRocketry/commit/a2c62ef29276179)
-			 * [ Fix #1228](https://github.com/zmaster587/AdvancedRocketry/commit/2ad2f540cb2ce7c)
-			 * [ Fix #1215 #1199, make sure planets know where they're going](https://github.com/zmaster587/AdvancedRocketry/commit/e9b86eb64e21f84)
-			 * [ fix gravity becoming gravy, +1 if you get the reference, #1211](https://github.com/zmaster587/AdvancedRocketry/commit/f6b6b7ee7b29711)
-			 * [ fix name in pressurized tank](https://github.com/zmaster587/AdvancedRocketry/commit/fbd747356461ffb)
-			 * [ fix bad localization with solar collector](https://github.com/zmaster587/AdvancedRocketry/commit/0ce1864fdc6cffc)
-			 * [ fix white screen with rocket builder, with AR only](https://github.com/zmaster587/AdvancedRocketry/commit/68cc272b8a4f761)
-			 * [ fix #1210](https://github.com/zmaster587/AdvancedRocketry/commit/d74dece36aeb2c0)
-			 * [ add sizes to artifacts](https://github.com/zmaster587/AdvancedRocketry/commit/46c917e19ab6b75)
-			 * [ fix #1165](https://github.com/zmaster587/AdvancedRocketry/commit/0e6e58c9886650d)
-			 * [ Don't push default values to XML](https://github.com/zmaster587/AdvancedRocketry/commit/6a47627d752245a)
-			 * [ prevent crash if a planet is removed](https://github.com/zmaster587/AdvancedRocketry/commit/cf206d27a58401d)
-			 * [ fix a few mistakes](https://github.com/zmaster587/AdvancedRocketry/commit/660f0583e148e6d)
-			 * [ update minor version number](https://github.com/zmaster587/AdvancedRocketry/commit/03b3c080c4ce86b)
-			 * [ Address #1205](https://github.com/zmaster587/AdvancedRocketry/commit/e6b1e919bacb2e5)
-			 * [ Add some variation in lunar spawning, liquid oxygen lakes](https://github.com/zmaster587/AdvancedRocketry/commit/17ed80ec9fee2f9)
-			 * [ terrain gen revamp, added cave planets, they are very slow](https://github.com/zmaster587/AdvancedRocketry/commit/09c8b2552afceb2)
-		AdvancedRocketry 1.12.2-1.4.0-76-UNSTABLE build -76 for 1.12.2:
-			 Highly untested and may break world
-
-			Current release 1.12.2-1.4.0-76
-
-			 * [ add extraneous load for world #1257](https://github.com/zmaster587/AdvancedRocketry/commit/11789f5ce9d38c0)
-			 * [ fix spelling error in config comments](https://github.com/zmaster587/AdvancedRocketry/commit/de72308146917f6)
-			 * [ Update GC handling for 1.12, should fix #1135](https://github.com/zmaster587/AdvancedRocketry/commit/54345b555f9f4df)
-			 * [ orbitalTheta, icon now transfer from config folder when resetFromConfig](https://github.com/zmaster587/AdvancedRocketry/commit/934ecbc3619251c)
-			 * [ improvements to the tranciever](https://github.com/zmaster587/AdvancedRocketry/commit/0abbb673ffc02cc)
-			 * [ planet loading fixes, things and stuff](https://github.com/zmaster587/AdvancedRocketry/commit/e48525e4f85cfdb)
-			 * [ fix crash when trying to store data to non existant chip in the warp controller](https://github.com/zmaster587/AdvancedRocketry/commit/87aa196c0fcff46)
-			 * [ fix random world crash when opening rocket contents](https://github.com/zmaster587/AdvancedRocketry/commit/77096646c69c03f)
-			 * [ Fix pressure tanks returning wrong capability Fair warning: this was written on github, so you might want to double check the syntax. This fixes crashes like [this one](https://pastebin.com/NTsgib8A) when getCapability is queried with a capability other than IFluidHandlerItem.](https://github.com/zmaster587/AdvancedRocketry/commit/10476a779f24afc)
-			 * [ Jetpacks massivly improved](https://github.com/zmaster587/AdvancedRocketry/commit/388891e87d415c9)
-			 * [ fix jetpack not deactivating in certain conditions, fly speed interference](https://github.com/zmaster587/AdvancedRocketry/commit/9b894763984a263)
-			 * [ fix crash with recent forge builds #1235](https://github.com/zmaster587/AdvancedRocketry/commit/e44e4c4a2d10df3)
-			 * [ fix issue with jetpack recipe not working in chemical assembler](https://github.com/zmaster587/AdvancedRocketry/commit/a2c62ef29276179)
-			 * [ Fix #1228](https://github.com/zmaster587/AdvancedRocketry/commit/2ad2f540cb2ce7c)
-			 * [ Fix #1215 #1199, make sure planets know where they're going](https://github.com/zmaster587/AdvancedRocketry/commit/e9b86eb64e21f84)
-			 * [ fix gravity becoming gravy, +1 if you get the reference, #1211](https://github.com/zmaster587/AdvancedRocketry/commit/f6b6b7ee7b29711)
-			 * [ fix name in pressurized tank](https://github.com/zmaster587/AdvancedRocketry/commit/fbd747356461ffb)
-			 * [ fix bad localization with solar collector](https://github.com/zmaster587/AdvancedRocketry/commit/0ce1864fdc6cffc)
-			 * [ fix white screen with rocket builder, with AR only](https://github.com/zmaster587/AdvancedRocketry/commit/68cc272b8a4f761)
-			 * [ fix #1210](https://github.com/zmaster587/AdvancedRocketry/commit/d74dece36aeb2c0)
-			 * [ add sizes to artifacts](https://github.com/zmaster587/AdvancedRocketry/commit/46c917e19ab6b75)
-			 * [ fix #1165](https://github.com/zmaster587/AdvancedRocketry/commit/0e6e58c9886650d)
-			 * [ Don't push default values to XML](https://github.com/zmaster587/AdvancedRocketry/commit/6a47627d752245a)
-			 * [ prevent crash if a planet is removed](https://github.com/zmaster587/AdvancedRocketry/commit/cf206d27a58401d)
-			 * [ fix a few mistakes](https://github.com/zmaster587/AdvancedRocketry/commit/660f0583e148e6d)
-			 * [ update minor version number](https://github.com/zmaster587/AdvancedRocketry/commit/03b3c080c4ce86b)
-			 * [ Address #1205](https://github.com/zmaster587/AdvancedRocketry/commit/e6b1e919bacb2e5)
-			 * [ Add some variation in lunar spawning, liquid oxygen lakes](https://github.com/zmaster587/AdvancedRocketry/commit/17ed80ec9fee2f9)
-			 * [ terrain gen revamp, added cave planets, they are very slow](https://github.com/zmaster587/AdvancedRocketry/commit/09c8b2552afceb2)
-		AdvancedRocketry 1.12.2-1.4.0-75-UNSTABLE build -75 for 1.12.2:
-			 Highly untested and may break world
-
-			Current release 1.12.2-1.4.0-75
-
-			 * [ fix spelling error in config comments](https://github.com/zmaster587/AdvancedRocketry/commit/de72308146917f6)
-			 * [ Update GC handling for 1.12, should fix #1135](https://github.com/zmaster587/AdvancedRocketry/commit/54345b555f9f4df)
-			 * [ orbitalTheta, icon now transfer from config folder when resetFromConfig](https://github.com/zmaster587/AdvancedRocketry/commit/934ecbc3619251c)
-			 * [ improvements to the tranciever](https://github.com/zmaster587/AdvancedRocketry/commit/0abbb673ffc02cc)
-			 * [ planet loading fixes, things and stuff](https://github.com/zmaster587/AdvancedRocketry/commit/e48525e4f85cfdb)
-			 * [ fix crash when trying to store data to non existant chip in the warp controller](https://github.com/zmaster587/AdvancedRocketry/commit/87aa196c0fcff46)
-			 * [ fix random world crash when opening rocket contents](https://github.com/zmaster587/AdvancedRocketry/commit/77096646c69c03f)
-			 * [ Fix pressure tanks returning wrong capability Fair warning: this was written on github, so you might want to double check the syntax. This fixes crashes like [this one](https://pastebin.com/NTsgib8A) when getCapability is queried with a capability other than IFluidHandlerItem.](https://github.com/zmaster587/AdvancedRocketry/commit/10476a779f24afc)
-			 * [ Jetpacks massivly improved](https://github.com/zmaster587/AdvancedRocketry/commit/388891e87d415c9)
-			 * [ fix jetpack not deactivating in certain conditions, fly speed interference](https://github.com/zmaster587/AdvancedRocketry/commit/9b894763984a263)
-			 * [ fix crash with recent forge builds #1235](https://github.com/zmaster587/AdvancedRocketry/commit/e44e4c4a2d10df3)
-			 * [ fix issue with jetpack recipe not working in chemical assembler](https://github.com/zmaster587/AdvancedRocketry/commit/a2c62ef29276179)
-			 * [ Fix #1228](https://github.com/zmaster587/AdvancedRocketry/commit/2ad2f540cb2ce7c)
-			 * [ Fix #1215 #1199, make sure planets know where they're going](https://github.com/zmaster587/AdvancedRocketry/commit/e9b86eb64e21f84)
-			 * [ fix gravity becoming gravy, +1 if you get the reference, #1211](https://github.com/zmaster587/AdvancedRocketry/commit/f6b6b7ee7b29711)
-			 * [ fix name in pressurized tank](https://github.com/zmaster587/AdvancedRocketry/commit/fbd747356461ffb)
-			 * [ fix bad localization with solar collector](https://github.com/zmaster587/AdvancedRocketry/commit/0ce1864fdc6cffc)
-			 * [ fix white screen with rocket builder, with AR only](https://github.com/zmaster587/AdvancedRocketry/commit/68cc272b8a4f761)
-			 * [ fix #1210](https://github.com/zmaster587/AdvancedRocketry/commit/d74dece36aeb2c0)
-			 * [ add sizes to artifacts](https://github.com/zmaster587/AdvancedRocketry/commit/46c917e19ab6b75)
-			 * [ fix #1165](https://github.com/zmaster587/AdvancedRocketry/commit/0e6e58c9886650d)
-			 * [ Don't push default values to XML](https://github.com/zmaster587/AdvancedRocketry/commit/6a47627d752245a)
-			 * [ prevent crash if a planet is removed](https://github.com/zmaster587/AdvancedRocketry/commit/cf206d27a58401d)
-			 * [ fix a few mistakes](https://github.com/zmaster587/AdvancedRocketry/commit/660f0583e148e6d)
-			 * [ update minor version number](https://github.com/zmaster587/AdvancedRocketry/commit/03b3c080c4ce86b)
-			 * [ Address #1205](https://github.com/zmaster587/AdvancedRocketry/commit/e6b1e919bacb2e5)
-			 * [ Add some variation in lunar spawning, liquid oxygen lakes](https://github.com/zmaster587/AdvancedRocketry/commit/17ed80ec9fee2f9)
-			 * [ terrain gen revamp, added cave planets, they are very slow](https://github.com/zmaster587/AdvancedRocketry/commit/09c8b2552afceb2)
-		AdvancedRocketry 1.12.2-1.4.0-74-UNSTABLE build -74 for 1.12.2:
-			 Highly untested and may break world
-
-			Current release 1.12.2-1.4.0-74
-
-			 * [ planet loading fixes, things and stuff](https://github.com/zmaster587/AdvancedRocketry/commit/e48525e4f85cfdb)
-			 * [ fix crash when trying to store data to non existant chip in the warp controller](https://github.com/zmaster587/AdvancedRocketry/commit/87aa196c0fcff46)
-			 * [ fix random world crash when opening rocket contents](https://github.com/zmaster587/AdvancedRocketry/commit/77096646c69c03f)
-			 * [ Fix pressure tanks returning wrong capability Fair warning: this was written on github, so you might want to double check the syntax. This fixes crashes like [this one](https://pastebin.com/NTsgib8A) when getCapability is queried with a capability other than IFluidHandlerItem.](https://github.com/zmaster587/AdvancedRocketry/commit/10476a779f24afc)
-			 * [ Jetpacks massivly improved](https://github.com/zmaster587/AdvancedRocketry/commit/388891e87d415c9)
-			 * [ fix jetpack not deactivating in certain conditions, fly speed interference](https://github.com/zmaster587/AdvancedRocketry/commit/9b894763984a263)
-			 * [ fix crash with recent forge builds #1235](https://github.com/zmaster587/AdvancedRocketry/commit/e44e4c4a2d10df3)
-			 * [ fix issue with jetpack recipe not working in chemical assembler](https://github.com/zmaster587/AdvancedRocketry/commit/a2c62ef29276179)
-			 * [ Fix #1228](https://github.com/zmaster587/AdvancedRocketry/commit/2ad2f540cb2ce7c)
-			 * [ Fix #1215 #1199, make sure planets know where they're going](https://github.com/zmaster587/AdvancedRocketry/commit/e9b86eb64e21f84)
-			 * [ fix gravity becoming gravy, +1 if you get the reference, #1211](https://github.com/zmaster587/AdvancedRocketry/commit/f6b6b7ee7b29711)
-			 * [ fix name in pressurized tank](https://github.com/zmaster587/AdvancedRocketry/commit/fbd747356461ffb)
-			 * [ fix bad localization with solar collector](https://github.com/zmaster587/AdvancedRocketry/commit/0ce1864fdc6cffc)
-			 * [ fix white screen with rocket builder, with AR only](https://github.com/zmaster587/AdvancedRocketry/commit/68cc272b8a4f761)
-			 * [ fix #1210](https://github.com/zmaster587/AdvancedRocketry/commit/d74dece36aeb2c0)
-			 * [ add sizes to artifacts](https://github.com/zmaster587/AdvancedRocketry/commit/46c917e19ab6b75)
-			 * [ fix #1165](https://github.com/zmaster587/AdvancedRocketry/commit/0e6e58c9886650d)
-			 * [ Don't push default values to XML](https://github.com/zmaster587/AdvancedRocketry/commit/6a47627d752245a)
-			 * [ prevent crash if a planet is removed](https://github.com/zmaster587/AdvancedRocketry/commit/cf206d27a58401d)
-			 * [ fix a few mistakes](https://github.com/zmaster587/AdvancedRocketry/commit/660f0583e148e6d)
-			 * [ update minor version number](https://github.com/zmaster587/AdvancedRocketry/commit/03b3c080c4ce86b)
-			 * [ Address #1205](https://github.com/zmaster587/AdvancedRocketry/commit/e6b1e919bacb2e5)
-			 * [ Add some variation in lunar spawning, liquid oxygen lakes](https://github.com/zmaster587/AdvancedRocketry/commit/17ed80ec9fee2f9)
-			 * [ terrain gen revamp, added cave planets, they are very slow](https://github.com/zmaster587/AdvancedRocketry/commit/09c8b2552afceb2)
-		AdvancedRocketry 1.12.2-1.4.0-73-UNSTABLE build -73 for 1.12.2:
-			 Highly untested and may break world
-
-			Current release 1.12.2-1.4.0-73
-
-			 * [ Jetpacks massivly improved](https://github.com/zmaster587/AdvancedRocketry/commit/388891e87d415c9)
-			 * [ fix jetpack not deactivating in certain conditions, fly speed interference](https://github.com/zmaster587/AdvancedRocketry/commit/9b894763984a263)
-			 * [ fix crash with recent forge builds #1235](https://github.com/zmaster587/AdvancedRocketry/commit/e44e4c4a2d10df3)
-			 * [ fix issue with jetpack recipe not working in chemical assembler](https://github.com/zmaster587/AdvancedRocketry/commit/a2c62ef29276179)
-			 * [ Fix #1228](https://github.com/zmaster587/AdvancedRocketry/commit/2ad2f540cb2ce7c)
-			 * [ Fix #1215 #1199, make sure planets know where they're going](https://github.com/zmaster587/AdvancedRocketry/commit/e9b86eb64e21f84)
-			 * [ fix gravity becoming gravy, +1 if you get the reference, #1211](https://github.com/zmaster587/AdvancedRocketry/commit/f6b6b7ee7b29711)
-			 * [ fix name in pressurized tank](https://github.com/zmaster587/AdvancedRocketry/commit/fbd747356461ffb)
-			 * [ fix bad localization with solar collector](https://github.com/zmaster587/AdvancedRocketry/commit/0ce1864fdc6cffc)
-			 * [ fix white screen with rocket builder, with AR only](https://github.com/zmaster587/AdvancedRocketry/commit/68cc272b8a4f761)
-			 * [ fix #1210](https://github.com/zmaster587/AdvancedRocketry/commit/d74dece36aeb2c0)
-			 * [ add sizes to artifacts](https://github.com/zmaster587/AdvancedRocketry/commit/46c917e19ab6b75)
-			 * [ fix #1165](https://github.com/zmaster587/AdvancedRocketry/commit/0e6e58c9886650d)
-			 * [ Don't push default values to XML](https://github.com/zmaster587/AdvancedRocketry/commit/6a47627d752245a)
-			 * [ prevent crash if a planet is removed](https://github.com/zmaster587/AdvancedRocketry/commit/cf206d27a58401d)
-			 * [ fix a few mistakes](https://github.com/zmaster587/AdvancedRocketry/commit/660f0583e148e6d)
-			 * [ update minor version number](https://github.com/zmaster587/AdvancedRocketry/commit/03b3c080c4ce86b)
-			 * [ Address #1205](https://github.com/zmaster587/AdvancedRocketry/commit/e6b1e919bacb2e5)
-			 * [ Add some variation in lunar spawning, liquid oxygen lakes](https://github.com/zmaster587/AdvancedRocketry/commit/17ed80ec9fee2f9)
-			 * [ terrain gen revamp, added cave planets, they are very slow](https://github.com/zmaster587/AdvancedRocketry/commit/09c8b2552afceb2)
-
-	Animania (went from Animania-1.12.2-1.4.7 to Animania-1.12.2-1.4.8):
-		Animania-1.12.2-1.4.8:
-			Animania
-
-			Release Notes 1.4.8 (1.10.x, 1.11.x, 1.12.x
-
-			“Tropical Bugs” - Special thanks to our friends at Tropicraft who found and reported some big ones.
-
-			Bug Fixes
-
-			 * Hamster Wheel no longer requires ridiculous Network usage (credit: tterag, Corosus)
-			 * Animals no longer lower TPS performance when stuck in water (credit: ElvenChaos)
-			 * [1.11, 1.12] Trough filled with water no longer creates memory leak (credit: tterag)
-			 * Wagon no longer drops separate chest, allowing for infinite chest exploit (credit: HurtsAsHell)
-			 * [1.11, 1.12] Truffle Soup no longer gives regen when potion effects disabled in config (credit: laserlemons)
-			 * [1.12] Goats no longer have infinite milk
-			 * [1.12] Dutch language properly loading again (though needs an update) (credit: Kippoenkomeet)
-			 * Corrected spawn egg color and Raw Chicken Orpington name (credit: RaliaTheWolf)
-			 * [1.12] Animania can now run properly on earlier versions of Forge, though we still encourage you to update (credit: lifeiseasy)
-			Compat Issues:
-
-			 * Chickens properly read data after interaction with Carry On (credit: Tschipp)
-			 * Horses can be properly captured using the Animal Trap from Keeper Essentials (credit: Wizard)
-
-	Biomes O' Plenty (went from BiomesOPlenty-1.12.2-7.0.1.2337-universal.jar to BiomesOPlenty-1.12.2-7.0.1.2381-universal.jar):
-		1.12.2-7.0.1.2381:
-			Matt Caughey: Removed Pixies (Moved to Familiar Fauna)
-		1.12.2-7.0.1.2380:
-			Matt Caughey: Allowed BOP fluid buckets to display in the BOP creative tab
-		1.12.2-7.0.1.2379:
-			Matt Caughey: Fixed crash if all island biomes are disabled (Closes #1233)
-		1.12.2-7.0.1.2378:
-			Matt Caughey:
-			Prevented Nether generation above the bedrock and fixed tpbiome command
-			in Nether (Closes #1140, #1141)
-		1.12.2-7.0.1.2377:
-			Matt Caughey: Removed some loot table entries
-		1.12.2-7.0.1.2376:
-			koh-gh: Update ja_JP.lang
-		1.12.2-7.0.1.2375:
-			Matt Caughey: Removed last remaining bucket override stuff
-		1.12.2-7.0.1.2374:
-			Matt Caughey: Removed Forge bucket override stuff since it's not needed anymore
-		1.12.2-7.0.1.2373:
-			Matt Caughey: Tweaked mud and flesh block sounds
-		1.12.2-7.0.1.2372:
-			Matt Caughey: Fixed terrarium block particles
-		1.12.2-7.0.1.2371:
-			Matt Caughey: Tweaked map colors
-		1.12.2-7.0.1.2370:
-			github: Update zh_CN.lang
-			github: Update zh_CN.lang
-		1.12.2-7.0.1.2369:
-			Matt Caughey: Updated map colors for blocks
-		1.12.2-7.0.1.2368:
-			Matt Caughey: Fixed some leaf textures not looking right in Fast graphics mode
-		1.12.2-7.0.1.2367:
-			Adubbz: Added scatterYMethod to the options for GeneratorLakes
-		1.12.2-7.0.1.2366:
-			Adubbz: Fixed adding new generators via config files
-		1.12.2-7.0.1.2365:
-			github: Update zh_CN.lang
-		1.12.2-7.0.1.2364:
-			lihow731: Update zh_TW.lang
-			Matt Caughey: Removed stalactites/stalagmites
-		1.12.2-7.0.1.2363:
-			Matt Caughey:
-			Added short Bone columns to the Visceral Heap, changed the Eyebulb
-			texture, made the vanilla Nether biome more common
-		1.12.2-7.0.1.2362:
-			Matt Caughey: Disabled Wheat Grass, Damp Grass, and Shrub generation in all biomes
-		1.12.2-7.0.1.2361:
-			Matt Caughey: Added Curse effect for Blue Fire
-		1.12.2-7.0.1.2360:
-			github:
-			Update ru_RU.lang
-			Optimization for version BiomesOPlenty 7.0.1.2358 (MC 1.12.2). 437 lines
-			en_US=437 lines ru_RU.
-		1.12.2-7.0.1.2359:
-			Matt Caughey:
-			Fixed disabled biomes crashing due to village material replacement
-			(Closes #1239)
-		1.12.2-7.0.1.2358:
-			Matt Caughey: Replaced Sapling Terrarium with Beach Terrarium
-		1.12.2-7.0.1.2357:
-			Matt Caughey:
-			Removed the Polar Chasm biome, added Blue Fire to the Phantasmagoric
-			Inferno, reworked Terrarium models/textures
-		1.12.2-7.0.1.2356:
-			github: Update zh_CN.lang
-		1.12.2-7.0.1.2355:
-			Matt Caughey: Removed Turnips, Ambrosia, Salads, Jelled Poison, and Pinecones
-		1.12.2-7.0.1.2354:
-			Matt Caughey: Improved the Xeric Shrubland biome
-		1.12.2-7.0.1.2353:
-			Matt Caughey:
-			Removed world creation menu options for replacing BOP
-			trees/grasses/soils/etc. with vanilla blocks (NOTE: This can still be
-			done using our config file system if you so desire)
-		1.12.2-7.0.1.2352:
-			Matt Caughey: Removed slowdown from Ash blocks, decreased slowdown from Flesh blocks
-		1.12.2-7.0.1.2351:
-			Matt Caughey: Improvements to the Fungi Forest biome
-		1.12.2-7.0.1.2350:
-			Matt Caughey:
-			Added Bramble thorns that generate in the Corrupted Sands biome.
-			Improved the Phantasmagoric Inferno biome
-		1.12.2-7.0.1.2349:
-			Matt Caughey: Tweaked the amount of Sea Oats in Beach biomes
-		1.12.2-7.0.1.2348:
-			github: Update zh_CN.lang
-			github: Update zh_CN.lang
-		1.12.2-7.0.1.2347:
-			Matt Caughey: Improved the Barley texture
-		1.12.2-7.0.1.2346:
-			Matt Caughey: Added village material replacements for various BOP biomes
-		1.12.2-7.0.1.2345:
-			Matt Caughey:
-			Fixed oasis generation so grass blocks don't generate under other grass
-			blocks
-		1.12.2-7.0.1.2344:
-			Matt Caughey: Added Origin Beach biome to appear around the Origin Island
-		1.12.2-7.0.1.2343:
-			Matt Caughey: Added Sea Oats to the Beach biome
-		1.12.2-7.0.1.2342:
-			lihow731: Update zh_TW.lang
-		1.12.2-7.0.1.2341:
-			Matt Caughey: Gave Barley a high chance of dropping wheat seeds.
-		1.12.2-7.0.1.2340:
-			Matt Caughey:
-			Re-added the Pasture biome as a sub-biome of the Prairie. Added Barley.
-			Improved the Prairie biome.
-		1.12.2-7.0.1.2339:
-			koh-gh:
-			Update ja_JP.lang
-			Tweak translations of slab and stairs.
-			Matt Caughey: Improved the grass/foliage color of the Grove biome
-
-	Blood Magic (went from BloodMagic-1.12.2-2.2.8-91.jar to BloodMagic-1.12.2-2.2.10-93.jar):
-		BloodMagic-1.12.2-2.2.10-93.jar:
-			Version 2.2.10:
-
-			- Fixed Turret Array crash on servers.
-			- Fixed the Blood Altar so it can actually fill Blood Orbs (derp).
-		BloodMagic-1.12.2-2.2.8-92.jar:
-			Version 2.2.9:
-
-			- Fixed stupid NPE in the Furnace Array
-			- Fixed various issues with the Alchemy Table:
-			 - Now works for recipes that require an LP cost.
-			 - Hoppers no longer lose items when items are placed into the "slave" Alchemy Table who has some slots restricted.
-			- Added an entry to the book that explains you can, in fact, use Sea Lanterns instead of glowstone blocks for your Tier 3 altar.
-			- Fixed the Demon Will crystals growing when they shouldn't. Also lowered the time between natural crystal growths in Will-enriched areas.
-			 - Side note: who's bright idea was it to have to wait 15 minutes per crystal growth?
-			- Added the "Resonance of the Faceted Crystal", which can be used to create your first aspected Will crystal clusters.
-			- Made it so the Crystallizer no longer generates a random aspected Will crystal cluster.
-			- Fixed rare crash with the Blood Altar, which only has a chance of occuring on restart.
-
-	Bookshelf (went from Bookshelf-1.12.2-2.3.539.jar to Bookshelf-1.12.2-2.3.544.jar):
-		Bookshelf-1.12.2-2.3.544.jar:
-			 * Added additional error checking for bad files. - Tyler Hancock
-		Bookshelf-1.12.2-2.3.543.jar:
-			 * Updated forge - Tyler Hancock
-		Bookshelf-1.12.2-2.3.541.jar:
-			 * Added experimental dynamic cached baked model. - Tyler Hancock
-		Bookshelf-1.12.2-2.3.540.jar:
-			 * Added a method to sanely get a ResourceLocation using the active mod container as the domain/id. - Tyler Hancock
-			 * Added stack methods for working with ore dictionary. - Tyler Hancock
-			 * Added a way to get all blocks for an oredict name. - Tyler Hancock
-			 * Updated gradle deps and settings to be more stable and up to date. - Tyler Hancock
-			 * Removed access transformers that are no longer used. - Tyler Hancock
-
-	Botania (went from Botania r1.10-353.jar to Botania r1.10-354.jar):
-		Botania r1.10-354.jar:
-			 See [http://botaniamod.net/changelog.php#r1.10-354](http://botaniamod.net/changelog.php#r1.10-354)
-
-	Compact Machines (went from compactmachines3-1.12.2-3.0.7-b197.jar to compactmachines3-1.12.2-3.0.8-b200.jar):
-		compactmachines3-1.12.2-3.0.8-b200.jar:
-			Fix NPE when tunnels are being checked on the client side
-
-			Only consume one catalyst item instead of the whole stack
-
-	CraftTweaker (went from CraftTweaker2-1.12-4.1.6 to CraftTweaker2-1.12-4.1.8):
-		CraftTweaker2-1.12-4.1.8:
-			fixed loadup crash
-		CraftTweaker2-1.12-4.1.7:
-			Added Command manager wrapperAdding recipes.replaceAllOccurences(IIngredient,IIngredient) as a new zenscript command.
-
-			Changed how names are set for replacement recipes
-
-			Implemented events.onPlayerBonemeal
-
-			Added DamageSource Bracket handler and static methods to get damagesources
-
-			Added Nullcheck to getIngredient
-
-			Fixed Typo in IMod
-
-			Some furnace recipe additions
-
-			- Allow intput/output/xp getter in IFurnaceRecipe
-			- IItemDefinition now has getITemBurnTime(IItemStack stack)
-			- IItemStack's getItemBurnTime is now implemented properly
-			- MCFurnaceManager's getFuel is now implemented correctly
-
-			Implemented some IItemStack Methods
-
-			Fixed possible NPE with RecipeFunctions
-
-			Added Way to create Item Entities from within CrT
-
-			Event system refactor
-
-			It's now split in API and Implementation since before it was all API.
-			Should be more versatile this way.
-			Also, implemented some more recipeHandlers
-
-			Added way of getting the clicked Entity to PlayerFillBucket
-
-			Replaced hitEntity with RayTraceResult getter
-
-			More Event System refactoring
-
-			- Added default methods for getX, Y and Z.
-			- Added Interfaces for Events with positions, and those who are processable.
-			- Rearranged Code in MTEventManager (comments were all over...)
-			- Implemented IContainer in MCContainer (needed for the opencontainerEvent)
-			- Pulled up commonly used methods into interfaces
-
-			More event stuff
-
-			- IContainers now have asString caster
-			- Annotated missing methods
-			- Moved IRayTraceResult from block to world (Last commit was not published yet so it's ok!)
-
-			Added ActionDummyAddRecipe for JEI plugin compatibility.
-
-			Changes in OreDictionary manipulation
-
-			- They now can blacklist items from being added later on.
-			- They now directly manipulate the list (as not to complicate ↑)
-
-			Fixed possible NPE when providing a null creativeTab to IITemDefinition's setter
-
-			Even more Event stuff
-
-			- More Events implemented
-			- Some Additional events added
-			- Some Methods pulled up into into interfaces (also some with default methods)
-
-			Added Command manager wrapper
-
-			Gave players the command function
-
-			Vector3d wrapper and Entity Spawning
-
-			Added Entity definition getter and CrafttweakerMC methods for fluids
-
-			Added optional parameter to IItemStack tags methods to allow for displayOnly tags
-
-			Added error checking to JEI stuff
-
-			DataMaps can now properly be indexed with numbers, if you ever needed to
-
-			Fixed JeI Hiding and optimized the code
-
-	Cyclic (went from Cyclic-1.12.2-1.14.8.jar to Cyclic-1.12.2-1.14.9.jar):
-		Cyclic-1.12.2-1.14.9.jar:
-			 * Fixed a dupe bug with certain items that have durability (see issue tracker for details).
-			 * Almost all custom sound effects have been totally remade and improved from scratch thanks to Ithronyar.
-			 * Update zh_CN.lang thanks to sandtechnology.
-			 * Merchant Almanac is less picky and now lets you use it directly on a villager instead of only on a nearby block.
-			 * Item Extraction Cable has a new button texture
-
-	Ender IO (went from Ender IO - 5.0.20 to Ender IO - 5.0.22):
-		Ender IO - 5.0.22:
-			You need either the main file or a selection of the "split" jars, not both!
-
-			[Changelog (this build)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252f22%252fchanges) / [Changelog (all builds)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252fchanges)
-
-			Added
-
-			 * Ender Liquid Conduit Color Channels
-			 * Some quality-of-life recipes (if there are major conflicts these will be reconsidered)
-			Fixed
-
-			 * Tank not respecting other mods treating bottle'o'enchanting as a fluid handler
-			 * Matter Overdrive ores duping in the Sagmill
-			 * XP Obelisk experience dupe bug
-		Ender IO - 5.0.21:
-			Default configs for machines have changed, please delete enderiomachines.cfg!
-			You need either the main file or a selection of the "split" jars, not both!
-
-			[Changelog (this build)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252f21%252fchanges) / [Changelog (all builds)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252fchanges)
-
-			EnderIO 5.0.21
-
-			New
-
-			 * Added Fluid Filter for Ender Fluid Conduits. This is now REQUIRED for an Ender Fluid Conduit to filter fluids
-			 * Several more recipes for supporting other mods in Ender IO Machines
-			 * Added End Steel, a new alloy made from Dark Steel, Obsidian and End Stone
-			 * Added Industrial Insulation, acts like a better sponge
-			 * Reimplemented conduit probe data for item and power conduits
-			 * Added Soul Chassis, used to make Soularium machines
-			 * Added an icon to indicate if a recipe cannot be used in a Simple Alloy Smelter
-			 * Tanks can now turn XP Bottles into Liquid XP
-			 * Updated FTBLib Integration. Travel Anchors in private mode can now be used by teammates
-			 * Added many new compatibility recipes to machines
-			Changes
-
-			 * Simple machines are now only half the speed of their normal counterparts
-			 * Brown and Green organic dye can now be made using green and brown dyes from the ore dictionary
-			 * Organic Powder Coatings now go further. Old recipe: one crafting = 1.5 chassis, new recipe: one crafting = 6 chassis
-			 * Ender Fluid Conduits now REQUIRE a Fluid Filter to use filters. All old filter settings will be lost
-			 * Telepad has an improved gui
-			Fixes
-
-			 * More than we can list here, but here are some major ones
-			 * Fixed "plz_dont_crash_us_mcjty" for redstone conduit connectivity
-			 * Fixed advancement icons being incorrect
-			 * Fixed a crash with the Wired Charger and baubles missing
-			 * Fixed inability to fill buckets when using TiC Integration, Thermal Foundation and Ender IO
-			 * Fixed wired charger breaking when Adv. Rocketry was installed
-			 * Fixed certain items (such as TE energy cells) rendering as missing models inside the wired charger
-			 * Fixed some elytra rendering issues
-			 * Fixed travel staff/upgrade printing chat messages many times
-
-	EnderCore (went from EnderCore - 1.12.2-0.5.18 to EnderCore - 1.12.2-0.5.20):
-		EnderCore - 1.12.2-0.5.20:
-			- Fix a bug that could be triggered by other mods replacing blocks
-			- Fix ghost slots not rendering at full brightness
-
-	Ex Nihilo: Creatio (went from exnihilocreatio-1.12-0.1.7.63.jar to exnihilocreatio-1.12-0.2.1.jar):
-		exnihilocreatio-1.12-0.2.1.jar:
-			 * Fixed possible NPEs
-			 * Fixed serversided crash
-			 * added partial thermal support
-			 * added oredict support for fluidToBlock transformation
-		exnihilocreatio-1.12-0.2.0.jar:
-			A lot of changes
-
-			View commit Historie for a more in depth overview
-
-			Summary:
-
-			 * Dank/Null integration
-			 * OreDict support for most registries
-			 * Cleaner JSON syntax
-			 * More modcompat
-			 * Added EndCake
-			 * Added more crushed stone types
-			 * Fixed various bugs and potential crashes
-
-	Extended Crafting (went from extendedcrafting-1.12-1.3.0.jar to extendedcrafting-1.12-1.3.1.jar):
-		extendedcrafting-1.12-1.3.1.jar:
-			Release 1.3.1 for MC 1.12.x
-
+	Biomes O' Plenty (Biomes O' Plenty 1.14.4-9.0.0.259 --> Biomes O' Plenty 1.14.4-9.0.0.261):
+		Biomes O' Plenty 1.14.4-9.0.0.261:
+			Build: 1.14.4-9.0.0.261 - Sat Dec 14 10:44:47 GMT 2019
+			 Adubbz:
+			 Fixed compile error
+			 Adubbz:
+			 Optimized tpbiome command by using ExecutorService (#1504)
+			=========
+			Build: 1.14.4-9.0.0.259 - Mon Dec 02 12:22:20 GMT 2019
+			 github:
+			 Update ru_ru.json
+			 Added a missing strings and fix other cosmetic things.
+			 github:
+			 Update ru_ru.json
+			 Added a missing strings and fix other cosmetic things.
+			=========
+			Build: 1.14.4-9.0.0.258 - Thu Nov 21 23:55:56 GMT 2019
+			 github:
+			 Create ru_ru.json
+			=========
+			Build: 1.14.4-9.0.0.257 - Sun Nov 10 08:22:58 GMT 2019
+			 github:
+			 Create es_ar.json
+			 Argentina Spanish Lang File
+			=========
+			Build: 1.14.4-9.0.0.256 - Sun Nov 10 08:20:22 GMT 2019
+			 github:
+			 es_es Lang File
+			 Europe Spanish Lang File
+			 github:
+			 Create es_mx.json
+			 And the méxico spanish lang file
+			 github:
+			 es_es Lang File
+			 Europe Spanish Lang File
+			 github:
+			 Create es_ar.json
+			 Argentina Spanish Lang File
+			 github:
+			 Create es_mx.json
+			 And the méxico spanish lang file
+			=========
+			Build: 1.14.4-9.0.0.255 - Tue Oct 22 17:40:50 GMT 2019
+			 github:
+			 Updated Discord link in README.md
+			=========
+			Build: 1.14.4-9.0.0.254 - Fri Oct 04 09:46:53 GMT 2019
+			 Adubbz:
+			 Update to Forge RB, update MCP mappings
+			=========
+			Build: 1.14.4-9.0.0.253 - Sun Sep 15 10:21:56 GMT 2019
+			 github:
+			 update german translation to match vanilla names
+			=========
+			Build: 1.14.4-9.0.0.252 - Fri Sep 06 21:36:42 GMT 2019
+			 forstride:
+			 Fixed mangrove root/reed/watergrass loot tables
+			=========
+			Build: 1.14.4-9.0.0.251 - Sun Sep 01 19:15:23 GMT 2019
+			 forstride:
+			 Changed reeds, watergrass, and mangrove roots into proper double tall
+			 blocks. NOTE: This will cause issues in existing worlds! Update at
+			 your own risk!
+			=========
+			Build: 1.14.4-9.0.0.250 - Fri Aug 30 11:42:59 GMT 2019
+			 forstride:
+			 Removed witch huts from the Mangrove and Highland Moor
+			=========
+			Build: 1.14.4-9.0.0.249 - Fri Aug 30 01:32:47 GMT 2019
+			 github:
+			 Create de_de.json
+			 add german translation
+			=========
+			Build: 1.14.4-9.0.0.248 - Wed Aug 28 11:31:10 GMT 2019
+			 forstride:
+			 Optimized class imports
+			=========
+			Build: 1.14.4-9.0.0.247 - Tue Aug 27 18:07:09 GMT 2019
+			 forstride:
+			 Changed blue hydrangeas and goldenrods into tall flowers (NOTE: This may
+			 cause issues in existing worlds! Update at your own risk!)
+			=========
+			Build: 1.14.4-9.0.0.246 - Sun Aug 25 09:16:30 GMT 2019
+			 forstride:
+			 Made poplar tree generation look slightly more natural
+			=========
+			Build: 1.14.4-9.0.0.245 - Sat Aug 24 12:11:53 GMT 2019
+			 forstride:
+			 Fixed big trees not generating alternate leaves
+			=========
+			Build: 1.14.4-9.0.0.244 - Sat Aug 24 10:49:38 GMT 2019
+			 forstride:
+			 Added a deeper middle block layer for the Alps and Volcano biomes, fixed
+			 big trees not growing on non-soil blocks, fixed ash/mud/flesh blocks not
+			 having proper shading (At the expense of not sinking into the blocks)
+			=========
+			Build: 1.14.4-9.0.0.243 - Sat Aug 24 08:28:23 GMT 2019
+			 forstride:
+			 Prevented non-opped players from using the tpbiome command (Closes
+			 #1459)
+			=========
+			Build: 1.14.4-9.0.0.242 - Fri Aug 23 22:34:07 GMT 2019
+			 forstride:
+			 Changed texture folder names to match vanilla (NOTE: This will break
+			 existing texture packs with BOP support!)
+			=========
+			Build: 1.14.4-9.0.0.241 - Fri Aug 23 17:17:27 GMT 2019
+			 forstride:
+			 Fixed sparse trees not being sparse, and huge trees in the Mystic Grove
+			 being too huge
+			=========
+			Build: 1.14.4-9.0.0.240 - Fri Aug 23 12:09:26 GMT 2019
+			 Adubbz:
+			 General system stability improvements to enhance the user's experience.
+			 Closes #1439
+			=========
+			Build: 1.14.4-9.0.0.239 - Fri Aug 23 11:02:56 GMT 2019
+			 Adubbz:
+			 Fixed rare biome generation. Closes #1438
+			=========
+			Build: 1.14.4-9.0.0.238 - Fri Aug 23 06:24:01 GMT 2019
+			 forstride:
+			 Fixed trees not growing around ground foliage (Closes #1461)
+			=========
+			Build: 1.14.4-9.0.0.237 - Fri Aug 23 05:30:26 GMT 2019
+			 forstride:
+			 Added missing smooth white sandstone recipe
+			=========
+			Build: 1.14.4-9.0.0.236 - Wed Aug 21 13:21:37 GMT 2019
+			 forstride:
+			 Updated Forge to 28.0.55, improved mod logo
+			=========
+			Build: 1.14.4-9.0.0.235 - Wed Aug 21 09:06:42 GMT 2019
+			 forstride:
+			 Added Jacaranda trees to the vanilla Flower Forest, added big Jacaranda
+			 tree variant to Lavender Field/sapling
+			 forstride:
+			 Changed order that blocks are registered for cleaner creative menu
+			 forstride:
+			 Fixed Ethereal wood map colors
+			 forstride:
+			 Tweaked various biome weights (WARNING: This update will cause abrupt
+			 chunk borders in existing worlds! Update at your own risk!)
+			=========
+			Build: 1.14.4-9.0.0.231 - Tue Aug 13 04:13:20 GMT 2019
+			 forstride:
+			 Removed Lily of the Valley from the Prairie
+			=========
+			Build: 1.14.4-9.0.0.230 - Tue Aug 13 02:32:46 GMT 2019
+			 forstride:
+			 Lowered the amount of trees in the Snowy Coniferous Forest/Snowy Forest,
+			 tweaked how Orchards generate within Plains to better match vanilla
+			=========
+			Build: 1.14.4-9.0.0.229 - Sun Aug 11 15:03:11 GMT 2019
+			 forstride:
+			 Added Fir/Snowy Fir Clearing and Temperate Rainforest Hills sub-biomes,
+			 renamed Moor to Highland Moor, made a separate climate for the
+			 Wasteland, allowed Deep Warm Ocean to generate within Warm Oceans (NOTE:
+			 This update will cause abrupt chunk borders in existing worlds! Update
+			 at your own risk!)
+			=========
+			Build: 1.14.4-9.0.0.228 - Sun Aug 11 09:16:06 GMT 2019
+			 forstride:
+			 Use white sand instead of normal sand for sediment in the Mystic Grove
+			=========
+			Build: 1.14.4-9.0.0.227 - Sun Aug 11 09:05:16 GMT 2019
+			 forstride:
+			 Tweaked cypress tree generation
+			=========
+			Build: 1.14.4-9.0.0.226 - Sun Aug 11 06:43:36 GMT 2019
+			 forstride:
+			 Added large versions of the yellow/orange autumn and maple trees
+			=========
+			Build: 1.14.4-9.0.0.225 - Sun Aug 11 03:47:55 GMT 2019
+			 forstride:
+			 Lush Swamp should be in Subtropical climate, not Wet Temperate.
+			 Adjusted Mangrove and Bayou weights (NOTE: This update will cause abrupt
+			 chunk borders in existing worlds! Update at your own risk!)
+			=========
+			Build: 1.14.4-9.0.0.224 - Sun Aug 11 03:31:25 GMT 2019
+			 forstride:
+			 Removed Dry Plains biome, moved Lush Swamp back to the Wet Temperate
+			 climate, renamed Glowstone Cavern to Glowstone Grotto (NOTE: This update
+			 will cause abrupt chunk borders in existing worlds! Update at your own
+			 risk!)
+			=========
+			Build: 1.14.4-9.0.0.223 - Sun Aug 11 02:16:45 GMT 2019
+			 forstride:
+			 Updated BOP icon, fixed Origin Hills underwater fog color
+			=========
+			Build: 1.14.4-9.0.0.222 - Sat Aug 10 12:19:34 GMT 2019
+			 forstride:
+			 Improved poplar tree generation
+			=========
+			Build: 1.14.4-9.0.0.221 - Sat Aug 10 10:21:39 GMT 2019
+			 forstride:
+			 Changed default Wet Temperate climate temperature to Cool
+			=========
+			Build: 1.14.4-9.0.0.220 - Sat Aug 10 10:16:13 GMT 2019
+			 Adubbz:
+			 Don't convert biomes already registered to a climate via our api
+			=========
+			Build: 1.14.4-9.0.0.219 - Sat Aug 10 09:42:48 GMT 2019
+			 Adubbz:
+			 Fixed mod version. Closes #1422
+			=========
+			Build: 1.14.4-9.0.0.218 - Sat Aug 10 09:17:18 GMT 2019
+			 Adubbz:
+			 Copy modded biomes to our worldtype. Closes #1428
+			=========
+			Build: 1.14.4-9.0.0.217 - Sat Aug 10 08:28:04 GMT 2019
+			 m.pietquin:
+			 fix #1446 & add dispenser behavior for bop boats
+			=========
+			Build: 1.14.4-9.0.0.216 - Sat Aug 10 08:11:23 GMT 2019
+			 forstride:
+			 Improved Cherry Log textures
+			=========
+			Build: 1.14.4-9.0.0.215 - Sat Aug 10 06:17:28 GMT 2019
+			 Adubbz:
+			 Put config loading back in construction. Closes #1447
+			=========
+			Build: 1.14.4-9.0.0.214 - Sat Aug 10 05:30:03 GMT 2019
+			 forstride:
+			 Improved the Bayou biome, allowed all BOP biomes to be spawned in
+			=========
+			Build: 1.14.4-9.0.0.213 - Sat Aug 10 03:36:13 GMT 2019
+			 Adubbz:
+			 Perform registration during the registration events. Closes #1444
+			=========
+			Build: 1.14.4-9.0.0.212 - Sat Aug 10 02:52:03 GMT 2019
+			 Adubbz:
+			 Updated to Forge 28.0.45... It works fine?
+			=========
+			Build: 1.14.4-9.0.0.211 - Tue Aug 06 20:33:00 GMT 2019
+			 forstride:
+			 Fixed a potential crash caused by big oak trees, tweaked a few textures
+			=========
+			Build: 1.14.4-9.0.0.210 - Tue Aug 06 15:40:45 GMT 2019
+			 github:
+			 Update pl_pl.json
+			 Poprawiono niektóre nazwy, by były bardziej spójne z vanilla Minecraft
+			=========
+			Build: 1.14.4-9.0.0.209 - Tue Aug 06 15:14:45 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.14.4-9.0.0.208 - Tue Aug 06 03:50:19 GMT 2019
+			 forstride:
+			 Tweaked mud generation in Mangroves
+			=========
+			Build: 1.14.4-9.0.0.207 - Tue Aug 06 03:32:09 GMT 2019
+			 forstride:
+			 Changed beach biomes for vanilla biomes, added the Mangrove as a beach
+			 biome for tropical biomes, moved the Lush Swamp to the Warm Temperate
+			 climate (NOTE: This can cause abrupt chunk borders in existing worlds!
+			 Update at your own risk!)
+			 forstride:
+			 Added BOP features to various vanilla biomes (NOTE: This will also
+			 affect the Default world type. Load existing vanilla worlds at your own
+			 risk!)
+			=========
+			Build: 1.14.4-9.0.0.205 - Mon Aug 05 09:10:57 GMT 2019
+			 forstride:
+			 Allowed Sprouts to be placed in Flower Pots, made Toadstools more common
+			=========
+			Build: 1.14.4-9.0.0.204 - Mon Aug 05 05:37:57 GMT 2019
+			 forstride:
+			 Work on End biomes
+			=========
+			Build: 1.14.4-9.0.0.203 - Mon Aug 05 03:51:27 GMT 2019
+			 forstride:
+			 Removed Poison Puffs
+			=========
+			Build: 1.14.4-9.0.0.202 - Mon Aug 05 03:34:22 GMT 2019
+			 forstride:
+			 "Fixed" Flowering Oak leaf model in Fast graphics
+			=========
+			Build: 1.14.4-9.0.0.201 - Sun Aug 04 12:54:00 GMT 2019
+			 forstride:
+			 Finished up Nether biomes, which now generate
+			=========
+			Build: 1.14.4-9.0.0.200 - Sun Aug 04 12:04:55 GMT 2019
+			 Adubbz:
+			 Added support for Nether biomes
+			=========
+			Build: 1.14.4-9.0.0.199 - Sun Aug 04 08:39:30 GMT 2019
+			 forstride:
+			 More work on Nether biomes
+			=========
+			Build: 1.14.4-9.0.0.198 - Sun Aug 04 04:26:55 GMT 2019
+			 forstride:
+			 More work on Nether biomes, tweaks to the Tundra and Bog biomes
+			=========
+			Build: 1.14.4-9.0.0.197 - Sat Aug 03 06:46:12 GMT 2019
+			 forstride:
+			 Changed Nether Sprouts into regular Sprouts and allowed them to grow on
+			 any block with a solid top
+			=========
+			Build: 1.14.4-9.0.0.196 - Thu Aug 01 00:08:36 GMT 2019
+			 forstride:
+			 Started working on Nether biomes/End biomes (Currently not available),
+			 fixed Polish localization file name (Closes #1432)
+			=========
+			Build: 1.14.4-9.0.0.195 - Tue Jul 30 01:10:47 GMT 2019
+			 m.pietquin:
+			 bop boats now extends BoatEntity
+			=========
+			Build: 1.14.4-9.0.0.194 - Mon Jul 29 18:08:00 GMT 2019
+			 m.pietquin:
+			 fix boat inputs allowing to move
+			 and also removes the import in the api
+			 m.pietquin:
+			 adapt without event
+			=========
+			Build: 1.14.4-9.0.0.193 - Mon Jul 29 08:15:39 GMT 2019
+			 m.pietquin:
+			 fix custom boats
+			=========
+			Build: 1.14.4-9.0.0.192 - Mon Jul 29 06:08:44 GMT 2019
+			 forstride:
+			 Fixed Flowering Oak Sapling loot table (Closes #1424)
+			=========
+			Build: 1.14.4-9.0.0.191 - Mon Jul 29 05:36:14 GMT 2019
+			 forstride:
+			 Improved reed/cattail texture
+			=========
+			Build: 1.14.4-9.0.0.190 - Mon Jul 29 04:11:04 GMT 2019
+			 forstride:
+			 Fixed flammability for foliage/wood blocks and removed unnecessary
+			 classes
+			=========
+			Build: 1.14.4-9.0.0.189 - Mon Jul 29 02:08:59 GMT 2019
+			 forstride:
+			 Added Polish translation (Made by DarkKnightComes)
+			=========
+			Build: 1.14.4-9.0.0.188 - Sun Jul 28 10:39:12 GMT 2019
+			 forstride:
+			 Fixed plant sustainability for white sand/mud, fixed cattails being able
+			 to grow on top of each other
+			=========
+			Build: 1.14.4-9.0.0.187 - Sun Jul 28 09:11:32 GMT 2019
+			 forstride:
+			 Added foxes to our biomes because I somehow forgot to
+			=========
+			Build: 1.14.4-9.0.0.186 - Sun Jul 28 01:14:47 GMT 2019
+			 forstride:
+			 Started working on re-adding boats (Still broken, boat items spawn oak
+			 boats for the time being)
+			=========
+			Build: 1.14.4-9.0.0.185 - Sat Jul 27 10:39:50 GMT 2019
+			 forstride:
+			 Allowed BOP saplings/flower/mushrooms to be placed in flower pots, added
+			 suspicious stew effects for BOP flowers, added makeshift vanilla sign
+			 recipes using BOP planks
+			=========
+			Build: 1.14.4-9.0.0.184 - Sat Jul 27 05:12:34 GMT 2019
+			 forstride:
+			 Allowed BOP logs to be stripped (Closes #1394), and
+			 saplings/leaves/plants to be composted
+			=========
+			Build: 1.14.4-9.0.0.183 - Fri Jul 26 10:57:43 GMT 2019
+			 forstride:
+			 Fixed sounds/tool effectiveness for various blocks, renamed block/item
+			 classes to match 1.14 naming convention
+			=========
+			Build: 1.14.4-9.0.0.182 - Thu Jul 25 22:39:12 GMT 2019
+			 forstride:
+			 For some reason the last commit didn't fully work?
+			 forstride:
+			 Removed tiny cacti and mud ball entity, fixed stack sizes for mud
+			 balls/music disc
+			=========
+			Build: 1.14.4-9.0.0.180 - Wed Jul 24 07:03:31 GMT 2019
+			 github:
+			 Update zh_cn.json
+			 fixed mistakes 修复错误
+			=========
+			Build: 1.14.4-9.0.0.179 - Wed Jul 24 05:59:21 GMT 2019
+			 forstride:
+			 Fixed reed/watergrass/mangrove root item placement (Again...), removed
+			 sweet berry bushes from Orchards
+			=========
+			Build: 1.14.4-9.0.0.178 - Tue Jul 23 01:44:29 GMT 2019
+			 Adubbz:
+			 Update Forge and MCP mappings
+			 forstride:
+			 Added bamboo to Cherry Blossom Grove and Tropics
+			 forstride:
+			 Fixed advancements, temporarily removed boat/sign files
+			 Adubbz:
+			 Updated to 1.14.4
+			=========
+			Build: 1.14.3-9.0.0.174 - Sun Jul 21 12:18:20 GMT 2019
+			 dmitrij.drandarov:
+			 Update to latest mappings (20190721) and forge version (1.14.3)
+			=========
+			Build: 1.14.3-9.0.0.173 - Thu Jul 04 09:03:32 GMT 2019
+			 Adubbz:
+			 Bump Forge version
+			=========
+			Build: 1.14.3-9.0.0.172 - Tue Jul 02 20:54:43 GMT 2019
+			 github:
+			 Update zh_cn.json
+			 Add new Translation.
+			=========
+			Build: 1.14.3-9.0.0.171 - Mon Jul 01 15:14:20 GMT 2019
+			 Adubbz:
+			 Workaround server.properties being overwritten by introducing a config
+			 option for using the BoP worldtype on servers
+			=========
+			Build: 1.14.3-9.0.0.170 - Fri Jun 28 20:16:53 GMT 2019
+			 forstride:
+			 Allowed fir, redwood, and umbran saplings to grow 2x2 trees
+			=========
+			Build: 1.14.3-9.0.0.169 - Fri Jun 28 13:40:57 GMT 2019
+			 forstride:
+			 Added villages to BOP biomes
+			=========
+			Build: 1.14.3-9.0.0.168 - Fri Jun 28 03:53:26 GMT 2019
+			 Adubbz:
+			 Fix issue template ordering
+			=========
+			Build: 1.14.3-9.0.0.167 - Fri Jun 28 03:52:11 GMT 2019
+			 Adubbz:
+			 Updated issue templates
+			=========
+			Build: 1.14.3-9.0.0.166 - Fri Jun 28 02:43:06 GMT 2019
+			 forstride:
+			 Updated a few additional textures
+			=========
+			Build: 1.13.2-8.0.0.164 - Thu Jun 13 04:50:03 GMT 2019
+			 forstride:
+			 Changed Cold Desert to not have snow, added missing override annotations
+			=========
+			Build: 1.13.2-8.0.0.163 - Tue Jun 11 06:23:37 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.162 - Sun Jun 09 15:00:43 GMT 2019
+			 forstride:
+			 Tweaked flower generation for certain biomes
+			=========
+			Build: 1.13.2-8.0.0.161 - Sun Jun 09 09:20:43 GMT 2019
+			 forstride:
+			 Added Lush Grassland biome
+			=========
+			Build: 1.13.2-8.0.0.160 - Sat Jun 08 09:44:30 GMT 2019
+			 forstride:
+			 Changed dead tree generation, increased cattail amounts in biomes that
+			 have them
+			=========
+			Build: 1.13.2-8.0.0.159 - Sat Jun 08 04:57:30 GMT 2019
+			 forstride:
+			 Fixed placement check for giant trees in the Mystic Grove
+			=========
+			Build: 1.13.2-8.0.0.158 - Fri Jun 07 05:21:07 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.157 - Thu Jun 06 03:04:40 GMT 2019
+			 forstride:
+			 Started experimenting with End biomes (Not currently available yet)
+			=========
+			Build: 1.13.2-8.0.0.156 - Wed Jun 05 08:23:23 GMT 2019
+			 forstride:
+			 Fixed a crash caused by bramble blocks, various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.155 - Wed Jun 05 01:32:12 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.154 - Wed Jun 05 00:36:07 GMT 2019
+			 forstride:
+			 Prevented non-overworld dimensions from using BOP's overworld biome
+			 provider
+			=========
+			Build: 1.13.2-8.0.0.153 - Tue Jun 04 17:36:42 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.152 - Tue Jun 04 14:26:40 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.151 - Tue Jun 04 04:02:34 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.150 - Tue Jun 04 00:24:23 GMT 2019
+			 forstride:
+			 Fixed the bases of fir/redwood trees not generating properly. Various
+			 biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.149 - Mon Jun 03 12:06:17 GMT 2019
+			 forstride:
+			 Renamed the Dead Swamp to Mire, renamed the Highland Moor to Moor,
+			 various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.148 - Mon Jun 03 00:19:36 GMT 2019
+			 forstride:
+			 Changed the Orchard biome to a sub-biome of the vanilla Plains
+			 (Replacing the Forest as its sub-biome), improved the Grove biome,
+			 prevented Plains/Forest islands from generating within oceans, added the
+			 vanilla Desert as an edge biome of the Wasteland
+			=========
+			Build: 1.13.2-8.0.0.147 - Sun Jun 02 09:04:19 GMT 2019
+			 forstride:
+			 Cleaned up unused class imports
+			=========
+			Build: 1.13.2-8.0.0.146 - Sat Jun 01 18:29:37 GMT 2019
+			 forstride:
+			 Updated issue templates
+			=========
+			Build: 1.13.2-8.0.0.145 - Sat Jun 01 18:22:49 GMT 2019
+			 github:
+			 Update question.md
+			=========
+			Build: 1.13.2-8.0.0.144 - Sat Jun 01 18:21:11 GMT 2019
+			 github:
+			 Update question.md
+			 github:
+			 Update question.md
+			 github:
+			 Update question.md
+			=========
+			Build: 1.13.2-8.0.0.143 - Sat Jun 01 18:19:32 GMT 2019
+			 github:
+			 Update question.md
+			=========
+			Build: 1.13.2-8.0.0.142 - Sat Jun 01 08:12:31 GMT 2019
+			 Adubbz:
+			 Fixed server crashing on boot. Closes #1401
+			=========
+			Build: 1.13.2-8.0.0.141 - Fri May 31 20:38:29 GMT 2019
+			 forstride:
+			 Various biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.140 - Fri May 31 12:08:48 GMT 2019
+			 forstride:
+			 Tweaks to the Bog biome
+			=========
+			Build: 1.13.2-8.0.0.139 - Fri May 31 05:47:18 GMT 2019
+			 forstride:
+			 Removed the Bog Mire sub-biome, renamed the Bog biome to Dead Swamp,
+			 added a new Bog biome based on a cranberry bog
+			=========
+			Build: 1.13.2-8.0.0.138 - Thu May 30 20:58:52 GMT 2019
+			 forstride:
+			 Added natural carved pumpkins/jack-o-lanterns to the Pumpkin Patch
+			 biome. Removed unused textures
+			=========
+			Build: 1.13.2-8.0.0.137 - Thu May 30 00:57:05 GMT 2019
+			 forstride:
+			 Added Pumpkin Patch sub-biome to the Seasonal Forest
+			=========
+			Build: 1.13.2-8.0.0.136 - Mon May 27 23:55:29 GMT 2019
+			 forstride:
+			 Biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.135 - Sun May 26 23:15:52 GMT 2019
+			 forstride:
+			 Fixed some improper biome tags
+			=========
+			Build: 1.13.2-8.0.0.134 - Sun May 26 21:33:17 GMT 2019
+			 forstride:
+			 Added Dry Plains biome
+			=========
+			Build: 1.13.2-8.0.0.133 - Sun May 26 08:15:01 GMT 2019
+			 github:
+			 Update README.md
+			=========
+			Build: 1.13.2-8.0.0.132 - Sun May 26 05:05:30 GMT 2019
+			 forstride:
+			 Added missing entities to various biomes
+			=========
+			Build: 1.13.2-8.0.0.131 - Sun May 26 00:01:11 GMT 2019
+			 forstride:
+			 Allowed palm saplings to grow on sand, Tropics/Volcano tweaks
+			=========
+			Build: 1.13.2-8.0.0.130 - Sat May 25 22:56:50 GMT 2019
+			 forstride:
+			 Fixed water plant itemblock not placing the right block
+			=========
+			Build: 1.13.2-8.0.0.129 - Sat May 25 19:31:59 GMT 2019
+			 forstride:
+			 Various biome improvements, allowed players to spawn in more biomes
+			=========
+			Build: 1.13.2-8.0.0.128 - Sat May 25 18:01:04 GMT 2019
+			 github:
+			 Create zh_cn.json
+			=========
+			Build: 1.13.2-8.0.0.127 - Sat May 25 09:28:28 GMT 2019
+			 forstride:
+			 Fixed willow vine flammability, beaches in Cold Deserts, and various
+			 grass/foliage colors
+			=========
+			Build: 1.13.2-8.0.0.126 - Sat May 25 08:37:03 GMT 2019
+			 forstride:
+			 Added Igloos/Woodland Mansions to certain biomes
+			=========
+			Build: 1.13.2-8.0.0.125 - Sat May 25 08:18:03 GMT 2019
+			 github:
+			 Update issue templates
+			=========
+			Build: 1.13.2-8.0.0.124 - Sat May 25 05:35:18 GMT 2019
+			 Adubbz:
+			 Apparently this didn't get pushed
+			 Adubbz:
+			 Renaming access transformer
+			=========
+			Build: 1.13.2-8.0.0.122 - Sat May 25 03:53:28 GMT 2019
+			 Adubbz:
+			 Do curseforge task earlier
+			=========
+			Build: 1.13.2-8.0.0.121 - Sat May 25 03:49:38 GMT 2019
+			 Adubbz:
+			 changelog_file, not changelog
+			 Adubbz:
+			 Actually set the curse api key...
+			=========
+			Build: 1.13.2-8.0.0.118 - Sat May 25 03:36:38 GMT 2019
+			 Adubbz:
+			 Added mainArtifact to curseforge gradle section
+			=========
+			Build: 1.13.2-8.0.0.117 - Sat May 25 03:28:48 GMT 2019
+			 Adubbz:
+			 Try this instead
+			=========
+			Build: 1.13.2-8.0.0.116 - Sat May 25 03:18:58 GMT 2019
+			 Adubbz:
+			 Prepare for alpha builds
+			=========
+			Build: 1.13.2-8.0.0.115 - Sat May 25 03:01:03 GMT 2019
+			 github:
+			 pt_br cleanup
+			=========
+			Build: 1.13.2-8.0.0.114 - Sat May 25 02:45:22 GMT 2019
+			 forstride:
+			 Biome tweaks
+			 forstride:
+			 Added smelting recipes
+			=========
+			Build: 1.13.2-8.0.0.112 - Sat May 25 02:04:32 GMT 2019
+			 forstride:
+			 Added vanilla blocks to our tag JSONs for the time being until Forge
+			 fixes tags
+			=========
+			Build: 1.13.2-8.0.0.111 - Sat May 25 01:25:32 GMT 2019
+			 Adubbz:
+			 Revert gradle update
+			=========
+			Build: 1.13.2-8.0.0.110 - Sat May 25 01:09:42 GMT 2019
+			 Adubbz:
+			 Fixed entities
+			=========
+			Build: 1.13.2-8.0.0.109 - Sat May 25 00:32:07 GMT 2019
+			 Adubbz:
+			 Updated Forge
+			=========
+			Build: 1.13.2-8.0.0.108 - Sat May 25 00:18:22 GMT 2019
+			 forstride:
+			 Fixed flammability for our blocks
+			=========
+			Build: 1.13.2-8.0.0.107 - Fri May 24 22:48:03 GMT 2019
+			 forstride:
+			 Re-added Mangrove
+			=========
+			Build: 1.13.2-8.0.0.106 - Fri May 24 21:00:07 GMT 2019
+			 forstride:
+			 Finished Volcano biome
+			=========
+			Build: 1.13.2-8.0.0.105 - Fri May 24 11:03:06 GMT 2019
+			 forstride:
+			 Island stuff
+			=========
+			Build: 1.13.2-8.0.0.104 - Fri May 24 09:43:39 GMT 2019
+			 Adubbz:
+			 Remove debug spam
+			=========
+			Build: 1.13.2-8.0.0.103 - Fri May 24 09:42:11 GMT 2019
+			 Adubbz:
+			 Generate islands before deep oceans
+			=========
+			Build: 1.13.2-8.0.0.102 - Fri May 24 09:26:21 GMT 2019
+			 forstride:
+			 Durr
+			=========
+			Build: 1.13.2-8.0.0.101 - Fri May 24 09:00:36 GMT 2019
+			 Adubbz:
+			 Hurr
+			=========
+			Build: 1.13.2-8.0.0.100 - Fri May 24 08:48:41 GMT 2019
+			 Adubbz:
+			 Re-added island biomes
+			=========
+			Build: 1.13.2-8.0.0.99 - Fri May 24 05:56:30 GMT 2019
+			 forstride:
+			 River stuff (Too lazy to write a proper commit description)
+			=========
+			Build: 1.13.2-8.0.0.98 - Fri May 24 05:35:40 GMT 2019
+			 Adubbz:
+			 Added support for custom river biomes
+			=========
+			Build: 1.13.2-8.0.0.97 - Fri May 24 05:20:15 GMT 2019
+			 forstride:
+			 Assigned beach biomes to our biomes, generate oceans by climate
+			=========
+			Build: 1.13.2-8.0.0.96 - Fri May 24 04:59:30 GMT 2019
+			 Adubbz:
+			 Oops
+			=========
+			Build: 1.13.2-8.0.0.95 - Fri May 24 04:52:15 GMT 2019
+			 Adubbz:
+			 Setup for climate-based ocean biomes
+			=========
+			Build: 1.13.2-8.0.0.94 - Fri May 24 04:28:00 GMT 2019
+			 Adubbz:
+			 Ensure the beach biome id is actually -1 when the biome is null
+			=========
+			Build: 1.13.2-8.0.0.93 - Fri May 24 04:23:38 GMT 2019
+			 Adubbz:
+			 Adjust this too
+			=========
+			Build: 1.13.2-8.0.0.92 - Fri May 24 04:22:20 GMT 2019
+			 Adubbz:
+			 Fix beach default
+			=========
+			Build: 1.13.2-8.0.0.91 - Fri May 24 04:04:25 GMT 2019
+			 Adubbz:
+			 Added support for custom beach biomes
+			=========
+			Build: 1.13.2-8.0.0.90 - Fri May 24 03:51:35 GMT 2019
+			 forstride:
+			 Biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.89 - Fri May 24 03:34:50 GMT 2019
+			 Adubbz:
+			 Added support for custom edge biomes
+			=========
+			Build: 1.13.2-8.0.0.88 - Fri May 24 01:16:05 GMT 2019
+			 Adubbz:
+			 Don't create an instance of BlockWaterTopPlant inline for registration.
+			 Fixes a crash on boot
+			=========
+			Build: 1.13.2-8.0.0.87 - Thu May 23 22:26:20 GMT 2019
+			 forstride:
+			 Re-added reeds and watergrass
+			=========
+			Build: 1.13.2-8.0.0.86 - Thu May 23 05:10:28 GMT 2019
+			 forstride:
+			 Biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.85 - Wed May 22 20:06:42 GMT 2019
+			 forstride:
+			 Tweaked sub-biome rarity
+			=========
+			Build: 1.13.2-8.0.0.84 - Wed May 22 06:46:51 GMT 2019
+			 forstride:
+			 Allowed the player to spawn in BOP biomes
+			=========
+			Build: 1.13.2-8.0.0.83 - Wed May 22 04:44:11 GMT 2019
+			 forstride:
+			 Biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.82 - Wed May 22 02:37:36 GMT 2019
+			 forstride:
+			 Started re-adding boat entities
+			=========
+			Build: 1.13.2-8.0.0.81 - Wed May 22 01:30:51 GMT 2019
+			 forstride:
+			 Removed short grass, tweaked biomes, fixed tree generation block
+			 replacement
+			=========
+			Build: 1.13.2-8.0.0.80 - Tue May 21 08:42:39 GMT 2019
+			 forstride:
+			 Implemented saplings properly
+			=========
+			Build: 1.13.2-8.0.0.79 - Tue May 21 06:46:44 GMT 2019
+			 forstride:
+			 Re-added Silkglade
+			=========
+			Build: 1.13.2-8.0.0.78 - Tue May 21 00:42:08 GMT 2019
+			 forstride:
+			 Biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.77 - Mon May 20 21:05:18 GMT 2019
+			 forstride:
+			 Re-added Bayou
+			=========
+			Build: 1.13.2-8.0.0.76 - Sun May 19 23:29:36 GMT 2019
+			 forstride:
+			 Fixed Bramble
+			=========
+			Build: 1.13.2-8.0.0.75 - Sun May 19 14:33:15 GMT 2019
+			 forstride:
+			 More biome tweaks
+			=========
+			Build: 1.13.2-8.0.0.74 - Sun May 19 13:26:20 GMT 2019
+			 Adubbz:
+			 Added support for subbiomes
+			=========
+			Build: 1.13.2-8.0.0.73 - Sun May 19 13:08:05 GMT 2019
+			 forstride:
+			 Tweaked biomes
+			=========
+			Build: 1.13.2-8.0.0.72 - Sun May 19 10:36:15 GMT 2019
+			 Adubbz:
+			 Fixed tpbiome dropping you underneath the world
+			=========
+			Build: 1.13.2-8.0.0.71 - Sun May 19 10:30:24 GMT 2019
+			 Adubbz:
+			 Hopefully fixed climates getting clobbered
+			=========
+			Build: 1.13.2-8.0.0.70 - Sun May 19 03:20:44 GMT 2019
+			 forstride:
+			 Re-added most of the remaining overworld biomes, revamped climate
+			 mapping
+			=========
+			Build: 1.13.2-8.0.0.69 - Sat May 18 05:59:12 GMT 2019
+			 forstride:
+			 Re-added Dead Forest and Grove
+			=========
+			Build: 1.13.2-8.0.0.68 - Sat May 18 03:13:02 GMT 2019
+			 forstride:
+			 Re-added Cold Desert and Bog Mire
+			=========
+			Build: 1.13.2-8.0.0.67 - Tue May 14 18:54:03 GMT 2019
+			 forstride:
+			 Fixed transparency for leaves in fast graphics
+			=========
+			Build: 1.13.2-8.0.0.66 - Tue May 14 08:17:47 GMT 2019
+			 forstride:
+			 Re-added Brushland, Tundra, and Flower Meadow
+			=========
+			Build: 1.13.2-8.0.0.65 - Mon May 13 23:40:27 GMT 2019
+			 forstride:
+			 Re-added Shield biome
+			=========
+			Build: 1.13.2-8.0.0.64 - Mon May 13 09:09:00 GMT 2019
+			 forstride:
+			 Re-added Boreal Forest, Pasture, and Prairie
+			=========
+			Build: 1.13.2-8.0.0.63 - Sat May 04 22:11:52 GMT 2019
+			 forstride:
+			 Re-added Chaparral
+			=========
+			Build: 1.13.2-8.0.0.62 - Sat May 04 18:35:12 GMT 2019
+			 forstride:
+			 Tweaked climate mapping
+			=========
+			Build: 1.13.2-8.0.0.61 - Sat May 04 12:43:37 GMT 2019
+			 Adubbz:
+			 Prevent oceans from generating in extreme climates
+			=========
+			Build: 1.13.2-8.0.0.60 - Sat May 04 07:51:26 GMT 2019
+			 Adubbz:
+			 Groovy requires double quotes for format strings
+			=========
+			Build: 1.13.2-8.0.0.59 - Sat May 04 07:46:56 GMT 2019
+			 Adubbz:
+			 Another attempt at fixing changelog naming
+			=========
+			Build: 1.13.2-8.0.0.58 - Sat May 04 07:38:01 GMT 2019
+			 Adubbz:
+			 Account for missing changelog for curse
+			=========
+			Build: 1.13.2-8.0.0.57 - Sat May 04 07:32:31 GMT 2019
+			 Adubbz:
+			 Attempt at better changelog naming
+			 Adubbz:
+			 More attempted fixes
+			=========
+			Build: 1.13.2-8.0.0.54 - Sat May 04 07:08:26 GMT 2019
+			 Adubbz:
+			 Ditch the git hash completely
+			=========
+			Build: 1.13.2-8.0.0.e1d728811 - Sat May 04 07:03:51 GMT 2019
+			 Adubbz:
+			 Hopefully fix wrong path
+			=========
+			Build: 1.13.2-8.0.0-06f254998.16 - Sat May 04 06:41:26 GMT 2019
+			 Adubbz:
+			 Put back the build number
+			=========
+			Build: 1.13.2-8.0.0.c49a4e404 - Sat May 04 06:34:56 GMT 2019
+			 Adubbz:
+			 Switch to using maven-publish
+			=========
+			Build: 1.13.2-8.0.0.51ff1cc23 - Sat May 04 06:02:01 GMT 2019
+			 Adubbz:
+			 Oops
+			 Adubbz:
+			 Swap build number for git hash
+			=========
+			Build: 1.13.2-8.0.0.12 - Sat May 04 05:44:54 GMT 2019
+			 Adubbz:
+			 It would be a good idea to include the password when trying to upload to
+			 maven...
+			 Adubbz:
+			 Grep only for lines starting with version
+			 Adubbz:
+			 Fixed maven url
+			 Adubbz:
+			 Minor fix
+			 Adubbz:
+			 More gradle fixes
+			 Adubbz:
+			 Have I ever told you how much I love build.gradle updates
+	Bookshelf (Bookshelf-1.14.4-4.4.71.jar --> Bookshelf-1.14.4-4.4.72.jar):
+		Bookshelf-1.14.4-4.4.72.jar:
+			 * Updated MCP and Forge. - Tyler Hancock
+			 * Added recipe base class. - Tyler Hancock Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?Bookshelf)
+
+			 * NillerMedDild
+			 * Pongo Sapiens
+			 * Darkosto
+	CraftTweaker (CraftTweaker-1.14.4-5.0.1.149.jar --> CraftTweaker-1.14.4-5.0.1.150.jar):
+		CraftTweaker-1.14.4-5.0.1.150.jar:
+			Current version: 5.0.1.150
+
+			 * [update ZS](https://github.com/CraftTweaker/CraftTweaker/commit/02dbe0659348e71ed5a2bdd25fb232af2da45735) - Jared - Thu Dec 12 18:41:54 2019
+			 * [Fix creating non item tags Close #894](https://github.com/CraftTweaker/CraftTweaker/commit/d789ba46c24bbd18ea9e45bf0cc6fac02b602819) - Jared - Sun Dec 8 20:35:53 2019
+			 * [Gave MCTag a toString() method](https://github.com/CraftTweaker/CraftTweaker/commit/c0eff766d56ca341cde171408ebb6c233c964fec) - Jared - Sun Dec 8 20:32:30 2019
+			 * [Preprocessor Annotation validator](https://github.com/CraftTweaker/CraftTweaker/commit/bdb566290c0270dc3af98e75d725e17841b54553) - kindlich - Sun Dec 8 20:07:31 2019
+			 * [Force BEPs to return a specific type](https://github.com/CraftTweaker/CraftTweaker/commit/cd3bdfbf34c690e2c0f093f5b42db1a688f4c885) - kindlich - Sun Dec 8 19:44:07 2019
+			 * [invalid recipe names are now logged (not fixed!) close #877](https://github.com/CraftTweaker/CraftTweaker/commit/ef821921e1cdd911aec23fcc3a9794dffaa60012) - Jared - Fri Dec 6 23:54:48 2019
+			 * [Gave MCBlockState a proper commandString](https://github.com/CraftTweaker/CraftTweaker/commit/35f12bd6c64058580cfb7629bd1ab4c04eb7da1a) - Jared - Fri Dec 6 23:42:02 2019
+			 * [Should fix random null pointer exceptions when comparing stacks](https://github.com/CraftTweaker/CraftTweaker/commit/b1b0f7cb12963b7e3c95d9b662d42e8a2934597c) - Jared - Fri Dec 6 23:28:04 2019
+			 * [Fixed the reload listener being too early close #883](https://github.com/CraftTweaker/CraftTweaker/commit/60047cb682cda0661830887c718c9b22eeb54dc2) - Jared - Fri Dec 6 23:19:29 2019
+			 * [Fixed JEI showing the recipes incorrectly on servers](https://github.com/CraftTweaker/CraftTweaker/commit/570deaceeed83c3eebe0da08063c44c114ff406d) - Jared - Fri Dec 6 23:03:56 2019
+			 * [update ZenCode](https://github.com/CraftTweaker/CraftTweaker/commit/c1d9f18d2665bae72b4d623e3d1a0f215065f750) - Jared - Fri Dec 6 22:44:29 2019
+			 * [update ZS to include stdlibs (please report issues!)](https://github.com/CraftTweaker/CraftTweaker/commit/41b431043e430a53e2a3cf3407f5a9921746a60e) - Jared - Fri Dec 6 03:57:29 2019
+			 * [Added MCBiome and MCBiomeSpawnEntry](https://github.com/CraftTweaker/CraftTweaker/commit/04c42b8c98239269547ea60f897e25096be831be) - Jared - Fri Nov 22 23:46:36 2019
+			 * [entityclassification bep](https://github.com/CraftTweaker/CraftTweaker/commit/f9ec8c5f1fb99b6e24ce91ad0a41ff759f3166db) - Jared - Fri Nov 22 23:05:04 2019
+			 * [renamed entityType bracket handler to entitytype, to fit with the rest](https://github.com/CraftTweaker/CraftTweaker/commit/b3b11ef1e3ff1c0c0e9bee636e2b47c6f804d271) - Jared - Fri Nov 22 22:15:30 2019
+			 * [Just warn about docs, don't error](https://github.com/CraftTweaker/CraftTweaker/commit/cd4eeb1cf7e77c28906a50894f76cfceee5d93f5) - Jared - Fri Nov 22 22:10:34 2019
+			 * [Added BlockPos and Direction/Axis](https://github.com/CraftTweaker/CraftTweaker/commit/076c282df6e242de7f25cca14065434a402dbf97) - Jared - Wed Nov 20 04:15:54 2019
+			 * [added docParam this to IData related stuff](https://github.com/CraftTweaker/CraftTweaker/commit/89b249931cd7ac7b302c073f0d1d19b874788f33) - Jared - Sat Nov 16 15:34:33 2019
+			 * [remove TODOS from docs](https://github.com/CraftTweaker/CraftTweaker/commit/7335be72ab1db2989cc040ebc6011edb80aff20f) - Jared - Sat Nov 16 12:38:23 2019
+			 * [Fix extra spaces in param examples](https://github.com/CraftTweaker/CraftTweaker/commit/7cc191cec787ab21bbeb24d2584d04e0492b1a77) - Jared - Sat Nov 16 12:38:13 2019
+			 * [Made the document processor check for interfaces and super classes](https://github.com/CraftTweaker/CraftTweaker/commit/9081e02bdb3e0aba84f96ea640cac02c1d10e21e) - Jared - Sat Nov 16 01:43:06 2019
+			 * [Set timeouts and closed the buffered reader](https://github.com/CraftTweaker/CraftTweaker/commit/00db92a516db7e46b6b7042873c55d39f413a6cb) - Jared - Thu Nov 14 15:29:40 2019
+			 * [add docParams for things to fix failed builds](https://github.com/CraftTweaker/CraftTweaker/commit/7c7553da78989db2ce9f05c1a3f6f0da95292def) - Jared - Thu Nov 14 01:53:05 2019
+			 * [renamed CTRecipeManager to CTCraftingTableManager](https://github.com/CraftTweaker/CraftTweaker/commit/4022ee82170c7dcff88826b8e634a0e159f8fe7f) - Jared - Thu Nov 14 01:24:06 2019
+			 * [Add more javadocs and Document javadocs](https://github.com/CraftTweaker/CraftTweaker/commit/294c12b46c1682c0e076afdb39ac4b8857dffa5e) - Jared - Thu Nov 14 01:22:59 2019
+			 * [Actually register MCEntityClassification](https://github.com/CraftTweaker/CraftTweaker/commit/a2a7f49dc28967d5301ee341155281c2c1f543fa) - Jared - Thu Nov 14 01:20:46 2019
+			 * [Apparently HTTPGet isn't on the server...](https://github.com/CraftTweaker/CraftTweaker/commit/614a24757df3c4e9d4171829acfeda7f1af389d4) - Jared - Wed Nov 13 23:45:25 2019
+			 * [Added a patron message. use #nobrand to disable it. open beta msg gone](https://github.com/CraftTweaker/CraftTweaker/commit/561511680fbbb6aea75468138070f71353e6e273) - Jared - Tue Nov 12 02:21:20 2019
+			 * [Disabled debug mode to start with, made #debug enable it](https://github.com/CraftTweaker/CraftTweaker/commit/7cd78799e2da610f98a872c8fe8dff05d598c5f3) - Jared - Wed Nov 6 11:13:35 2019
+			 * [Added composter support](https://github.com/CraftTweaker/CraftTweaker/commit/3d371a905e8e14eab71a5e9494a1bd35bc7ca1aa) - Jared - Tue Nov 5 23:52:12 2019
+			 * [made actions only undo on their effective sides (not a full fix)](https://github.com/CraftTweaker/CraftTweaker/commit/c2166e3674a729e0fd45401a658a831985bb1744) - Jared - Tue Nov 5 23:52:00 2019
+			 * [add MCIngredientList, which is, fixes server tags in recipes](https://github.com/CraftTweaker/CraftTweaker/commit/74ed833f66ae051822fcb5dee2bedd74fe4e06b8) - Jared - Tue Nov 5 20:13:48 2019
+			 * [Ingredients only work with Tag<Item> so just always create it](https://github.com/CraftTweaker/CraftTweaker/commit/2428a951a3af1f5b63208150a485dc340e1511ed) - Jared - Tue Nov 5 20:12:54 2019
+			 * [no need to pretty print our json](https://github.com/CraftTweaker/CraftTweaker/commit/3f9441aefdf5929a6aaa5d75ad361e0c438c4750) - Jared - Tue Nov 5 20:12:37 2019
+			 * [IData#toJsonString](https://github.com/CraftTweaker/CraftTweaker/commit/d0ab6511d18423d3f488e2ecb1cf63faeec7b6e2) - kindlich - Tue Nov 5 19:59:36 2019
+			 * [Fix nested maps in json](https://github.com/CraftTweaker/CraftTweaker/commit/8dcf80c7b568052c53c14087916462c8dd80302a) - Jared - Tue Nov 5 12:51:22 2019
+			 * [Added a way to add any recipe through json](https://github.com/CraftTweaker/CraftTweaker/commit/7cb66910a8aa3020ae8aa86c7c01b4b78d52b478) - Jared - Mon Nov 4 23:51:54 2019
+			 * [Fixed the stone cutter subType being wrong](https://github.com/CraftTweaker/CraftTweaker/commit/9324b32c133fe61cf9c254d713f3df4939bfe2c9) - Jared - Mon Nov 4 23:51:34 2019
+			 * [fix command dumps being hard to copy](https://github.com/CraftTweaker/CraftTweaker/commit/3f86c6a5aec95ada60ccc8aebc7fff49e611bf3e) - Jared - Mon Nov 4 23:51:21 2019
+			 * [removed source and javadoc jars from curseforge upload](https://github.com/CraftTweaker/CraftTweaker/commit/ef43e24057bac52e883dd37332c5594b7d09cf0e) - Jared - Sun Nov 3 23:21:41 2019
+			 * [Added a tag dump command](https://github.com/CraftTweaker/CraftTweaker/commit/944395cb03d7e4c375b4ad9adce0aa39e1778bb7) - Jared - Sun Nov 3 23:13:10 2019
+			 * [Fixed duplicate jar entries](https://github.com/CraftTweaker/CraftTweaker/commit/ac9ea58c9ff6021241f872ccb36dcdfb48d65f12) - Jared - Sun Nov 3 13:00:23 2019
+			 * [Made stdlibs a jar file, in theory this should work](https://github.com/CraftTweaker/CraftTweaker/commit/7225829f2c5ea2cf4cb2e0e821bc97aa3e798fbc) - Jared - Sat Nov 2 21:53:11 2019
+			 * [add <item>.registryName](https://github.com/CraftTweaker/CraftTweaker/commit/92dede21bef019455b6abf18e570372d5885ca28) - Jared - Sat Nov 2 21:40:00 2019
+			 * [and we're back to the zip file because Java resources are not feasible](https://github.com/CraftTweaker/CraftTweaker/commit/6d26fd25229ec1a622ed02bb1f294eed896f0c5f) - Jared - Sat Nov 2 21:29:12 2019
+			 * [Fully remove any other zip files from the jar file.](https://github.com/CraftTweaker/CraftTweaker/commit/8c96694f079f185d159e1d260686997601898191) - Jared - Sat Nov 2 18:45:46 2019
+			 * [remove left over 7z file...](https://github.com/CraftTweaker/CraftTweaker/commit/4bbd9faa44dc43356cf5a334aa74bc68c6d6bc5f) - Jared - Sat Nov 2 18:37:53 2019
+			 * [Made stdLibs a folder instead of a zip file to reduce curse wait times](https://github.com/CraftTweaker/CraftTweaker/commit/f351b225fa640570074f3326606e66eb5a05c3c4) - Jared - Sat Nov 2 18:33:46 2019
+			 * [undo zsp test](https://github.com/CraftTweaker/CraftTweaker/commit/bc747467579e1380842fa491b9074ea366dfdd97) - Jared - Sat Nov 2 14:33:10 2019
+			 * [test with making StdLibs zsp instead of zip](https://github.com/CraftTweaker/CraftTweaker/commit/ce5801f4cbec7a5630024342171e5cdcac96b861) - Jared - Sat Nov 2 14:28:17 2019
+			 * [Blacklist crafttweaker:scripts recipe type from being used in scripts](https://github.com/CraftTweaker/CraftTweaker/commit/ee0bec4bfddd768d8dc18c192819a08ec33721c5) - Jared - Fri Nov 1 18:59:57 2019
+			 * [Fix client only actions not being applied in single player](https://github.com/CraftTweaker/CraftTweaker/commit/c193eb604fadac6e642919cb6ad5563a70cc330a) - Jared - Fri Nov 1 15:11:25 2019
+			 * [fix script recipe type modid](https://github.com/CraftTweaker/CraftTweaker/commit/e2dd626c995e08db9e8168d3a14be2e90eb382cb) - Jared - Fri Nov 1 15:10:40 2019
+			 * [fix recipe dumps if there are no recipes in a recipe type](https://github.com/CraftTweaker/CraftTweaker/commit/00b8fb1dd244555b13b38ef2740805545c4ffa93) - Jared - Fri Nov 1 15:10:25 2019
+			 * [re-enable curseforge pushing](https://github.com/CraftTweaker/CraftTweaker/commit/1cfaff85b9aae782bcdaa2eedc6be7c6dc2d2fc5) - Jared - Fri Nov 1 09:07:48 2019
+			 * [Fixed javadoc complaining about docParam](https://github.com/CraftTweaker/CraftTweaker/commit/1bc78f150c08ad5e9c42f4f92c2d811876dfa2f1) - kindlich - Thu Oct 31 19:14:40 2019
+			 * [Fixed pipeline](https://github.com/CraftTweaker/CraftTweaker/commit/9f6c3be5ab0ea4577af95ed1e92cdda9d95c8921) - kindlich - Thu Oct 31 17:22:53 2019
+			 * [Split Jenkins Pipeline](https://github.com/CraftTweaker/CraftTweaker/commit/8a439cca69cd19e71af7a194f0a0989c3a8a100d) - kindlich - Thu Oct 31 17:19:31 2019
+			 * [fix gradle execing commands](https://github.com/CraftTweaker/CraftTweaker/commit/5af8959cc9afed4d3c4fb422f7185a2ea12761df) - Jared - Thu Oct 31 16:29:45 2019
+			 * [remove line about ct syntax, feedback received](https://github.com/CraftTweaker/CraftTweaker/commit/911d78038a972b6aa028f918a5463f67d9cf604e) - Jared - Thu Oct 31 16:12:20 2019
+			 * [Add burn time changing](https://github.com/CraftTweaker/CraftTweaker/commit/1c2e637a258d9ec15f4a4b1bf296cd6a5915f81a) - Jared - Thu Oct 31 16:09:28 2019
+			 * [Set docParam missing as error and added it to the existing classes](https://github.com/CraftTweaker/CraftTweaker/commit/0de8d10cb5b1b6e036be120872df9145ed1e121a) - kindlich - Wed Oct 30 18:25:18 2019
+			 * [Changed some regex matches to make them more readable](https://github.com/CraftTweaker/CraftTweaker/commit/8691284e033a875cbd71bab2efc56898fa366bc1) - kindlich - Wed Oct 30 18:23:51 2019
+			 * [Fixed static-only classes wanting docParam this](https://github.com/CraftTweaker/CraftTweaker/commit/69e61e7f2fee4d68f7b28407f8a9dae15216bd60) - kindlich - Wed Oct 30 00:01:52 2019
+			 * [docParam and scriptFile for generated documents Methods need @docParam for their parameters. If the type has nonstatic methods, then the type also needs @docParam on its javadoc](https://github.com/CraftTweaker/CraftTweaker/commit/d20fe1f5b461a572dbde2d15ace8f366afee888e) - kindlich - Tue Oct 29 18:17:19 2019
+	Cucumber Library (Cucumber-1.14.4-2.0.5.jar --> Cucumber-1.14.4-2.0.6.jar):
+		Cucumber-1.14.4-2.0.6.jar:
+			No changelog provided.
+	Dark Utilities (DarkUtilities-1.14.4-2.0.8.jar --> DarkUtilities-1.14.4-2.0.10.jar):
+		DarkUtilities-1.14.4-2.0.10.jar:
+			 * Fix gluttony charm side effects when equipped as Curio. (#192) - Vaelzan
+			 * Fixed potion effects crashing with player damage plate. Closes #191 - Tyler Hancock
+			 * Fixed natural spawning and some AI not liking vector plates and other flat blocks. Closes #193 - Tyler Hancock
+			 * Optimized some textures. - Tyler Hancock Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?DarkUtilities)
+
+			 * NillerMedDild
+			 * Pongo Sapiens
+			 * Darkosto
+		DarkUtilities-1.14.4-2.0.9.jar:
+			 * Fixed potion effects crashing with player damage plate. Closes #191 - Tyler Hancock
+			 * Fixed natural spawning and some AI not liking vector plates and other flat blocks. Closes #193 - Tyler Hancock
+			 * Optimized some textures. - Tyler Hancock Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?DarkUtilities)
+
+			 * NillerMedDild
+			 * Pongo Sapiens
+			 * Darkosto
+	Forbidden and Arcanus (forbidden_arcanus-1.14.4-1.5-beta-2.jar --> forbidden_arcanus-1.14.4-1.5-beta-3.jar):
+		forbidden_arcanus-1.14.4-1.5-beta-3.jar:
+			forbidden_arcanus-1.14.4-1.5-beta-3
+			-Added Iron Chain & Arcane Golden Chain
+			-Added zh_cn language
+			-Fixed Arcane Base Block Center Part missing Model
+			-Changed Edelwood Ladder Recipe to prevent a Recipe Conflict
+			-Edelwood Ladder is now Twice as fast as a normal Ladder
+			-Crafting a Candelabra now gives 3 items
+			-Endermans now have a Chance to drop Ender Pearl Fragments
+	Industrial Foregoing (industrial-foregoing-1.14.4-2.1.0-69a4a14.jar --> industrial-foregoing-1.14.4-2.1.2-582ea8b.jar):
+		industrial-foregoing-1.14.4-2.1.2-582ea8b.jar:
+			Hot fix for missing resources
+		industrial-foregoing-1.14.4-2.1.1-6df3f9e.jar:
+			Range Addon can't be inserted in all of the machines anymore, closes #645
+			Machines aren't angry at you anymore so they will look at you
+			Fixed Infinity Drill excesive tooltip
+			Fixed client crash + height of rendered boxes when using drill (Vaelzan)
+			Fixed Sewer not collecting popo, closes #636
+			Fixed item extraction from the Dissolution Chamber, closes #632 Added recipes for the Fluid Placer and the Fluid Collector, closes #630 Updated to the new resource registration system
+			Add only tooltip to the MIT if it doesnt have a key
+	Ma Essentials ([Forge v1.14.4] Ma Essentials v1.2.6 --> [Forge v1.14.4] Ma Essentials v1.2.7):
+		[Forge v1.14.4] Ma Essentials v1.2.7:
+			Temporary fix to /speed command crash on dedicated server.
+	McJtyLib (mcjtylib-1.14-3.5.15-alpha.jar --> mcjtylib-1.14-3.5.17-alpha.jar):
+		mcjtylib-1.14-3.5.17-alpha.jar:
+			3.5.17:
+			- hnOsmium0001 did some improvements on text editing in McJtyLib gui's. For example, you can now use ctrl-arrow to move between words
+			- Some further improvements on input handling
+		mcjtylib-1.14-3.5.16-alpha.jar:
+			3.5.16:
+			- Various changes and fixes
+	Mystical Agriculture (MysticalAgriculture-1.14.4-2.0.3.jar --> MysticalAgriculture-1.14.4-2.0.4.jar):
+		MysticalAgriculture-1.14.4-2.0.4.jar:
+			Release 2.0.4 for MC 1.14.4
 			Changes:
-
-			 * Added a config option for the catalyst required to make Singularities
-			 * Fixed the arrow in the Quantum Compressor GUI not rendering properly for recipes with large power requirements
-			 * Fixed the Quantum Compressor ejecting ItemStacks with larger than max stack sizes
-			 * Fixed the Quantum Compressor overwriting NBT tags
-			 * This means you can no longer insert or eject multiple of the same item with different NBT tags
-
-	FTB Utilities (went from FTBUtilities-5.0.1.12.jar to FTBUtilities-5.0.2.10.jar):
-		FTBUtilities-5.0.2.10.jar:
+			- Initial implementation of the new Augment system
+			 - Augments are the replacement for Charms
+			 - Augments can be applied to all tiers of tools/armor
+			 - Augments themselves have tiers, lots of them have multiple tiers
+			 - An augment can be applied to any applicable item of equal or greater tier
+			 - They are added using the Tinkering Table, and can be removed or swapped at any time
+			 - The set bonuses have been changed to Augments, set bonuses will return in a new form at a later date
+			- Removed the extra diamonds from essence tool/armor recipes
+			- Fixed network issues with recipes (JEI should properly show the recipes in all circumstances now)
+			- Fixed an error with color handler registration
+			- Fixed IF planters not being able to plant crops on Essence Farmland
+			- Fixed the I/O of Seed Reprocessors
+			Requires Cucumber Library 2.0.6+
+	Quark (Quark-r2.0-200.jar --> Quark-r2.0-202.jar):
+		Quark-r2.0-202.jar:
+			- Added a biome type config for mega dungeons, which prevents them from spawning in oceans, as well as the end or nether
+			- Fixed chests and spawners in the same logical room in mega dungeons having the same values
+			- Fixed stonelings not triggering the summoned_entity advancement trigger
+			- Lowered the default size of mega dungeons to hopefully make it less likely they'll protrude from the surface
+		Quark-r2.0-201.jar:
+			- Added beaches to the mega cave blacklist
+			- Added Mega Dungeon
+			- Added Nether Obsidian Spikes
+			- Added the Wrapped mob, which spawns instead of a zombie, if it would spawn on cobbedstone
+			- Cave Crystals can now grow naturally if placed deep underground
+			- Fixed a bunch of items not having the right tags (fixes issues with Oak Chests not behaving properly and more)
+			- Fixed a crash if your computer is set to turkish
+			- Fixed disabling Compasses Work Everywhere making compasses not work at all
+			- Fixed mega caves not having the biome list config in consideration, and thus spawning in oceans even though they shouldn't
+			- Fixed mega caves spawning in superflat worlds, thus just placing a bunch of lava
+			- Increased the frequency monster boxes will spawn by default
+			- Made mega caves a bit rarer by default
+	RFTools Base (rftoolsbase-1.14-0.0.11-alpha.jar --> rftoolsbase-1.14-0.0.12-alpha.jar):
+		rftoolsbase-1.14-0.0.12-alpha.jar:
+			0.0.12:
+			- Updates to latest McJtyLib
+	RFTools Builder (rftoolsbuilder-1.14-1.2.10-alpha.jar --> rftoolsbuilder-1.14-1.2.12-alpha.jar):
+		rftoolsbuilder-1.14-1.2.12-alpha.jar:
+			1.2.12:
+			- Fixed power bar display in the GUI of the shield
+			- Fixed cleanup of shapecard previews
+			- When the shield projector is destroyed by an explosion the shield template blocks will be restored first
+		rftoolsbuilder-1.14-1.2.11-alpha.jar:
+			1.2.11:
+			- Updates to latest McJtyLib
+			- The shield has been ported!
+	RFTools Power (rftoolspower-1.14-1.2.11-alpha.jar --> rftoolspower-1.14-1.2.12-alpha.jar):
+		rftoolspower-1.14-1.2.12-alpha.jar:
+			1.2.12:
+			- Updates to latest McJtyLib
+	RFTools Storage (rftoolsstorage-1.14-0.0.6-alpha.jar --> rftoolsstorage-1.14-0.0.7-alpha.jar):
+		rftoolsstorage-1.14-0.0.7-alpha.jar:
+			0.0.7:
+			- Updates to latest McJtyLib
+	RFTools Utility (rftoolsutility-1.14-1.2.12-alpha.jar --> rftoolsutility-1.14-1.2.13-alpha.jar):
+		rftoolsutility-1.14-1.2.13-alpha.jar:
+			1.2.13:
+			- Updates to latest McJtyLib
+	Restrictions (restrictions-1.14-1.3.9.jar --> restrictions-1.14-1.3.10.jar):
+		restrictions-1.14-1.3.10.jar:
+			1.3.10:
+			- Updates to the latest McJtyLib
+	Solar Flux Reborn ([1.14.4] Solar Flux Reborn - 14.1.2 --> [1.14.4] Solar Flux Reborn - 14.1.3):
+		[1.14.4] Solar Flux Reborn - 14.1.3:
 			No changelog provided.
-		FTBUtilities-5.0.2.9.jar:
-			 * Fixed server crash
-		FTBUtilities-5.0.2.8.jar:
-			No changelog provided.
+	Steve's Factory Manager Reborn (StevesFactoryManager-1.14.4-3.0.0-alpha21.jar --> StevesFactoryManager-1.14.4-3.0.0-alpha23.jar):
+		StevesFactoryManager-1.14.4-3.0.0-alpha23.jar:
+			Built on commit d0a0aeb
+			 - Fixed world block outline dispositions when sneaking
+			 - Fixed unable to disable crafting command
+			 - Fixed crashing in dedicated server
+			 - Merged language files
+		StevesFactoryManager-1.14.4-3.0.0-alpha22.jar:
+			Built on commit a5b307a
+			 - Added procedure groups
+			 - Added renaming procedure groups
+			 - Changed to a different storage format, and added automatic migration from older format
+			 - Fixed remove all connected procedures (shift + context menu “delete”) removing all procedures instead of only the connected ones
+			 - Fixed redstone input not working across saves
+	Titanium (titanium-1.14.4-2.2.9.jar --> titanium-1.14.4-2.2.10.jar):
+		titanium-1.14.4-2.2.10.jar:
+			Fixed Shit+Clicking into a slot wierdness (Buuz135)
+			Fixed handler chacking (Buuz135)
+			Added Serializer which doesn't auto register itself (SkySom)
+			Improved Resource Registration (Buuz135)
+			Allowed the modules to have custom files (Buuz135)
+	Torchmaster (torchmaster-2.0.0-rc1.jar --> torchmaster-2.0.0-rc2.jar):
+		torchmaster-2.0.0-rc2.jar:
+			v2.0.0-rc2
 
-	FTBLib (went from FTBLib-5.0.1.15.jar to FTBLib-5.0.2.10.jar):
-		FTBLib-5.0.2.10.jar:
-			No changelog provided.
+			 * Fixed feral flare lantern and dreadlamp not dropping when broken. v2.0.0-rc1
 
-	FoamFix for Minecraft (went from FoamFix 0.9.6 Anarchy (1.12.2) to FoamFix 0.9.8 Anarchy (1.12.2)):
-		FoamFix 0.9.8 Anarchy (1.12.2):
-			 * Update to Forge 2673+ (now required!)
-		FoamFix 0.9.7 Anarchy (1.12.2):
-			 * Fix invalid Forge dependency
-			 * [#137] Fix 3D item models not rendering correctly (for example Silent's Gems shields)
+			 * Fixed tesselating crash when placing a feral flare lantern v2.0.0-rc0
 
-	Forestry (went from forestry_1.12.2-5.8.0.264.jar to forestry_1.12.2-5.8.0.270.jar):
-		5.8.0:
-			* Add missing code - Nedelosk
-			* Fix book entry loading after reloading the resource manager - Nedelosk
-			* Fix #2094, Fix #2096 Wrong entry order and Clean Up resource loading - Nedelosk
-			* Fix #2095 Duplicated Book Entries - Nedelosk
-			* Fix #2087 Issue with guide book - Nedelosk
-			* Update README (#2080) - temp1011
-			* Optimise Worldgen Hives (#2063) - temp1011
-			* Fix #2077 Crash from disabling the Arboriculture Module - Nedelosk
-			* Add more methods to ModuleHelper - Nedelosk
-			* Clean Up Book - Nedelosk
-			* Add missing Side Only Annotations Fix #2076 - Nedelosk
-			* Fix extra drop from greenhouse window (#2072) - temp1011
-			* Update Forge and Mappings (#2075) - temp1011
-			* Add Guide Book and Analyzer Screen (#2073) - Nedelosk
-			* Make butterflies obey mob spawning gamerules - temp1011
-			* Don't drop xp orbs into world directly - temp1011
-			* Remove Chisel Plugin - temp1011
-			* Replace Forestry IRC link with discord badge - mezz
-			* resolve conflict - temp1011
-			* Fix #2037 Add Comparator Support for Engines - Nedelosk
-			* Fix #2042 Another crash with butterflies - Nedelosk
-			* Fix #2040 Villager AI Crashes Server - Nedelosk
-			* Add AI for Apiarist to Replace Bees in Village Bee Houses (#2001) - temp1011
-			* Fix Broken Ore Dictionary Registration - temp1011
-			* Fix JEI errors for disabled modules - temp1011
-			* Register Charcoal Block with Ore Dictionary - temp1011
-			* Remove test, use Enum instead of ordinal - temp1011
-			* Add potted plants as flowers for bees - temp1011
-			* Stop peat fired engine outputting ash through power side - temp1011
-			* Improve logic - temp1011
-			* Make Apiarist Armour Repairable - temp1011
-			* formatting, re-include config - temp1011
-			* Move self pollination into main pollination method - Only happens if normal pollination can't occur - Will not cause return otherwise would worsen chance for cross pollination - temp1011
-			* Add self-pollination of leaves near bees - temp1011
-			* minor ShapedRecipeCustom optimization - Adrian Siekierka
-			* Fix #1997 Actually Additions Integration - Nedelosk
-			* Close #1859, Close #1858 Add Natura huge glowshrooms farm support - Nedelosk
-			* Update Lang - Nedelosk
-			* Fix "X-Ray" Leaves and wrong leaf particle color - Nedelosk
-			* Fix #1959 Forestry leaves causing server crash - Nedelosk
-			* Fix #1962 Wood Pile fire spread might be a bit too aggressive - Nedelosk
-			* Fix #1974 Add Support for Animania wool types in recipes - Nedelosk
-			* Fix #1982 Wrong drop Greenhouse Window - Nedelosk
-			* Fix #1975 Farm blocks change type on world reload - Nedelosk
-			* Fix #1963 Forestry leaves confuse minimap mods - Nedelosk
-			* Fix #1984 Server crash when placing an arboretum - Nedelosk
-			* Fix #1993, Fix #1972 Managed Succulent Farm doesn't work and Farm multiblock causing chunks to be loaded - Nedelosk
-			* Fix #1988 Arborist's Chests causing suffocation damage - Nedelosk
-			* Fix #1989 "X-Ray" Leaves - Nedelosk
-			* More correct method - temp1011
-			* formatting - temp1011
-			* Fix crash if HarvestCraft present but Apiculture disabled - temp1011
-			* Add oredict for bronze gear in sorting pipe recipe - temp1011
-			* Fix #1969 Multiblock farms server-crash - Nedelosk
-			* Fix return statement - temp1011
-			* Woops - temp1011
-			* Added whitelist for dimension generation too - temp1011
-			* merge (#1) * Reintroduce the old-style farm * Remove Unused Files * Fix #1945 Database duping trees / bees * Fix broken model baker uvs * Improve Farm Logic System and add ring farm layout * Rebalance electron tubes and add ender farm * Improve fertilizer config and Clean Up * Clean Up API * Add missing farm logic localisation * Add missing fluid handler capability to the planter * Remove unneeded GL state changes * Update Lang * Fix #1955 Add Filter Sorting to fix a server sided bug * Make cultivation farms more expensive * Round fertilizer values * Add deprecated circuit replacement and Version 5.8 - temp1011
-			* Add deprecated circuit replacement and Version 5.8 - Nedelosk
-			* fix imports - temp1011
-			* Add IMC messages for mods to blacklist dimensions in - temp1011
-			* Round fertilizer values - Nedelosk
-			* Make cultivation farms more expensive - Nedelosk
-			* Fix #1955 Add Filter Sorting to fix a server sided bug - Nedelosk
-			* Update Lang - Nedelosk
-			* Remove unneeded GL state changes - Nedelosk
-			* Add missing fluid handler capability to the planter - Nedelosk
-			* Add missing farm logic localisation - Nedelosk
-			* Clean Up API - Nedelosk
-			* Improve fertilizer config and Clean Up - Nedelosk
-			* Pull from branch 'mc-1.12' - Nedelosk
-			* Rebalance electron tubes and add ender farm - Nedelosk
-			* Improve Farm Logic System and add ring farm layout - Nedelosk
-			* Fix broken model baker uvs - Nedelosk
-			* Fix #1945 Database duping trees / bees - Nedelosk
-			* Update Lang - Nedelosk
-			* Improve genetic filter implementation - Nedelosk
-			* Move the filter logic to a separate interface - Nedelosk
-			* Change default filter rule - Nedelosk
-			* Improve Filter collision box - Nedelosk
-			* Remove unused texture - Nedelosk
-			* Add sorting block (Genetic Filter) - Nedelosk
-			* Add more Dimension Config Blacklists for world generation (#1942) - temp1011
-			* Removing overworked bees mechanic, cap production modifier at 16x (#1946) - temp1011
-			* Remove Unused Files - Nedelosk
-			* Reintroduce the old-style farm - Nedelosk
-			* Adds dimension blacklist for hive generation. - phillipasmith1995
-			* Adds dimension blacklist for hive generation. - phillipasmith1995
-			* Adds dimension blacklist for hive generation. - phillipasmith1995
-			* Move the worktable into a separate module - Nedelosk
-			* Should be all of them (hopefully) - temp1011
-			* Add power config for analyzer - temp1011
-			* Fix #1061 Squeezer is very "liberal" regarding oredict in Recipes - Nedelosk
-			* Update Lang Git-Module - Nedelosk
-			* Fix #1937 Backpacks do not hold previously defined items - Nedelosk
-			* Fix #1399 Add Hive Generation Blacklist - Nedelosk
-			* Fix #1884 Tin can / wax capsule cannot pick up fluid blocks in world - Nedelosk
-			* Fix Crate Registration - Nedelosk
-			* Fix #1916 Client Crash with new version - Nedelosk
-			* Fix #1874 Crash when adding bee to BQM quest / chestloot - Nedelosk
-			* Fix #1920 Crate registration only on client side - Nedelosk
-			* No biome check - temp1011
-			* Fix #1919 Butterfly Model throws NullPointerException - Nedelosk
-			* Improve Database Recipe - Nedelosk
-			* Fix hive flammability Hive placed in the overworld burned whereas hive placed in nether did not in my tests. Hopefully this works better. - temp1011
-			* Fix #1932 Client Tile Updates Depending On Apiculture Module - Nedelosk
-			* Woops - temp1011
-			* add damage option to hives based on config - temp1011
-			* update config in apiculture - temp1011
-			* make non hellish hives flammable - temp1011
-			* Fix "Invalid property value detected" error logs from Buildcraft - mezz
-			* Fix #1918 Fix #1912 packet handler issue with latest Forge (14.23.1.2574+) - Nedelosk
-			* Fix Broken Sockets - Nedelosk
-			* Fix #1907 Electric engine doesn't update configuration properly - Nedelosk
-			* Fix #1901 Custom Backpack Model Registration - Nedelosk
-			* Fix #1906 Willow leaves can be used to create an x-ray - Nedelosk
-			* Fix resurrected ender dragons having no AI (#1908) - Remy A
-			* Revert "Slightly improve render performance of genetic items (bee, trees, etc)" This reverts commit 3df3d9121e51fca16e8a02b19ddb8e1a2b1d5bc6. - mezz
-			* Fix #1893 False Module Container ID - Nedelosk
-			* Slightly improve render performance of genetic items (bee, trees, etc) - mezz
-			* Stop viscous fluids from making water flowing sounds - mezz
-			* Fix #1890 NPE with Quark - Nedelosk
-			* Fix backward compatibility - Nedelosk
-			* Clean Up Module System - Nedelosk
-			* Fix Module System - Nedelosk
-			* Fix Api - Nedelosk
-			* Improve Module System - Nedelosk
-			* Fix GreenhouseEventHandler - Nedelosk
-			* Change the plugin system to a module system and split up modules -Changed plugin system to a module -Renamed forestry plugins to modules -Mod integration plugins are still called plugins -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage block for individuals -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk
-			* Update Lang - Nedelosk
-			* Move some classes to the api and fix broken api classes - Nedelosk
-			* Remove experimental code - Nedelosk
-			* Remove unused resources - Nedelosk
-			* Change the plugin system to a module system and slit up modules -Moved the woodpile from the arboriculture module to the charcoal module -Moved the backpacks from the storage module to the backpacks module -Moved the crates from the storage module to the creates module -Added the database module with a new storage for individuals -Added a gui element system to improve the alyzer api -Added a species plugin interface to handle the database gui -Added some alyzer methods to the species plugin to move the alyzer integration later to it - Nedelosk
-			* Fix #1866 Block State Interaction Issues With Pokecube and Forestry - Nedelosk
-			* Fix Mystical Agriculture Inferium Seeds and update Integration - Nedelosk
-			* Fix #1860 Mystical Agriculture Integration (Could not find item) - Nedelosk
-			* Fix #1856 Non Glass Fluids in Thermionic Fabricator are not getting used up. - Nedelosk
-			* Fix #1863 Bottler does not empty bottles - Nedelosk
+			 * first release candidate, written from scratch
+			 * Improved Mega Torch from first 1.14 release
+			 * Added Dread Lamp
+			 * Added Feral Flare Lantern (LoS feature is currently missing but will come in the next release candidate)
+			 * Added Frozen Pearl (Not really that useful anymore since the lantern now removes all lights when it gets removed, but just in case)
+			 * Added entity black/white listing for megatorch and dreadlamp via config
+		torchmaster_1.12.2-1.8.1.81.jar:
+			v1.8.1
 
-	Immersive Engineering (went from Immersive Engineering 0.12 - 80 to Immersive Engineering 0.12 - 81):
-		Immersive Engineering 0.12 - 81:
-			REQUIRES AT LEAST FORGE VERSION 14.23.3.2655!
+			 * Slightly improved the Feral Flare Lantern Bounding Box
+			 * Improved compatibility with Lycanites Mobs v1.8.0
 
-			- Added the functionality for the Faraday Suit to protect against live wiring (Malte)
-			- Added the ability to use Pick Block to take a connector's wire by sneaking (BluSunrize)
-			- Added Magma blocks to the list of heatsources for the Thermoelectric generator (BluSunrize)
-			- Added Efficiency, Unbreaking and Mending enchantments to the Engineer's Hammer and Wirecutter (BluSunrize)
-			- Made those tools take damage when used to break blocks
-			- Added compatibility for Forge's update checker (Malte)
-			- Added support for Forge's memory Maven repo, this makes deleting old coremod versions unnecessary in Forge 2656+ (latest) (Malte)
-			- Changed fences to allow torches on top and prevent mobspawns (Malte)
-			- Changed animated item models to use Item-TESRs rather than rebaking (Malte)
-			- Made the Fluorescent tube to be really fancy again! (Malte)
-			- Changed renderdistance config to work as described (Malte)
-			- Changed the images of wiring in the manual to use up-to-date pictures and feature connectors and relays (BluSunrize)
-			- Shift-clicking is no longer needed to connect wires to breaker switches etc (Malte)
-			- Failed wire connection attempts no longer spam the chat (Malte)
-			- Changed Thermoelectric generator to cache its output values, improving performance (BluSunrize)
-			- Fixed wires being invisible when logging into a server for the first time (Malte)
-			- Fixed localization for treated wood banners (Malte)
-			- Fixed the mineral command not workign with Vein names that contain a space (Malte)
-			- Fixed shield having a really trippy enchantment glow (Malte)
-			- Fixed conveyor recipe (Malte)
-			- Fixed Skyhook crashing servers (Malte)
-			- Fixed lag with redstone connectors (Malte)
-			- Fixed blocks somtimes taking longer to break with the hammer (Malte)
-			- Fixed a divide-by-zero issue in the ExcavatorHandler for blacklisted dimensions (BluSunrize)
+			 * FIX: Fixed rendering of the dread lamp glass texture
+			 * FIX: Improved compatibility with quark mobs (stonelings and frogs in particular, both should be blocked by the dread lamp)
+			 * NEW: Added /torchmaster_entity_dump command. Dumps all registered entities to the log file (Registered to the game, the mega torch and dread lamp)
+			 * NEW: Added /torchmaster_list_torches command. Dumps all mega torches and dread lamps of loaded dimensions to the log file
+			 *  NEW: Added mega torch and dread lamp white/black listing option
+			 * Format: [PREFIX][MODNAMESPACE]:[ENTITYNAME]
+			 *  Valid Prefixes:
+			 * +: Adds an entity to the list, effectively blocking it from being able to spawn
+			 * -: Removes an entity from the list, effectively allowing it to spawn
+			 *  Examples:
+			 * Block Bats from spawning: +minecraft:bat
+			 * Allow pigs to spawn: -minecraft:pig
+			 * Block Quark Stonelings from spawning: +quark:stoneling
+			 * Use the /torchmaster_entity_dump command to obtain a full list of available entities (in the game log file) v1.7.1
 
-	Immersive Tech (went from immersivetech-1.12-1.3.7.jar to immersivetech-1.12-1.3.7-SevTech-Ages.jar):
-		immersivetech-1.12-1.3.7-SevTech-Ages.jar:
-			- Fixed Boiler crash [Thanks LiskoSlayer63]
+			 * FIX: Fixed an issue with the Feral Flare Lantern that could lead to chunk corruption when placed close to the world height limit.
+			 *  NEW: Added a configuration option to limit the amount of lights a Feral Flare Lantern can place.
+			 * Warning: Setting this value in conjunction with the radius and light level setting too high can still lead to chunk corruption! Dont be stupid. You dont need a light at every possible block in a chunk. v1.7.0
 
-	Industrial Foregoing (went from industrialforegoing-1.12.2-1.8.7-132.jar to industrialforegoing-1.12.2-1.8.10-143.jar):
-		industrialforegoing-1.12.2-1.8.10-143.jar:
-			 * Added support for the Adult Filter in the Mob Slaughter Factory
-			 * The Enchantment Extractor will keep items in the input slot until they are fully disenchanted
-			 * The Enchantment Extractor will now accept enchanted books with multiple enchantments and split them up
-			 * Fluids without buckets are now properly displayed in the Black Hole Unit
-			 * Added Right Click Harvestability to cocoa beans as no other mod adds it so the Plant Interactor can harvest them (can be disabled in the config)
-			 * Animal rancher will stop shearing animals if the inventory is full
-			 * Fixed a crash with the enchantment extractor or a couple
-		industrialforegoing-1.12.2-1.8.10-142.jar:
-			 * Added support for the Adult Filter in the Mob Slaughter Factory
-			 * The Enchantment Extractor will keep items in the input slot until they are fully disenchanted
-			 * The Enchantment Extractor will now accept enchanted books with multiple enchantments and split them up
-			 * Fluids without buckets are now properly displayed in the Black Hole Unit
-			 * Added Right Click Harvestability to cocoa beans as no other mod adds it so the Plant Interactor can harvest them (can be disabled in the config)
-			 * Animal rancher will stop shearing animals if the inventory is full
-			 * Fixed a crash with the enchantment extractor
-		industrialforegoing-1.12.2-1.8.10-141.jar:
-			 * Added support for the Adult Filter in the Mob Slaughter Factory
-			 * The Enchantment Extractor will keep items in the input slot until they are fully disenchanted
-			 * The Enchantment Extractor will now accept enchanted books with multiple enchantments and split them up
-			 * Fluids without buckets are now properly displayed in the Black Hole Unit
-			 * Added Right Click Harvestability to cocoa beans as no other mod adds it so the Plant Interactor can harvest them (can be disabled in the config)
-			 * Animal rancher will stop shearing animals if the inventory is full
-		industrialforegoing-1.12.2-1.8.9-138.jar:
-			 * Fixed Server Side Crash with the Mob Crusher
-			 * Fixed Fluid Dictionary Converted working when no fluid was selected
-		industrialforegoing-1.12.2-1.8.8-136.jar:
-			 * Fixed Potion Brewer mot respecting locked slots
-			 * Added custom death message from the mob crusher (Katzen48)
-			 * Added localizations from the fluids placed in the world (superfluke)
-			 * Fixed shulker boxed dropping twice
-			 * Horses and llamas can be tamed again but they need to be tamed first as MC rules
-			 * Fixed Villager Trade Exchanger doing stuff when it doesn't need to do stuff and fixed missing button translations
-			 * Added recipe integrations for EnderIO (if present) all the recipes integrations can be disabled in the config
-			 * Added Fluid Dictionary Converter that will transform fluids into another similar fluids with Crafttweaker integration import mods.industrialforegoing.FluidDictionary;
+			 * CHANGE: The Mega Torch and Dread Lamp now work in a cube instead of a cylinder. This should make it much easier to setup torches without overlap or deadspots. The Size of the cube is Range + 1 in each direction. A range of 64 (default) will result in a cube of 129 by 129 blocks with the torch as its center.
+			 * NEW [Beta]: Mega Torches can now visualize the range at which they work. Use any dye to render a visual representation of the torches working volume. Use any dye or an empty hand to disable the renderer. The renderer will also disable itself when you change dimensions or get out of viewing range.
+			 * NEW: Feral Flare Lanterns can now be configured to only place lights in line of sight. Simply rightclick the lantern to open the gui. At the moment this mechanic feels a bit clunky, so there will be changes in a future release.
+			 * NEW: Mega Torches should now be able to suppress those scary cave ambient sounds v1.6.4
 
-			FluidDictionary.add("essence","xpjuice",1);
-			FluidDictionary.remove("essence","xpjuice");
+			 * FIX: reworked torch storage system to use capabilities instead of a global file. This fixes an issue with torches not working in most modded dimensions after a restart. You might need to replace your torches and lamps for the changes to take effect. v1.6.3
 
-	JAOPCA (went from JAOPCA-1.12.2-2.2.6.78.jar to JAOPCA-1.12.2-2.2.6.82.jar):
-		JAOPCA-1.12.2-2.2.6.82.jar:
-			Attempted to fix crash with Ender IO
-		JAOPCA-1.12.2-2.2.6.81.jar:
-			Added a localizing function
+			 * FIX: Moved russian language files to correct location v1.6.2
 
-			Changed module blacklist to count occurences:
-			If a module name occurs an odd number of times for a material, then the module is disabled for the material. * means all modules.
+			 * Updated to latest stable MCForge Version (14.23.3.2655)
+			 * FIX: Feral Flare Lantern now uses the configuration option for its tick rate
+			 * FIX: Torches should no longer work across multiple world saves
+			 * FIX: Added small workaround to prevent a crash during world startup on certain modpacks
+			 * FIX: Improved Terrain lighter compatibility with replaceable blocks
+			 * CHANGE: Removed some Logging Spam (and added more :D well, just for some errors) v1.6.1
 
-			Fixed crash with latest Ex Nihilo Creatio
-			Fixed Ender IO module
+			 * Fix Mega Torch and Dread Lamp not working (oops...) v1.6.0
 
-	Just Enough Items (JEI) (went from jei_1.12.2-4.8.5.159.jar to jei_1.12.2-4.9.1.168.jar):
-		4.9.1:
-			* Update ru_ru.lang (#1196)
-			* Fix issues with items that crash with FluidSubtypeInterpreter
-			* Fix #1197 Truncate long recipe category titles so they fit in the gui
-			* Add built-in IDrawable for drawing basic ingredients
-			* Fix #1192 Fix hiding ingredients at runtime without a resource reload
-			* Add "Recipe ID:" prefix for advanced tooltip on recipe outputs
-		4.9.0:
-			* Hide recipe categories when all their crafting catalysts are hidden
-			* Fix #1161 Empty Recipe Screen shows when all recipes in category are hidden
-			* Fix in-game changes to blacklist and hidden ingredients
-		4.8.6:
-			* Fix #1145 Blacklist not re-applying after Resource Reload
-			* Fix resource reload listener in main menu
-			* Protect against wildcard items in the creative menu
-			* Show full recipe registry name on advanced tooltips for crafting recipes
-			* Update README on Github (#1157)
-			* Fix #1095 remove maxSubtypes restriction for displaying items
-			* Updated Ukrainian translation (#1139)
-			* Fix recipe lookups for enchanted books on servers
-			* Fix #1129 JEI responds to R and U keys when config gui is open
-			* Fix #1128 Prevent crashes when creating anvil recipes for broken Items
-			* Create tr_tr.lang by RoCoKo & Emirhangg (#1112)
-			* Use latest Forge getValuesCollection instead of getValues (#1113)
-			* Depend on latest Forge version to allow JEI to crash properly
-			* Fix crash with JEI Villagers and Primitive Mobs
-			* Improve zh_tw translation (#1102)
-			* Updated Russian translation (#1105)
-			* Update Polish translation (#1103)
-			* Update sv_se.lang (#1101)
-			* Add config for maximum width of the ingredient list
-			* Fix Error Info for null fluids
-			* Boolean to ignore set restriction when transferring recipe items. (#1068)
-			* Update pl_PL (#1092)
-			* Update sv_se.lang (#1090)
-			* Update ja_jp.lang (#1089)
-			* Improve error message when a recipeHandler.getRecipeWrapper fails
-			* Update zh_cn.lang (#1073)
-			* Improve tooltip message when item can't be crafted in player inventory
-			* Fix #1077 packet handler issue with latest Forge (14.23.1.2574+)
-			* Update sv_se.lang (#1070)
-			* Fix #1066 Item Hiding Mode not working with mouse clicks
-			* Use ClientConnectedToServerEvent instead of EntityJoinWorldEvent
-			* Check for disabled brewing recipes using a BrewingRecipeRegistry#hasOutput (#1065)
+			 * Add Feral Flare Lantern (Illuminates a big area with a configurable minimum light level, default 16 radius)
+			 * Add Frozen Pearl (Removes nearby invisible feral flare light sources) v1.5.3
 
-	KleeSlabs (went from KleeSlabs_1.12.2-5.4.8.jar to KleeSlabs_1.12.2-5.4.9.jar):
-		KleeSlabs_1.12.2-5.4.9.jar:
-			Fixed Betweenlands single slabs not being breakable
+			 * Changed buildscript and configuration to be compatible with 1.12 and 1.12.1+ v1.5.2
 
-			Added missing Betweenlands slabs support
+			 * Update to forge 14.22.0.2445
+			 * Marked as stable release
+			 * WARNING: IF YOU UPDATE FROM 1.4.3 OR EARLIER YOU WILL NEED TO REPLACE YOUR TORCHES AND LAMPS! v1.5.1
 
-	Lapis Stays in the Enchanting Table (went from EnchantingTable-1.12-1.1.2.jar to EnchantingTable-1.12-1.1.3.jar):
-		EnchantingTable-1.12-1.1.3.jar:
-			v1.1.3
+			 * Switched torchmaster logging to debug instead of info to reduce log spam v1.5.0
 
-			 * Moved capability registration from Init to PreInit for improved compatibility with other mods. Thanks to the folks at Dimension Development for the patch!
-			 * Changed capability to register against EntityPlayer rather than EntityLivingBase
+			 * Added beginner tooltips to the mega torch, dread lamp and terrain lighter
+			 * Added persistent torch registry (Allows torches and lamps to work while not being chunk loaded)
+			 * MC 1.12 versions of this mod are now signed, yey! v1.4.3
 
-	LibVulpes (went from LibVulpes 1.12.2-0.2.8-28-UNSTABLE build -28 for 1.12.2 to LibVulpes 1.12.2-0.2.8-29-UNSTABLE build -29 for 1.12.2):
-		LibVulpes 1.12.2-0.2.8-29-UNSTABLE build -29 for 1.12.2:
-			 Highly untested and may break world
+			 * Updated to forge 14.21.0.2363, fixes a crash on startup due to the forge registry changes.
+	XNet (xnet-1.14-1.8.5-alpha.jar --> xnet-1.14-1.8.7-alpha.jar):
+		xnet-1.14-1.8.7-alpha.jar:
+			1.8.7:
+			- Inventory hilighting from the controller works again
+			- The facade block works much better now
+			- Connectors now connect better (visually) when they are first placed
+		xnet-1.14-1.8.6-alpha.jar:
+			1.8.6:
+			- Updates to latest McJtyLib
+			- The drops for cables, connectors and advanced connectors should now be correct
+			- The xnet cables and connectors should no longer appear in all creative tabs
+	Xaero's Minimap (v1.19.1 for Minecraft 1.14.4 --> v1.19.2 for Minecraft 1.14.4):
+		v1.19.2 for Minecraft 1.14.4:
+			+ Added the ability to select multiple waypoints in the waypoints menu using SHIFT (to select a range) and CTRL (to select individual) keys. You can now disable/enable or delete multiple waypoints at once. Editing multiple waypoints isn't supported yet, but it's coming soon!
+			* You can now deselect a waypoint in the waypoint menu by clicking on it again. Right click to deselect everything still works though.
+			* Fixed the selected set in the dropdown menu not being updated after moving a waypoint between sets.
+			* Fixed some modded mobs not being seen as hostile by adding another check for the sound category. Entities don't have sound categories in 1.8.9 and 1.7.10, sounds themselves have categories. This means that a mod can make a hostile mob play a non-hostile sound and vice versa (which probably happens a lot), so I decided it's better to skip this change for these MC versions.
+		v1.19.2 for Minecraft 1.13.2:
+			+ Added the ability to select multiple waypoints in the waypoints menu using SHIFT (to select a range) and CTRL (to select individual) keys. You can now disable/enable or delete multiple waypoints at once. Editing multiple waypoints isn't supported yet, but it's coming soon!
+			* You can now deselect a waypoint in the waypoint menu by clicking on it again. Right click to deselect everything still works though.
+			* Fixed the selected set in the dropdown menu not being updated after moving a waypoint between sets.
+			* Fixed waypoints list scrolling not working while dragging a waypoint.
+			* Fixed some modded mobs not being seen as hostile by adding another check for the sound category. Entities don't have sound categories in 1.8.9 and 1.7.10, sounds themselves have categories. This means that a mod can make a hostile mob play a non-hostile sound and vice versa (which probably happens a lot), so I decided it's better to skip this change for these MC versions.
+		v1.19.2 for Minecraft 1.12.2 | 1.12.1 | 1.12:
+			+ Added the ability to select multiple waypoints in the waypoints menu using SHIFT (to select a range) and CTRL (to select individual) keys. You can now disable/enable or delete multiple waypoints at once. Editing multiple waypoints isn't supported yet, but it's coming soon!
+			* You can now deselect a waypoint in the waypoint menu by clicking on it again. Right click to deselect everything still works though.
+			* Fixed the selected set in the dropdown menu not being updated after moving a waypoint between sets.
+			* Fixed some modded mobs not being seen as hostile by adding another check for the sound category. Entities don't have sound categories in 1.8.9 and 1.7.10, sounds themselves have categories. This means that a mod can make a hostile mob play a non-hostile sound and vice versa (which probably happens a lot), so I decided it's better to skip this change for these MC versions.
+		v1.19.2 for Minecraft 1.8.9:
+			+ Added the ability to select multiple waypoints in the waypoints menu using SHIFT (to select a range) and CTRL (to select individual) keys. You can now disable/enable or delete multiple waypoints at once. Editing multiple waypoints isn't supported yet, but it's coming soon!
+			* You can now deselect a waypoint in the waypoint menu by clicking on it again. Right click to deselect everything still works though.
+			* Fixed the selected set in the dropdown menu not being updated after moving a waypoint between sets.
+		v1.19.2 for Minecraft 1.7.10:
+			+ Added the ability to select multiple waypoints in the waypoints menu using SHIFT (to select a range) and CTRL (to select individual) keys. You can now disable/enable or delete multiple waypoints at once. Editing multiple waypoints isn't supported yet, but it's coming soon!
+			* You can now deselect a waypoint in the waypoint menu by clicking on it again. Right click to deselect everything still works though.
+			* Fixed the selected set in the dropdown menu not being updated after moving a waypoint between sets.
 
-			Current release 1.12.2-0.2.8-29
-
-			 * [ fix items not dropping](https://github.com/zmaster587/LibVulpes/commit/d9918b1904b9854)
-			 * [ support for https://github.com/zmaster587/AdvancedRocketry/issues/1068](https://github.com/zmaster587/LibVulpes/commit/09cfdea529c9ff0)
-			 * [ fix for https://github.com/zmaster587/AdvancedRocketry/issues/1069](https://github.com/zmaster587/LibVulpes/commit/9af291ee939dd5a)
-			 * [ fix https://github.com/zmaster587/AdvancedRocketry/issues/1039](https://github.com/zmaster587/LibVulpes/commit/33632836dac0ef8)
-			 * [ Add locale overrides for #1012](https://github.com/zmaster587/LibVulpes/commit/182587bc99b89b2)
-			 * [ Fixes jetpack toggle key #26](https://github.com/zmaster587/LibVulpes/commit/fc7f6413f69e433)
-			 * [ fix https://github.com/zmaster587/AdvancedRocketry/issues/977](https://github.com/zmaster587/LibVulpes/commit/a47c9e24e25b1e5)
-			 * [ fixes https://github.com/zmaster587/AdvancedRocketry/issues/991](https://github.com/zmaster587/LibVulpes/commit/970f3ced89b8171)
-			 * [ fixes https://github.com/zmaster587/AdvancedRocketry/issues/938#issuecomment-351028819](https://github.com/zmaster587/LibVulpes/commit/baf62e827720d18)
-			 * [ add getters for outputs](https://github.com/zmaster587/LibVulpes/commit/f603dbb45bd2941)
-			 * [ add getters for outputs, update build num](https://github.com/zmaster587/LibVulpes/commit/5c39a00e823ef8d)
-			 * [ fix itemHandler, https://github.com/zmaster587/AdvancedRocketry/issues/954](https://github.com/zmaster587/LibVulpes/commit/f052c4110d22306)
-			 * [ disable curse builds temporarily](https://github.com/zmaster587/LibVulpes/commit/c237fc105fd7ad9)
-			 * [ update artefact location for git](https://github.com/zmaster587/LibVulpes/commit/b620c33dd67e3d6)
-			 * [ fix https://github.com/zmaster587/AdvancedRocketry/issues/939](https://github.com/zmaster587/LibVulpes/commit/2c59e0e8ea088e0)
-			 * [ add curseforge and changelog tasks.](https://github.com/zmaster587/LibVulpes/commit/38fcb72a4b0f478)
-
-	MCMultiPart (went from MCMultiPart 2.4.1 to MCMultipart 2.5.0):
-		MCMultipart 2.5.0:
-			 * Fixed some multipart placement issues
-			 * Added checks for block breaking permissions
-			 * Allow special bounding box handling
-			 * Added support for climbable multiparts
-			 * Fixed blocks not being notified of break events properly
-
-	Mekanism (went from Mekanism-1.12.2-9.4.3.330.jar to Mekanism-1.12.2-9.4.4.337.jar):
-		Mekanism-1.12.2-9.4.4.337.jar:
-			 Please see [http://aidancbrady.com/mekanism/download/legacy/](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252faidancbrady.com%252fmekanism%252fdownload%252flegacy%252f) for changelog.
-
-	Mekanism Generators (went from MekanismGenerators-1.12.2-9.4.3.330.jar to MekanismGenerators-1.12.2-9.4.4.337.jar):
-		MekanismGenerators-1.12.2-9.4.4.337.jar:
-			 Please see [http://aidancbrady.com/mekanism/download/legacy/](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252faidancbrady.com%252fmekanism%252fdownload%252flegacy%252f) for changelog.
-
-	Minecraft Forge (went from 1.12.2-14.23.2.2645 to 1.12.2-14.23.3.2673):
-		1.12.2-14.23.3.2673:
-			josephcsible: Fix #4772: add an "isActivator" boolean to powered rails (#4774)
-		1.12.2-14.23.3.2672:
-			bs2609: Fix some code holding client world references longer than needed (#4881)
-			bs2609:
-				Add checks for undefined packet discriminators when sending messages
-				(#4890)
-		1.12.2-14.23.3.2671:
-			bs2609: Don't try to render removed tile entities. Fixes MC-123363 (#4811)
-		1.12.2-14.23.3.2670:
-			LexManos: Fix overrides typo in saving registry data. Closes #4894
-		1.12.2-14.23.3.2669:
-			LexManos: Fix library path and soft fail when repository root is not found.
-		1.12.2-14.23.3.2668:
-			LexManos:
-				Fix libraries not being added to the modlist when using external
-				metadata. Closes #4879
-		1.12.2-14.23.3.2666:
-			bs2609:
-				Fix dragon fight not initialising correctly under some circumstances
-				(#4868)
-		1.12.2-14.23.3.2665:
-			LexManos:
-				Cleanup some issues with the mod extraction to the memory modlist.
-				Closes #4874 #4875
-		1.12.2-14.23.3.2664:
-			mezz: Improve missing mod dependency error screen (#4762)
-		1.12.2-14.23.3.2663:
-			bs2609: Fix biome dictionary's biome type detection (#4878)
-		1.12.2-14.23.3.2662:
-			bs2609: Clean up Reader/Writer handling to use a specified charset (#4872)
-		1.12.2-14.23.3.2661:
-			bs2609:
-				Suppress firing events at load time if an error has already occurred
-				(#4801)
-		1.12.2-14.23.3.2660:
-			AlexIIL: Fix FluidUtil.getFluidHandler skipping some fluid tile entities (#4854)
-		1.12.2-14.23.3.2659:
-			erlend: Parse contained dependency Timestamp as long instead of int (#4866)
-		1.12.2-14.23.3.2658:
-			LexManos: Fix Forge's metadata not being loaded. Closes #4865
-		1.12.2-14.23.3.2657:
-			LexManos: Fix mods without ModSide meta value.
-		1.12.2-14.23.3.2656:
-			LexManos: Rewrite dependency extraction to use mod list system (#4841)
-		1.12.2-14.23.3.2655:
-			LexManos: Bump Forge version for new dev chunk.
-		1.12.2-14.23.2.2654:
-			LexManos:
-				Add support for World Workers skipping ticks without being removed from
-				the worker list.
-			LexManos:
-				Slow down Forge chunk gen worker when save queue is to high. Prevents
-				task from completing while tons of chunks are pending save. And add
-				minimum notification every 60 seconds.
-			LexManos: Fix vanilla duplication bug.
-		1.12.2-14.23.2.2653:
-			williewillus: Fix MC-88179 in a better way that avoids and closes #4824 (#4830)
-		1.12.2-14.23.2.2652:
-			bs2609: Improve the warning logged for cascading world generation (#4725)
-		1.12.2-14.23.2.2651:
-			bs2609:
-				New ITeleporter interface making dimensional teleportation easier.
-				(#4602)
-		1.12.2-14.23.2.2650:
-			williewillus:
-				Add a FML outbound target for all players tracking a point or entity in
-				the world. Closes #3677 (#4631)
-		1.12.2-14.23.2.2649:
-			mail:
-				Prevent EntityPlayer.attackEntityFrom from firing LivingAttackEvent
-				twice (#4661)
-		1.12.2-14.23.2.2648:
-			bs2609: Improve performance of some ExtendedBlockState methods (#4698)
-			6081834+Yuudaari: Add a way to get a list of registered biome types (#4685)
-		1.12.2-14.23.2.2647:
-			bs2609:
-				Check for empty dimensions outside of chunk unloading loop, culling
-				worlds without needing chunk unloads to trigger it. (#4704)
-			bs2609: Optimise adding normal element to vertex formats (#4699)
-		1.12.2-14.23.2.2646:
-			CreativeMD:
-				Fixed Spectator mode particles and sounds computed from where you have
-				been before (MC-46445) (#4728)
-			Parker Young:
-				Update ItemHandlerHelper.giveItemToPlayer to allow player who picked up
-				the item to hear the sound as well (#4720)
-			josephcsible: Add description to Error raised by the server hang watchdog. (#4714)
-			Judge40: Create event for overriding mob griefing flag based on entity. (#4710)
-
-	NuclearCraft (went from [Archived file] to NuclearCraft-2.10j--1.12.2):
-
-	Ore Excavation (went from OreExcavation-1.4.113.jar to OreExcavation-1.4.118.jar):
-		OreExcavation-1.4.118.jar:
-			Fixed shears not working under particular settings
-
-			Fixed potential issue saving JSON files
-			Fixed potential crash with null ore dictionaries
-			Fixed potential crash with null mining agent
-
-			Fixed ghost blocks showing up after some excavations
-			Updated project files
-			Minor code cleanup
-
-	Placebo (went from Placebo-1.12.2-1.3.2.jar to Placebo-1.12.2-1.3.3.jar):
-		Placebo-1.12.2-1.3.3.jar:
-			Minor speed improvement in FastShapelessRecipe
-
-	Scaling Health (went from ScalingHealth-1.12-1.3.13-94.jar to ScalingHealth-1.12-1.3.14-96.jar):
-		ScalingHealth-1.12-1.3.14-96.jar:
-			Added: Localization key for difficulty meter text.
-			Fixed: Distance calculations overflowing, resulting in unkillable entities with NaN max health. Bugged entities should fix themselves when you get close to them. (#89)
-			Fixed: Returning from the End through the portal counting as "dying", potentially resulting in changes to health or difficulty. (#91)
-			Fixed: Server crash when lunar phases are enabled (#97)
-
-	Signals (went from Signals-1.12.2-1.2.2-5-universal.jar to Signals-1.12.2-1.3.1-9-universal.jar):
-		Signals-1.12.2-1.3.1-9-universal.jar:
-			* A 'hold delay' can now be configured on the Rail Link.
-
-			* Added blacklist config option to disable carts from receiving Cart Engines.
-
-			* Performance enhancements on the network system introduced in 1.3.0
-		Signals-1.12.2-1.3.0-6-universal.jar:
-			The Signals logic has been completely rewritten to not require an entire rail network to be chunkloaded for the logic to work.
-
-			-The Signals mod no longer requires chunkloading of the rail network.
-
-			-Removed Path Signal, as it is rendundant (it can be replaced on intersections by Chain Signals). Any Path Signals in existing worlds get converted to Chain Signals upon chunk load.
-
-			-Performance upgrades (Rail Network now caches stuff like sections, edges, for improved pathfinding times. Additionally, network updating requires mostly off-thread. More is to be gained).
-
-			-Improved network visualization options (added a config to alter what is shown when).
-
-			-Added Chunkloader Upgrade, which, when applied to a cart, will keep a 3x3 area of chunks chunkloaded centered around the cart.
-
-			-Bugfix: Crash when placing down a signal next to a large rail section.
-
-	Thermal Expansion (went from ThermalExpansion-1.12.2-5.3.11.14-universal.jar to ThermalExpansion-1.12.2-5.3.12.17-universal.jar):
-		5.3.12:
-			CHANGED:
-				-Adjusted insertion and extraction logic from various machine tanks.
-				-Potion refining now produces a bit more at each level, ending at 100 mB for level 5.
-
-	Thermal Foundation (went from ThermalFoundation-1.12.2-2.3.11.8-universal.jar to ThermalFoundation-1.12.2-2.3.12.10-universal.jar):
-		2.3.12:
-			FIXED:
-				-Fluids should properly sync with the server in all cases.
-
-
-	Toast Control (went from Toast Control-1.12.2-1.4.1.jar to Toast Control-1.12.2-1.5.0.jar):
-		Toast Control-1.12.2-1.5.0.jar:
-			All config options can now be reloaded from within the game.
-			Fixed transparency requiring translucency to be on. Transparency will still take precedence if both options are enabled.
-
-	UniDict (went from UniDict-1.12.2-2.4c.jar to UniDict-1.12.2-2.5.jar):
-		UniDict-1.12.2-2.5.jar:
-			New Integrations:
-
-			 *
-			Ender IO (Alloy Smelter, SAG Mill)
-
-			 *
-			BloodMagic (Alchemy Table)
-
-	Unlimited Chisel Works (went from Unlimited Chisel Works 0.1.10 to Unlimited Chisel Works 0.1.11):
-		Unlimited Chisel Works 0.1.11:
-			 * Add support for Aether Legacy, Bewitchment, Bamboozled, Terra
-			 * Fix minor omission in The Betweenlands' support
-
-	Wawla - What Are We Looking At (went from Wawla-1.12.2-2.5.253.jar to Wawla-1.12.2-2.5.255.jar):
-		Wawla-1.12.2-2.5.255.jar:
-			No changelog provided.
-		Wawla-1.12.2-2.5.254.jar:
-			 * Re-added raw horse stats to the horse plugin. - Tyler Hancock
-
-	Wireless Crafting Terminal (went from WirelessCraftingTerminal-1.12.2-3.9.62.jar to WirelessCraftingTerminal-1.12.2-3.9.64.jar):
-		WirelessCraftingTerminal-1.12.2-3.9.64.jar:
-			Fixed [#246](https://github.com/p455w0rd/WirelessCraftingTerminal/issues/246), [#247](https://github.com/p455w0rd/WirelessCraftingTerminal/issues/247), and [#249](https://github.com/p455w0rd/WirelessCraftingTerminal/issues/249)
-
-			also fixed another bug I found with ItemScroller
-
-Downgraded:
-	DiscordSuite (went from DiscordSuite-2.0.1.jar to DiscordSuite-2.0.0.jar):
-		DiscordSuite-2.0.1.jar:
-			Fix some curse packs having invalid information due to... things
-
-Removed:
-	- EDX Multipart
-	- Game Stages
-	- Reborn Core
-
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.11)
+Generated using [ChangelogGenerator](https://github.com/TheRandomLabs/ChangelogGenerator) by TheRandomLabs.

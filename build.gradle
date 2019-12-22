@@ -1,32 +1,123 @@
-apply plugin: "java"
+import com.github.spotbugs.SpotBugsTask
+
+plugins {
+	id "java-library"
+	id "maven-publish"
+	//id "checkstyle"
+	id "pmd"
+	id "com.github.spotbugs" version "3.0.0"
+	id "jacoco"
+}
+
+group = "com.therandomlabs.changeloggenerator"
+version = "2.0.0"
 
 repositories {
+	mavenCentral()
+
 	maven {
 		url "https://jitpack.io"
 	}
 }
 
 dependencies {
-	compile "com.github.TheRandomLabs:ForgeUtils:master-SNAPSHOT"
+	implementation "com.google.guava:guava:28.1-jre"
+	implementation "org.slf4j:slf4j-api:2.0.0-alpha1"
+	api "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
+	api "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
+
+	testRuntimeOnly "org.apache.logging.log4j:log4j-core:2.12.1"
+	testRuntimeOnly "org.apache.logging.log4j:log4j-slf4j18-impl:2.12.1"
+
+	testImplementation "com.github.TheRandomLabs:TRLUtils-IO:master-SNAPSHOT"
+
+	testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.0-M1"
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.6.0-M1"
+	testImplementation "org.assertj:assertj-core:3.14.0"
+
+	spotbugsPlugins "com.mebigfatguy.fb-contrib:fb-contrib:7.4.3.sb"
+	spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1"
+	spotbugsPlugins "jp.skypencil.findbugs.slf4j:bug-pattern:1.5.0@jar"
+}
+
+test {
+	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			element = "CLASS"
+
+			limit {
+				counter = "INSTRUCTION"
+				value = "COVEREDRATIO"
+				minimum = 0.8
+			}
+		}
+	}
+}
+
+//check.dependsOn jacocoTestCoverageVerification
+
+pmd {
+	ruleSets = []
+	ruleSetConfig = resources.text.fromFile("config/pmd.xml")
+}
+
+spotbugs {
+	excludeFilter = file("config/spotbugs-exclude.xml")
+}
+
+tasks.withType(SpotBugsTask) {
+	reports {
+		xml.enabled false
+		html.enabled true
+	}
+}
+
+task generateSources(type: Copy) {
+	from "src/replaceme/java"
+	into "$buildDir/generated-src"
+	filter {
+		line -> line.replaceAll("CG_VERSION", "${version}")
+	}
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-	classifier = "sources"
+	archiveClassifier.set("sources")
 	from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+	archiveClassifier.set("javadoc")
+	from javadoc
 }
 
 artifacts {
 	archives sourcesJar
+	archives javadocJar
 }
 
-jar {
-	manifest {
-		attributes "Main-Class": "com.therandomlabs.changeloggenerator.ChangelogGenerator"
+publishing {
+	repositories {
+		maven {
+			name = "GitHubPackages"
+			url = uri("https://maven.pkg.github.com/TheRandomLabs/ChangelogGenerator")
+
+			credentials {
+				username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+				password = project.findProperty("gpr.key") ?: System.getenv("PASSWORD")
+			}
+		}
 	}
 
-	from {
-		configurations.compile.collect {
-			it.isDirectory() ? it : zipTree(it)
+	publications {
+		gpr(MavenPublication) {
+			artifact sourcesJar
+			artifact javadocJar
+			from components.java
 		}
 	}
 }

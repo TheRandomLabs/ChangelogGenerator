@@ -25,7 +25,7 @@ public abstract class ChangelogGenerator {
 		withProvider(BiomesOPlentyProvider.instance);
 	}
 
-	public ChangelogGenerator withProvider(ChangelogProvider provider) {
+	public final ChangelogGenerator withProvider(ChangelogProvider provider) {
 		Preconditions.checkNotNull(provider, "provider should not be null");
 		Preconditions.checkArgument(
 				!providers.contains(provider), "provider should not already be registered"

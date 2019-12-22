@@ -53,6 +53,10 @@ jacocoTestCoverageVerification {
 	violationRules {
 		rule {
 			element = "CLASS"
+			excludes = [
+					"com.therandomlabs.changeloggenerator.ChangelogEntry",
+					"com.therandomlabs.changeloggenerator.Main"
+			]
 
 			limit {
 				counter = "INSTRUCTION"

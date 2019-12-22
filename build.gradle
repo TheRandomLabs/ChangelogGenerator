@@ -23,6 +23,7 @@ repositories {
 dependencies {
 	implementation "com.google.guava:guava:28.1-jre"
 	implementation "org.slf4j:slf4j-api:2.0.0-alpha1"
+	implementation "com.atlassian.commonmark:commonmark:0.13.1"
 	api "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
 	api "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 

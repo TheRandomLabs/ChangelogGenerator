@@ -123,7 +123,10 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 			builder.append(System.lineSeparator()).append("\t\t").
 					append(entry.displayName()).append(':');
 
-			for (String line : JsoupUtils.getPlainText(entry.entry()).split("\n")) {
+			final String[] entryLines =
+					JsoupUtils.getPlainText(entry.entry()).split(System.lineSeparator());
+
+			for (String line : entryLines) {
 				builder.append(System.lineSeparator());
 
 				if (!line.isEmpty()) {

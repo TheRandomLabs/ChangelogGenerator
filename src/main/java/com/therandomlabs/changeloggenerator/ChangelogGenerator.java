@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.SortedSet;
 
 import com.google.common.base.Preconditions;
+import com.therandomlabs.changeloggenerator.provider.ActuallyAdditionsProvider;
+import com.therandomlabs.changeloggenerator.provider.BiomesOPlentyProvider;
 import com.therandomlabs.changeloggenerator.provider.ChangelogProvider;
 import com.therandomlabs.changeloggenerator.provider.CurseChangelogProvider;
 import com.therandomlabs.curseapi.CurseException;
@@ -19,6 +21,8 @@ public abstract class ChangelogGenerator {
 
 	protected ChangelogGenerator() {
 		withProvider(CurseChangelogProvider.instance);
+		withProvider(ActuallyAdditionsProvider.instance);
+		withProvider(BiomesOPlentyProvider.instance);
 	}
 
 	public ChangelogGenerator withProvider(ChangelogProvider provider) {

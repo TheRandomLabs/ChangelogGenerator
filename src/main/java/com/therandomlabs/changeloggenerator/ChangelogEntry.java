@@ -1,37 +1,37 @@
 package com.therandomlabs.changeloggenerator;
 
-import com.therandomlabs.curseapi.file.CurseFile;
 import org.jsoup.nodes.Element;
 
 public final class ChangelogEntry implements Comparable<ChangelogEntry> {
-	private final CurseFile file;
+	private final Comparable<?> comparable;
 	private final String displayName;
 	private final Element entry;
 
-	public ChangelogEntry(CurseFile file, String displayName, Element entry) {
-		this.file = file;
+	public ChangelogEntry(Comparable<?> comparable, String displayName, Element entry) {
+		this.comparable = comparable;
 		this.displayName = displayName;
 		this.entry = entry;
 	}
 
 	@Override
 	public int hashCode() {
-		return file.hashCode();
+		return comparable.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object object) {
-		return this == object ||
-				(object instanceof ChangelogEntry && file.equals(((ChangelogEntry) object).file));
+		return this == object || (object instanceof ChangelogEntry &&
+				comparable.equals(((ChangelogEntry) object).comparable));
 	}
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
 	@Override
 	public int compareTo(ChangelogEntry changelogEntry) {
-		return file.compareTo(changelogEntry.file);
+		return ((Comparable) comparable).compareTo(changelogEntry.comparable);
 	}
 
-	public CurseFile file() {
-		return file;
+	public Comparable<?> comparable() {
+		return comparable;
 	}
 
 	public String displayName() {

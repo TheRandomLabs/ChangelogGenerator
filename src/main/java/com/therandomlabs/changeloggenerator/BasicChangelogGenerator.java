@@ -110,6 +110,8 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 			builder.append(System.lineSeparator());
 			appendChangelogs(builder, changelog.getKey(), changelog.getValue());
 		}
+
+		builder.setLength(builder.length() - System.lineSeparator().length());
 	}
 
 	protected void appendChangelogs(StringBuilder builder, String projectName, Changelog changelog)
@@ -120,8 +122,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 				append(fileChange.newFile().displayName()).append("):");
 
 		for (ChangelogEntry entry : changelog.entries()) {
-			builder.append(System.lineSeparator()).append("\t\t").
-					append(entry.displayName()).append(':');
+			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
 			final String[] entryLines =
 					JsoupUtils.getPlainText(entry.entry()).split(System.lineSeparator());
@@ -133,17 +134,13 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 					builder.append("\t\t\t").append(line);
 				}
 			}
+
+			builder.append(System.lineSeparator());
 		}
 	}
 
 	protected void appendTail(StringBuilder builder) {
-		builder.append("Generated using [ChangelogGenerator");
-
-		//If this is a development environment, we don't append the version.
-		if (VERSION.length() != 10) {
-			builder.append(' ').append(VERSION);
-		}
-
-		builder.append("](https://github.com/TheRandomLabs/ChangelogGenerator).");
+		builder.append("Generated using [ChangelogGenerator ").append(VERSION).
+				append("](https://github.com/TheRandomLabs/ChangelogGenerator).");
 	}
 }

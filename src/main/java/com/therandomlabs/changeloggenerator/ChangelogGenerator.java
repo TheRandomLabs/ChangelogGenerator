@@ -12,10 +12,15 @@ import com.therandomlabs.changeloggenerator.provider.CurseChangelogProvider;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
+import com.therandomlabs.curseapi.minecraft.CurseAPIMinecraft;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 
 public abstract class ChangelogGenerator {
-	public static final String VERSION = "CG_VERSION";
+	public static final String VERSION = "@VERSION@";
+
+	static {
+		CurseAPIMinecraft.initialize();
+	}
 
 	private final List<ChangelogProvider> providers = new ArrayList<>();
 

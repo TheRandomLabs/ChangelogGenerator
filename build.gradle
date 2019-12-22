@@ -1,4 +1,5 @@
 import com.github.spotbugs.SpotBugsTask
+import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
 	id "java-library"
@@ -80,12 +81,15 @@ tasks.withType(SpotBugsTask) {
 	}
 }
 
-task generateSources(type: Copy) {
-	from "src/replaceme/java"
-	into "$buildDir/generated-src"
-	filter {
-		line -> line.replaceAll("CG_VERSION", "${version}")
-	}
+task processSource(type: Sync) {
+    from sourceSets.main.java
+    inputs.property "version", version
+    filter(ReplaceTokens, tokens: [VERSION: version])
+    into "$buildDir/src"
+}
+
+compileJava {
+    source = processSource.outputs
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

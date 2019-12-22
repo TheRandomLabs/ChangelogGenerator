@@ -13,10 +13,10 @@ public final class Main {
 		//TODO
 		final CurseModpack oldModpack = CurseModpack.fromJSON(Paths.get("old.json"));
 		final CurseModpack newModpack = CurseModpack.fromJSON(Paths.get("new.json"));
+		final String changelog = new BasicChangelogGenerator().generate(oldModpack, newModpack);
 
 		try (BufferedSink sink = Okio.buffer(Okio.sink(Paths.get("changelog.txt")))) {
-			sink.writeUtf8(new BasicChangelogGenerator().generate(oldModpack, newModpack)).
-					writeUtf8(System.lineSeparator());
+			sink.writeUtf8(changelog).writeUtf8(System.lineSeparator());
 		}
 	}
 }

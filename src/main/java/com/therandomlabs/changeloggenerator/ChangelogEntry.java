@@ -4,12 +4,12 @@ import org.jsoup.nodes.Element;
 
 public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 	private final Comparable<?> comparable;
-	private final String displayName;
+	private final String title;
 	private final Element entry;
 
-	public ChangelogEntry(Comparable<?> comparable, String displayName, Element entry) {
+	public ChangelogEntry(Comparable<?> comparable, String title, Element entry) {
 		this.comparable = comparable;
-		this.displayName = displayName;
+		this.title = title;
 		this.entry = entry;
 	}
 
@@ -34,8 +34,8 @@ public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 		return comparable;
 	}
 
-	public String displayName() {
-		return displayName;
+	public String title() {
+		return title;
 	}
 
 	public Element entry() {

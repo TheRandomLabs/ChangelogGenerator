@@ -144,6 +144,6 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 			builder.append(' ').append(VERSION);
 		}
 
-		builder.append("](https://github.com/TheRandomLabs/ChangelogGenerator) by TheRandomLabs.");
+		builder.append("](https://github.com/TheRandomLabs/ChangelogGenerator).");
 	}
 }

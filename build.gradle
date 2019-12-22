@@ -4,7 +4,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 plugins {
 	id "java-library"
 	id "maven-publish"
-	//id "checkstyle"
+	id "checkstyle"
 	id "pmd"
 	id "com.github.spotbugs" version "3.0.0"
 	id "jacoco"

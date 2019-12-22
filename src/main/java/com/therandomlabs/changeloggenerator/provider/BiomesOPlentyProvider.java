@@ -9,11 +9,20 @@ import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import org.jsoup.nodes.Element;
 
+/**
+ * An implementation of {@link ChangelogProvider} for Biomes O' Plenty.
+ */
 public final class BiomesOPlentyProvider implements ChangelogProvider {
+	/**
+	 * The singleton instance of {@link BiomesOPlentyProvider}.
+	 */
 	public static final BiomesOPlentyProvider instance = new BiomesOPlentyProvider();
 
 	private BiomesOPlentyProvider() {}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
 			CurseFileChange<? extends BasicCurseFile> fileChange
@@ -80,7 +89,7 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 	}
 
 	private static String getVersion(String string) {
-		return string.replaceAll(".*(\\d+\\.\\d+\\.\\d+-\\d+\\.\\d+\\.\\d+\\.\\d+).*", "$1");
+		return string.replaceAll(".*((\\d+\\.){2}\\d+-(\\d+\\.){3}\\d+).*", "$1");
 	}
 
 	private static int getVersionInt(String string) {

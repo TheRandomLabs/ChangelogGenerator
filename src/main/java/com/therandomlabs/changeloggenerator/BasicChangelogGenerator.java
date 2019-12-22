@@ -16,13 +16,25 @@ import com.therandomlabs.curseapi.file.CurseFilesComparison;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 import com.therandomlabs.curseapi.util.JsoupUtils;
 
+/**
+ * A basic implementation of {@link ChangelogGenerator} that generates a plaintext changelog.
+ */
 public class BasicChangelogGenerator extends ChangelogGenerator {
+	/**
+	 * The singleton instance of {@link BasicChangelogGenerator}.
+	 */
 	public static final BasicChangelogGenerator instance = new BasicChangelogGenerator();
 
+	/**
+	 * Constructs a {@link BasicChangelogGenerator}.
+	 */
 	protected BasicChangelogGenerator() {
 		//Default constructor.
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String generate(CurseModpack oldModpack, CurseModpack newModpack) throws CurseException {
 		final CurseFilesComparison<BasicCurseFile> comparison =
@@ -38,12 +50,12 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		}
 
 		if (!comparison.updated().isEmpty()) {
-			appendChangelogs(builder, "Updated", comparison.updated());
+			appendChangelog(builder, "Updated", comparison.updated());
 			separateSections(builder);
 		}
 
 		if (!comparison.downgraded().isEmpty()) {
-			appendChangelogs(builder, "Downgraded", comparison.downgraded());
+			appendChangelog(builder, "Downgraded", comparison.downgraded());
 			separateSections(builder);
 		}
 
@@ -56,14 +68,34 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		return builder.toString();
 	}
 
+	/**
+	 * Separates two different changelog sections, e.g. "Updated" and "Downgraded".
+	 * By default, this is done by appending {@link System#lineSeparator()} twice.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 */
 	protected void separateSections(StringBuilder builder) {
 		builder.append(System.lineSeparator()).append(System.lineSeparator());
 	}
 
+	/**
+	 * Appends the specified title to the changelog.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 * @param title a title.
+	 */
 	protected void appendTitle(StringBuilder builder, String title) {
 		builder.append(title).append(':');
 	}
 
+	/**
+	 * Appends the old and new modpack versions to the changelog.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 * @param oldModpack the old version of the modpack.
+	 * @param newModpack the new version of the modpack.
+	 * @throws CurseException if an error occurs.
+	 */
 	protected void appendModpackVersions(
 			StringBuilder builder, CurseModpack oldModpack, CurseModpack newModpack
 	) throws CurseException {
@@ -82,6 +114,15 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		}
 	}
 
+	/**
+	 * Appends the specified files to the modpack under the specified section title.
+	 * By default, the files' project names are listed.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 * @param title a section title.
+	 * @param files a {@link CurseFiles}.
+	 * @throws CurseException if an error occurs.
+	 */
 	protected void appendFiles(
 			StringBuilder builder, String title, CurseFiles<BasicCurseFile> files
 	) throws CurseException {
@@ -97,7 +138,16 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		}
 	}
 
-	protected void appendChangelogs(
+	/**
+	 * Appends the changelogs for the specified {@link CurseFileChange}s to the changelog
+	 * under the specified section title.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 * @param title a section title.
+	 * @param fileChanges a {@link Set} of {@link CurseFileChange}.s
+	 * @throws CurseException if an error occurs.
+	 */
+	protected void appendChangelog(
 			StringBuilder builder, String title, Set<CurseFileChange<BasicCurseFile>> fileChanges
 	) throws CurseException {
 		builder.append(title).append(':');
@@ -108,13 +158,21 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 
 		for (Map.Entry<String, Changelog> changelog : allChangelogs.entrySet()) {
 			builder.append(System.lineSeparator());
-			appendChangelogs(builder, changelog.getKey(), changelog.getValue());
+			appendChangelog(builder, changelog.getKey(), changelog.getValue());
 		}
 
 		builder.setLength(builder.length() - System.lineSeparator().length());
 	}
 
-	protected void appendChangelogs(StringBuilder builder, String projectName, Changelog changelog)
+	/**
+	 * Appends a {@link Changelog} to the changelog.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 * @param projectName a project name.
+	 * @param changelog a {@link Changelog}.
+	 * @throws CurseException if an error occurs.
+	 */
+	protected void appendChangelog(StringBuilder builder, String projectName, Changelog changelog)
 			throws CurseException {
 		final CurseFileChange<CurseFile> fileChange = changelog.fileChange();
 		builder.append('\t').append(fileChange.project().name()).append(" (").
@@ -139,6 +197,11 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		}
 	}
 
+	/**
+	 * Appends a tail message to the changelog.
+	 *
+	 * @param builder a {@link StringBuilder} to append to.
+	 */
 	protected void appendTail(StringBuilder builder) {
 		builder.append("Generated using [ChangelogGenerator ").append(VERSION).
 				append("](https://github.com/TheRandomLabs/ChangelogGenerator).");

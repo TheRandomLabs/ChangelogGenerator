@@ -13,15 +13,24 @@ import com.therandomlabs.curseapi.util.OkHttpUtils;
 import okhttp3.HttpUrl;
 import org.jsoup.nodes.Element;
 
+/**
+ * An implementation of {@link ChangelogProvider} for Actually Additions.
+ */
 public final class ActuallyAdditionsProvider implements ChangelogProvider {
-	public static final HttpUrl CHANGELOG_URL = HttpUrl.get(
+	/**
+	 * The singleton instance of {@link ActuallyAdditionsProvider}.
+	 */
+	public static final ActuallyAdditionsProvider instance = new ActuallyAdditionsProvider();
+
+	private static final HttpUrl CHANGELOG_URL = HttpUrl.get(
 			"https://raw.githubusercontent.com/Ellpeck/ActuallyAdditions/master/update/changelog.md"
 	);
 
-	public static final ActuallyAdditionsProvider instance = new ActuallyAdditionsProvider();
-
 	private ActuallyAdditionsProvider() {}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
 			CurseFileChange<? extends BasicCurseFile> fileChange

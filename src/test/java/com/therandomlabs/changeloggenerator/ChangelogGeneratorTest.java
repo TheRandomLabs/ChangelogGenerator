@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.LoggerFactory;
 
-public class BasicChangelogGeneratorTest {
+public class ChangelogGeneratorTest {
 	@Test
 	public void atm4ChangelogIsValid(@TempDir Path tempDirectory) throws Exception {
 		final Optional<Path> optionalOldModpackPath =
@@ -69,6 +69,6 @@ public class BasicChangelogGeneratorTest {
 		final String changelog = new BasicChangelogGenerator().generate(oldModpack, newModpack);
 		assertThat(changelog).isNotEmpty();
 
-		LoggerFactory.getLogger(BasicChangelogGeneratorTest.class).info("\n{}", changelog);
+		LoggerFactory.getLogger(ChangelogGeneratorTest.class).info("\n{}", changelog);
 	}
 }

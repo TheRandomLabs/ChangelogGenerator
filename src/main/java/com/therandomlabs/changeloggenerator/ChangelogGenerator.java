@@ -15,7 +15,13 @@ import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.minecraft.CurseAPIMinecraft;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 
+/**
+ * Generates changelogs for CurseForge modpacks.
+ */
 public abstract class ChangelogGenerator {
+	/**
+	 * The current version of ChangelogGenerator.
+	 */
 	public static final String VERSION = "@VERSION@";
 
 	static {
@@ -24,12 +30,23 @@ public abstract class ChangelogGenerator {
 
 	private final List<ChangelogProvider> providers = new ArrayList<>();
 
+	/**
+	 * Constructs a {@link ChangelogGenerator} instance with a default set of
+	 * {@link CurseChangelogProvider}s.
+	 */
 	protected ChangelogGenerator() {
 		withProvider(CurseChangelogProvider.instance);
 		withProvider(ActuallyAdditionsProvider.instance);
 		withProvider(BiomesOPlentyProvider.instance);
 	}
 
+	/**
+	 * Registers the specified {@link ChangelogProvider} to this {@link ChangelogGenerator}
+	 * instance with the highest priority.
+	 *
+	 * @param provider a {@link ChangelogProvider}.
+	 * @return this {@link ChangelogGenerator}.
+	 */
 	public final ChangelogGenerator withProvider(ChangelogProvider provider) {
 		Preconditions.checkNotNull(provider, "provider should not be null");
 		Preconditions.checkArgument(
@@ -39,6 +56,16 @@ public abstract class ChangelogGenerator {
 		return this;
 	}
 
+	/**
+	 * Returns the {@link Changelog} for the specified {@link CurseFileChange} by iterating
+	 * through registered {@link ChangelogProvider}s and calling
+	 * {@link ChangelogProvider#getChangelog(CurseFileChange)}.
+	 *
+	 * @param fileChange a {@link CurseFileChange}.
+	 * @return the {@link Changelog} for the specified {@link CurseFileChange}.
+	 * @throws CurseException if an error occurs.
+	 * @see #withProvider(ChangelogProvider)
+	 */
 	public Changelog getChangelog(CurseFileChange<? extends BasicCurseFile> fileChange)
 			throws CurseException {
 		for (ChangelogProvider provider : providers) {
@@ -55,6 +82,17 @@ public abstract class ChangelogGenerator {
 		throw new CurseException("Could not retrieve changelogs for: " + fileChange);
 	}
 
+	/**
+	 * Generates a changelog that details changes between an older and newer version of a
+	 * CurseForge modpack.
+	 *
+	 * @param oldModpack a {@link CurseModpack} instance that represents an older version of a
+	 * CurseForge modpack.
+	 * @param newModpack a {@link CurseModpack} instance that represents a newer version of a
+	 * CurseForge modpack.
+	 * @return the generated changelog.
+	 * @throws CurseException if an error occurs.
+	 */
 	public abstract String generate(CurseModpack oldModpack, CurseModpack newModpack)
 			throws CurseException;
 }

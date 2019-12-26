@@ -32,7 +32,7 @@ public final class CurseChangelogProvider implements ChangelogProvider {
 	) throws CurseException {
 		final CurseFiles<CurseFile> files = fileChange.filesBetween();
 		new CurseFileFilter().
-				gameVersionGroups(fileChange.oldCurseFile().gameVersionGroups()).
+				gameVersionGroups(fileChange.get(CurseFile::gameVersionGroups)).
 				apply(files);
 		return files.parallelMap(
 				file -> new ChangelogEntry(file, file.displayName(), file.changelog()),

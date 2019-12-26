@@ -9,6 +9,7 @@ import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
+import com.therandomlabs.curseapi.file.CurseFiles;
 import com.therandomlabs.curseapi.util.OkHttpUtils;
 import okhttp3.HttpUrl;
 import org.jsoup.nodes.Element;
@@ -39,8 +40,9 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 			return null;
 		}
 
-		final int oldVersion = getVersion(fileChange.olderCurseFile());
-		final int newVersion = getVersion(fileChange.newerCurseFile());
+		final CurseFiles<CurseFile> files = ChangelogProvider.getFilesBetweenInclusive(fileChange);
+		final int oldVersion = getVersion(files.last());
+		final int newVersion = getVersion(files.first());
 
 		final Element fullChangelog = CommonMarkUtils.parseElement(OkHttpUtils.read(CHANGELOG_URL));
 		final SortedSet<ChangelogEntry> changelog = new TreeSet<>();

@@ -174,10 +174,16 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 */
 	protected void appendChangelog(StringBuilder builder, String projectName, Changelog changelog)
 			throws CurseException {
-		final CurseFileChange<CurseFile> fileChange = changelog.fileChange();
+		final CurseFileChange<BasicCurseFile> fileChange = changelog.fileChange();
+
+		final CurseFile oldFile = fileChange.oldCurseFile();
+		final String oldDisplayName = oldFile == null ? "Archived file" : oldFile.displayName();
+
+		final CurseFile newFile = fileChange.newCurseFile();
+		final String newDisplayName = newFile == null ? "Archived file" : newFile.displayName();
+
 		builder.append('\t').append(fileChange.project().name()).append(" (").
-				append(fileChange.oldFile().displayName()).append(" --> ").
-				append(fileChange.newFile().displayName()).append("):");
+				append(oldDisplayName).append(" --> ").append(newDisplayName).append("):");
 
 		for (ChangelogEntry entry : changelog.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');

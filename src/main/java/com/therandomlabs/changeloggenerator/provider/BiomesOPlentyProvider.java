@@ -6,7 +6,9 @@ import java.util.TreeSet;
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
+import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
+import com.therandomlabs.curseapi.file.CurseFiles;
 import org.jsoup.nodes.Element;
 
 /**
@@ -31,13 +33,14 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 			return null;
 		}
 
-		final String fullChangelog = fileChange.newerCurseFile().changelogPlainText();
+		final CurseFiles<CurseFile> files = ChangelogProvider.getFilesBetweenInclusive(fileChange);
+		final String fullChangelog = files.first().changelogPlainText();
 
 		if (!fullChangelog.startsWith("Build: ")) {
 			return null;
 		}
 
-		final int oldVersion = getVersionInt(fileChange.olderCurseFile().displayName());
+		final int oldVersion = getVersionInt(files.last().displayName());
 
 		final SortedSet<ChangelogEntry> changelog = new TreeSet<>();
 

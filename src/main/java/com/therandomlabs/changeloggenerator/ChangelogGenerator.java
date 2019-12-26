@@ -24,11 +24,11 @@ public abstract class ChangelogGenerator {
 	 */
 	public static final String VERSION = "@VERSION@";
 
+	private final List<ChangelogProvider> providers = new ArrayList<>();
+
 	static {
 		CurseAPIMinecraft.initialize();
 	}
-
-	private final List<ChangelogProvider> providers = new ArrayList<>();
 
 	/**
 	 * Constructs a {@link ChangelogGenerator} instance with a default set of
@@ -72,10 +72,7 @@ public abstract class ChangelogGenerator {
 			final SortedSet<ChangelogEntry> changelog = provider.getChangelog(fileChange);
 
 			if (changelog != null) {
-				return new Changelog(
-						new CurseFileChange<>(fileChange.oldCurseFile(), fileChange.newCurseFile()),
-						changelog
-				);
+				return new Changelog(fileChange, changelog);
 			}
 		}
 

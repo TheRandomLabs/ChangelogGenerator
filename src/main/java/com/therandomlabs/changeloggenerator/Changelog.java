@@ -4,14 +4,14 @@ import java.util.Collection;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import com.therandomlabs.curseapi.file.CurseFile;
+import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 
 /**
  * Represents a set of changelog entries for a {@link CurseFileChange}.
  */
 public class Changelog {
-	private final CurseFileChange<CurseFile> fileChange;
+	private final CurseFileChange<BasicCurseFile> fileChange;
 	@SuppressWarnings("PMD.LooseCoupling")
 	private final TreeSet<ChangelogEntry> entries;
 
@@ -24,10 +24,10 @@ public class Changelog {
 	 */
 	@SuppressWarnings("unchecked")
 	public Changelog(
-			CurseFileChange<? extends CurseFile> fileChange,
+			CurseFileChange<? extends BasicCurseFile> fileChange,
 			Collection<? extends ChangelogEntry> entries
 	) {
-		this.fileChange = (CurseFileChange<CurseFile>) fileChange;
+		this.fileChange = (CurseFileChange<BasicCurseFile>) fileChange;
 		this.entries = new TreeSet<>(entries);
 	}
 
@@ -36,7 +36,7 @@ public class Changelog {
 	 *
 	 * @return this {@link Changelog}'s {@link CurseFileChange}.
 	 */
-	public CurseFileChange<CurseFile> fileChange() {
+	public CurseFileChange<BasicCurseFile> fileChange() {
 		return fileChange;
 	}
 

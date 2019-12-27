@@ -17,6 +17,8 @@ import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.minecraft.CurseAPIMinecraft;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 import org.jsoup.nodes.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Generates changelogs for CurseForge modpacks.
@@ -26,6 +28,8 @@ public abstract class ChangelogGenerator {
 	 * The current version of ChangelogGenerator.
 	 */
 	public static final String VERSION = "@VERSION@";
+
+	private static final Logger logger = LoggerFactory.getLogger(ChangelogGenerator.class);
 
 	private final List<ChangelogProvider> providers = new ArrayList<>();
 
@@ -73,6 +77,8 @@ public abstract class ChangelogGenerator {
 	 */
 	public Changelog getChangelog(CurseFileChange<? extends BasicCurseFile> fileChange)
 			throws CurseException {
+		logger.info("Retrieving changelog for file change: " + fileChange);
+
 		for (ChangelogProvider provider : providers) {
 			final SortedSet<ChangelogEntry> changelog = provider.getChangelog(fileChange);
 

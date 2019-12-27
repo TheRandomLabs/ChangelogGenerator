@@ -16,6 +16,9 @@ public final class McJtyProvider implements ChangelogProvider {
 
 	private McJtyProvider() {}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Element processChangelog(
 			CurseFileChange<? extends BasicCurseFile> fileChange, Element changelog
@@ -24,10 +27,8 @@ public final class McJtyProvider implements ChangelogProvider {
 			return changelog;
 		}
 
-		//McJty puts a heading in each of his changelogs with the mod name and file version.
-		changelog.child(0).remove();
-		//This heading is then followed by a line break.
-		changelog.child(0).remove();
+		//McJty puts a heading in each of his changelogs with the file version.
+		changelog.textNodes().get(0).remove();
 
 		return changelog;
 	}

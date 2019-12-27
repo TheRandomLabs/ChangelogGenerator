@@ -4,7 +4,6 @@ import java.util.SortedSet;
 
 import com.google.common.collect.ImmutableSortedSet;
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
-import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import org.jsoup.nodes.Element;

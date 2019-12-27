@@ -9,11 +9,14 @@ import com.therandomlabs.changeloggenerator.provider.ActuallyAdditionsProvider;
 import com.therandomlabs.changeloggenerator.provider.BiomesOPlentyProvider;
 import com.therandomlabs.changeloggenerator.provider.ChangelogProvider;
 import com.therandomlabs.changeloggenerator.provider.CurseChangelogProvider;
+import com.therandomlabs.changeloggenerator.provider.McJtyProvider;
+import com.therandomlabs.changeloggenerator.provider.MezzProvider;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.minecraft.CurseAPIMinecraft;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
+import org.jsoup.nodes.Element;
 
 /**
  * Generates changelogs for CurseForge modpacks.
@@ -38,6 +41,8 @@ public abstract class ChangelogGenerator {
 		withProvider(CurseChangelogProvider.instance);
 		withProvider(ActuallyAdditionsProvider.instance);
 		withProvider(BiomesOPlentyProvider.instance);
+		withProvider(McJtyProvider.instance);
+		withProvider(MezzProvider.instance);
 	}
 
 	/**
@@ -72,6 +77,17 @@ public abstract class ChangelogGenerator {
 			final SortedSet<ChangelogEntry> changelog = provider.getChangelog(fileChange);
 
 			if (changelog != null) {
+				//Call ChangelogProvider#processChangelog(CurseFileChange, Element).
+				for (ChangelogEntry changelogEntry : changelog) {
+					Element entry = changelogEntry.entry();
+
+					for (ChangelogProvider provider2 : providers) {
+						entry = provider2.processChangelog(fileChange, entry);
+					}
+
+					changelogEntry.setEntry(entry);
+				}
+
 				return new Changelog(fileChange, changelog);
 			}
 		}

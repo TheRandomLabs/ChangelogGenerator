@@ -56,6 +56,16 @@ public class ChangelogGeneratorTest {
 		testProject(220318, 2814404, 2846238);
 	}
 
+	@Test
+	public void jeiChangelogIsValid() throws CurseException {
+		testProject(238222, 2822850, 2847274);
+	}
+
+	@Test
+	public void rfToolsChangelogIsValid() throws CurseException {
+		testProject(224641, 2672513, 2745848);
+	}
+
 	private static void testProject(int projectID, int oldFileID, int newFileID)
 			throws CurseException {
 		final CurseModpack oldModpack = CurseModpack.createEmpty();

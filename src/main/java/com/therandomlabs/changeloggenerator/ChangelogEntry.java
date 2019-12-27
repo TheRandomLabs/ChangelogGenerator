@@ -8,7 +8,7 @@ import org.jsoup.nodes.Element;
 public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 	private final Comparable<?> comparable;
 	private final String title;
-	private final Element entry;
+	private Element entry;
 
 	/**
 	 * Constructs a {@link ChangelogEntry} instance with the specified title and entry.
@@ -66,5 +66,10 @@ public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 	 */
 	public Element entry() {
 		return entry;
+	}
+
+	//This is called by ChangelogGenerator#getChangelog(CurseFileChange).
+	void setEntry(Element entry) {
+		this.entry = entry;
 	}
 }

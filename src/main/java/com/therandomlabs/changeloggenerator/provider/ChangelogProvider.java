@@ -9,6 +9,7 @@ import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFileFilter;
 import com.therandomlabs.curseapi.file.CurseFiles;
+import org.jsoup.nodes.Element;
 
 /**
  * Provides changelogs for {@link CurseFileChange}s.
@@ -24,8 +25,25 @@ public interface ChangelogProvider {
 	 * {@code null} may be returned.
 	 * @throws CurseException if an error occurs.
 	 */
-	SortedSet<ChangelogEntry> getChangelog(CurseFileChange<? extends BasicCurseFile> fileChange)
-			throws CurseException;
+	default SortedSet<ChangelogEntry> getChangelog(
+			CurseFileChange<? extends BasicCurseFile> fileChange
+	) throws CurseException {
+		return null;
+	}
+
+	/**
+	 * Performs modifications on a retrieved changelog.
+	 *
+	 * @param fileChange a {@link CurseFileChange}.
+	 * @param changelog an {@link Element} that contains a changelog.
+	 * @return the modified changelog.
+	 * @throws CurseException if an error occurs.
+	 */
+	default Element processChangelog(
+			CurseFileChange<? extends BasicCurseFile> fileChange, Element changelog
+	) throws CurseException {
+		return changelog;
+	}
 
 	/**
 	 * Calls {@link CurseFileChange#filesBetweenInclusive()} on the specified

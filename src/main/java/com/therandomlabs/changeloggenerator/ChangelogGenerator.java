@@ -77,7 +77,7 @@ public abstract class ChangelogGenerator {
 	 */
 	public Changelog getChangelog(CurseFileChange<? extends BasicCurseFile> fileChange)
 			throws CurseException {
-		logger.info("Retrieving changelog for file change: " + fileChange);
+		logger.info("Retrieving changelog for file change: {}", fileChange);
 
 		for (ChangelogProvider provider : providers) {
 			final SortedSet<ChangelogEntry> changelog = provider.getChangelog(fileChange);

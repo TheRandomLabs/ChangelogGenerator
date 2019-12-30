@@ -25,7 +25,7 @@ public final class MezzProvider implements ChangelogProvider {
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
 			CurseFileChange<? extends BasicCurseFile> fileChange
-	) {//throws CurseException {
+	) {
 		if (fileChange.projectID() != 59751 && fileChange.projectID() != 223525 &&
 				fileChange.projectID() != 238222) {
 			return null;

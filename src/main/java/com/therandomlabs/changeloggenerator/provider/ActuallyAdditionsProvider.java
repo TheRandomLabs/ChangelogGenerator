@@ -3,6 +3,7 @@ package com.therandomlabs.changeloggenerator.provider;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import com.google.common.base.Splitter;
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
 import com.therandomlabs.changeloggenerator.CommonMarkUtils;
 import com.therandomlabs.curseapi.CurseException;
@@ -22,6 +23,8 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 	 * The singleton instance of {@link ActuallyAdditionsProvider}.
 	 */
 	public static final ActuallyAdditionsProvider instance = new ActuallyAdditionsProvider();
+
+	private static final Splitter HYPHEN_SPLITTER = Splitter.on('-');
 
 	private static final HttpUrl CHANGELOG_URL = HttpUrl.get(
 			"https://raw.githubusercontent.com/Ellpeck/ActuallyAdditions/master/update/changelog.md"
@@ -85,6 +88,6 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 	}
 
 	private static int getVersion(String version) {
-		return Integer.parseInt(version.split("-")[1].substring(1));
+		return Integer.parseInt(HYPHEN_SPLITTER.splitToList(version).get(1).substring(1));
 	}
 }

@@ -188,8 +188,15 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		for (ChangelogEntry entry : changelog.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
-			final String[] entryLines =
-					JsoupUtils.getPlainText(entry.entry()).split(System.lineSeparator());
+			final String[] entryLines;
+
+			if (JsoupUtils.isEmpty(entry.entry())) {
+				entryLines = new String[] {
+						"No changelog available."
+				};
+			} else {
+				entryLines = JsoupUtils.getPlainText(entry.entry()).split(System.lineSeparator());
+			}
 
 			for (String line : entryLines) {
 				builder.append(System.lineSeparator());

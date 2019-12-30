@@ -7,6 +7,7 @@ plugins {
 	id "checkstyle"
 	id "pmd"
 	id "com.github.spotbugs" version "3.0.0"
+	id "net.ltgt.errorprone" version "1.1.1"
 	id "jacoco"
 }
 
@@ -42,6 +43,9 @@ dependencies {
 	spotbugsPlugins "com.mebigfatguy.fb-contrib:fb-contrib:7.4.3.sb"
 	spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1"
 	spotbugsPlugins "jp.skypencil.findbugs.slf4j:bug-pattern:1.5.0@jar"
+
+	errorprone "com.google.errorprone:error_prone_core:2.3.4"
+	errorproneJavac "com.google.errorprone:javac:9+181-r4173-1"
 }
 
 test {
@@ -83,6 +87,11 @@ tasks.withType(SpotBugsTask) {
 		xml.enabled false
 		html.enabled true
 	}
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+	options.compilerArgs << "-Xlint:all"
 }
 
 task processSource(type: Sync) {

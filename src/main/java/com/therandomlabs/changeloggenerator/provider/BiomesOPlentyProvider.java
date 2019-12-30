@@ -3,6 +3,7 @@ package com.therandomlabs.changeloggenerator.provider;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import com.google.common.base.Splitter;
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
@@ -19,6 +20,9 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 	 * The singleton instance of {@link BiomesOPlentyProvider}.
 	 */
 	public static final BiomesOPlentyProvider instance = new BiomesOPlentyProvider();
+
+	private static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator());
+	private static final Splitter FULL_STOP_SPLITTER = Splitter.on('.');
 
 	private BiomesOPlentyProvider() {}
 
@@ -50,7 +54,7 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 		Element currentEntry = new Element("div");
 		Element currentList = null;
 
-		for (String line : fullChangelog.split(System.lineSeparator())) {
+		for (String line : LINE_SEPARATOR_SPLITTER.split(fullChangelog)) {
 			if (line.startsWith("Build: ")) {
 				currentVersion = getVersion(line);
 
@@ -96,6 +100,6 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 	}
 
 	private static int getVersionInt(String string) {
-		return Integer.parseInt(getVersion(string).split("\\.")[5]);
+		return Integer.parseInt(FULL_STOP_SPLITTER.splitToList(getVersion(string)).get(5));
 	}
 }

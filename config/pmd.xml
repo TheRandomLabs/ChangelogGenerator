@@ -4,7 +4,7 @@
 		 xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
 		 xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
 	<description>
-		ChangelogGenerator ruleset.
+		TheRandomLabs's ruleset.
 	</description>
 
 	<rule ref="category/java/bestpractices.xml/AvoidStringBufferField"/>

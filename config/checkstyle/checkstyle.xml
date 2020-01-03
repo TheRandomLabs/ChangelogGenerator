@@ -211,7 +211,7 @@
 		</module>
 		<module name="MissingJavadocMethod">
 			<property name="scope" value="protected"/>
-			<property name="allowedAnnotations" value="Test"/>
+			<property name="allowedAnnotations" value="BeforeAll,Test"/>
 		</module>
 		<module name="MethodName">
 			<property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>

@@ -1,6 +1,30 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2019-2020 TheRandomLabs
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 package com.therandomlabs.changeloggenerator;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -14,6 +38,7 @@ import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFiles;
 import com.therandomlabs.curseapi.file.CurseFilesComparison;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
+import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.JsoupUtils;
 
 /**
@@ -129,7 +154,9 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		appendTitle(builder, title);
 
 		final Set<String> projectNames = files.parallelMap(
-				file -> file.project().name(),
+				file -> Optional.ofNullable(file.project()).
+						map(CurseProject::name).
+						orElse("Deleted project"),
 				Collectors.toCollection(TreeSet::new)
 		);
 
@@ -153,7 +180,11 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		builder.append(title).append(':');
 
 		final Map<String, Changelog> allChangelogs = new TreeMap<>(CurseAPI.parallelMap(
-				fileChanges, fileChange -> fileChange.project().name(), this::getChangelog
+				fileChanges,
+				fileChange -> Optional.ofNullable(fileChange.project()).
+						map(CurseProject::name).
+						orElse("Deleted project"),
+				this::getChangelog
 		));
 
 		for (Map.Entry<String, Changelog> changelog : allChangelogs.entrySet()) {
@@ -182,8 +213,11 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		final CurseFile newFile = fileChange.newCurseFile();
 		final String newDisplayName = newFile == null ? "Archived file" : newFile.displayName();
 
-		builder.append('\t').append(fileChange.project().name()).append(" (").
-				append(oldDisplayName).append(" --> ").append(newDisplayName).append("):");
+		builder.append('\t').append(
+				Optional.ofNullable(fileChange.project()).
+						map(CurseProject::name).
+						orElse("Deleted project")
+		).append(" (").append(oldDisplayName).append(" --> ").append(newDisplayName).append("):");
 
 		for (ChangelogEntry entry : changelog.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');

@@ -8,6 +8,42 @@
 	</Match>
 
 	<Match>
+		<Bug pattern="URF_UNREAD_FIELD"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="EXS_EXCEPTION_SOFTENING_NO_CONSTRAINTS"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="LEST_LOST_EXCEPTION_STACK_TRACE"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="FII_USE_METHOD_REFERENCE"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="IMC_IMMATURE_CLASS_BAD_SERIALVERSIONUID"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="PATH_TRAVERSAL_IN"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="MDM_INETADDRESS_GETLOCALHOST"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="EXS_EXCEPTION_SOFTENING_RETURN_FALSE"/>
+	</Match>
+
+	<Match>
+		<Bug pattern="DMI_HARDCODED_ABSOLUTE_FILENAME"/>
+	</Match>
+
+	<Match>
 		<Class name="~.*Test"/>
 
 		<Not>

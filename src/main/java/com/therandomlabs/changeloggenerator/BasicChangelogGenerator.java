@@ -52,7 +52,9 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 */
 	public static final BasicChangelogGenerator instance = new BasicChangelogGenerator();
 
-	private static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator());
+	private static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator()).
+			omitEmptyStrings().
+			trimResults();
 
 	/**
 	 * Constructs a {@link BasicChangelogGenerator}.
@@ -226,7 +228,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		for (ChangelogEntry entry : changelog.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
-			final Iterable<String> entryLines;
+			Iterable<String> entryLines;
 
 			if (JsoupUtils.isEmpty(entry.entry())) {
 				entryLines = Collections.singleton("No changelog available.");

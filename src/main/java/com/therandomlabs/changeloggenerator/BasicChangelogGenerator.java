@@ -23,6 +23,7 @@
 
 package com.therandomlabs.changeloggenerator;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -30,6 +31,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
+import com.google.common.base.Splitter;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
@@ -49,6 +51,8 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * The singleton instance of {@link BasicChangelogGenerator}.
 	 */
 	public static final BasicChangelogGenerator instance = new BasicChangelogGenerator();
+
+	private static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator());
 
 	/**
 	 * Constructs a {@link BasicChangelogGenerator}.
@@ -222,21 +226,26 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		for (ChangelogEntry entry : changelog.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
-			final String[] entryLines;
+			final Iterable<String> entryLines;
 
 			if (JsoupUtils.isEmpty(entry.entry())) {
-				entryLines = new String[] {
-						"No changelog available."
-				};
+				entryLines = Collections.singleton("No changelog available.");
 			} else {
-				entryLines = JsoupUtils.getPlainText(entry.entry()).split(System.lineSeparator());
+				entryLines = LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()));
 			}
 
 			for (String line : entryLines) {
 				builder.append(System.lineSeparator());
 
 				if (!line.isEmpty()) {
-					builder.append("\t\t\t").append(line);
+					builder.append("\t\t\t");
+
+					//For consistency, we change "- " to "* " at line beginnings.
+					if (line.startsWith("- ") && line.length() > 2) {
+						builder.append("* ").append(line.substring(2));
+					} else {
+						builder.append(line);
+					}
 				}
 			}
 

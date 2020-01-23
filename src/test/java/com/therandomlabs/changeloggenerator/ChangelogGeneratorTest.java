@@ -24,10 +24,12 @@
 package com.therandomlabs.changeloggenerator;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.nio.file.Path;
 import java.util.Optional;
 
+import com.therandomlabs.changeloggenerator.provider.CurseChangelogProvider;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.CurseFile;
@@ -38,6 +40,14 @@ import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.LoggerFactory;
 
 public class ChangelogGeneratorTest {
+	@Test
+	public void exceptionShouldBeThrownIfDuplicateProviderIsRegistered() {
+		assertThatThrownBy(() -> BasicChangelogGenerator.instance.withProvider(
+				CurseChangelogProvider.instance
+		)).isInstanceOf(IllegalArgumentException.class).
+				hasMessageContaining("should not already be registered");
+	}
+
 	@Test
 	public void atm4ChangelogIsValid(@TempDir Path tempDirectory) throws Exception {
 		final Optional<Path> optionalOldModpackPath =
@@ -62,7 +72,8 @@ public class ChangelogGeneratorTest {
 					CurseModpack.fromJSON(oldModpackZipFile.getEntry("manifest.json"));
 			final CurseModpack newModpack =
 					CurseModpack.fromJSON(newModpackZipFile.getEntry("manifest.json"));
-			final String changelog = new BasicChangelogGenerator().generate(oldModpack, newModpack);
+			final String changelog =
+					BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
 			assertThat(changelog).isNotEmpty();
 
 			LoggerFactory.getLogger(getClass()).info(changelog);
@@ -99,7 +110,7 @@ public class ChangelogGeneratorTest {
 		newModpack.name("New Test Modpack");
 		newModpack.files().add(new CurseFile.Immutable(projectID, newFileID));
 
-		final String changelog = new BasicChangelogGenerator().generate(oldModpack, newModpack);
+		final String changelog = BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
 		assertThat(changelog).isNotEmpty();
 
 		LoggerFactory.getLogger(ChangelogGeneratorTest.class).info("\n{}", changelog);

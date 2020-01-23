@@ -30,13 +30,13 @@ import okio.BufferedSink;
 import okio.Okio;
 
 /**
- * A launcher class for ChangelogGenerator.
+ * The entry point for the runnable ChangelogGenerator application.
  */
 public final class Main {
 	private Main() {}
 
 	/**
-	 * The main method.
+	 * The main method for the runnable ChangelogGenerator application.
 	 *
 	 * @param args the command-line arguments.
 	 * @throws Exception if an error occurs.
@@ -45,7 +45,7 @@ public final class Main {
 		//TODO
 		final CurseModpack oldModpack = CurseModpack.fromJSON(Paths.get("old.json"));
 		final CurseModpack newModpack = CurseModpack.fromJSON(Paths.get("new.json"));
-		final String changelog = new BasicChangelogGenerator().generate(oldModpack, newModpack);
+		final String changelog = BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
 
 		try (BufferedSink sink = Okio.buffer(Okio.sink(Paths.get("changelog.txt")))) {
 			sink.writeUtf8(changelog).writeUtf8(System.lineSeparator());

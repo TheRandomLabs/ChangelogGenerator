@@ -1,8 +1,14 @@
 group = "com.therandomlabs.changeloggenerator"
 version = "2.0.0-pre3"
 
-ext.mainClass = "${group}.Main"
-ext.jacocoMinimumInstructionCoverage = 0.0
+ext {
+	mainClass = "${group}.Main"
+	jacocoMinimumInstructionCoverage = 0.9
+	jacocoExcludes = [
+		"com.therandomlabs.changeloggenerator.ChangelogEntry",
+		"com.therandomlabs.changeloggenerator.Main"
+	]
+}
 
 apply from: "https://raw.githubusercontent.com/TheRandomLabs/Common-Gradle/master/runnable/build.gradle"
 

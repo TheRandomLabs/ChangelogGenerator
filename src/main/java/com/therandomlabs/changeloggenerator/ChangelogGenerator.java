@@ -73,22 +73,6 @@ public abstract class ChangelogGenerator {
 	}
 
 	/**
-	 * Registers the specified {@link ChangelogProvider} to this {@link ChangelogGenerator}
-	 * instance with the highest priority.
-	 *
-	 * @param provider a {@link ChangelogProvider}.
-	 * @return this {@link ChangelogGenerator}.
-	 */
-	public final ChangelogGenerator withProvider(ChangelogProvider provider) {
-		Preconditions.checkNotNull(provider, "provider should not be null");
-		Preconditions.checkArgument(
-				!providers.contains(provider), "provider should not already be registered"
-		);
-		providers.add(0, provider);
-		return this;
-	}
-
-	/**
 	 * Returns the {@link Changelog} for the specified {@link CurseFileChange} by iterating
 	 * through registered {@link ChangelogProvider}s and calling
 	 * {@link ChangelogProvider#getChangelog(CurseFileChange)}.
@@ -137,4 +121,20 @@ public abstract class ChangelogGenerator {
 	 */
 	public abstract String generate(CurseModpack oldModpack, CurseModpack newModpack)
 			throws CurseException;
+
+	/**
+	 * Registers the specified {@link ChangelogProvider} to this {@link ChangelogGenerator}
+	 * instance with the highest priority.
+	 *
+	 * @param provider a {@link ChangelogProvider}.
+	 * @return this {@link ChangelogGenerator}.
+	 */
+	protected final ChangelogGenerator withProvider(ChangelogProvider provider) {
+		Preconditions.checkNotNull(provider, "provider should not be null");
+		Preconditions.checkArgument(
+				!providers.contains(provider), "provider should not already be registered"
+		);
+		providers.add(0, provider);
+		return this;
+	}
 }

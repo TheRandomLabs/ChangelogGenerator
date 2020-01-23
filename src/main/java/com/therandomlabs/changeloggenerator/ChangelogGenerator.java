@@ -73,18 +73,19 @@ public abstract class ChangelogGenerator {
 	}
 
 	/**
-	 * Returns the {@link Changelog} for the specified {@link CurseFileChange} by iterating
-	 * through registered {@link ChangelogProvider}s and calling
+	 * Returns the {@link ChangelogEntries} for the specified {@link CurseFileChange} by iterating
+	 * through the registered {@link ChangelogProvider}s and calling
 	 * {@link ChangelogProvider#getChangelog(CurseFileChange)}.
 	 *
 	 * @param fileChange a {@link CurseFileChange}.
-	 * @return the {@link Changelog} for the specified {@link CurseFileChange}.
+	 * @return the {@link ChangelogEntries} for the specified {@link CurseFileChange}.
 	 * @throws CurseException if an error occurs.
 	 * @see #withProvider(ChangelogProvider)
 	 */
-	public Changelog getChangelog(CurseFileChange<? extends BasicCurseFile> fileChange)
-			throws CurseException {
-		logger.info("Retrieving changelog for file change: {}", fileChange);
+	public ChangelogEntries getChangelogEntries(
+			CurseFileChange<? extends BasicCurseFile> fileChange
+	) throws CurseException {
+		logger.info("Retrieving changelog entries for file change: {}", fileChange);
 
 		for (ChangelogProvider provider : providers) {
 			final SortedSet<ChangelogEntry> changelog = provider.getChangelog(fileChange);
@@ -101,11 +102,11 @@ public abstract class ChangelogGenerator {
 					changelogEntry.setEntry(entry);
 				}
 
-				return new Changelog(fileChange, changelog);
+				return new ChangelogEntries(fileChange, changelog);
 			}
 		}
 
-		throw new CurseException("Could not retrieve changelogs for: " + fileChange);
+		throw new CurseException("Could not retrieve changelog entries for: " + fileChange);
 	}
 
 	/**

@@ -33,20 +33,20 @@ import com.therandomlabs.curseapi.file.CurseFileChange;
 /**
  * Represents a set of changelog entries for a {@link CurseFileChange}.
  */
-public class Changelog {
+public class ChangelogEntries {
 	private final CurseFileChange<BasicCurseFile> fileChange;
 	@SuppressWarnings("PMD.LooseCoupling")
 	private final TreeSet<ChangelogEntry> entries;
 
 	/**
-	 * Constructs a {@link Changelog} instance with the specified {@link CurseFileChange}
+	 * Constructs a {@link ChangelogEntries} instance with the specified {@link CurseFileChange}
 	 * and {@link Collection} of {@link ChangelogEntry} instances.
 	 *
 	 * @param fileChange a {@link CurseFileChange}.
 	 * @param entries a {@link SortedSet} of {@link ChangelogEntry} instances.
 	 */
 	@SuppressWarnings("unchecked")
-	public Changelog(
+	public ChangelogEntries(
 			CurseFileChange<? extends BasicCurseFile> fileChange,
 			Collection<? extends ChangelogEntry> entries
 	) {
@@ -55,18 +55,18 @@ public class Changelog {
 	}
 
 	/**
-	 * Returns this {@link Changelog}'s {@link CurseFileChange}.
+	 * Returns this {@link ChangelogEntries}' {@link CurseFileChange}.
 	 *
-	 * @return this {@link Changelog}'s {@link CurseFileChange}.
+	 * @return this {@link ChangelogEntries}' {@link CurseFileChange}.
 	 */
 	public CurseFileChange<BasicCurseFile> fileChange() {
 		return fileChange;
 	}
 
 	/**
-	 * Returns this {@link Changelog}'s {@link ChangelogEntry} instances.
+	 * Returns this {@link ChangelogEntries}' {@link ChangelogEntry} instances.
 	 *
-	 * @return a mutable {@link SortedSet} of this {@link Changelog}'s {@link ChangelogEntry}
+	 * @return a mutable {@link SortedSet} of this {@link ChangelogEntries}' {@link ChangelogEntry}
 	 * instances.
 	 */
 	@SuppressWarnings("unchecked")

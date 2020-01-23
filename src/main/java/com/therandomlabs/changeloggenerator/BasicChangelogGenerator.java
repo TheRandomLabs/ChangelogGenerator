@@ -81,12 +81,12 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		}
 
 		if (!comparison.updated().isEmpty()) {
-			appendChangelog(builder, "Updated", comparison.updated());
+			appendChangelogEntries(builder, "Updated", comparison.updated());
 			separateSections(builder);
 		}
 
 		if (!comparison.downgraded().isEmpty()) {
-			appendChangelog(builder, "Downgraded", comparison.downgraded());
+			appendChangelogEntries(builder, "Downgraded", comparison.downgraded());
 			separateSections(builder);
 		}
 
@@ -180,38 +180,39 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * @param fileChanges a {@link Set} of {@link CurseFileChange}.s
 	 * @throws CurseException if an error occurs.
 	 */
-	protected void appendChangelog(
+	protected void appendChangelogEntries(
 			StringBuilder builder, String title, Set<CurseFileChange<BasicCurseFile>> fileChanges
 	) throws CurseException {
 		builder.append(title).append(':');
 
-		final Map<String, Changelog> allChangelogs = new TreeMap<>(CurseAPI.parallelMap(
+		final Map<String, ChangelogEntries> allEntries = new TreeMap<>(CurseAPI.parallelMap(
 				fileChanges,
 				fileChange -> Optional.ofNullable(fileChange.project()).
 						map(CurseProject::name).
 						orElse("Deleted project"),
-				this::getChangelog
+				this::getChangelogEntries
 		));
 
-		for (Map.Entry<String, Changelog> changelog : allChangelogs.entrySet()) {
+		for (Map.Entry<String, ChangelogEntries> changelogEntries : allEntries.entrySet()) {
 			builder.append(System.lineSeparator());
-			appendChangelog(builder, changelog.getKey(), changelog.getValue());
+			appendChangelogEntries(builder, changelogEntries.getKey(), changelogEntries.getValue());
 		}
 
 		builder.setLength(builder.length() - System.lineSeparator().length());
 	}
 
 	/**
-	 * Appends a {@link Changelog} to the changelog.
+	 * Appends a {@link ChangelogEntries} to the changelog.
 	 *
 	 * @param builder a {@link StringBuilder} to append to.
 	 * @param projectName a project name.
-	 * @param changelog a {@link Changelog}.
+	 * @param changelogEntries a {@link ChangelogEntries}.
 	 * @throws CurseException if an error occurs.
 	 */
-	protected void appendChangelog(StringBuilder builder, String projectName, Changelog changelog)
-			throws CurseException {
-		final CurseFileChange<BasicCurseFile> fileChange = changelog.fileChange();
+	protected void appendChangelogEntries(
+			StringBuilder builder, String projectName, ChangelogEntries changelogEntries
+	) throws CurseException {
+		final CurseFileChange<BasicCurseFile> fileChange = changelogEntries.fileChange();
 
 		final CurseFile oldFile = fileChange.oldCurseFile();
 		final String oldDisplayName = oldFile == null ? "Archived file" : oldFile.displayName();
@@ -225,7 +226,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 						orElse("Deleted project")
 		).append(" (").append(oldDisplayName).append(" --> ").append(newDisplayName).append("):");
 
-		for (ChangelogEntry entry : changelog.entries()) {
+		for (ChangelogEntry entry : changelogEntries.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
 			Iterable<String> entryLines;

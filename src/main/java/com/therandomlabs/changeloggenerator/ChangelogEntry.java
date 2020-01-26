@@ -91,7 +91,7 @@ public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 		return entry;
 	}
 
-	//This is called by ChangelogGenerator#getChangelog(CurseFileChange).
+	//This is called by ChangelogGenerator#getChangelogEntries(CurseFileChange).
 	void setEntry(Element entry) {
 		this.entry = entry;
 	}

@@ -9,7 +9,7 @@ ext {
 	]
 }
 
-apply from: "https://raw.githubusercontent.com/TheRandomLabs/Common-Gradle/master/runnable/build.gradle"
+apply from: "https://raw.githubusercontent.com/TheRandomLabs/Common-Gradle/master/build.gradle"
 
 repositories {
 	maven {

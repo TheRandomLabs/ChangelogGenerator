@@ -32,7 +32,9 @@ import java.util.Optional;
 import com.therandomlabs.changeloggenerator.provider.CurseChangelogProvider;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
+import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFile;
+import com.therandomlabs.curseapi.file.CurseFilesComparison;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 import com.therandomlabs.utils.io.ZipFile;
 import org.junit.jupiter.api.Test;
@@ -75,6 +77,17 @@ public class ChangelogGeneratorTest {
 			final String changelog =
 					BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
 			assertThat(changelog).isNotEmpty();
+
+			final CurseFilesComparison<BasicCurseFile> comparison =
+					CurseFilesComparison.of(oldModpack.files(), newModpack.files());
+			final ChangelogEntries entries = BasicChangelogGenerator.instance.getChangelogEntries(
+					comparison.updated().iterator().next()
+			);
+
+			assertThat(entries).isNotNull();
+			assertThat(entries.toString()).isNotEmpty();
+			assertThat(entries.entries()).isNotEmpty();
+			assertThat(entries.entries().first().toString()).isNotEmpty();
 
 			LoggerFactory.getLogger(getClass()).info(changelog);
 		}

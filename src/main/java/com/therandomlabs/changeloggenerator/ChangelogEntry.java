@@ -23,6 +23,7 @@
 
 package com.therandomlabs.changeloggenerator;
 
+import com.google.common.base.MoreObjects;
 import org.jsoup.nodes.Element;
 
 /**
@@ -62,6 +63,17 @@ public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 	public boolean equals(Object object) {
 		return this == object || (object instanceof ChangelogEntry &&
 				comparable.equals(((ChangelogEntry) object).comparable));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return MoreObjects.toStringHelper(this).
+				add("title", title).
+				add("entry", entry).
+				toString();
 	}
 
 	/**

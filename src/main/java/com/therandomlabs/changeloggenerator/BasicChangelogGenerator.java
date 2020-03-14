@@ -189,7 +189,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 				fileChanges,
 				fileChange -> Optional.ofNullable(fileChange.project()).
 						map(CurseProject::name).
-						orElse("Deleted project"),
+						orElse("Deleted project (" + fileChange.projectID() + ")"),
 				this::getChangelogEntries
 		));
 

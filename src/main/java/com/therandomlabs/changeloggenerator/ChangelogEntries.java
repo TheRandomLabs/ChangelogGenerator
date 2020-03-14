@@ -27,6 +27,7 @@ import java.util.Collection;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import com.google.common.base.MoreObjects;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 
@@ -52,6 +53,17 @@ public class ChangelogEntries {
 	) {
 		this.fileChange = (CurseFileChange<BasicCurseFile>) fileChange;
 		this.entries = new TreeSet<>(entries);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return MoreObjects.toStringHelper(this).
+				add("fileChange", fileChange).
+				add("entries", entries).
+				toString();
 	}
 
 	/**

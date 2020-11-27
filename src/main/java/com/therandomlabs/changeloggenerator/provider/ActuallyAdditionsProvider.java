@@ -51,7 +51,7 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 	private static final Splitter HYPHEN_SPLITTER = Splitter.on('-');
 
 	private static final HttpUrl CHANGELOG_URL = HttpUrl.get(
-			"https://raw.githubusercontent.com/Ellpeck/ActuallyAdditions/master/update/changelog.md"
+			"https://raw.githubusercontent.com/Ellpeck/ActuallyAdditions/main/update/changelog.md"
 	);
 
 	private ActuallyAdditionsProvider() {}

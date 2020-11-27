@@ -41,9 +41,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.slf4j.LoggerFactory;
 
-public class ChangelogGeneratorTest {
+class ChangelogGeneratorTest {
 	@Test
-	public void exceptionShouldBeThrownIfDuplicateProviderIsRegistered() {
+	void exceptionShouldBeThrownIfDuplicateProviderIsRegistered() {
 		assertThatThrownBy(() -> BasicChangelogGenerator.instance.withProvider(
 				CurseChangelogProvider.instance
 		)).isInstanceOf(IllegalArgumentException.class).
@@ -51,7 +51,7 @@ public class ChangelogGeneratorTest {
 	}
 
 	@Test
-	public void atm4ChangelogIsValid(@TempDir Path tempDirectory) throws Exception {
+	void atm4ChangelogIsValid(@TempDir Path tempDirectory) throws Exception {
 		final Optional<Path> optionalOldModpackPath =
 				CurseAPI.downloadFileToDirectory(316059, 2839369, tempDirectory);
 		assertThat(optionalOldModpackPath).isPresent();
@@ -94,22 +94,22 @@ public class ChangelogGeneratorTest {
 	}
 
 	@Test
-	public void actuallyAdditionsChangelogIsValid() throws CurseException {
+	void actuallyAdditionsChangelogIsValid() throws CurseException {
 		testProject(228404, 2621643, 2844115);
 	}
 
 	@Test
-	public void biomesOPlentyChangelogIsValid() throws CurseException {
+	void biomesOPlentyChangelogIsValid() throws CurseException {
 		testProject(220318, 2814404, 2846238);
 	}
 
 	@Test
-	public void jeiChangelogIsValid() throws CurseException {
+	void jeiChangelogIsValid() throws CurseException {
 		testProject(238222, 2822850, 2847274);
 	}
 
 	@Test
-	public void rfToolsChangelogIsValid() throws CurseException {
+	void rfToolsChangelogIsValid() throws CurseException {
 		testProject(224641, 2672513, 2745848);
 	}
 
@@ -117,11 +117,11 @@ public class ChangelogGeneratorTest {
 			throws CurseException {
 		final CurseModpack oldModpack = CurseModpack.createEmpty();
 		oldModpack.name("Old Test Modpack");
-		oldModpack.files().add(new CurseFile.Immutable(projectID, oldFileID));
+		oldModpack.basicFiles().add(new CurseFile.Immutable(projectID, oldFileID));
 
 		final CurseModpack newModpack = CurseModpack.createEmpty();
 		newModpack.name("New Test Modpack");
-		newModpack.files().add(new CurseFile.Immutable(projectID, newFileID));
+		newModpack.basicFiles().add(new CurseFile.Immutable(projectID, newFileID));
 
 		final String changelog = BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
 		assertThat(changelog).isNotEmpty();

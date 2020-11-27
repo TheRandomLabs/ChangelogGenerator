@@ -1,5 +1,5 @@
 group = "com.therandomlabs.changeloggenerator"
-version = "2.0.0-pre3"
+version = "2.0.0-pre4"
 
 ext {
 	mainClass = "${group}.Main"

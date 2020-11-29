@@ -177,7 +177,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 *
 	 * @param builder a {@link StringBuilder} to append to.
 	 * @param title a section title.
-	 * @param fileChanges a {@link Set} of {@link CurseFileChange}.s
+	 * @param fileChanges a {@link Set} of {@link CurseFileChange}s.
 	 * @throws CurseException if an error occurs.
 	 */
 	protected void appendChangelogEntries(

@@ -24,6 +24,7 @@
 package com.therandomlabs.changeloggenerator;
 
 import java.util.Collection;
+import java.util.NavigableSet;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -78,11 +79,11 @@ public class ChangelogEntries {
 	/**
 	 * Returns this {@link ChangelogEntries}' {@link ChangelogEntry} instances.
 	 *
-	 * @return a mutable {@link SortedSet} of this {@link ChangelogEntries}' {@link ChangelogEntry}
-	 * instances.
+	 * @return a mutable {@link NavigableSet} of this {@link ChangelogEntries}'
+	 * {@link ChangelogEntry} instances.
 	 */
 	@SuppressWarnings("unchecked")
-	public SortedSet<ChangelogEntry> entries() {
-		return (SortedSet<ChangelogEntry>) entries.clone();
+	public NavigableSet<ChangelogEntry> entries() {
+		return (NavigableSet<ChangelogEntry>) entries.clone();
 	}
 }

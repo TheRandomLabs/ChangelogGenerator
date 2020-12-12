@@ -2,6 +2,7 @@ group = "com.therandomlabs.changeloggenerator"
 version = "2.0.0-pre5"
 
 ext {
+	commonGradleBranch = "master"
 	mainClass = "${group}.Main"
 	jacocoExcludes = [
 		"com.therandomlabs.changeloggenerator.ChangelogEntry",
@@ -9,7 +10,7 @@ ext {
 	]
 }
 
-apply from: "https://raw.githubusercontent.com/TheRandomLabs/Common-Gradle/master/build.gradle"
+apply from: "https://raw.githubusercontent.com/TheRandomLabs/Common-Gradle/${project.commonGradleBranch}/build.gradle"
 
 repositories {
 	maven {

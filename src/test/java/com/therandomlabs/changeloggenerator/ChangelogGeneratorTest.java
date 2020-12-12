@@ -33,7 +33,6 @@ import com.therandomlabs.changeloggenerator.provider.CurseChangelogProvider;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
-import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFilesComparison;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 import com.therandomlabs.utils.io.ZipFile;
@@ -117,11 +116,11 @@ class ChangelogGeneratorTest {
 			throws CurseException {
 		final CurseModpack oldModpack = CurseModpack.createEmpty();
 		oldModpack.name("Old Test Modpack");
-		oldModpack.basicFiles().add(new CurseFile.Immutable(projectID, oldFileID));
+		oldModpack.basicFiles().add(new BasicCurseFile.Immutable(projectID, oldFileID));
 
 		final CurseModpack newModpack = CurseModpack.createEmpty();
 		newModpack.name("New Test Modpack");
-		newModpack.basicFiles().add(new CurseFile.Immutable(projectID, newFileID));
+		newModpack.basicFiles().add(new BasicCurseFile.Immutable(projectID, newFileID));
 
 		final String changelog = BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
 		assertThat(changelog).isNotEmpty();

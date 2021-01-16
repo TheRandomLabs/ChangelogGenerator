@@ -14,3 +14,9 @@
 Generates changelogs for CurseForge modpacks.
 
 All public-facing code is documented with Javadoc and (mostly) tested with JUnit.
+
+## How to use?
+1. Put the `manifest.json` from your old version in a folder and rename it to `old.json`.
+2. Put the `manifest.json` from your new version in the same folder and rename it to `new.json`.
+3. Execute the `ChangelogGenerator.jar` by double-clicking it in the same folder.
+4. Wait for the `changelog.txt`.

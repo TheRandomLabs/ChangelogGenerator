@@ -243,8 +243,8 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 				if (!line.isEmpty()) {
 					builder.append("\t\t\t");
 
-					//For consistency, we change "- " to "* " at line beginnings.
-					if (line.startsWith("- ") && line.length() > 2) {
+					//For consistency, we change "- " and "+ " to "* " at line beginnings.
+					if ((line.startsWith("- ") || line.startsWith("+ ")) && line.length() > 2) {
 						builder.append("* ").append(line.substring(2));
 					} else {
 						builder.append(line);

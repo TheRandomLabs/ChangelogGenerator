@@ -24,6 +24,7 @@
 package com.therandomlabs.changeloggenerator;
 
 import com.google.common.base.MoreObjects;
+import okhttp3.HttpUrl;
 import org.jsoup.nodes.Element;
 
 /**
@@ -32,19 +33,22 @@ import org.jsoup.nodes.Element;
 public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 	private final Comparable<?> comparable;
 	private final String title;
+	private final HttpUrl url;
 	private Element entry;
 
 	/**
-	 * Constructs a {@link ChangelogEntry} instance with the specified title and entry.
+	 * Constructs a {@link ChangelogEntry} instance with the specified title, entry and URL.
 	 *
 	 * @param comparable a {@link Comparable} for use in sorting. Changelog entries for newer
 	 * files should be sorted first.
 	 * @param title a title.
+	 * @param url a URL.
 	 * @param entry a changelog entry.
 	 */
-	public ChangelogEntry(Comparable<?> comparable, String title, Element entry) {
+	public ChangelogEntry(Comparable<?> comparable, String title, HttpUrl url, Element entry) {
 		this.comparable = comparable;
 		this.title = title;
+		this.url = url;
 		this.entry = entry;
 	}
 
@@ -92,6 +96,14 @@ public final class ChangelogEntry implements Comparable<ChangelogEntry> {
 	 */
 	public String title() {
 		return title;
+	}
+
+	/**
+	 * Returns this {@link ChangelogEntry}'s URL.
+	 * @return this {@link ChangelogEntry}'s URL.
+	 */
+	public HttpUrl url() {
+		return url;
 	}
 
 	/**

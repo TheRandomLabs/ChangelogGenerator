@@ -29,6 +29,7 @@ import com.google.common.collect.ImmutableSortedSet;
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
+import okhttp3.HttpUrl;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.jsoup.nodes.Element;
 
@@ -108,6 +109,8 @@ public final class MezzProvider implements ChangelogProvider {
 		return changelog;
 		*/
 
-		return ImmutableSortedSet.of(new ChangelogEntry(0, "Placeholder", new Element("p")));
+		return ImmutableSortedSet.of(new ChangelogEntry(
+				0, "Placeholder", HttpUrl.get("https://placeholder.com"), new Element("p")
+		));
 	}
 }

@@ -59,7 +59,7 @@ public final class CurseChangelogProvider implements ChangelogProvider {
 				gameVersionGroups(fileChange.get(CurseFile::gameVersionGroups)).
 				apply(files);
 		return files.parallelMap(
-				file -> new ChangelogEntry(file, file.displayName(), file.changelog()),
+				file -> new ChangelogEntry(file, file.displayName(), file.url(), file.changelog()),
 				Collectors.toCollection(TreeSet::new)
 		);
 	}

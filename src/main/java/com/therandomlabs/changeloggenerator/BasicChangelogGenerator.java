@@ -52,7 +52,11 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 */
 	public static final BasicChangelogGenerator instance = new BasicChangelogGenerator();
 
-	private static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator()).
+	/**
+	 * A {@link Splitter} that works on line separators.
+	 * Empty strings are omitted, and results are trimmed.
+	 */
+	protected static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator()).
 			omitEmptyStrings().
 			trimResults();
 
@@ -67,7 +71,9 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String generate(CurseModpack oldModpack, CurseModpack newModpack) throws CurseException {
+	public String generate(
+			CurseModpack oldModpack, CurseModpack newModpack, ChangelogGeneratorOptions options
+	) throws CurseException {
 		final CurseFilesComparison<BasicCurseFile> comparison =
 				CurseFilesComparison.of(oldModpack.files(), newModpack.files());
 		final StringBuilder builder = new StringBuilder();
@@ -167,7 +173,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		);
 
 		for (String projectName : projectNames) {
-			builder.append(System.lineSeparator()).append("- ").append(projectName);
+			builder.append(System.lineSeparator()).append("* ").append(projectName);
 		}
 	}
 
@@ -183,7 +189,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	protected void appendChangelogEntries(
 			StringBuilder builder, String title, Set<CurseFileChange<BasicCurseFile>> fileChanges
 	) throws CurseException {
-		builder.append(title).append(':');
+		appendTitle(builder, title);
 
 		final Map<String, ChangelogEntries> allEntries = new TreeMap<>(CurseAPI.parallelMap(
 				fileChanges,

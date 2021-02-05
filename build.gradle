@@ -1,12 +1,12 @@
 group = "com.therandomlabs.changeloggenerator"
-version = "2.0.0-pre5"
+version = "2.0.0-pre6"
 
 ext {
 	commonGradleBranch = "master"
-	mainClass = "${group}.Main"
+	mainClass = "${group}.ChangelogGeneratorOptions"
 	jacocoExcludes = [
 		"com.therandomlabs.changeloggenerator.ChangelogEntry",
-		"com.therandomlabs.changeloggenerator.Main"
+		"com.therandomlabs.changeloggenerator.ChangelogGeneratorOptions"
 	]
 }
 
@@ -22,7 +22,14 @@ dependencies {
 	api "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
 	api "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 
+	implementation "info.picocli:picocli:4.6.1"
+	annotationProcessor "info.picocli:picocli-codegen:4.6.1"
+
 	implementation "com.atlassian.commonmark:commonmark:0.13.1"
 
 	testImplementation "com.github.TheRandomLabs:TRLUtils-IO:master-SNAPSHOT"
+}
+
+compileJava {
+    options.compilerArgs += "-Aproject=${project.group}/${project.name}"
 }

@@ -98,7 +98,7 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 
 			if (newVersionFound && "ul".equals(element.tagName())) {
 				changelog.add(new ChangelogEntry(
-						index++, "Actually Additions " + currentVersion, element
+						index++, "Actually Additions " + currentVersion, CHANGELOG_URL, element
 				));
 			}
 		}

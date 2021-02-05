@@ -63,7 +63,8 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 		}
 
 		final CurseFiles<CurseFile> files = ChangelogProvider.getFilesBetweenInclusive(fileChange);
-		final String fullChangelog = files.first().changelogPlainText();
+		final CurseFile newFile = files.first();
+		final String fullChangelog = newFile.changelogPlainText();
 
 		if (!fullChangelog.startsWith("Build: ")) {
 			return null;
@@ -111,7 +112,7 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 			}
 
 			changelog.add(new ChangelogEntry(
-					index++, "Biomes O' Plenty " + currentVersion, currentEntry
+					index++, "Biomes O' Plenty " + currentVersion, newFile.url(), currentEntry
 			));
 			currentEntry = new Element("div");
 			currentList = null;

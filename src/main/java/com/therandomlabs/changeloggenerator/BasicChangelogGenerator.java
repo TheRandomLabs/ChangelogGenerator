@@ -23,7 +23,7 @@
 
 package com.therandomlabs.changeloggenerator;
 
-import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -32,6 +32,7 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Splitter;
+import com.google.common.collect.Lists;
 import com.therandomlabs.curseapi.CurseAPI;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
@@ -48,11 +49,6 @@ import com.therandomlabs.curseapi.util.JsoupUtils;
  */
 public class BasicChangelogGenerator extends ChangelogGenerator {
 	/**
-	 * The singleton instance of {@link BasicChangelogGenerator}.
-	 */
-	public static final BasicChangelogGenerator instance = new BasicChangelogGenerator();
-
-	/**
 	 * A {@link Splitter} that works on line separators.
 	 * Empty strings are omitted, and results are trimmed.
 	 */
@@ -60,20 +56,29 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 			omitEmptyStrings().
 			trimResults();
 
+	private final ChangelogGeneratorOptions options;
+
 	/**
 	 * Constructs a {@link BasicChangelogGenerator}.
 	 */
-	protected BasicChangelogGenerator() {
-		//Default constructor.
+	public BasicChangelogGenerator() {
+		this(new ChangelogGeneratorOptions());
+	}
+
+	/**
+	 * Constructs a {@link BasicChangelogGenerator}.
+	 *
+	 * @param options ChangelogGenerator options.
+	 */
+	public BasicChangelogGenerator(ChangelogGeneratorOptions options) {
+		this.options = options;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String generate(
-			CurseModpack oldModpack, CurseModpack newModpack, ChangelogGeneratorOptions options
-	) throws CurseException {
+	public String generate(CurseModpack oldModpack, CurseModpack newModpack) throws CurseException {
 		final CurseFilesComparison<BasicCurseFile> comparison =
 				CurseFilesComparison.of(oldModpack.files(), newModpack.files());
 		final StringBuilder builder = new StringBuilder();
@@ -103,6 +108,15 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 
 		appendTail(builder);
 		return builder.toString();
+	}
+
+	/**
+	 * Returns ChangelogGenerator options.
+	 *
+	 * @return a {@link ChangelogGeneratorOptions} instance.
+	 */
+	protected ChangelogGeneratorOptions getOptions() {
+		return options;
 	}
 
 	/**
@@ -235,12 +249,22 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		for (ChangelogEntry entry : changelogEntries.entries()) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
-			Iterable<String> entryLines;
+			List<String> entryLines;
 
 			if (JsoupUtils.isEmpty(entry.entry())) {
-				entryLines = Collections.singleton("No changelog available.");
+				entryLines = Lists.newArrayList("No changelog available.");
 			} else {
-				entryLines = LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()));
+				entryLines = Lists.newArrayList(
+						LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()))
+				);
+			}
+
+			final int maxLines = getOptions().maxEntryLineCount;
+
+			if (maxLines != 0 && entryLines.size() > maxLines) {
+				final int extra = entryLines.size() - maxLines;
+				entryLines.set(maxLines, "(" + extra + " more line" + (extra == 1 ? ")" : "s)"));
+				entryLines = entryLines.subList(0, maxLines + 1);
 			}
 
 			for (String line : entryLines) {
@@ -268,7 +292,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * @param builder a {@link StringBuilder} to append to.
 	 */
 	protected void appendTail(StringBuilder builder) {
-		builder.append("Generated using [ChangelogGenerator ").append(VERSION).
-				append("](https://github.com/TheRandomLabs/ChangelogGenerator).");
+		builder.append("Generated using ChangelogGenerator ").append(VERSION).
+				append(": https://github.com/TheRandomLabs/ChangelogGenerator");
 	}
 }

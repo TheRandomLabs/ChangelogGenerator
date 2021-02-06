@@ -120,25 +120,8 @@ public abstract class ChangelogGenerator {
 	 * @return the generated changelog.
 	 * @throws CurseException if an error occurs.
 	 */
-	public String generate(CurseModpack oldModpack, CurseModpack newModpack) throws CurseException {
-		return generate(oldModpack, newModpack, new ChangelogGeneratorOptions());
-	}
-
-	/**
-	 * Generates a changelog that details changes between an older and newer version of a
-	 * CurseForge modpack.
-	 *
-	 * @param oldModpack a {@link CurseModpack} instance that represents an older version of a
-	 * CurseForge modpack.
-	 * @param newModpack a {@link CurseModpack} instance that represents a newer version of a
-	 * CurseForge modpack.
-	 * @param options ChangelogGenerator options.
-	 * @return the generated changelog.
-	 * @throws CurseException if an error occurs.
-	 */
-	public abstract String generate(
-			CurseModpack oldModpack, CurseModpack newModpack, ChangelogGeneratorOptions options
-	) throws CurseException;
+	public abstract String generate(CurseModpack oldModpack, CurseModpack newModpack)
+			throws CurseException;
 
 	/**
 	 * Registers the specified {@link ChangelogProvider} to this {@link ChangelogGenerator}

@@ -43,7 +43,7 @@ import org.slf4j.LoggerFactory;
 class ChangelogGeneratorTest {
 	@Test
 	void exceptionShouldBeThrownIfDuplicateProviderIsRegistered() {
-		assertThatThrownBy(() -> BasicChangelogGenerator.instance.withProvider(
+		assertThatThrownBy(() -> new BasicChangelogGenerator().withProvider(
 				CurseChangelogProvider.instance
 		)).isInstanceOf(IllegalArgumentException.class).
 				hasMessageContaining("should not already be registered");
@@ -73,13 +73,17 @@ class ChangelogGeneratorTest {
 					CurseModpack.fromJSON(oldModpackZipFile.getEntry("manifest.json"));
 			final CurseModpack newModpack =
 					CurseModpack.fromJSON(newModpackZipFile.getEntry("manifest.json"));
-			final String changelog =
-					BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
-			assertThat(changelog).isNotEmpty();
+
+			final String basic = new BasicChangelogGenerator().generate(oldModpack, newModpack);
+			assertThat(basic).isNotEmpty();
+
+			final String markdown =
+					new MarkdownChangelogGenerator().generate(oldModpack, newModpack);
+			assertThat(markdown).isNotEmpty();
 
 			final CurseFilesComparison<BasicCurseFile> comparison =
 					CurseFilesComparison.of(oldModpack.files(), newModpack.files());
-			final ChangelogEntries entries = BasicChangelogGenerator.instance.getChangelogEntries(
+			final ChangelogEntries entries = new BasicChangelogGenerator().getChangelogEntries(
 					comparison.updated().iterator().next()
 			);
 
@@ -88,7 +92,8 @@ class ChangelogGeneratorTest {
 			assertThat(entries.entries()).isNotEmpty();
 			assertThat(entries.entries().first().toString()).isNotEmpty();
 
-			LoggerFactory.getLogger(getClass()).info(changelog);
+			LoggerFactory.getLogger(getClass()).info(basic);
+			LoggerFactory.getLogger(getClass()).info(markdown);
 		}
 	}
 
@@ -122,7 +127,7 @@ class ChangelogGeneratorTest {
 		newModpack.name("New Test Modpack");
 		newModpack.basicFiles().add(new BasicCurseFile.Immutable(projectID, newFileID));
 
-		final String changelog = BasicChangelogGenerator.instance.generate(oldModpack, newModpack);
+		final String changelog = new BasicChangelogGenerator().generate(oldModpack, newModpack);
 		assertThat(changelog).isNotEmpty();
 
 		LoggerFactory.getLogger(ChangelogGeneratorTest.class).info("\n{}", changelog);

@@ -23,19 +23,19 @@
 
 package com.therandomlabs.changeloggenerator;
 
-import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
+import com.google.common.collect.Lists;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFiles;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
-import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.JsoupUtils;
 
 /**
@@ -43,15 +43,19 @@ import com.therandomlabs.curseapi.util.JsoupUtils;
  */
 public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 	/**
-	 * The singleton instance of {@link MarkdownChangelogGenerator}.
+	 * Constructs a {@link MarkdownChangelogGenerator}.
 	 */
-	public static final MarkdownChangelogGenerator instance = new MarkdownChangelogGenerator();
+	public MarkdownChangelogGenerator() {
+		this(new ChangelogGeneratorOptions());
+	}
 
 	/**
 	 * Constructs a {@link MarkdownChangelogGenerator}.
+	 *
+	 * @param options ChangelogGenerator options.
 	 */
-	protected MarkdownChangelogGenerator() {
-		//Default constructor.
+	public MarkdownChangelogGenerator(ChangelogGeneratorOptions options) {
+		super(options);
 	}
 
 	/**
@@ -70,7 +74,7 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 			StringBuilder builder, CurseModpack oldModpack, CurseModpack newModpack
 	) throws CurseException {
 		builder.append("# ").append(oldModpack.name()).append(' ').append(oldModpack.version()).
-				append("⟶").append(newModpack.name()).append(' ').append(newModpack.version());
+				append('⟶').append(newModpack.name()).append(' ').append(newModpack.version());
 	}
 
 	/**
@@ -126,7 +130,7 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 				Optional.ofNullable(fileChange.project()).
 						map(project -> "[" + project.name() + "](" + project.url() + ")").
 						orElse("Deleted project")
-		).append(" (").append(oldDisplayName).append("⟶").append(newDisplayName).append(")");
+		).append(" (").append(oldDisplayName).append('⟶').append(newDisplayName).append(')');
 
 		if (changelogEntries.entries().isEmpty()) {
 			builder.append(System.lineSeparator());
@@ -135,15 +139,29 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 
 		for (ChangelogEntry entry : changelogEntries.entries()) {
 			builder.append(System.lineSeparator()).append(System.lineSeparator()).append("#### [").
-					append(entry.title()).append("](").append(entry.url()).append(")").
+					append(entry.title()).append("](").append(entry.url()).append(')').
 					append(System.lineSeparator());
 
-			Iterable<String> entryLines;
+			List<String> entryLines;
 
 			if (JsoupUtils.isEmpty(entry.entry())) {
-				entryLines = Collections.singleton("No changelog available.");
+				entryLines = Lists.newArrayList("No changelog available.");
 			} else {
-				entryLines = LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()));
+				entryLines = Lists.newArrayList(
+						LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()))
+				);
+			}
+
+			final int maxLines = getOptions().maxEntryLineCount;
+
+			if (maxLines != 0 && entryLines.size() > maxLines) {
+				final int extra = entryLines.size() - maxLines;
+				entryLines.set(
+						maxLines,
+						System.lineSeparator() + "[(" + extra + " more line" +
+								(extra == 1 ? ")](" : "s)](") + entry.url() + ')'
+				);
+				entryLines = entryLines.subList(0, maxLines + 1);
 			}
 
 			for (String line : entryLines) {
@@ -161,5 +179,14 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 
 			builder.append(System.lineSeparator());
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void appendTail(StringBuilder builder) {
+		builder.append("Generated using [ChangelogGenerator ").append(VERSION).
+				append("](https://github.com/TheRandomLabs/ChangelogGenerator).");
 	}
 }

@@ -1,12 +1,14 @@
 group = "com.therandomlabs.changeloggenerator"
-version = "2.0.0-pre6"
+version = "2.0.0-pre7"
 
 ext {
 	commonGradleBranch = "master"
-	mainClass = "${group}.ChangelogGeneratorOptions"
+	mainClass = "${group}.Main"
+	jacocoMinimumInstructionCoverage = 0.8
 	jacocoExcludes = [
 		"com.therandomlabs.changeloggenerator.ChangelogEntry",
-		"com.therandomlabs.changeloggenerator.ChangelogGeneratorOptions"
+		"com.therandomlabs.changeloggenerator.ChangelogGeneratorOptions",
+		"com.therandomlabs.changeloggenerator.Main"
 	]
 }
 
@@ -31,5 +33,5 @@ dependencies {
 }
 
 compileJava {
-    options.compilerArgs += "-Aproject=${project.group}/${project.name}"
+	options.compilerArgs += "-Aproject=${project.group}/${project.name}"
 }

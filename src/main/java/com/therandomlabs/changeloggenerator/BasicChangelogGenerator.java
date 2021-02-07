@@ -295,7 +295,8 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 					builder.append("\t\t\t");
 
 					//For consistency, we change "- " and "+ " to "* " at line beginnings.
-					if ((line.startsWith("- ") || line.startsWith("+ ")) && line.length() > 2) {
+					if ((line.startsWith("- ") || line.startsWith("+ ") || line.startsWith("* ")) &&
+							line.length() > 2) {
 						builder.append("* ").append(line.substring(2).trim());
 					} else {
 						builder.append(line);

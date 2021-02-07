@@ -80,7 +80,7 @@ public abstract class ChangelogGenerator {
 	/**
 	 * Returns the {@link ChangelogEntries} for the specified {@link CurseFileChange} by iterating
 	 * through the registered {@link ChangelogProvider}s and calling
-	 * {@link ChangelogProvider#getChangelog(CurseFileChange)}.
+	 * {@link ChangelogProvider#getChangelog(CurseFileChange, CurseGameVersionGroup)}.
 	 *
 	 * @param fileChange a {@link CurseFileChange}.
 	 * @param fallbackVersionGroup the {@link CurseGameVersionGroup} to use if a game version group

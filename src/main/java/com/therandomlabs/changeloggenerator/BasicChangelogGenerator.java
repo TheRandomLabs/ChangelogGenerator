@@ -23,6 +23,7 @@
 
 package com.therandomlabs.changeloggenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -80,7 +81,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	@Override
 	public String generate(CurseModpack oldModpack, CurseModpack newModpack) throws CurseException {
 		final CurseFilesComparison<BasicCurseFile> comparison =
-				CurseFilesComparison.of(oldModpack.files(), newModpack.files());
+				CurseFilesComparison.of(oldModpack.basicFiles(), newModpack.basicFiles());
 		final StringBuilder builder = new StringBuilder();
 
 		appendModpackVersions(builder, oldModpack, newModpack);
@@ -229,6 +230,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * @param changelogEntries a {@link ChangelogEntries}.
 	 * @throws CurseException if an error occurs.
 	 */
+	@SuppressWarnings("Duplicates")
 	protected void appendChangelogEntries(
 			StringBuilder builder, String projectName, ChangelogEntries changelogEntries
 	) throws CurseException {
@@ -246,7 +248,20 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 						orElse("Deleted project")
 		).append(" (").append(oldDisplayName).append(" --> ").append(newDisplayName).append("):");
 
-		for (ChangelogEntry entry : changelogEntries.entries()) {
+		List<ChangelogEntry> entries = new ArrayList<>(changelogEntries.entries());
+
+		if (entries.isEmpty()) {
+			return;
+		}
+
+		final int maxEntries = getOptions().maxEntryCount;
+		final int extraEntries = maxEntries == 0 ? 0 : entries.size() - maxEntries;
+
+		if (extraEntries > 0) {
+			entries = entries.subList(0, maxEntries);
+		}
+
+		for (ChangelogEntry entry : entries) {
 			builder.append(System.lineSeparator()).append("\t\t").append(entry.title()).append(':');
 
 			List<String> entryLines;
@@ -275,7 +290,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 
 					//For consistency, we change "- " and "+ " to "* " at line beginnings.
 					if ((line.startsWith("- ") || line.startsWith("+ ")) && line.length() > 2) {
-						builder.append("* ").append(line.substring(2));
+						builder.append("* ").append(line.substring(2).trim());
 					} else {
 						builder.append(line);
 					}
@@ -283,6 +298,12 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 			}
 
 			builder.append(System.lineSeparator());
+		}
+
+		if (extraEntries > 0) {
+			builder.append(System.lineSeparator()).append("\t\t").append(extraEntries).
+					append(" more entr").append(extraEntries == 1 ? "y" : "ies").
+					append(System.lineSeparator());
 		}
 	}
 

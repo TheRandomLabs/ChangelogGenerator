@@ -49,7 +49,7 @@ public final class Main {
 	 *
 	 * @param args the command-line arguments.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		options = new ChangelogGeneratorOptions(Main::run);
 		commandLine = new CommandLine(options).registerConverter(Path.class, Paths::get);
 		System.exit(commandLine.execute(args));
@@ -64,6 +64,16 @@ public final class Main {
 			throw new IllegalStateException("commandLine should not be null");
 		}
 
+		if (options.maxEntryLineCount < 0) {
+			System.err.println("Cannot display negative number of lines");
+			return 1;
+		}
+
+		if (options.maxEntryCount < 0) {
+			System.err.println("Cannot display negative number of entries");
+			return 1;
+		}
+
 		if (options.oldManifest == null) {
 			options.oldManifest = Paths.get("old.json");
 		}
@@ -74,11 +84,6 @@ public final class Main {
 
 		if (options.output == null) {
 			options.output = Paths.get(options.markdown ? "changelog.md" : "changelog.txt");
-		}
-
-		if (options.maxEntryLineCount < 0) {
-			System.err.println("Cannot display negative number of lines");
-			return 1;
 		}
 
 		final CurseModpack oldModpack = CurseModpack.fromJSON(options.oldManifest);

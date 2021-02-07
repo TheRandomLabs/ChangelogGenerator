@@ -44,6 +44,12 @@ public final class ChangelogGeneratorOptions implements Callable<Integer> {
 	public int maxEntryLineCount;
 
 	@CommandLine.Option(
+			names = {"-e", "--entries"},
+			description = "The maximum number of changelog entries to display per mod."
+	)
+	public int maxEntryCount;
+
+	@CommandLine.Option(
 			names = {"-m", "--markdown"},
 			description = "Generate a Markdown changelog."
 	)

@@ -12,3 +12,9 @@ out
 *.iws
 *.iml
 .idea
+
+# ChangelogGenerator
+out.json
+new.json
+changelog.txt
+changelog.md

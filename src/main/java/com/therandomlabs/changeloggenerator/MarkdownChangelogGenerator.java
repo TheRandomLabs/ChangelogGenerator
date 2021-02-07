@@ -23,10 +23,12 @@
 
 package com.therandomlabs.changeloggenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.Lists;
@@ -42,6 +44,8 @@ import com.therandomlabs.curseapi.util.JsoupUtils;
  * A variant of {@link BasicChangelogGenerator} that generates a Markdown changelog.
  */
 public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
+	private static final Pattern image = Pattern.compile(".*!\\[.*]\\(.*\\).*");
+
 	/**
 	 * Constructs a {@link MarkdownChangelogGenerator}.
 	 */
@@ -101,7 +105,7 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 	/**
 	 * {@inheritDoc}
 	 */
-	@SuppressWarnings("Duplicates")
+	@SuppressWarnings({"Duplicates", "ConstantConditions"})
 	@Override
 	protected void appendChangelogEntries(
 			StringBuilder builder, String projectName, ChangelogEntries changelogEntries
@@ -130,17 +134,25 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 				Optional.ofNullable(fileChange.project()).
 						map(project -> "[" + project.name() + "](" + project.url() + ")").
 						orElse("Deleted project")
-		).append(" (").append(oldDisplayName).append('⟶').append(newDisplayName).append(')');
+		).append(" (").append(oldDisplayName).append('⟶').append(newDisplayName).append(')').
+				append(System.lineSeparator());
 
-		if (changelogEntries.entries().isEmpty()) {
-			builder.append(System.lineSeparator());
+		List<ChangelogEntry> entries = new ArrayList<>(changelogEntries.entries());
+
+		if (entries.isEmpty()) {
 			return;
 		}
 
-		for (ChangelogEntry entry : changelogEntries.entries()) {
-			builder.append(System.lineSeparator()).append(System.lineSeparator()).append("#### [").
-					append(entry.title()).append("](").append(entry.url()).append(')').
-					append(System.lineSeparator());
+		final int maxEntries = getOptions().maxEntryCount;
+		final int extraEntries = maxEntries == 0 ? 0 : entries.size() - maxEntries;
+
+		if (extraEntries > 0) {
+			entries = entries.subList(0, maxEntries);
+		}
+
+		for (ChangelogEntry entry : entries) {
+			builder.append(System.lineSeparator()).append("#### [").append(entry.title()).
+					append("](").append(entry.url()).append(')').append(System.lineSeparator());
 
 			List<String> entryLines;
 
@@ -152,32 +164,61 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 				);
 			}
 
+			//Remove all lines with images.
+			entryLines = entryLines.stream().
+					filter(line -> !image.matcher(line).matches()).
+					collect(Collectors.toCollection(ArrayList::new));
+
 			final int maxLines = getOptions().maxEntryLineCount;
 
 			if (maxLines != 0 && entryLines.size() > maxLines) {
 				final int extra = entryLines.size() - maxLines;
 				entryLines.set(
 						maxLines,
-						System.lineSeparator() + "[(" + extra + " more line" +
-								(extra == 1 ? ")](" : "s)](") + entry.url() + ')'
+						"[(" + extra + " more line" + (extra == 1 ? ")](" : "s)](") + entry.url() +
+								')'
 				);
 				entryLines = entryLines.subList(0, maxLines + 1);
 			}
 
-			for (String line : entryLines) {
+			boolean wasListItem = false;
+
+			for (int i = 0; i < entryLines.size(); i++) {
+				final String line = entryLines.get(i);
+
 				builder.append(System.lineSeparator());
 
 				if (!line.isEmpty()) {
 					//For consistency, we change "- " and "+ " to "* " at line beginnings.
-					if ((line.startsWith("- ") || line.startsWith("+ ")) && line.length() > 2) {
-						builder.append("* ").append(line.substring(2));
+					if ((line.startsWith("- ") || line.startsWith("+ ") || line.startsWith("* ")) &&
+							line.length() > 2) {
+						builder.append("* ").append(line.substring(2).trim());
+						wasListItem = true;
 					} else {
+						if (wasListItem) {
+							builder.append(System.lineSeparator());
+							wasListItem = false;
+						}
+
 						builder.append(line);
+
+						if (i != entryLines.size() - 1) {
+							builder.append(System.lineSeparator());
+						}
 					}
 				}
 			}
 
 			builder.append(System.lineSeparator());
+		}
+
+		if (extraEntries > 0) {
+			//fileChange.project() is guaranteed to return a non-null value,
+			//since it is necessary to determine whether there are extra entries in the first place.
+			builder.append(System.lineSeparator()).append("#### [").append(extraEntries).
+					append(" more entr").append(extraEntries == 1 ? "y](" : "ies](").
+					append(fileChange.project().url()).append("/files/all)").
+					append(System.lineSeparator());
 		}
 	}
 

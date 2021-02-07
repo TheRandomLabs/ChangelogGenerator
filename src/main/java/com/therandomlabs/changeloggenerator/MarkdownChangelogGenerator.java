@@ -38,6 +38,7 @@ import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFiles;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
+import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.JsoupUtils;
 
 /**
@@ -105,7 +106,7 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 	/**
 	 * {@inheritDoc}
 	 */
-	@SuppressWarnings({"Duplicates", "ConstantConditions"})
+	@SuppressWarnings("Duplicates")
 	@Override
 	protected void appendChangelogEntries(
 			StringBuilder builder, String projectName, ChangelogEntries changelogEntries
@@ -213,11 +214,19 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 		}
 
 		if (extraEntries > 0) {
-			//fileChange.project() is guaranteed to return a non-null value,
-			//since it is necessary to determine whether there are extra entries in the first place.
+			//This is guaranteed to be non-null, but we have to appease the static code analysis
+			//tools.
+			final CurseProject project = fileChange.project();
+
+			if (project == null) {
+				builder.append(System.lineSeparator()).append("#### ").append(extraEntries).
+						append(" more entr").append(extraEntries == 1 ? "y" : "ies");
+				return;
+			}
+
 			builder.append(System.lineSeparator()).append("#### [").append(extraEntries).
 					append(" more entr").append(extraEntries == 1 ? "y](" : "ies](").
-					append(fileChange.project().url()).append("/files/all)").
+					append(project.url()).append("/files/all)").
 					append(System.lineSeparator());
 		}
 	}

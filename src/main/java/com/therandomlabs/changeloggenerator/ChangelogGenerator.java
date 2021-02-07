@@ -54,10 +54,7 @@ public abstract class ChangelogGenerator {
 	 */
 	public static final String VERSION = "@VERSION@";
 
-	/**
-	 * The ChangelogGenerator logger.
-	 */
-	protected static final Logger logger = LoggerFactory.getLogger(ChangelogGenerator.class);
+	private static final Logger logger = LoggerFactory.getLogger(ChangelogGenerator.class);
 
 	private final List<ChangelogProvider> providers = new ArrayList<>();
 

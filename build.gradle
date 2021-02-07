@@ -4,7 +4,7 @@ version = "2.0.0-pre8"
 ext {
 	commonGradleBranch = "master"
 	mainClass = "${group}.Main"
-	jacocoMinimumInstructionCoverage = 0.8
+	jacocoMinimumInstructionCoverage = 0.7
 	jacocoExcludes = [
 		"com.therandomlabs.changeloggenerator.ChangelogEntry",
 		"com.therandomlabs.changeloggenerator.ChangelogGeneratorOptions",

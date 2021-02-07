@@ -34,6 +34,8 @@ import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFiles;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 import com.therandomlabs.curseapi.util.OkHttpUtils;
 import okhttp3.HttpUrl;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -62,7 +64,8 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 	@Nullable
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		if (fileChange.projectID() != 228404) {
 			return null;

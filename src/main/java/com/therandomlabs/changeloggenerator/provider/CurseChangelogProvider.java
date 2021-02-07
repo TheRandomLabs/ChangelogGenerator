@@ -23,6 +23,8 @@
 
 package com.therandomlabs.changeloggenerator.provider;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -34,6 +36,8 @@ import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFileFilter;
 import com.therandomlabs.curseapi.file.CurseFiles;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 
 /**
  * A generic implementation of {@link ChangelogProvider} for all CurseForge files.
@@ -52,11 +56,21 @@ public final class CurseChangelogProvider implements ChangelogProvider {
 	@SuppressWarnings("NullAway")
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		final CurseFiles<CurseFile> files = fileChange.filesBetween();
+
+		Collection<CurseGameVersionGroup<MCVersion>> versionGroup;
+
+		try {
+			versionGroup = fileChange.get(CurseFile::gameVersionGroups);
+		} catch (CurseException ex) {
+			versionGroup = Collections.singleton(fallbackVersionGroup);
+		}
+
 		new CurseFileFilter().
-				gameVersionGroups(fileChange.get(CurseFile::gameVersionGroups)).
+				gameVersionGroups(versionGroup).
 				apply(files);
 		return files.parallelMap(
 				file -> new ChangelogEntry(file, file.displayName(), file.url(), file.changelog()),

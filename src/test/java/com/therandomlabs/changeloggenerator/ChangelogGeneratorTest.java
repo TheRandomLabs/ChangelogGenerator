@@ -84,7 +84,7 @@ class ChangelogGeneratorTest {
 			final CurseFilesComparison<BasicCurseFile> comparison =
 					CurseFilesComparison.of(oldModpack.files(), newModpack.files());
 			final ChangelogEntries entries = new BasicChangelogGenerator().getChangelogEntries(
-					comparison.updated().iterator().next()
+					comparison.updated().iterator().next(), oldModpack.mcVersion().versionGroup()
 			);
 
 			assertThat(entries).isNotNull();

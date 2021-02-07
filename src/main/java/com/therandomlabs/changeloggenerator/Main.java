@@ -49,7 +49,7 @@ public final class Main {
 	 *
 	 * @param args the command-line arguments.
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		options = new ChangelogGeneratorOptions(Main::run);
 		commandLine = new CommandLine(options).registerConverter(Path.class, Paths::get);
 		System.exit(commandLine.execute(args));

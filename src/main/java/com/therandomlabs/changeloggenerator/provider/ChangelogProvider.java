@@ -32,6 +32,8 @@ import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFileFilter;
 import com.therandomlabs.curseapi.file.CurseFiles;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.jsoup.nodes.Element;
 
@@ -43,6 +45,8 @@ public interface ChangelogProvider {
 	 * Returns the changelog for the specified {@link CurseFileChange}.
 	 *
 	 * @param fileChange a {@link CurseFileChange}.
+	 * @param fallbackVersionGroup the {@link CurseGameVersionGroup} to use if a game version group
+	 * is necessary and cannot be determined.
 	 * @return a {@link SortedSet} of {@link ChangelogEntry} instances that represent
 	 * the changelog for the specified {@link CurseFileChange}. If the {@link CurseFileChange}
 	 * is not supported by this implementation of {@link ChangelogProvider},
@@ -51,7 +55,8 @@ public interface ChangelogProvider {
 	 */
 	@Nullable
 	default SortedSet<ChangelogEntry> getChangelog(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		return null;
 	}

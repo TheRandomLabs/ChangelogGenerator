@@ -29,6 +29,8 @@ import com.google.common.collect.ImmutableSortedSet;
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 import okhttp3.HttpUrl;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.jsoup.nodes.Element;
@@ -50,7 +52,8 @@ public final class MezzProvider implements ChangelogProvider {
 	@Nullable
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) {
 		if (fileChange.projectID() != 59751 && fileChange.projectID() != 223525 &&
 				fileChange.projectID() != 238222) {

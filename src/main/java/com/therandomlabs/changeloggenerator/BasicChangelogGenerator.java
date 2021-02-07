@@ -41,6 +41,8 @@ import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFiles;
 import com.therandomlabs.curseapi.file.CurseFilesComparison;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 import com.therandomlabs.curseapi.project.CurseProject;
 import com.therandomlabs.curseapi.util.JsoupUtils;
@@ -82,6 +84,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	public String generate(CurseModpack oldModpack, CurseModpack newModpack) throws CurseException {
 		final CurseFilesComparison<BasicCurseFile> comparison =
 				CurseFilesComparison.of(oldModpack.basicFiles(), newModpack.basicFiles());
+		final CurseGameVersionGroup<MCVersion> versionGroup = newModpack.mcVersion().versionGroup();
 		final StringBuilder builder = new StringBuilder();
 
 		appendModpackVersions(builder, oldModpack, newModpack);
@@ -93,12 +96,12 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 		}
 
 		if (!comparison.updated().isEmpty()) {
-			appendChangelogEntries(builder, "Updated", comparison.updated());
+			appendChangelogEntries(builder, "Updated", comparison.updated(), versionGroup);
 			separateSections(builder);
 		}
 
 		if (!comparison.downgraded().isEmpty()) {
-			appendChangelogEntries(builder, "Downgraded", comparison.downgraded());
+			appendChangelogEntries(builder, "Downgraded", comparison.downgraded(), versionGroup);
 			separateSections(builder);
 		}
 
@@ -199,10 +202,13 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * @param builder a {@link StringBuilder} to append to.
 	 * @param title a section title.
 	 * @param fileChanges a {@link Set} of {@link CurseFileChange}s.
+	 * @param fallbackVersionGroup the {@link CurseGameVersionGroup} to use if a game version group
+	 * is necessary and cannot be determined.
 	 * @throws CurseException if an error occurs.
 	 */
 	protected void appendChangelogEntries(
-			StringBuilder builder, String title, Set<CurseFileChange<BasicCurseFile>> fileChanges
+			StringBuilder builder, String title, Set<CurseFileChange<BasicCurseFile>> fileChanges,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		appendTitle(builder, title);
 
@@ -211,7 +217,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 				fileChange -> Optional.ofNullable(fileChange.project()).
 						map(CurseProject::name).
 						orElseGet(() -> "Deleted project (" + fileChange.projectID() + ")"),
-				this::getChangelogEntries
+				fileChange -> getChangelogEntries(fileChange, fallbackVersionGroup)
 		));
 
 		for (Map.Entry<String, ChangelogEntries> changelogEntries : allEntries.entrySet()) {

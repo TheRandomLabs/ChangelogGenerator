@@ -33,6 +33,8 @@ import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
 import com.therandomlabs.curseapi.file.CurseFiles;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.jsoup.nodes.Element;
 
@@ -56,7 +58,8 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 	@Nullable
 	@Override
 	public SortedSet<ChangelogEntry> getChangelog(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		if (fileChange.projectID() != 220318) {
 			return null;

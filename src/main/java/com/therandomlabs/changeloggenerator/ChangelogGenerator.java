@@ -37,7 +37,9 @@ import com.therandomlabs.changeloggenerator.provider.MezzProvider;
 import com.therandomlabs.curseapi.CurseException;
 import com.therandomlabs.curseapi.file.BasicCurseFile;
 import com.therandomlabs.curseapi.file.CurseFileChange;
+import com.therandomlabs.curseapi.game.CurseGameVersionGroup;
 import com.therandomlabs.curseapi.minecraft.CurseAPIMinecraft;
+import com.therandomlabs.curseapi.minecraft.MCVersion;
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
 import org.jsoup.nodes.Element;
 import org.slf4j.Logger;
@@ -81,17 +83,21 @@ public abstract class ChangelogGenerator {
 	 * {@link ChangelogProvider#getChangelog(CurseFileChange)}.
 	 *
 	 * @param fileChange a {@link CurseFileChange}.
+	 * @param fallbackVersionGroup the {@link CurseGameVersionGroup} to use if a game version group
+	 * is necessary and cannot be determined.
 	 * @return the {@link ChangelogEntries} for the specified {@link CurseFileChange}.
 	 * @throws CurseException if an error occurs.
 	 * @see #withProvider(ChangelogProvider)
 	 */
 	public ChangelogEntries getChangelogEntries(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		logger.info("Retrieving changelog entries for file change: {}", fileChange);
 
 		for (ChangelogProvider provider : providers) {
-			final SortedSet<ChangelogEntry> changelog = provider.getChangelog(fileChange);
+			final SortedSet<ChangelogEntry> changelog =
+					provider.getChangelog(fileChange, fallbackVersionGroup);
 
 			if (changelog != null) {
 				//Call ChangelogProvider#processChangelog(CurseFileChange, Element).

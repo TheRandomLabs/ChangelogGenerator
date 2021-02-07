@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-![Build](https://github.com/TheRandomLabs/ChangelogGenerator/workflows/Build/badge.svg?branch=master)
+![Build](https://github.com/TheRandomLabs/ChangelogGenerator/workflows/Build/badge.svg?branch=main)
 [![Dependabot](https://badgen.net/dependabot/TheRandomLabs/ChangelogGenerator/?icon=dependabot)](https://dependabot.com/)
 
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/TheRandomLabs/ChangelogGenerator.svg)](http://isitmaintained.com/project/TheRandomLabs/ChangelogGenerator "Average time to resolve an issue")

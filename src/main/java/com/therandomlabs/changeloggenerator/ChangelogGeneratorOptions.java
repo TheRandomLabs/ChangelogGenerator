@@ -39,15 +39,17 @@ import picocli.CommandLine;
 public final class ChangelogGeneratorOptions implements Callable<Integer> {
 	@CommandLine.Option(
 			names = {"-l", "--lines"},
-			description = "The maximum number of lines to display in a changelog entry."
+			description = "The maximum number of lines to display in a changelog entry. " +
+					"5 by default. 0 removes this limit."
 	)
-	public int maxEntryLineCount;
+	public int maxEntryLineCount = 5;
 
 	@CommandLine.Option(
 			names = {"-e", "--entries"},
-			description = "The maximum number of changelog entries to display per mod."
+			description = "The maximum number of changelog entries to display per mod. " +
+					"5 by default. 0 removes this limit."
 	)
-	public int maxEntryCount;
+	public int maxEntryCount = 5;
 
 	@CommandLine.Option(
 			names = {"-m", "--markdown"},

@@ -110,6 +110,7 @@ class ChangelogGeneratorTest {
 	@Test
 	void jeiChangelogIsValid() throws CurseException {
 		testProject(238222, 2822850, 2847274);
+		testProject(238222, 3136590, 3192904);
 	}
 
 	@Test

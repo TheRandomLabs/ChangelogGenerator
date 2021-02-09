@@ -161,7 +161,7 @@ public class MarkdownChangelogGenerator extends BasicChangelogGenerator {
 				entryLines = Lists.newArrayList("No changelog available.");
 			} else {
 				entryLines = Lists.newArrayList(
-						LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()))
+						lineSeparatorSplitter.split(JsoupUtils.getPlainText(entry.entry()))
 				);
 			}
 

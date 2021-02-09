@@ -50,7 +50,7 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 	 */
 	public static final ActuallyAdditionsProvider instance = new ActuallyAdditionsProvider();
 
-	private static final Splitter HYPHEN_SPLITTER = Splitter.on('-');
+	private static final Splitter hyphenSplitter = Splitter.on('-');
 
 	private static final HttpUrl CHANGELOG_URL = HttpUrl.get(
 			"https://raw.githubusercontent.com/Ellpeck/ActuallyAdditions/main/update/changelog.md"
@@ -71,7 +71,8 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 			return null;
 		}
 
-		final CurseFiles<CurseFile> files = ChangelogProvider.getFilesBetweenInclusive(fileChange);
+		final CurseFiles<CurseFile> files =
+				ChangelogProvider.getFilesBetweenInclusive(fileChange, fallbackVersionGroup);
 		final int oldVersion = getVersion(files.last());
 		final int newVersion = getVersion(files.first());
 
@@ -80,13 +81,13 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 
 		boolean newVersionFound = false;
 		int index = 0;
-		String currentVersion = "";
+		String version = "";
 
 		for (Element element : fullChangelog.children()) {
 			if ("h1".equals(element.tagName())) {
-				currentVersion = element.text();
+				version = element.text();
 
-				final int currentVersionInt = getVersion(currentVersion);
+				final int currentVersionInt = getVersion(version);
 
 				if (newVersionFound) {
 					if (currentVersionInt <= oldVersion) {
@@ -101,7 +102,7 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 
 			if (newVersionFound && "ul".equals(element.tagName())) {
 				changelog.add(new ChangelogEntry(
-						index++, "Actually Additions " + currentVersion, CHANGELOG_URL, element
+						index++, "Actually Additions " + version, CHANGELOG_URL, element
 				));
 			}
 		}
@@ -116,6 +117,6 @@ public final class ActuallyAdditionsProvider implements ChangelogProvider {
 	}
 
 	private static int getVersion(String version) {
-		return Integer.parseInt(HYPHEN_SPLITTER.splitToList(version).get(1).substring(1));
+		return Integer.parseInt(hyphenSplitter.splitToList(version).get(1).substring(1));
 	}
 }

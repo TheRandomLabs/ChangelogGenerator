@@ -65,7 +65,8 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 			return null;
 		}
 
-		final CurseFiles<CurseFile> files = ChangelogProvider.getFilesBetweenInclusive(fileChange);
+		final CurseFiles<CurseFile> files =
+				ChangelogProvider.getFilesBetweenInclusive(fileChange, fallbackVersionGroup);
 		final CurseFile newFile = files.first();
 		final String fullChangelog = newFile.changelogPlainText();
 
@@ -78,14 +79,13 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 		final SortedSet<ChangelogEntry> changelog = new TreeSet<>();
 
 		int index = 0;
-		String currentVersion = "";
-
-		Element currentEntry = new Element("div");
-		Element currentList = null;
+		String version = "";
+		Element entry = new Element("div");
+		Element list = null;
 
 		for (String line : LINE_SEPARATOR_SPLITTER.split(fullChangelog)) {
 			if (line.startsWith("Build: ")) {
-				currentVersion = getVersion(line);
+				version = getVersion(line);
 
 				if (getVersionInt(line) <= oldVersion) {
 					break;
@@ -96,29 +96,29 @@ public final class BiomesOPlentyProvider implements ChangelogProvider {
 
 			if (!line.startsWith("=")) {
 				if (line.isEmpty()) {
-					currentEntry.append("<br/>");
+					entry.append("<br/>");
 					continue;
 				}
 
 				if (line.endsWith(":")) {
-					currentEntry.appendText(line);
+					entry.appendText(line);
 				} else {
-					if (currentList == null) {
-						currentList = new Element("ul");
-						currentEntry.appendChild(currentList);
+					if (list == null) {
+						list = new Element("ul");
+						entry.appendChild(list);
 					}
 
-					currentList.appendChild(new Element("li").text(line.trim()));
+					list.appendChild(new Element("li").text(line.trim()));
 				}
 
 				continue;
 			}
 
 			changelog.add(new ChangelogEntry(
-					index++, "Biomes O' Plenty " + currentVersion, newFile.url(), currentEntry
+					index++, "Biomes O' Plenty " + version, newFile.url(), entry
 			));
-			currentEntry = new Element("div");
-			currentList = null;
+			entry = new Element("div");
+			list = null;
 		}
 
 		return changelog;

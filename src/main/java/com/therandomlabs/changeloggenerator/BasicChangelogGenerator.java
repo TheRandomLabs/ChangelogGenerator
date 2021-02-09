@@ -55,7 +55,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 	 * A {@link Splitter} that works on line separators.
 	 * Empty strings are omitted, and results are trimmed.
 	 */
-	protected static final Splitter LINE_SEPARATOR_SPLITTER = Splitter.on(System.lineSeparator()).
+	protected static final Splitter lineSeparatorSplitter = Splitter.on(System.lineSeparator()).
 			omitEmptyStrings().
 			trimResults();
 
@@ -276,7 +276,7 @@ public class BasicChangelogGenerator extends ChangelogGenerator {
 				entryLines = Lists.newArrayList("No changelog available.");
 			} else {
 				entryLines = Lists.newArrayList(
-						LINE_SEPARATOR_SPLITTER.split(JsoupUtils.getPlainText(entry.entry()))
+						lineSeparatorSplitter.split(JsoupUtils.getPlainText(entry.entry()))
 				);
 			}
 

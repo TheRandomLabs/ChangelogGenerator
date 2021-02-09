@@ -23,6 +23,8 @@
 
 package com.therandomlabs.changeloggenerator.provider;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.SortedSet;
 
 import com.therandomlabs.changeloggenerator.ChangelogEntry;
@@ -81,18 +83,27 @@ public interface ChangelogProvider {
 	 * include files from the relevant game version groups.
 	 *
 	 * @param fileChange a {@link CurseFileChange}.
+	 * @param fallbackVersionGroup the {@link CurseGameVersionGroup} to use if a game version group
+	 * is necessary and cannot be determined.
 	 * @return {@link CurseFileChange#filesBetweenInclusive()} filtered to only include
 	 * files from relevant game version groups.
 	 * @throws CurseException if an error occurs.
 	 */
 	@SuppressWarnings("NullAway")
 	static CurseFiles<CurseFile> getFilesBetweenInclusive(
-			CurseFileChange<? extends BasicCurseFile> fileChange
+			CurseFileChange<? extends BasicCurseFile> fileChange,
+			CurseGameVersionGroup<MCVersion> fallbackVersionGroup
 	) throws CurseException {
 		final CurseFiles<CurseFile> files = fileChange.filesBetweenInclusive();
-		new CurseFileFilter().
-				gameVersionGroups(fileChange.get(CurseFile::gameVersionGroups)).
-				apply(files);
+		Collection<CurseGameVersionGroup<MCVersion>> versionGroup;
+
+		try {
+			versionGroup = fileChange.get(CurseFile::gameVersionGroups);
+		} catch (CurseException ex) {
+			versionGroup = Collections.singleton(fallbackVersionGroup);
+		}
+
+		new CurseFileFilter().gameVersionGroups(versionGroup).apply(files);
 		return files;
 	}
 }

@@ -23,10 +23,13 @@
 
 package com.therandomlabs.changeloggenerator;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import com.therandomlabs.curseapi.minecraft.modpack.CurseModpack;
+import com.therandomlabs.utils.io.ZipFile;
 import okio.BufferedSink;
 import okio.Okio;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -55,6 +58,7 @@ public final class Main {
 		System.exit(commandLine.execute(args));
 	}
 
+	@SuppressWarnings({"ConstantConditions", "NullAway"})
 	private static Integer run() throws Exception {
 		if (options == null) {
 			throw new IllegalStateException("options should not be null");
@@ -74,20 +78,54 @@ public final class Main {
 			return 1;
 		}
 
-		if (options.oldManifest == null) {
-			options.oldManifest = Paths.get("old.json");
+		if (options.oldModpack == null) {
+			options.oldModpack = Paths.get("old.json");
+
+			if (!Files.exists(options.oldModpack)) {
+				final Path zip = Paths.get("old.zip");
+
+				if (Files.exists(zip)) {
+					options.oldModpack = zip;
+				}
+			}
 		}
 
-		if (options.newManifest == null) {
-			options.newManifest = Paths.get("new.json");
+		if (options.oldModpack.getFileName().toString().endsWith(".zip")) {
+			try {
+				options.oldModpack = new ZipFile(options.oldModpack).getEntry("manifest.json");
+			} catch (IOException ex) {
+				System.err.println("Invalid zip file: " + options.oldModpack);
+				return 1;
+			}
+		}
+
+		if (options.newModpack == null) {
+			options.newModpack = Paths.get("new.json");
+
+			if (!Files.exists(options.newModpack)) {
+				final Path zip = Paths.get("new.zip");
+
+				if (Files.exists(zip)) {
+					options.newModpack = zip;
+				}
+			}
+		}
+
+		if (options.newModpack.getFileName().toString().endsWith(".zip")) {
+			try {
+				options.newModpack = new ZipFile(options.newModpack).getEntry("manifest.json");
+			} catch (IOException ex) {
+				System.err.println("Invalid zip file: " + options.newModpack);
+				return 1;
+			}
 		}
 
 		if (options.output == null) {
 			options.output = Paths.get(options.markdown ? "changelog.md" : "changelog.txt");
 		}
 
-		final CurseModpack oldModpack = CurseModpack.fromJSON(options.oldManifest);
-		final CurseModpack newModpack = CurseModpack.fromJSON(options.newManifest);
+		final CurseModpack oldModpack = CurseModpack.fromJSON(options.oldModpack);
+		final CurseModpack newModpack = CurseModpack.fromJSON(options.newModpack);
 		final ChangelogGenerator generator = options.markdown ?
 				new MarkdownChangelogGenerator(options) : new BasicChangelogGenerator(options);
 		final String changelog = generator.generate(oldModpack, newModpack);

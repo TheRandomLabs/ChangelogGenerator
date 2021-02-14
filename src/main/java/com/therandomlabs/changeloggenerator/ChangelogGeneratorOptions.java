@@ -58,18 +58,20 @@ public final class ChangelogGeneratorOptions implements Callable<Integer> {
 	boolean markdown;
 
 	@CommandLine.Option(
-			names = {"-o", "--old-manifest"},
-			description = "The old modpack manifest. \"old.json\" by default."
+			names = {"-o", "--old"},
+			description = "The old modpack or modpack manifest. " +
+					"\"old.json\" or \"old.zip\" by default."
 	)
 	@Nullable
-	Path oldManifest;
+	Path oldModpack;
 
 	@CommandLine.Option(
-			names = {"-n", "--new-manifest"},
-			description = "The new modpack manifest. \"new.json\" by default."
+			names = {"-n", "--new"},
+			description = "The new modpack or modpack manifest. " +
+					"\"new.json\" or \"new.zip\" by default."
 	)
 	@Nullable
-	Path newManifest;
+	Path newModpack;
 
 	@CommandLine.Option(
 			names = {"-O", "--output"},

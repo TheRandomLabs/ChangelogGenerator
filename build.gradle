@@ -1,5 +1,5 @@
 group = "com.therandomlabs.changeloggenerator"
-version = "2.0.0-pre9"
+version = "2.0.0-pre10"
 
 ext {
 	commonGradleBranch = "master"
@@ -24,12 +24,11 @@ dependencies {
 	api "com.github.TheRandomLabs:CurseAPI:master-SNAPSHOT"
 	api "com.github.TheRandomLabs:CurseAPI-Minecraft:master-SNAPSHOT"
 
+	implementation "org.commonmark:commonmark:0.17.1"
+	implementation "com.github.TheRandomLabs:TRLUtils-IO:master-SNAPSHOT"
+
 	implementation "info.picocli:picocli:4.6.1"
 	annotationProcessor "info.picocli:picocli-codegen:4.6.1"
-
-	implementation "org.commonmark:commonmark:0.17.1"
-
-	testImplementation "com.github.TheRandomLabs:TRLUtils-IO:master-SNAPSHOT"
 }
 
 compileJava {

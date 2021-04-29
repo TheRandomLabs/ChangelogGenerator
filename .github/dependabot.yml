@@ -1,0 +1,11 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: com.mebigfatguy.fb-contrib:fb-contrib
+    versions:
+    - "> 7.4.3.sb"

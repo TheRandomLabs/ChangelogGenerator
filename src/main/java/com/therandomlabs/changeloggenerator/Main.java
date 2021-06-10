@@ -90,6 +90,18 @@ public final class Main {
 			}
 		}
 
+		if (options.oldModpack != null) {
+			String fileName = options.oldModpack.getFileName().toString();
+
+			if (!fileName.endsWith(".zip")) {
+				final Path zip = Paths.get(fileName + ".zip");
+
+				if (Files.exists(zip)) {
+					options.oldModpack = zip;
+				}
+			}
+		}
+
 		if (options.oldModpack.getFileName().toString().endsWith(".zip")) {
 			try {
 				options.oldModpack = new ZipFile(options.oldModpack).getEntry("manifest.json");
@@ -104,6 +116,18 @@ public final class Main {
 
 			if (!Files.exists(options.newModpack)) {
 				final Path zip = Paths.get("new.zip");
+
+				if (Files.exists(zip)) {
+					options.newModpack = zip;
+				}
+			}
+		}
+
+		if (options.newModpack != null) {
+			String fileName = options.newModpack.getFileName().toString();
+
+			if (!fileName.endsWith(".zip")) {
+				final Path zip = Paths.get(fileName + ".zip");
 
 				if (Files.exists(zip)) {
 					options.newModpack = zip;
